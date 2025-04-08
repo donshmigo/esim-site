@@ -189,45 +189,51 @@
     "mostPopular": "Most Popular",
     "commonFeatures": {
       "feature1": "Valid for 30 days",
-      "feature2": "Data only",
-      "feature3": "No speed caps",
+      "feature2": "High-speed data (4G/5G)",
+      "feature3": "Global coverage in 80+ countries",
       "feature4": "Secure connection",
-      "feature5": "Worldwide customer support"
+      "feature5": "Worldwide customer support",
+      "feature6": "24/7 customer support",
+      "feature7": "Keep your number",
+      "feature8": "Email support"
     },
     "lite": {
       "name": "Lite",
       "price": "$4.99",
       "yearlyPrice": "$47.88",
-      "data": "1GB Data",
-      "countries": "40+ Countries",
-      "description": "Perfect for occasional travelers",
+      "data": "5GB Data",
+      "countries": "80+ Countries",
+      "description": "Perfect for occasional travelers who need basic connectivity during short trips. Ideal for messaging and light browsing.",
       "features": {
-        "feature1": "Basic customer support"
+        "feature1": "Basic customer support",
+        "feature2": "Email support response within 24 hours",
+        "feature3": "Monthly data usage reports"
       }
     },
     "traveler": {
       "name": "Traveler",
       "price": "$9.99",
       "yearlyPrice": "$95.88",
-      "data": "5GB Data",
-      "countries": "60+ Countries",
-      "description": "Ideal for frequent travelers",
+      "data": "20GB Data",
+      "countries": "80+ Countries",
+      "description": "Ideal for frequent travelers who need reliable connectivity for work and leisure. Great for social media and video streaming.",
       "features": {
         "feature1": "24/7 customer support",
-        "feature2": "Multi-device support"
+        "feature2": "Email support response within 12 hours",
+        "feature3": "Weekly data usage reports"
       }
     },
     "max": {
       "name": "Max",
       "price": "$19.99",
       "yearlyPrice": "$191.88",
-      "data": "Unlimited Data",
+      "data": "30GB Data",
       "countries": "80+ Countries",
-      "description": "Best for digital nomads",
+      "description": "Best for digital nomads and business travelers who need unlimited connectivity across the globe. Perfect for heavy data usage.",
       "features": {
         "feature1": "Priority 24/7 support",
-        "feature2": "Multi-device support",
-        "feature3": "Family sharing (up to 3 devices)"
+        "feature2": "Email support response within 2 hours",
+        "feature3": "Real-time data usage monitoring"
       }
     },
     "cta": "Subscribe Now",
@@ -251,6 +257,49 @@
     "a6": "Yes, you can cancel your subscription at any time from your account dashboard. There are no cancellation fees or long-term contracts.",
     "moreQuestions": "Have more questions?",
     "contactSupport": "Contact Support"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our team for support, sales inquiries, or to learn more about our global eSIM solutions.",
+    "getInTouch": "Get in Touch",
+    "getInTouchText": "Have questions about our eSIM service? Our team is ready to help. Contact us using any of the methods below.",
+    "emailUs": "Email Us",
+    "callUs": "Call Us",
+    "office": "Office",
+    "followUs": "Follow Us",
+    "sendMessage": "Send Us a Message",
+    "fullName": "Full Name",
+    "emailAddress": "Email Address",
+    "company": "Company",
+    "phone": "Phone Number",
+    "subject": "Subject",
+    "message": "Message",
+    "placeholder": {
+      "name": "John Doe",
+      "email": "john@example.com",
+      "company": "Your company (optional)",
+      "phone": "+1 (123) 456-7890",
+      "subject": "How can we help you?",
+      "message": "Please provide details about your inquiry..."
+    },
+    "sending": "Sending...",
+    "sendButton": "Send Message",
+    "success": {
+      "title": "Message Sent!",
+      "text": "Thank you for contacting us. We'll respond to your message as soon as possible.",
+      "button": "Send Another Message"
+    },
+    "error": "An error occurred while submitting the form. Please try again later.",
+    "faqSection": {
+      "title": "Frequently Asked Questions",
+      "text": "Find answers to common questions about our service or contact our support team for additional help.",
+      "button": "View FAQ"
+    },
+    "businessSection": {
+      "title": "Business Solutions",
+      "text": "Looking for enterprise connectivity solutions? Contact our business team to discuss custom plans for your organization.",
+      "button": "Explore Business Plans"
+    }
   },
   "footer": {
     "company": "Company",

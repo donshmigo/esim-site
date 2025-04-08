@@ -74,7 +74,11 @@ const PhoneHero = () => {
                 Get Connected
                 <ArrowRightIcon className="ml-2 h-4 w-4 inline-block transition-transform group-hover:translate-x-1" />
               </a>
-              <a href="#how-it-works" className="btn-secondary hover-glitch">
+              <a 
+                href="#how-it-works" 
+                className="btn-secondary no-focus-outline"
+                style={{ outline: 'none' }}
+              >
                 See How It Works
               </a>
             </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import PhoneHero from '../../components/PhoneHero';
 import Features from '../../features/home/components/Features';
 import HowItWorks from '../../features/home/components/HowItWorks';
@@ -8,9 +9,9 @@ import FAQ from '../../features/home/components/FAQ';
 import Header from '../../layouts/Header';
 import Footer from '../../layouts/Footer';
 import { ArrowUpIcon } from '@heroicons/react/24/outline';
-import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
+  const location = useLocation();
   const [showStickyCTA, setShowStickyCTA] = useState(false);
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [inPricingSection, setInPricingSection] = useState(false);
@@ -56,6 +57,24 @@ const Home: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
+  // Handle hash links
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      
+      if (element) {
+        // Add a slight delay to ensure DOM is fully loaded
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 0);
+      }
+    } else {
+      // If no hash, scroll to top
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
+  
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -71,9 +90,13 @@ const Home: React.FC = () => {
       <Header />
       <PhoneHero />
       <Features />
-      <Pricing />
-      <HowItWorks />
+      <div id="how-it-works">
+        <HowItWorks />
+      </div>
       <Coverage />
+      <div id="pricing">
+        <Pricing />
+      </div>
       <FAQ />
       <Footer />
       

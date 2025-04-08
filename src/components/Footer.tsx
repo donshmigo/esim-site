@@ -11,28 +11,28 @@ export default function Footer() {
     {
       title: 'Company',
       links: [
-        { name: 'About', href: '/about' },
-        { name: 'Careers', href: '/careers' },
-        { name: 'Press', href: '/press' },
-        { name: 'Blog', href: '/blog' },
+        { name: 'About', href: '/', isLink: true },
+        { name: 'Careers', href: '/', isLink: true },
+        { name: 'Press', href: '/', isLink: true },
+        { name: 'Blog', href: '/', isLink: true },
       ],
     },
     {
       title: 'Product',
       links: [
-        { name: 'Features', href: '#features' },
-        { name: 'Pricing', href: '#pricing' },
-        { name: 'Coverage', href: '#coverage' },
-        { name: 'Support', href: '/support' },
+        { name: 'Features', href: '/plans', isLink: true },
+        { name: 'Pricing', href: '/plans', isLink: true },
+        { name: 'Coverage', href: '/', isLink: true },
+        { name: 'Support', href: '/contact', isLink: true },
       ],
     },
     {
       title: 'Resources',
       links: [
-        { name: 'Help Center', href: '/help' },
-        { name: 'Partner Program', href: '/partners' },
-        { name: 'Privacy Policy', href: '/privacy' },
-        { name: 'Terms of Service', href: '/terms' },
+        { name: 'Help Center', href: '/contact', isLink: true },
+        { name: 'Partner Program', href: '/contact', isLink: true },
+        { name: 'Privacy Policy', href: '/', isLink: true },
+        { name: 'Terms of Service', href: '/', isLink: true },
       ],
     },
   ];
@@ -79,7 +79,7 @@ export default function Footer() {
               <ul className="space-y-4">
                 {column.links.map((link) => (
                   <li key={link.name}>
-                    {link.href.startsWith('/') ? (
+                    {link.isLink ? (
                       <Link to={link.href} className="text-steel-gray hover:text-signal-blue transition-colors">
                         {link.name}
                       </Link>
@@ -101,8 +101,8 @@ export default function Footer() {
             &copy; {currentYear} Romio eSIM. All rights reserved.
           </p>
           <div className="mt-4 md:mt-0 flex items-center space-x-4">
-            <span className="text-steel-gray">USD ($)</span>
-            <span className="text-steel-gray">English</span>
+            <Link to="/" className="text-steel-gray hover:text-signal-blue transition-colors text-sm">Privacy Policy</Link>
+            <Link to="/" className="text-steel-gray hover:text-signal-blue transition-colors text-sm">Terms of Service</Link>
           </div>
         </div>
       </div>

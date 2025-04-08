@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 function FaqItem({ questionKey, answerKey, initiallyOpen = false }: { questionKey: string; answerKey: string; initiallyOpen?: boolean }) {
   const [isOpen, setIsOpen] = useState(initiallyOpen);
@@ -126,9 +127,9 @@ export default function FAQ() {
           <p className="text-sm md:text-base text-cool-slate mb-4 md:mb-6">
             {t('faq.contactSupport')}
           </p>
-          <a href="/contact" className="btn-primary inline-block text-sm md:text-base py-2 px-4 md:py-3 md:px-5">
+          <Link to="/contact" className="btn-primary inline-block text-sm md:text-base py-2 px-4 md:py-3 md:px-5">
             {t('faq.contactSupport')}
-          </a>
+          </Link>
         </div>
       </div>
     </section>

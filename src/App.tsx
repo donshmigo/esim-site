@@ -8,6 +8,7 @@ import LitePlan from './pages/plans/LitePlan';
 import TravelerPlan from './pages/plans/TravelerPlan';
 import MaxPlan from './pages/plans/MaxPlan';
 import BusinessPage from './pages/business';
+import ContactPage from './pages/contact';
 
 // Import auth pages and components
 import { AuthProvider } from './firebase/AuthContext';
@@ -30,6 +31,7 @@ function App() {
         <Route path="/plans/traveler" element={<TravelerPlan />} />
         <Route path="/plans/max" element={<MaxPlan />} />
         <Route path="/business" element={<BusinessPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         
         {/* Auth Routes */}
         <Route path="/login" element={<Login />} />

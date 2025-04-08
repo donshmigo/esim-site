@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 
 const faqs = [
   {
@@ -75,9 +76,9 @@ export default function FAQ() {
           <p className="text-cool-slate mb-6">
             Our support team is ready to help you with any questions about our eSIM service.
           </p>
-          <a href="/contact" className="btn-primary inline-block">
+          <Link to="/contact" className="btn-primary inline-block">
             Contact Support
-          </a>
+          </Link>
         </div>
       </div>
     </section>

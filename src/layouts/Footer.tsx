@@ -12,28 +12,28 @@ export default function Footer() {
     {
       title: t('footer.company.title'),
       links: [
-        { name: t('footer.company.about'), href: '/about' },
-        { name: t('footer.company.careers'), href: '/careers' },
-        { name: t('footer.company.press'), href: '/press' },
-        { name: t('footer.company.blog'), href: '/blog' },
+        { name: t('footer.company.about'), href: '/', isLink: true },
+        { name: t('footer.company.careers'), href: '/', isLink: true },
+        { name: t('footer.company.press'), href: '/', isLink: true },
+        { name: t('footer.company.blog'), href: '/', isLink: true },
       ],
     },
     {
       title: t('footer.product.title'),
       links: [
-        { name: t('footer.product.features'), href: '#features' },
-        { name: t('footer.product.pricing'), href: '#pricing' },
-        { name: t('footer.product.coverage'), href: '#coverage' },
-        { name: t('footer.product.support'), href: '/support' },
+        { name: t('footer.product.features'), href: '/plans', isLink: true },
+        { name: t('footer.product.pricing'), href: '/plans', isLink: true },
+        { name: t('footer.product.coverage'), href: '/', isLink: true },
+        { name: t('footer.product.support'), href: '/contact', isLink: true },
       ],
     },
     {
       title: t('footer.resources.title'),
       links: [
-        { name: t('footer.resources.helpCenter'), href: '/help' },
-        { name: t('footer.resources.partnerProgram'), href: '/partners' },
-        { name: t('footer.resources.privacyPolicy'), href: '/privacy' },
-        { name: t('footer.resources.termsOfService'), href: '/terms' },
+        { name: t('footer.resources.helpCenter'), href: '/contact', isLink: true },
+        { name: t('footer.resources.partnerProgram'), href: '/contact', isLink: true },
+        { name: t('footer.resources.privacyPolicy'), href: '/', isLink: true },
+        { name: t('footer.resources.termsOfService'), href: '/', isLink: true },
       ],
     },
   ];
@@ -80,7 +80,7 @@ export default function Footer() {
               <ul className="space-y-3">
                 {column.links.map((link) => (
                   <li key={link.name}>
-                    {link.href.startsWith('/') ? (
+                    {link.isLink ? (
                       <Link to={link.href} className="text-steel-gray hover:text-dark-theme transition-colors text-sm sm:text-base">
                         {link.name}
                       </Link>
@@ -115,13 +115,19 @@ export default function Footer() {
         </div>
 
         {/* Bottom section */}
-        <div className="mt-8 pt-6 border-t border-gray-800 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-steel-gray text-xs sm:text-sm text-center sm:text-left mb-3 sm:mb-0">
-            &copy; {currentYear} {t('footer.copyright')}
-          </p>
-          <div className="flex items-center space-x-4">
-            <span className="text-steel-gray text-xs sm:text-sm">{t('footer.currency')}</span>
-            <span className="text-steel-gray text-xs sm:text-sm">{t('language.en')}</span>
+        <div className="mt-12 pt-8 border-t border-gray-800">
+          <div className="flex flex-col sm:flex-row justify-between items-center">
+            <p className="text-steel-gray mb-6 sm:mb-0">
+              &copy; {currentYear} Romio Mobile. {t('footer.copyright')}
+            </p>
+            <div className="flex items-center space-x-6">
+              <Link to="/" className="text-steel-gray hover:text-white transition-colors text-sm">
+                {t('footer.privacy')}
+              </Link>
+              <Link to="/" className="text-steel-gray hover:text-white transition-colors text-sm">
+                {t('footer.terms')}
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -7,12 +7,13 @@ const plans = [
     price: 19.99,
     dataAmount: '5GB',
     features: [
-      'Works in 80+ countries',
-      'No roaming fees',
-      'No contracts',
-      'Instant activation',
-      'Dashboard access',
-      'Email support'
+      'Valid for 30 days',
+      'High-speed data (4G/5G)',
+      'Global coverage in 80+ countries',
+      'Secure connection',
+      'Worldwide customer support',
+      '24/7 customer support',
+      'Keep your number'
     ],
     popular: false,
     ctaText: 'View Plan Details',
@@ -23,13 +24,13 @@ const plans = [
     price: 39.99,
     dataAmount: '20GB',
     features: [
-      'Works in 80+ countries',
-      'No roaming fees',
-      'No contracts',
-      'Instant activation',
-      'Dashboard access',
-      'Priority email support',
-      'Top-up discounts'
+      'Valid for 30 days',
+      'High-speed data (4G/5G)',
+      'Global coverage in 80+ countries',
+      'Secure connection',
+      'Worldwide customer support',
+      '24/7 customer support',
+      'Keep your number'
     ],
     popular: true,
     ctaText: 'View Plan Details',
@@ -40,14 +41,13 @@ const plans = [
     price: 59.99,
     dataAmount: '30GB',
     features: [
-      'Works in 80+ countries',
-      'No roaming fees',
-      'No contracts',
-      'Instant activation',
-      'Dashboard access',
-      'Priority support',
-      'Top-up discounts',
-      'VoIP add-on included'
+      'Valid for 30 days',
+      'High-speed data (4G/5G)',
+      'Global coverage in 80+ countries',
+      'Secure connection',
+      'Worldwide customer support',
+      '24/7 customer support',
+      'Keep your number'
     ],
     popular: false,
     ctaText: 'View Plan Details',
@@ -112,9 +112,9 @@ export default function Pricing() {
           <p className="text-cool-slate mb-6">
             For teams, families, or special travel requirements, we offer custom plans.
           </p>
-          <a href="/contact" className="btn-secondary inline-block">
+          <Link to="/contact" className="btn-secondary inline-block">
             Contact Sales
-          </a>
+          </Link>
         </div>
       </div>
     </section>

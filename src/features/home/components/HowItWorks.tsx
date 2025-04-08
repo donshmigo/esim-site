@@ -137,6 +137,21 @@ export default function HowItWorks() {
               style={{ width: `${(activeStep / (steps.length - 1)) * 100}%` }}
             ></div>
           </div>
+          
+          {/* Mobile CTA */}
+          <div className="mt-8 text-center">
+            <button 
+              onClick={() => {
+                const pricingSection = document.getElementById('pricing');
+                if (pricingSection) {
+                  pricingSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="btn-primary"
+            >
+              {t('howItWorks.cta')}
+            </button>
+          </div>
         </div>
 
         {/* Desktop View: Grid layout with connector lines */}
@@ -148,19 +163,22 @@ export default function HowItWorks() {
               </div>
               <h3 className="text-xl font-semibold mb-4 text-romio-black">{step.title}</h3>
               <p className="text-cool-slate">{step.description}</p>
-
-              {/* Connector line - only show between items (not after the last item) */}
-              {idx < steps.length - 1 && (
-                <div className="hidden md:block absolute top-10 right-0 w-full h-[2px] bg-steel-gray md:max-w-[calc(100%-1rem)] md:left-[calc(100%-(1rem/2))]"></div>
-              )}
             </div>
           ))}
         </div>
 
         <div className="mt-8 md:mt-16 text-center">
-          <a href="#coverage" className="btn-primary hidden md:inline-block">
+          <button 
+            onClick={() => {
+              const pricingSection = document.getElementById('pricing');
+              if (pricingSection) {
+                pricingSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="btn-primary hidden md:inline-block"
+          >
             {t('howItWorks.cta')}
-          </a>
+          </button>
         </div>
       </div>
     </section>

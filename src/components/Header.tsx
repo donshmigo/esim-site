@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { XMarkIcon, Bars3Icon, SignalIcon } from '@heroicons/react/24/outline';
 import { useAuth } from '../firebase/AuthContext';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LocaleSelector from './LocaleSelector';
 // import logo from '../assets/images/logo.svg';
@@ -14,7 +14,9 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const { currentUser, logout } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const { t } = useTranslation();
+  const isHomePage = location.pathname === '/';
 
   // Add scroll effect
   useEffect(() => {
@@ -44,9 +46,29 @@ export default function Header() {
     }
   };
 
-  // Handle navigation
-  const handleNavigation = (path: string): void => {
-    navigate(path);
+  // Handle navigation with section scrolling on homepage
+  const handleNavigation = (linkTo: string): void => {
+    if (linkTo.startsWith('#') && isHomePage) {
+      // If it's a hash link and we're on the homepage
+      const element = document.getElementById(linkTo.substring(1));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (linkTo.includes('#') && !isHomePage) {
+      // If it's a hash link but we're not on the homepage, navigate to homepage first
+      navigate('/');
+      // We need to wait for the navigation to complete before scrolling
+      setTimeout(() => {
+        const sectionId = linkTo.split('#')[1];
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // Regular navigation
+      navigate(linkTo);
+    }
   };
 
   return (
@@ -56,7 +78,7 @@ export default function Header() {
       <nav className="container-custom mx-auto py-4 flex items-center justify-between">
         {/* Logo with signal animation */}
         <Link to="/" className="flex items-center group">
-          <img src={logoPath} alt="Romio Mobile" className="h-16 hover-glitch" />
+          <img src={logoPath} alt="Romio Mobile" className="h-16" />
           <span className="ml-2 flex items-center">
             <SignalIcon className="h-4 w-4 text-signal-blue animate-signal hidden md:block" />
           </span>
@@ -65,19 +87,19 @@ export default function Header() {
         {/* Desktop Navigation with animations */}
         <div className="hidden md:flex items-center gap-8">
           {[
-            { key: 'features', label: t('header.features') },
-            { key: 'how-it-works', label: t('header.howItWorks') },
-            { key: 'coverage', label: t('header.coverage') },
-            { key: 'pricing', label: t('header.pricing') },
-            { key: 'faq', label: t('header.faq') }
+            { key: 'features', label: t('header.features'), path: isHomePage ? '#features' : '/plans' },
+            { key: 'howItWorks', label: t('header.howItWorks'), path: isHomePage ? '#how-it-works' : '/' },
+            { key: 'coverage', label: t('header.coverage'), path: isHomePage ? '#coverage' : '/' },
+            { key: 'pricing', label: t('header.pricing'), path: isHomePage ? '#pricing' : '/plans' },
+            { key: 'faq', label: t('header.faq'), path: isHomePage ? '#faq' : '/contact' }
           ].map((item, index) => (
-            <a 
-              key={item.key} 
-              href={`#${item.key}`} 
-              className={`text-romio-black hover:text-signal-blue transition-colors animate-fade-in-right animate-delay-${(index + 1) * 100}`}
+            <button
+              key={item.key}
+              onClick={() => handleNavigation(item.path)}
+              className={`text-romio-black hover:text-signal-blue transition-colors animate-fade-in-right animate-delay-${(index + 1) * 100} bg-transparent border-0 cursor-pointer p-0`}
             >
               {item.label}
-            </a>
+            </button>
           ))}
         </div>
         
@@ -93,8 +115,14 @@ export default function Header() {
               >
                 {t('header.dashboard')}
               </Link>
+              <button
+                onClick={handleLogout}
+                className="text-romio-black hover:text-signal-blue transition-colors animate-fade-in-right animate-delay-500"
+              >
+                {t('header.logout')}
+              </button>
               <Link 
-                to="/signup" 
+                to="/plans" 
                 className="btn-primary animate-fade-in-right animate-delay-600 hover:animate-pulse-subtle"
               >
                 {t('header.subscribe')}
@@ -109,7 +137,7 @@ export default function Header() {
                 {t('header.login')}
               </Link>
               <Link 
-                to="/signup" 
+                to="/plans" 
                 className="btn-primary animate-fade-in-right animate-delay-500 hover:animate-pulse-subtle"
               >
                 {t('header.subscribe')}
@@ -130,12 +158,11 @@ export default function Header() {
         
         {/* Mobile menu with animations */}
         {mobileMenuOpen && (
-          <div className="md:hidden fixed inset-0 z-50 bg-white animate-fade-in-up">
-            <div className="container-custom pt-5 pb-6">
+          <div className="fixed inset-0 z-50 bg-white overflow-y-auto">
+            <div className="p-4">
               <div className="flex items-center justify-between">
                 <Link to="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
                   <img src={logoPath} alt="Romio Mobile" className="h-16" />
-                  <SignalIcon className="h-4 w-4 ml-2 text-signal-blue animate-signal" />
                 </Link>
                 <button
                   type="button"
@@ -143,25 +170,28 @@ export default function Header() {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span className="sr-only">Close menu</span>
-                  <XMarkIcon className="h-6 w-6 hover-glitch" aria-hidden="true" />
+                  <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
               </div>
+              
               <div className="mt-6 flex flex-col gap-6">
                 {[
-                  { key: 'features', label: t('header.features') },
-                  { key: 'how-it-works', label: t('header.howItWorks') },
-                  { key: 'coverage', label: t('header.coverage') },
-                  { key: 'pricing', label: t('header.pricing') },
-                  { key: 'faq', label: t('header.faq') }
+                  { key: 'features', label: t('header.features'), path: isHomePage ? '#features' : '/plans' },
+                  { key: 'howItWorks', label: t('header.howItWorks'), path: isHomePage ? '#how-it-works' : '/' },
+                  { key: 'coverage', label: t('header.coverage'), path: isHomePage ? '#coverage' : '/' },
+                  { key: 'pricing', label: t('header.pricing'), path: isHomePage ? '#pricing' : '/plans' },
+                  { key: 'faq', label: t('header.faq'), path: isHomePage ? '#faq' : '/contact' }
                 ].map((item, index) => (
-                  <a 
+                  <button
                     key={item.key}
-                    href={`#${item.key}`} 
-                    onClick={() => setMobileMenuOpen(false)} 
-                    className={`text-lg font-medium text-romio-black hover:text-signal-blue animate-fade-in-up animate-delay-${(index + 1) * 100}`}
+                    onClick={() => {
+                      handleNavigation(item.path);
+                      setMobileMenuOpen(false);
+                    }}
+                    className={`text-left text-lg font-medium text-romio-black hover:text-signal-blue animate-fade-in-up animate-delay-${(index + 1) * 100} bg-transparent border-0 cursor-pointer p-0`}
                   >
                     {item.label}
-                  </a>
+                  </button>
                 ))}
                 <div className="my-4">
                   <LocaleSelector />
@@ -176,8 +206,17 @@ export default function Header() {
                       >
                         {t('header.dashboard')}
                       </Link>
+                      <button
+                        onClick={() => {
+                          handleLogout();
+                          setMobileMenuOpen(false);
+                        }}
+                        className="text-center py-2 text-romio-black hover:text-signal-blue animate-fade-in-up animate-delay-550"
+                      >
+                        {t('header.logout')}
+                      </button>
                       <Link 
-                        to="/signup" 
+                        to="/plans" 
                         onClick={() => setMobileMenuOpen(false)}
                         className="btn-primary text-center animate-fade-in-up animate-delay-600"
                       >
@@ -194,7 +233,7 @@ export default function Header() {
                         {t('header.login')}
                       </Link>
                       <Link 
-                        to="/signup" 
+                        to="/plans" 
                         onClick={() => setMobileMenuOpen(false)}
                         className="btn-primary text-center animate-fade-in-up animate-delay-500"
                       >

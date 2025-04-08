@@ -159,10 +159,12 @@ const LitePlan = () => {
                 <ul className="space-y-3">
                   {[
                     "5GB high-speed data",
+                    "Valid for 30 days",
                     "Global coverage in 80+ countries",
-                    "No roaming fees",
-                    "Easy setup via QR code",
-                    "Access to customer dashboard",
+                    "Secure connection",
+                    "Worldwide customer support",
+                    "24/7 customer support", 
+                    "Keep your number",
                     "Email support"
                   ].map((feature, idx) => (
                     <li key={idx} className="flex items-start">

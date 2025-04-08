@@ -77,27 +77,29 @@ export default function Pricing() {
       'pricing.commonFeatures.feature2',
       'pricing.commonFeatures.feature3',
       'pricing.commonFeatures.feature4',
-      'pricing.commonFeatures.feature5'
+      'pricing.commonFeatures.feature5',
+      'pricing.commonFeatures.feature6',
+      'pricing.commonFeatures.feature7'
     ].map(key => t(key));
     
     // Add plan-specific features
-    const planFeatures = [];
+    const planFeatures: string[] = [];
     try {
       if (planKey === 'lite') {
-        planFeatures.push(t('pricing.lite.features.feature1'));
+        // No plan-specific features for now
       } else if (planKey === 'traveler') {
-        planFeatures.push(t('pricing.traveler.features.feature1'));
-        planFeatures.push(t('pricing.traveler.features.feature2'));
+        // No plan-specific features for now
       } else if (planKey === 'max') {
-        planFeatures.push(t('pricing.max.features.feature1'));
-        planFeatures.push(t('pricing.max.features.feature2'));
-        planFeatures.push(t('pricing.max.features.feature3'));
+        // No plan-specific features for now
       }
     } catch (e) {
       // Fallback for languages without the nested features structure
+      console.error('Error loading features for', planKey, e);
     }
     
-    return [...commonFeatures, ...planFeatures].filter(f => f !== '' && !f.includes('pricing.') && f !== undefined);
+    const result = [...commonFeatures, ...planFeatures].filter(f => f !== '' && !f.includes('pricing.') && f !== undefined);
+    console.log(`Features for ${planKey}:`, result);
+    return result;
   };
 
   const plansWithFallback = [
@@ -303,9 +305,12 @@ export default function Pricing() {
                     <span className="text-cool-slate">/{t('pricing.monthly')}</span>
                   </div>
                   <div className="mt-1 text-lg font-medium text-signal-blue">{plansWithFallback[activeIndex].dataAmount}</div>
+                  <p className="mt-2 text-sm text-cool-slate">
+                    {t(`pricing.${plansWithFallback[activeIndex].name.toLowerCase()}.description`)}
+                  </p>
                 </div>
                 
-                <ul className="mb-6 space-y-2 pointer-events-auto">
+                <ul className="mb-6 space-y-2 pointer-events-auto min-h-[120px]">
                   {plansWithFallback[activeIndex].features.map((feature, featureIdx) => (
                     <li key={featureIdx} className="flex items-start text-sm">
                       <CheckIcon className="h-4 w-4 text-signal-blue flex-shrink-0 mr-2 mt-0.5" />
@@ -335,9 +340,9 @@ export default function Pricing() {
               <p className="text-cool-slate text-sm mb-4">
                 {t('pricing.contactUs')}
               </p>
-              <a href="/contact" className="btn-secondary inline-block text-sm py-2 px-4">
+              <Link to="/contact" className="btn-secondary inline-block text-sm py-2 px-4">
                 {t('pricing.contactUs')}
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -359,9 +364,12 @@ export default function Pricing() {
                 <span className="text-4xl font-bold text-romio-black">{formatPrice(convertFromUSD(plan.price))}</span>
                 <span className="text-cool-slate">/{t('pricing.monthly')}</span>
                 <div className="mt-1 text-lg font-medium text-signal-blue">{plan.dataAmount}</div>
+                <p className="mt-2 text-sm text-cool-slate min-h-[80px]">
+                  {t(`pricing.${plan.name.toLowerCase()}.description`)}
+                </p>
               </div>
               
-              <ul className="mb-8 space-y-4">
+              <ul className="mb-8 space-y-4 min-h-[200px]">
                 {plan.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start">
                     <CheckIcon className="h-5 w-5 text-signal-blue flex-shrink-0 mr-2" />
@@ -389,9 +397,9 @@ export default function Pricing() {
           <p className="text-cool-slate mb-6">
             {t('pricing.contactUs')}
           </p>
-          <a href="/contact" className="btn-secondary inline-block">
+          <Link to="/contact" className="btn-secondary inline-block">
             {t('pricing.contactUs')}
-          </a>
+          </Link>
         </div>
       </div>
     </section>

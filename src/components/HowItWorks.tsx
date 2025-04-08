@@ -41,19 +41,22 @@ export default function HowItWorks() {
               </div>
               <h3 className="text-xl font-semibold mb-4 text-romio-black">{step.title}</h3>
               <p className="text-cool-slate">{step.description}</p>
-
-              {/* Connector line - only show between items (not after the last item) */}
-              {step.number !== '04' && (
-                <div className="hidden md:block absolute top-10 right-0 w-full h-[2px] bg-steel-gray md:max-w-[calc(100%-1rem)] md:left-[calc(100%-(1rem/2))]"></div>
-              )}
             </div>
           ))}
         </div>
 
         <div className="mt-16 text-center">
-          <a href="#pricing" className="btn-primary inline-block">
+          <button 
+            onClick={() => {
+              const pricingSection = document.getElementById('pricing');
+              if (pricingSection) {
+                pricingSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="btn-primary inline-block"
+          >
             Get Started Now
-          </a>
+          </button>
         </div>
       </div>
     </section>

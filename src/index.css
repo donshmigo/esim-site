@@ -104,6 +104,12 @@
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+  
+  /* Remove focus outline for buttons and links */
+  .no-focus-outline:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
 }
 
 /* Custom scrollbar */

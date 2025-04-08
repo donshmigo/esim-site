@@ -1,0 +1,330 @@
+{
+  "header": {
+    "features": "Features",
+    "howItWorks": "How It Works",
+    "coverage": "Coverage",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "login": "Login",
+    "subscribe": "Subscribe",
+    "dashboard": "My Account",
+    "logout": "Log Out"
+  },
+  "dashboard": {
+    "sidebar": {
+      "profile": "Profile",
+      "myPlans": "My Plans",
+      "usage": "Usage",
+      "planSettings": "Plan Settings",
+      "billing": "Billing",
+      "adminPanel": "Admin Panel",
+      "user": "User",
+      "closeAriaLabel": "Close sidebar",
+      "openAriaLabel": "Open sidebar",
+      "close": "Close",
+      "menu": "Menu"
+    },
+    "plans": {
+      "availablePlans": "Available Plans",
+      "premiumPlan": "Premium Plan",
+      "globalConnectivity": "Global connectivity with high-speed data",
+      "data": "Data",
+      "validFor30Days": "Valid for 30 days",
+      "coverageIn150Countries": "Coverage in 150+ countries",
+      "support247": "24/7 support",
+      "selectPlan": "Select Plan"
+    },
+    "profile": {
+      "myProfile": "My Profile",
+      "editProfile": "Edit Profile",
+      "yourName": "Your Name",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location",
+      "unitedStates": "United States",
+      "memberSince": "Member Since",
+      "january2023": "January 2023"
+    },
+    "usage": {
+      "planUsage": "Plan Usage",
+      "dataUsed": "Data Used",
+      "dataRemaining": "Data Remaining",
+      "daysRemaining": "Days Remaining",
+      "days": "days",
+      "topUpYourPlan": "Top Up Your Plan",
+      "small": "Small",
+      "medium": "Medium",
+      "large": "Large"
+    },
+    "settings": {
+      "planSettings": "Plan Settings",
+      "premiumGlobalPlan": "Premium Global Plan",
+      "startDate": "Start Date",
+      "november1": "November 1, 2023",
+      "endDate": "End Date",
+      "december1": "December 1, 2023",
+      "autoRenew": "Auto-Renew",
+      "enabled": "Enabled",
+      "changePlan": "Change Plan",
+      "disableAutoRenew": "Disable Auto-Renew",
+      "paymentMethods": "Payment Methods",
+      "visaEndingIn": "Visa ending in",
+      "expires": "Expires",
+      "edit": "Edit"
+    },
+    "billing": {
+      "billingHistory": "Billing History",
+      "date": "Date",
+      "description": "Description",
+      "amount": "Amount",
+      "status": "Status",
+      "nov1": "Nov 1, 2023",
+      "oct15": "Oct 15, 2023",
+      "oct1": "Oct 1, 2023",
+      "sep18": "Sep 18, 2023",
+      "premiumGlobalPlan": "Premium Global Plan",
+      "dataTopUp": "Data Top-Up",
+      "completed": "Completed"
+    },
+    "error": {
+      "retry": "Retry",
+      "pleaseLogIn": "Please log in to view your dashboard."
+    }
+  },
+  "hero": {
+    "title": "Global Connectivity, Monthly Freedom",
+    "subtitle": "Stay connected in 80+ countries with no roaming fees",
+    "ctaButton": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "features": {
+    "title": "Why Choose Romio eSIM",
+    "subtitle": "Experience seamless connectivity worldwide with our advanced eSIM technology",
+    "feature1": {
+      "title": "Instant Activation",
+      "description": "Setup in minutes with a simple QR code scan"
+    },
+    "feature2": {
+      "title": "Global Coverage",
+      "description": "Connect in over 80 countries with reliable service"
+    },
+    "feature3": {
+      "title": "Use at Home & Abroad",
+      "description": "Works in your home country and while traveling, with no roaming fees"
+    },
+    "feature4": {
+      "title": "24/7 Support",
+      "description": "Get help anytime, anywhere from our global team"
+    },
+    "feature5": {
+      "title": "Cost Effective",
+      "description": "Save up to 70% compared to traditional roaming fees"
+    },
+    "feature6": {
+      "title": "Dual SIM Ready",
+      "description": "Keep your local number while using our global data"
+    }
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Getting connected with Romio eSIM is simple and fast",
+    "step1": {
+      "title": "Choose Your Plan",
+      "description": "Select from our range of flexible data plans"
+    },
+    "step2": {
+      "title": "Scan QR Code",
+      "description": "Use your phone camera to scan the provided QR code"
+    },
+    "step3": {
+      "title": "Start Using",
+      "description": "Instantly connect to local networks worldwide"
+    },
+    "step4": {
+      "title": "Manage & Top-Up",
+      "description": "Add more data anytime through your dashboard"
+    },
+    "cta": "Get Started Now"
+  },
+  "coverage": {
+    "title": "Global Coverage",
+    "subtitle": "Connected in over 80 countries worldwide",
+    "searchPlaceholder": "Search country...",
+    "mapAlt": "World map showing coverage regions",
+    "moreCountries": "more countries",
+    "covered": "Coverage Available",
+    "notCovered": "No Coverage",
+    "resetMap": "Reset Map View",
+    "zoomIn": "Zoom In",
+    "zoomOut": "Zoom Out",
+    "world": "World",
+    "regions": {
+      "europe": "Europe",
+      "americas": "Americas",
+      "asiaPacific": "Asia Pacific",
+      "middleEastAfrica": "Middle East & Africa"
+    },
+    "viewAll": "View All Countries"
+  },
+  "techAnimation": {
+    "title": "Next-Gen eSIM Technology",
+    "subtitle": "Powered by the latest digital SIM innovations",
+    "feature1": "Instant digital delivery",
+    "feature2": "Compatible with all eSIM phones",
+    "feature3": "Secure end-to-end encryption",
+    "learnMore": "Learn More About eSIM",
+    "signalStrength": "Signal Strength",
+    "instantConnection": "Instant Connection",
+    "globalCoverage": "Global Coverage",
+    "countries": "Countries",
+    "uptime": "Uptime",
+    "activation": "Activation"
+  },
+  "pricing": {
+    "title": "Simple Pricing",
+    "subtitle": "Choose the plan that works for you",
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "savingTag": "Save 20%",
+    "mostPopular": "Most Popular",
+    "commonFeatures": {
+      "feature1": "Valid for 30 days",
+      "feature2": "Data only",
+      "feature3": "No speed caps",
+      "feature4": "Secure connection",
+      "feature5": "Worldwide customer support"
+    },
+    "lite": {
+      "name": "Lite",
+      "price": "$4.99",
+      "yearlyPrice": "$47.88",
+      "data": "1GB Data",
+      "countries": "40+ Countries",
+      "description": "Perfect for occasional travelers",
+      "features": {
+        "feature1": "Basic customer support"
+      }
+    },
+    "traveler": {
+      "name": "Traveler",
+      "price": "$9.99",
+      "yearlyPrice": "$95.88",
+      "data": "5GB Data",
+      "countries": "60+ Countries",
+      "description": "Ideal for frequent travelers",
+      "features": {
+        "feature1": "24/7 customer support",
+        "feature2": "Multi-device support"
+      }
+    },
+    "max": {
+      "name": "Max",
+      "price": "$19.99",
+      "yearlyPrice": "$191.88",
+      "data": "Unlimited Data",
+      "countries": "80+ Countries",
+      "description": "Best for digital nomads",
+      "features": {
+        "feature1": "Priority 24/7 support",
+        "feature2": "Multi-device support",
+        "feature3": "Family sharing (up to 3 devices)"
+      }
+    },
+    "cta": "Subscribe Now",
+    "customPlan": "Need a custom plan?",
+    "contactUs": "Contact Us"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to common questions about our service",
+    "q1": "What is an eSIM?",
+    "a1": "An eSIM is a digital SIM that allows you to activate a cellular plan without having to use a physical SIM card. It's built into most newer smartphones and enables easier switching between carriers.",
+    "q2": "Is my device compatible with eSIM?",
+    "a2": "Most newer smartphones (iPhone XS and newer, Google Pixel 3 and newer, Samsung Galaxy S20 and newer) support eSIM technology. You can check your phone's specifications or contact us to verify compatibility.",
+    "q3": "How do I activate my eSIM?",
+    "a3": "After purchase, you'll receive a QR code via email. On your phone, go to Settings > Cellular/Mobile > Add Cellular/Mobile Plan, then scan the QR code. Follow the on-screen instructions to complete activation.",
+    "q4": "Can I use my eSIM and physical SIM at the same time?",
+    "a4": "Yes! That's one of the benefits of eSIM technology. You can keep your regular SIM active for calls and texts, while using the eSIM for data when traveling.",
+    "q5": "What happens when my data runs out?",
+    "a5": "When your data allocation is exhausted, you can purchase additional data through your account dashboard or set up auto-renewal to avoid interruptions.",
+    "q6": "Can I cancel my subscription anytime?",
+    "a6": "Yes, you can cancel your subscription at any time from your account dashboard. There are no cancellation fees or long-term contracts.",
+    "moreQuestions": "Have more questions?",
+    "contactSupport": "Contact Support"
+  },
+  "footer": {
+    "company": "Company",
+    "about": "About Us",
+    "careers": "Careers",
+    "blog": "Blog",
+    "press": "Press",
+    "support": "Support",
+    "help": "Help Center",
+    "contact": "Contact Us",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "legal": "Legal",
+    "copyright": "© 2024 Romio Mobile. All rights reserved.",
+    "newsletter": {
+      "title": "Stay Connected",
+      "subtitle": "Subscribe to our newsletter for updates and special offers",
+      "placeholder": "Your email address",
+      "button": "Subscribe",
+      "consent": "By subscribing, you agree to our Privacy Policy"
+    },
+    "socialMedia": "Follow Us",
+    "disclaimer": "Availability of service may vary depending on your location and device compatibility.",
+    "tagline": "Connect globally with Romio eSIM technology",
+    "currency": "USD",
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "careers": "Careers",
+      "press": "Press",
+      "blog": "Blog"
+    },
+    "product": {
+      "title": "Product",
+      "features": "Features",
+      "pricing": "Pricing",
+      "coverage": "Coverage",
+      "support": "Support"
+    },
+    "resources": {
+      "title": "Resources",
+      "helpCenter": "Help Center",
+      "partnerProgram": "Partner Program",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service"
+    }
+  },
+  "language": {
+    "en": "English",
+    "de": "German",
+    "fr": "French",
+    "es": "Spanish",
+    "it": "Italian",
+    "ar": "Arabic",
+    "ja": "Japanese",
+    "ru": "Russian",
+    "zh": "Chinese",
+    "detectedCountry": "Detected country"
+  },
+  "locale": {
+    "language": "Language",
+    "currency": "Currency"
+  },
+  "currency": {
+    "title": "Currency",
+    "USD": "US Dollar",
+    "EUR": "Euro",
+    "GBP": "British Pound",
+    "JPY": "Japanese Yen",
+    "CAD": "Canadian Dollar",
+    "AUD": "Australian Dollar",
+    "CNY": "Chinese Yuan",
+    "RUB": "Russian Ruble",
+    "detectedCurrency": "Detected Currency",
+    "changeCurrency": "Change Currency"
+  }
+} 

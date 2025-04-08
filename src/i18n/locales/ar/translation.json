@@ -1,0 +1,169 @@
+{
+  "header": {
+    "features": "المميزات",
+    "howItWorks": "كيف يعمل",
+    "coverage": "التغطية",
+    "pricing": "الأسعار",
+    "faq": "الأسئلة الشائعة",
+    "login": "تسجيل الدخول",
+    "subscribe": "اشتراك",
+    "dashboard": "حسابي",
+    "logout": "تسجيل الخروج"
+  },
+  "dashboard": {
+    "sidebar": {
+      "profile": "الملف الشخصي",
+      "myPlans": "خططي",
+      "usage": "الاستخدام",
+      "planSettings": "إعدادات الخطة",
+      "billing": "الفواتير",
+      "adminPanel": "لوحة الإدارة",
+      "user": "المستخدم",
+      "closeAriaLabel": "إغلاق الشريط الجانبي",
+      "openAriaLabel": "فتح الشريط الجانبي",
+      "close": "إغلاق",
+      "menu": "القائمة"
+    },
+    "plans": {
+      "availablePlans": "الخطط المتاحة",
+      "premiumPlan": "الخطة المميزة",
+      "globalConnectivity": "اتصال عالمي مع بيانات عالية السرعة",
+      "data": "البيانات",
+      "validFor30Days": "صالحة لمدة 30 يوم",
+      "coverageIn150Countries": "تغطية في أكثر من 150 دولة",
+      "support247": "دعم على مدار الساعة",
+      "selectPlan": "اختر الخطة"
+    },
+    "profile": {
+      "myProfile": "ملفي الشخصي",
+      "editProfile": "تعديل الملف الشخصي",
+      "yourName": "اسمك",
+      "email": "البريد الإلكتروني",
+      "phone": "الهاتف",
+      "location": "الموقع",
+      "unitedStates": "الولايات المتحدة",
+      "memberSince": "عضو منذ",
+      "january2023": "يناير 2023"
+    },
+    "usage": {
+      "planUsage": "استخدام الخطة",
+      "dataUsed": "البيانات المستخدمة",
+      "dataRemaining": "البيانات المتبقية",
+      "daysRemaining": "الأيام المتبقية",
+      "days": "يوم",
+      "topUpYourPlan": "شحن خطتك",
+      "small": "صغير",
+      "medium": "متوسط",
+      "large": "كبير"
+    },
+    "settings": {
+      "planSettings": "إعدادات الخطة",
+      "premiumGlobalPlan": "الخطة العالمية المميزة",
+      "startDate": "تاريخ البدء",
+      "november1": "1 نوفمبر 2023",
+      "endDate": "تاريخ الانتهاء",
+      "december1": "1 ديسمبر 2023",
+      "autoRenew": "التجديد التلقائي",
+      "enabled": "مفعّل",
+      "changePlan": "تغيير الخطة",
+      "disableAutoRenew": "تعطيل التجديد التلقائي",
+      "paymentMethods": "طرق الدفع",
+      "visaEndingIn": "فيزا تنتهي بـ",
+      "expires": "تنتهي في",
+      "edit": "تعديل"
+    },
+    "billing": {
+      "billingHistory": "سجل الفواتير",
+      "date": "التاريخ",
+      "description": "الوصف",
+      "amount": "المبلغ",
+      "status": "الحالة",
+      "nov1": "1 نوفمبر 2023",
+      "oct15": "15 أكتوبر 2023",
+      "oct1": "1 أكتوبر 2023",
+      "sep18": "18 سبتمبر 2023",
+      "premiumGlobalPlan": "الخطة العالمية المميزة",
+      "dataTopUp": "شحن البيانات",
+      "completed": "مكتمل"
+    },
+    "error": {
+      "retry": "إعادة المحاولة",
+      "pleaseLogIn": "يرجى تسجيل الدخول لعرض لوحة التحكم الخاصة بك."
+    }
+  },
+  "hero": {
+    "title": "اتصال عالمي، حرية شهرية",
+    "subtitle": "ابق متصلاً في أكثر من 80 دولة بدون رسوم تجوال",
+    "ctaButton": "ابدأ الآن",
+    "learnMore": "معرفة المزيد"
+  },
+  "features": {
+    "title": "لماذا تختار Romio eSIM",
+    "subtitle": "تجربة اتصال سلس في جميع أنحاء العالم بفضل تقنية eSIM المتطورة"
+  },
+  "howItWorks": {
+    "title": "كيف يعمل",
+    "step1": "اختر خطتك",
+    "step2": "امسح رمز QR بهاتفك",
+    "step3": "قم بالتفعيل وابق متصلاً"
+  },
+  "coverage": {
+    "title": "تغطية عالمية",
+    "subtitle": "متصل في أكثر من 80 دولة حول العالم",
+    "searchPlaceholder": "البحث عن دولة..."
+  },
+  "pricing": {
+    "title": "تسعير بسيط",
+    "subtitle": "اختر الخطة التي تناسبك",
+    "monthly": "شهري",
+    "yearly": "سنوي",
+    "savingTag": "وفر 20%",
+    "mostPopular": "الأكثر شعبية",
+    "lite": {
+      "name": "لايت",
+      "price": "19.99 ريال",
+      "description": "مثالية للمسافرين بشكل متقطع"
+    },
+    "traveler": {
+      "name": "المسافر",
+      "price": "39.99 ريال",
+      "description": "مثالية للمسافرين المتكررين"
+    },
+    "max": {
+      "name": "ماكس",
+      "price": "79.99 ريال",
+      "description": "الأفضل للرحالة الرقميين"
+    },
+    "cta": "اشترك الآن"
+  },
+  "faq": {
+    "title": "الأسئلة الشائعة",
+    "q1": "ما هي eSIM؟",
+    "a1": "eSIM هي شريحة SIM رقمية تتيح لك تفعيل خطة الجوال دون الحاجة لاستخدام بطاقة SIM فعلية."
+  },
+  "footer": {
+    "company": "الشركة",
+    "about": "عن الشركة",
+    "careers": "وظائف",
+    "privacy": "سياسة الخصوصية",
+    "terms": "شروط الخدمة",
+    "contact": "اتصل بنا",
+    "copyright": "© 2024 Romio Mobile. جميع الحقوق محفوظة."
+  },
+  "language": {
+    "en": "الإنجليزية",
+    "de": "الألمانية",
+    "fr": "الفرنسية",
+    "es": "الإسبانية",
+    "it": "الإيطالية",
+    "ar": "العربية",
+    "ja": "اليابانية",
+    "ru": "الروسية",
+    "zh": "الصينية",
+    "detectedCountry": "البلد المكتشف"
+  },
+  "locale": {
+    "language": "اللغة",
+    "currency": "العملة"
+  }
+} 

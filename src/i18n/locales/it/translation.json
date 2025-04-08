@@ -1,0 +1,169 @@
+{
+  "header": {
+    "features": "Funzionalità",
+    "howItWorks": "Come funziona",
+    "coverage": "Copertura",
+    "pricing": "Prezzi",
+    "faq": "Domande",
+    "login": "Accedi",
+    "subscribe": "Abbonati",
+    "dashboard": "Il mio account",
+    "logout": "Esci"
+  },
+  "dashboard": {
+    "sidebar": {
+      "profile": "Profilo",
+      "myPlans": "I miei piani",
+      "usage": "Utilizzo",
+      "planSettings": "Impostazioni piano",
+      "billing": "Fatturazione",
+      "adminPanel": "Pannello amministratore",
+      "user": "Utente",
+      "closeAriaLabel": "Chiudi barra laterale",
+      "openAriaLabel": "Apri barra laterale",
+      "close": "Chiudi",
+      "menu": "Menu"
+    },
+    "plans": {
+      "availablePlans": "Piani disponibili",
+      "premiumPlan": "Piano Premium",
+      "globalConnectivity": "Connettività globale con dati ad alta velocità",
+      "data": "Dati",
+      "validFor30Days": "Valido per 30 giorni",
+      "coverageIn150Countries": "Copertura in più di 150 paesi",
+      "support247": "Supporto 24/7",
+      "selectPlan": "Seleziona piano"
+    },
+    "profile": {
+      "myProfile": "Il mio profilo",
+      "editProfile": "Modifica profilo",
+      "yourName": "Il tuo nome",
+      "email": "Email",
+      "phone": "Telefono",
+      "location": "Posizione",
+      "unitedStates": "Stati Uniti",
+      "memberSince": "Membro dal",
+      "january2023": "Gennaio 2023"
+    },
+    "usage": {
+      "planUsage": "Utilizzo del piano",
+      "dataUsed": "Dati utilizzati",
+      "dataRemaining": "Dati rimanenti",
+      "daysRemaining": "Giorni rimanenti",
+      "days": "giorni",
+      "topUpYourPlan": "Ricarica il tuo piano",
+      "small": "Piccolo",
+      "medium": "Medio",
+      "large": "Grande"
+    },
+    "settings": {
+      "planSettings": "Impostazioni piano",
+      "premiumGlobalPlan": "Piano Globale Premium",
+      "startDate": "Data di inizio",
+      "november1": "1 novembre 2023",
+      "endDate": "Data di fine",
+      "december1": "1 dicembre 2023",
+      "autoRenew": "Rinnovo automatico",
+      "enabled": "Abilitato",
+      "changePlan": "Cambia piano",
+      "disableAutoRenew": "Disabilita rinnovo automatico",
+      "paymentMethods": "Metodi di pagamento",
+      "visaEndingIn": "Visa che termina con",
+      "expires": "Scade",
+      "edit": "Modifica"
+    },
+    "billing": {
+      "billingHistory": "Cronologia fatturazione",
+      "date": "Data",
+      "description": "Descrizione",
+      "amount": "Importo",
+      "status": "Stato",
+      "nov1": "1 nov 2023",
+      "oct15": "15 ott 2023",
+      "oct1": "1 ott 2023",
+      "sep18": "18 set 2023",
+      "premiumGlobalPlan": "Piano Globale Premium",
+      "dataTopUp": "Ricarica dati",
+      "completed": "Completato"
+    },
+    "error": {
+      "retry": "Riprova",
+      "pleaseLogIn": "Accedi per visualizzare il tuo pannello di controllo."
+    }
+  },
+  "hero": {
+    "title": "Connettività globale, libertà mensile",
+    "subtitle": "Rimani connesso in più di 80 paesi senza costi di roaming",
+    "ctaButton": "Inizia",
+    "learnMore": "Scopri di più"
+  },
+  "features": {
+    "title": "Perché scegliere Romio eSIM",
+    "subtitle": "Sperimenta una connettività senza interruzioni in tutto il mondo con la nostra tecnologia eSIM avanzata"
+  },
+  "howItWorks": {
+    "title": "Come funziona",
+    "step1": "Scegli il tuo piano",
+    "step2": "Scansiona il codice QR con il tuo telefono",
+    "step3": "Attiva e rimani connesso"
+  },
+  "coverage": {
+    "title": "Copertura globale",
+    "subtitle": "Connesso in oltre 80 paesi in tutto il mondo",
+    "searchPlaceholder": "Cerca paese..."
+  },
+  "pricing": {
+    "title": "Prezzi Semplici",
+    "subtitle": "Scegli il piano che funziona per te",
+    "monthly": "Mensile",
+    "yearly": "Annuale",
+    "savingTag": "Risparmia 20%",
+    "mostPopular": "Più Popolare",
+    "lite": {
+      "name": "Lite",
+      "price": "4,99 €",
+      "description": "Perfetto per viaggiatori occasionali"
+    },
+    "traveler": {
+      "name": "Traveler",
+      "price": "9,99 €",
+      "description": "Ideale per viaggiatori frequenti"
+    },
+    "max": {
+      "name": "Max",
+      "price": "19,99 €",
+      "description": "Migliore per nomadi digitali"
+    },
+    "cta": "Abbonati ora"
+  },
+  "faq": {
+    "title": "Domande frequenti",
+    "q1": "Che cos'è una eSIM?",
+    "a1": "Una eSIM è una SIM digitale che consente di attivare un piano cellulare senza dover utilizzare una scheda SIM fisica."
+  },
+  "footer": {
+    "company": "Azienda",
+    "about": "Chi siamo",
+    "careers": "Carriere",
+    "privacy": "Politica sulla privacy",
+    "terms": "Termini di servizio",
+    "contact": "Contattaci",
+    "copyright": "© 2024 Romio Mobile. Tutti i diritti riservati."
+  },
+  "language": {
+    "en": "Inglese",
+    "de": "Tedesco",
+    "fr": "Francese",
+    "es": "Spagnolo",
+    "it": "Italiano",
+    "ar": "Arabo",
+    "ja": "Giapponese",
+    "ru": "Russo",
+    "zh": "Cinese",
+    "detectedCountry": "Paese rilevato"
+  },
+  "locale": {
+    "language": "Lingua",
+    "currency": "Valuta"
+  }
+} 

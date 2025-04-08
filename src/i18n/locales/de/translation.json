@@ -1,0 +1,309 @@
+{
+  "header": {
+    "features": "Funktionen",
+    "howItWorks": "Wie es funktioniert",
+    "coverage": "Abdeckung",
+    "pricing": "Preise",
+    "faq": "FAQ",
+    "login": "Anmelden",
+    "subscribe": "Abonnieren",
+    "dashboard": "Mein Konto",
+    "logout": "Abmelden"
+  },
+  "dashboard": {
+    "sidebar": {
+      "profile": "Profil",
+      "myPlans": "Meine Tarife",
+      "usage": "Nutzung",
+      "planSettings": "Tarifeinstellungen",
+      "billing": "Abrechnung",
+      "adminPanel": "Admin-Panel",
+      "user": "Benutzer",
+      "closeAriaLabel": "Seitenleiste schließen",
+      "openAriaLabel": "Seitenleiste öffnen",
+      "close": "Schließen",
+      "menu": "Menü"
+    },
+    "plans": {
+      "availablePlans": "Verfügbare Tarife",
+      "premiumPlan": "Premium-Tarif",
+      "globalConnectivity": "Globale Konnektivität mit Hochgeschwindigkeitsdaten",
+      "data": "Daten",
+      "validFor30Days": "Gültig für 30 Tage",
+      "coverageIn150Countries": "Abdeckung in über 150 Ländern",
+      "support247": "24/7 Support",
+      "selectPlan": "Tarif auswählen"
+    },
+    "profile": {
+      "myProfile": "Mein Profil",
+      "editProfile": "Profil bearbeiten",
+      "yourName": "Ihr Name",
+      "email": "E-Mail",
+      "phone": "Telefon",
+      "location": "Standort",
+      "unitedStates": "Vereinigte Staaten",
+      "memberSince": "Mitglied seit",
+      "january2023": "Januar 2023"
+    },
+    "usage": {
+      "planUsage": "Tarifnutzung",
+      "dataUsed": "Genutzte Daten",
+      "dataRemaining": "Verbleibende Daten",
+      "daysRemaining": "Verbleibende Tage",
+      "days": "Tage",
+      "topUpYourPlan": "Tarif aufladen",
+      "small": "Klein",
+      "medium": "Mittel",
+      "large": "Groß"
+    },
+    "settings": {
+      "planSettings": "Tarifeinstellungen",
+      "premiumGlobalPlan": "Premium Global Tarif",
+      "startDate": "Startdatum",
+      "november1": "1. November 2023",
+      "endDate": "Enddatum",
+      "december1": "1. Dezember 2023",
+      "autoRenew": "Automatische Verlängerung",
+      "enabled": "Aktiviert",
+      "changePlan": "Tarif ändern",
+      "disableAutoRenew": "Automatische Verlängerung deaktivieren",
+      "paymentMethods": "Zahlungsmethoden",
+      "visaEndingIn": "Visa endet auf",
+      "expires": "Läuft ab",
+      "edit": "Bearbeiten"
+    },
+    "billing": {
+      "billingHistory": "Abrechnungsverlauf",
+      "date": "Datum",
+      "description": "Beschreibung",
+      "amount": "Betrag",
+      "status": "Status",
+      "nov1": "1. Nov 2023",
+      "oct15": "15. Okt 2023",
+      "oct1": "1. Okt 2023",
+      "sep18": "18. Sep 2023",
+      "premiumGlobalPlan": "Premium Global Tarif",
+      "dataTopUp": "Daten-Aufladung",
+      "completed": "Abgeschlossen"
+    },
+    "error": {
+      "retry": "Wiederholen",
+      "pleaseLogIn": "Bitte melden Sie sich an, um Ihr Dashboard anzuzeigen."
+    }
+  },
+  "hero": {
+    "title": "Globale Konnektivität, monatliche Freiheit",
+    "subtitle": "Bleiben Sie in über 80 Ländern ohne Roaming-Gebühren verbunden",
+    "ctaButton": "Loslegen",
+    "learnMore": "Mehr erfahren"
+  },
+  "features": {
+    "title": "Warum Romio eSIM wählen",
+    "subtitle": "Erleben Sie nahtlose Konnektivität weltweit mit unserer fortschrittlichen eSIM-Technologie",
+    "feature1": {
+      "title": "Sofortige Aktivierung",
+      "description": "Einrichtung in Minuten mit einem einfachen QR-Code-Scan"
+    },
+    "feature2": {
+      "title": "Globale Abdeckung",
+      "description": "Verbinden Sie sich in über 80 Ländern mit zuverlässigem Service"
+    },
+    "feature3": {
+      "title": "Keine Verträge",
+      "description": "Flexible monatliche Tarife ohne langfristige Verpflichtungen"
+    },
+    "feature4": {
+      "title": "24/7 Support",
+      "description": "Erhalten Sie jederzeit und überall Hilfe von unserem globalen Team"
+    },
+    "feature5": {
+      "title": "Kosteneffektiv",
+      "description": "Sparen Sie bis zu 70% im Vergleich zu herkömmlichen Roaming-Gebühren"
+    },
+    "feature6": {
+      "title": "Dual-SIM-fähig",
+      "description": "Behalten Sie Ihre lokale Nummer bei der Nutzung unserer globalen Daten"
+    }
+  },
+  "howItWorks": {
+    "title": "Wie es funktioniert",
+    "subtitle": "Die Verbindung mit Romio eSIM ist einfach und schnell",
+    "step1": {
+      "title": "Wählen Sie Ihren Tarif",
+      "description": "Wählen Sie aus unserer Reihe von flexiblen Datentarifen"
+    },
+    "step2": {
+      "title": "QR-Code scannen",
+      "description": "Verwenden Sie Ihre Handykamera, um den bereitgestellten QR-Code zu scannen"
+    },
+    "step3": {
+      "title": "Beginnen Sie mit der Nutzung",
+      "description": "Sofortige Verbindung zu lokalen Netzwerken weltweit"
+    },
+    "cta": "Jetzt loslegen"
+  },
+  "coverage": {
+    "title": "Globale Abdeckung",
+    "subtitle": "Verbunden in über 80 Ländern weltweit",
+    "searchPlaceholder": "Land suchen...",
+    "mapAlt": "Weltkarte mit Abdeckungsregionen",
+    "moreCountries": "weitere Länder",
+    "regions": {
+      "europe": "Europa",
+      "americas": "Amerika",
+      "asiaPacific": "Asien-Pazifik",
+      "middleEastAfrica": "Naher Osten & Afrika"
+    },
+    "viewAll": "Alle Länder anzeigen"
+  },
+  "techAnimation": {
+    "title": "Next-Gen eSIM-Technologie",
+    "subtitle": "Unterstützt durch die neuesten digitalen SIM-Innovationen",
+    "feature1": "Sofortige digitale Lieferung",
+    "feature2": "Kompatibel mit allen eSIM-Handys",
+    "feature3": "Sichere Ende-zu-Ende-Verschlüsselung",
+    "learnMore": "Mehr über eSIM erfahren",
+    "signalStrength": "Signalstärke",
+    "instantConnection": "Sofortige Verbindung",
+    "globalCoverage": "Globale Abdeckung",
+    "countries": "Länder",
+    "uptime": "Betriebszeit",
+    "activation": "Aktivierung"
+  },
+  "pricing": {
+    "title": "Einfache Preisgestaltung",
+    "subtitle": "Wählen Sie den Tarif, der für Sie geeignet ist",
+    "monthly": "Monatlich",
+    "yearly": "Jährlich",
+    "savingTag": "20% sparen",
+    "mostPopular": "Am beliebtesten",
+    "lite": {
+      "name": "Lite",
+      "price": "4,99 €",
+      "yearlyPrice": "47,88 €",
+      "data": "1GB Daten",
+      "countries": "40+ Länder",
+      "description": "Perfekt für gelegentliche Reisende",
+      "features": [
+        "Gültig für 30 Tage",
+        "Nur Daten",
+        "Keine Geschwindigkeitsbegrenzungen",
+        "Grundlegender Kundensupport"
+      ]
+    },
+    "traveler": {
+      "name": "Traveler",
+      "price": "9,99 €",
+      "yearlyPrice": "95,88 €",
+      "data": "5GB Daten",
+      "countries": "60+ Länder",
+      "description": "Ideal für häufige Reisende",
+      "features": [
+        "Gültig für 30 Tage",
+        "Nur Daten",
+        "Keine Geschwindigkeitsbegrenzungen",
+        "24/7 Kundensupport",
+        "Multi-Geräte-Unterstützung"
+      ]
+    },
+    "max": {
+      "name": "Max",
+      "price": "19,99 €",
+      "yearlyPrice": "191,88 €",
+      "data": "Unbegrenzte Daten",
+      "countries": "80+ Länder",
+      "description": "Am besten für digitale Nomaden",
+      "features": [
+        "Gültig für 30 Tage",
+        "Nur Daten",
+        "Keine Geschwindigkeitsbegrenzungen",
+        "Prioritäts-24/7-Support",
+        "Multi-Geräte-Unterstützung",
+        "Familien-Sharing (bis zu 3 Geräte)"
+      ]
+    },
+    "cta": "Jetzt abonnieren",
+    "customPlan": "Benötigen Sie einen individuellen Tarif?",
+    "contactUs": "Kontaktieren Sie uns"
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "subtitle": "Finden Sie Antworten auf häufige Fragen zu unserem Service",
+    "q1": "Was ist eine eSIM?",
+    "a1": "Eine eSIM ist eine digitale SIM, mit der Sie einen Mobilfunktarif aktivieren können, ohne eine physische SIM-Karte verwenden zu müssen. Sie ist in den meisten neueren Smartphones eingebaut und ermöglicht einen einfacheren Wechsel zwischen Mobilfunkanbietern.",
+    "q2": "Ist mein Gerät mit eSIM kompatibel?",
+    "a2": "Die meisten neueren Smartphones (iPhone XS und neuer, Google Pixel 3 und neuer, Samsung Galaxy S20 und neuer) unterstützen die eSIM-Technologie. Sie können die Spezifikationen Ihres Telefons überprüfen oder uns kontaktieren, um die Kompatibilität zu überprüfen.",
+    "q3": "Wie aktiviere ich meine eSIM?",
+    "a3": "Nach dem Kauf erhalten Sie einen QR-Code per E-Mail. Gehen Sie auf Ihrem Telefon zu Einstellungen > Mobilfunk > Mobilfunktarif hinzufügen und scannen Sie dann den QR-Code. Folgen Sie den Anweisungen auf dem Bildschirm, um die Aktivierung abzuschließen.",
+    "q4": "Kann ich meine eSIM und physische SIM gleichzeitig nutzen?",
+    "a4": "Ja! Das ist einer der Vorteile der eSIM-Technologie. Sie können Ihre reguläre SIM für Anrufe und Textnachrichten aktiv halten, während Sie die eSIM für Daten beim Reisen nutzen.",
+    "q5": "Was passiert, wenn meine Daten aufgebraucht sind?",
+    "a5": "Wenn Ihr Datenkontingent erschöpft ist, können Sie über Ihr Konto-Dashboard zusätzliche Daten kaufen oder die automatische Verlängerung einrichten, um Unterbrechungen zu vermeiden.",
+    "q6": "Kann ich mein Abonnement jederzeit kündigen?",
+    "a6": "Ja, Sie können Ihr Abonnement jederzeit über Ihr Konto-Dashboard kündigen. Es gibt keine Kündigungsgebühren oder langfristigen Verträge.",
+    "moreQuestions": "Haben Sie weitere Fragen?",
+    "contactSupport": "Support kontaktieren"
+  },
+  "footer": {
+    "company": "Unternehmen",
+    "about": "Über uns",
+    "careers": "Karriere",
+    "blog": "Blog",
+    "press": "Presse",
+    "support": "Support",
+    "help": "Hilfecenter",
+    "contact": "Kontakt",
+    "privacy": "Datenschutzrichtlinie",
+    "terms": "Nutzungsbedingungen",
+    "legal": "Rechtliches",
+    "copyright": "© 2024 Romio Mobile. Alle Rechte vorbehalten.",
+    "newsletter": {
+      "title": "Bleiben Sie verbunden",
+      "subtitle": "Abonnieren Sie unseren Newsletter für Updates und Sonderangebote",
+      "placeholder": "Ihre E-Mail-Adresse",
+      "button": "Abonnieren",
+      "consent": "Mit dem Abonnieren stimmen Sie unserer Datenschutzrichtlinie zu"
+    },
+    "socialMedia": "Folgen Sie uns",
+    "disclaimer": "Die Verfügbarkeit des Dienstes kann je nach Standort und Gerätekompatibilität variieren.",
+    "tagline": "Global verbinden mit Romio eSIM-Technologie",
+    "currency": "EUR",
+    "company": {
+      "title": "Unternehmen",
+      "about": "Über uns",
+      "careers": "Karriere",
+      "press": "Presse",
+      "blog": "Blog"
+    },
+    "product": {
+      "title": "Produkt",
+      "features": "Funktionen",
+      "pricing": "Preise",
+      "coverage": "Abdeckung",
+      "support": "Support"
+    },
+    "resources": {
+      "title": "Ressourcen",
+      "helpCenter": "Hilfecenter",
+      "partnerProgram": "Partnerprogramm",
+      "privacyPolicy": "Datenschutzrichtlinie",
+      "termsOfService": "Nutzungsbedingungen"
+    }
+  },
+  "language": {
+    "en": "Englisch",
+    "de": "Deutsch",
+    "fr": "Französisch",
+    "es": "Spanisch",
+    "it": "Italienisch",
+    "ar": "Arabisch",
+    "ja": "Japanisch",
+    "ru": "Russisch",
+    "zh": "Chinesisch",
+    "detectedCountry": "Erkanntes Land"
+  },
+  "locale": {
+    "language": "Sprache",
+    "currency": "Währung"
+  }
+} 

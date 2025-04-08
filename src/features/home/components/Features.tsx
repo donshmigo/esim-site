@@ -1,0 +1,139 @@
+import { GlobeAltIcon, DevicePhoneMobileIcon, CurrencyDollarIcon, BoltIcon, PhoneIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
+import { useTranslation } from 'react-i18next';
+import { useState, useRef, useEffect } from 'react';
+
+export default function Features() {
+  const { t } = useTranslation();
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [maxScroll, setMaxScroll] = useState(0);
+
+  const features = [
+    {
+      name: t('features.feature3.title'),
+      description: t('features.feature3.description'),
+      icon: DevicePhoneMobileIcon,
+    },
+    {
+      name: t('features.feature2.title'),
+      description: t('features.feature2.description'),
+      icon: GlobeAltIcon,
+    },
+    {
+      name: t('features.feature1.title'),
+      description: t('features.feature1.description'),
+      icon: BoltIcon,
+    },
+    {
+      name: "Keep Your Phone Number",
+      description: "Use your existing number while enjoying Romio eSIM data worldwide",
+      icon: PhoneIcon,
+    },
+    {
+      name: t('features.feature5.title'),
+      description: t('features.feature5.description'),
+      icon: CurrencyDollarIcon,
+    },
+    {
+      name: t('features.feature6.title'),
+      description: t('features.feature6.description'),
+      icon: ArrowPathIcon,
+    },
+  ];
+
+  // Calculate max scroll value when component mounts or window resizes
+  useEffect(() => {
+    const updateMaxScroll = () => {
+      if (scrollContainerRef.current) {
+        const containerWidth = scrollContainerRef.current.scrollWidth;
+        const viewportWidth = scrollContainerRef.current.clientWidth;
+        setMaxScroll(containerWidth - viewportWidth);
+      }
+    };
+
+    // Update on mount
+    updateMaxScroll();
+    
+    // Update on resize
+    window.addEventListener('resize', updateMaxScroll);
+    return () => window.removeEventListener('resize', updateMaxScroll);
+  }, []);
+
+  // Update scroll position when user scrolls
+  const handleScroll = () => {
+    if (scrollContainerRef.current) {
+      setScrollPosition(scrollContainerRef.current.scrollLeft);
+    }
+  };
+
+  return (
+    <section id="features" className="section-spacing bg-steel-gray">
+      <div className="container-custom mx-auto">
+        <div className="max-w-3xl mx-auto text-center mb-8 md:mb-16">
+          <h2 className="section-title">{t('features.title')}</h2>
+          <p className="text-lg text-cool-slate">
+            {t('features.subtitle')}
+          </p>
+        </div>
+
+        {/* Mobile view: Horizontal scrolling container */}
+        <div className="md:hidden relative">
+          <div 
+            ref={scrollContainerRef}
+            className="flex overflow-x-auto pb-6 snap-x snap-mandatory no-scrollbar"
+            onScroll={handleScroll}
+            style={{ scrollBehavior: 'smooth' }}
+          >
+            {features.map((feature, idx) => (
+              <div 
+                key={feature.name} 
+                className="flex-shrink-0 w-[80%] mx-2 first:ml-4 last:mr-4 snap-center bg-white rounded-xl p-4 shadow-sm"
+              >
+                <div className="h-12 w-12 bg-gray-100 rounded-lg flex items-center justify-center mb-4">
+                  <feature.icon className="h-6 w-6 text-gray-500" aria-hidden="true" />
+                </div>
+                <h3 className="text-lg font-semibold mb-2 text-romio-black">{feature.name}</h3>
+                <p className="text-cool-slate text-sm">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Scroll indicators */}
+          <div className="flex justify-center mt-4 space-x-2">
+            {features.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  if (scrollContainerRef.current) {
+                    const cardWidth = scrollContainerRef.current.scrollWidth / features.length;
+                    scrollContainerRef.current.scrollTo({ left: cardWidth * idx, behavior: 'smooth' });
+                  }
+                }}
+                className={`h-2 rounded-full transition-all ${
+                  scrollPosition >= (maxScroll * idx) / (features.length - 1) - 20 &&
+                  scrollPosition <= (maxScroll * (idx + 1)) / (features.length - 1) + 20
+                    ? 'w-6 bg-dark-theme'
+                    : 'w-2 bg-gray-300'
+                }`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop view: Grid layout */}
+        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature) => (
+            <div key={feature.name} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div className="h-12 w-12 bg-gray-100 rounded-lg flex items-center justify-center mb-6">
+                <feature.icon className="h-6 w-6 text-gray-500" aria-hidden="true" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4 text-romio-black">{feature.name}</h3>
+              <p className="text-cool-slate">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

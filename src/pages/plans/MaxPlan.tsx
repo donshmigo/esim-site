@@ -1,0 +1,240 @@
+import { Link, useNavigate } from 'react-router-dom';
+import { ArrowLeftIcon, CheckIcon, DevicePhoneMobileIcon, GlobeAltIcon, SignalIcon, WifiIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline';
+import { useEffect } from 'react';
+
+const MaxPlan = () => {
+  const navigate = useNavigate();
+  
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
+  const handleSubscribe = () => {
+    const planDetails = {
+      id: 'max',
+      name: 'Romio Max – 30GB Global eSIM Plan',
+      description: 'Our most powerful plan for remote workers and digital explorers',
+      data_amount: 30,
+      data_unit: 'GB',
+      price: {
+        amount: 59.99,
+        currency: 'USD'
+      }
+    };
+    
+    navigate('/checkout', { state: { selectedPlan: planDetails, skipPlanSelection: true } });
+  };
+
+  return (
+    <div className="pt-4 pb-16">
+      <div className="container-custom mx-auto">
+        {/* Back button and breadcrumb */}
+        <div className="mb-4">
+          <Link to="/#pricing" className="inline-flex items-center text-signal-blue hover:underline group">
+            <ArrowLeftIcon className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+            Back to All Plans
+          </Link>
+        </div>
+
+        {/* Plan Header */}
+        <div className="mb-4 max-w-3xl">
+          <div className="flex items-center gap-2 mb-2">
+            <SignalIcon className="h-5 w-5 text-signal-blue animate-signal" />
+            <span className="text-signal-blue font-medium">30GB Data Plan</span>
+          </div>
+          
+          <h1 className="text-4xl md:text-5xl font-bold text-romio-black mb-4 tech-accent">
+            Romio Max – 30GB Global eSIM Plan
+          </h1>
+          
+          <div className="flex flex-col lg:flex-row lg:items-start">
+            <p className="text-xl text-cool-slate lg:max-w-xl">
+              Our most powerful plan for remote workers and digital explorers. Go further, stay longer, connect more.
+            </p>
+            
+            {/* Mobile subscription box - visible only on mobile - NOW ALIGNED WITH DESCRIPTION */}
+            <div className="lg:hidden mt-4">
+              <div className="bg-white rounded-xl border-2 border-signal-blue p-4 shadow-lg">
+                <div className="mb-2 text-center">
+                  <h3 className="text-lg font-medium mb-1">Monthly Subscription: <span className="text-2xl font-bold text-signal-blue">$59.99</span></h3>
+                </div>
+
+                <button 
+                  onClick={handleSubscribe}
+                  className="btn-primary w-full text-center block py-3"
+                >
+                  Subscribe Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Two-column layout for desktop */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* Left column - Plan details */}
+          <div className="lg:col-span-2">
+            <div className="prose prose-lg max-w-none">
+              <h2 className="text-2xl font-bold mb-4">Plan Overview</h2>
+              <p>
+                Romio Max was made for people who live online — from airports and cafés to islands and coworking hubs. 
+                With 30GB of global data, it supports everything from heavy video usage to hotspotting your laptop. 
+                It's your full-time data plan that works across borders without skipping a beat.
+              </p>
+
+              {/* Key features */}
+              <div className="mt-8 mb-12 grid grid-cols-1 md:grid-cols-2 gap-4">
+                {[
+                  "Supports streaming, uploading, Zoom, and more",
+                  "High-speed LTE coverage in 80+ countries",
+                  "Auto-renewing, easy to manage",
+                  "Designed for remote work, travel, and hybrid life",
+                  "VoIP and insurance add-ons available"
+                ].map((feature, idx) => (
+                  <div key={idx} className="flex items-start">
+                    <CheckIcon className="h-5 w-5 text-signal-blue flex-shrink-0 mr-2 mt-1" />
+                    <span>{feature}</span>
+                  </div>
+                ))}
+              </div>
+
+              <h2 className="text-2xl font-bold mb-4">What You Can Do with 30GB</h2>
+              <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                <div className="card-tech">
+                  <div className="flex items-center mb-2">
+                    <GlobeAltIcon className="h-6 w-6 text-signal-blue mr-2" />
+                    <h3 className="font-bold">40+ hours</h3>
+                  </div>
+                  <p className="text-cool-slate">HD video streaming</p>
+                </div>
+                
+                <div className="card-tech">
+                  <div className="flex items-center mb-2">
+                    <DevicePhoneMobileIcon className="h-6 w-6 text-signal-blue mr-2" />
+                    <h3 className="font-bold">15+ hours</h3>
+                  </div>
+                  <p className="text-cool-slate">Zoom calls</p>
+                </div>
+                
+                <div className="card-tech">
+                  <div className="flex items-center mb-2">
+                    <WifiIcon className="h-6 w-6 text-signal-blue mr-2" />
+                    <h3 className="font-bold">WiFi backup</h3>
+                  </div>
+                  <p className="text-cool-slate">Use as a mobile hotspot</p>
+                </div>
+                
+                <div className="card-tech">
+                  <div className="flex items-center mb-2">
+                    <ComputerDesktopIcon className="h-6 w-6 text-signal-blue mr-2" />
+                    <h3 className="font-bold">Unlimited</h3>
+                  </div>
+                  <p className="text-cool-slate">Stream, scroll, work — anywhere</p>
+                </div>
+              </div>
+
+              <h2 className="text-2xl font-bold mb-4">Perfect For</h2>
+              <ul className="list-disc pl-5 mb-8 space-y-2">
+                <li>Remote workers</li>
+                <li>Digital nomads</li>
+                <li>Full-time travelers</li>
+                <li>Content creators</li>
+                <li>Heavy data users</li>
+              </ul>
+              
+              <h2 className="text-2xl font-bold mb-4">Premium Add-ons Available</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                <div className="bg-steel-gray bg-opacity-10 p-4 rounded-lg">
+                  <h3 className="font-bold mb-2">VoIP Services</h3>
+                  <p className="text-cool-slate text-sm">
+                    Keep your phone number while traveling with our VoIP service. Make and receive calls using your home number from anywhere.
+                  </p>
+                </div>
+                
+                <div className="bg-steel-gray bg-opacity-10 p-4 rounded-lg">
+                  <h3 className="font-bold mb-2">Device Insurance</h3>
+                  <p className="text-cool-slate text-sm">
+                    Protect your devices against loss or damage with our global device protection plan, valid in any country your eSIM works.
+                  </p>
+                </div>
+              </div>
+              
+              <p>
+                The Max plan is built for those who need uncompromising connectivity. When your livelihood, content creation, 
+                or digital lifestyle depends on having stable internet, Max gives you the headroom you need without constantly 
+                worrying about hitting data limits.
+              </p>
+            </div>
+          </div>
+
+          {/* Right column - Sidebar with pricing and CTA - visible only on desktop */}
+          <div className="hidden lg:block lg:col-span-1">
+            <div className="sticky top-24 bg-white rounded-xl border-2 border-signal-blue p-6 shadow-lg">
+              <div className="mb-6 text-center">
+                <h3 className="text-lg font-medium mb-1">Monthly Subscription</h3>
+                <div className="text-4xl font-bold text-signal-blue mb-2">$59.99 <span className="text-lg font-normal text-cool-slate">/month</span></div>
+                <p className="text-cool-slate text-sm">Renews automatically. Cancel anytime.</p>
+              </div>
+
+              <div className="mb-6">
+                <h4 className="font-medium mb-2">Plan Includes:</h4>
+                <ul className="space-y-3">
+                  {[
+                    "30GB high-speed data",
+                    "Global coverage in 80+ countries",
+                    "No roaming fees",
+                    "Easy setup via QR code",
+                    "Access to customer dashboard",
+                    "Priority support",
+                    "Top-up discounts",
+                    "VoIP add-on included"
+                  ].map((feature, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <CheckIcon className="h-5 w-5 text-signal-blue flex-shrink-0 mr-2" />
+                      <span className="text-sm">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <button 
+                onClick={handleSubscribe}
+                className="btn-primary w-full text-center block py-3"
+              >
+                Subscribe Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Other plans section */}
+        <div className="mt-16 pt-12 border-t border-steel-gray">
+          <h2 className="text-2xl font-bold mb-8 text-center">Browse Other Plans</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="rounded-xl border border-steel-gray p-6 hover:border-signal-blue hover:shadow-md transition-all">
+              <h3 className="text-xl font-bold mb-1">Romio Lite – 5GB</h3>
+              <p className="text-cool-slate mb-4">A lightweight plan for short trips or casual use. Stay connected across 80+ countries with 5GB of high-speed data.</p>
+              <div className="flex justify-between items-center">
+                <span className="font-bold text-xl text-signal-blue">$19.99<span className="text-sm font-normal text-cool-slate">/mo</span></span>
+                <Link to="/plans/lite" className="btn-secondary text-sm">Learn More</Link>
+              </div>
+            </div>
+            
+            <div className="rounded-xl border border-steel-gray p-6 hover:border-signal-blue hover:shadow-md transition-all">
+              <h3 className="text-xl font-bold mb-1">Romio Traveler – 20GB</h3>
+              <p className="text-cool-slate mb-4">Perfect for digital nomads, content creators, and longer trips. More data, same freedom — in 80+ countries.</p>
+              <div className="flex justify-between items-center">
+                <span className="font-bold text-xl text-signal-blue">$39.99<span className="text-sm font-normal text-cool-slate">/mo</span></span>
+                <Link to="/plans/traveler" className="btn-secondary text-sm">Learn More</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default MaxPlan; 

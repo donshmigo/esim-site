@@ -1,0 +1,169 @@
+{
+  "header": {
+    "features": "機能",
+    "howItWorks": "使い方",
+    "coverage": "対応エリア",
+    "pricing": "料金",
+    "faq": "よくある質問",
+    "login": "ログイン",
+    "subscribe": "登録する",
+    "dashboard": "マイアカウント",
+    "logout": "ログアウト"
+  },
+  "dashboard": {
+    "sidebar": {
+      "profile": "プロフィール",
+      "myPlans": "マイプラン",
+      "usage": "使用状況",
+      "planSettings": "プラン設定",
+      "billing": "請求履歴",
+      "adminPanel": "管理パネル",
+      "user": "ユーザー",
+      "closeAriaLabel": "サイドバーを閉じる",
+      "openAriaLabel": "サイドバーを開く",
+      "close": "閉じる",
+      "menu": "メニュー"
+    },
+    "plans": {
+      "availablePlans": "利用可能なプラン",
+      "premiumPlan": "プレミアムプラン",
+      "globalConnectivity": "高速データグローバル接続",
+      "data": "データ",
+      "validFor30Days": "30日間有効",
+      "coverageIn150Countries": "150カ国以上でのカバレッジ",
+      "support247": "24時間365日サポート",
+      "selectPlan": "プランを選択"
+    },
+    "profile": {
+      "myProfile": "マイプロフィール",
+      "editProfile": "プロフィール編集",
+      "yourName": "お名前",
+      "email": "メールアドレス",
+      "phone": "電話番号",
+      "location": "場所",
+      "unitedStates": "アメリカ合衆国",
+      "memberSince": "会員登録日",
+      "january2023": "2023年1月"
+    },
+    "usage": {
+      "planUsage": "プラン使用状況",
+      "dataUsed": "使用済みデータ",
+      "dataRemaining": "残りデータ",
+      "daysRemaining": "残り日数",
+      "days": "日",
+      "topUpYourPlan": "プランをチャージ",
+      "small": "小",
+      "medium": "中",
+      "large": "大"
+    },
+    "settings": {
+      "planSettings": "プラン設定",
+      "premiumGlobalPlan": "プレミアムグローバルプラン",
+      "startDate": "開始日",
+      "november1": "2023年11月1日",
+      "endDate": "終了日",
+      "december1": "2023年12月1日",
+      "autoRenew": "自動更新",
+      "enabled": "有効",
+      "changePlan": "プラン変更",
+      "disableAutoRenew": "自動更新を無効にする",
+      "paymentMethods": "支払い方法",
+      "visaEndingIn": "末尾が次の番号のVisa",
+      "expires": "有効期限",
+      "edit": "編集"
+    },
+    "billing": {
+      "billingHistory": "請求履歴",
+      "date": "日付",
+      "description": "説明",
+      "amount": "金額",
+      "status": "状態",
+      "nov1": "2023年11月1日",
+      "oct15": "2023年10月15日",
+      "oct1": "2023年10月1日",
+      "sep18": "2023年9月18日",
+      "premiumGlobalPlan": "プレミアムグローバルプラン",
+      "dataTopUp": "データチャージ",
+      "completed": "完了"
+    },
+    "error": {
+      "retry": "再試行",
+      "pleaseLogIn": "ダッシュボードを表示するにはログインしてください。"
+    }
+  },
+  "hero": {
+    "title": "グローバル接続、月額自由",
+    "subtitle": "ローミング料金なしで80カ国以上で接続を維持",
+    "ctaButton": "始める",
+    "learnMore": "詳細を見る"
+  },
+  "features": {
+    "title": "なぜRomio eSIMを選ぶのか",
+    "subtitle": "最先端のeSIM技術で世界中でシームレスな接続を体験"
+  },
+  "howItWorks": {
+    "title": "使い方",
+    "step1": "プランを選択",
+    "step2": "スマートフォンでQRコードをスキャン",
+    "step3": "アクティベーションして接続を維持"
+  },
+  "coverage": {
+    "title": "グローバルカバレッジ",
+    "subtitle": "世界80カ国以上でつながる",
+    "searchPlaceholder": "国を検索..."
+  },
+  "pricing": {
+    "title": "シンプルな料金",
+    "subtitle": "あなたに合ったプランを選んでください",
+    "monthly": "月額",
+    "yearly": "年額",
+    "savingTag": "20%節約",
+    "mostPopular": "最も人気",
+    "lite": {
+      "name": "ライト",
+      "price": "¥500",
+      "description": "時々旅行する人に最適"
+    },
+    "traveler": {
+      "name": "トラベラー",
+      "price": "¥1,000",
+      "description": "頻繁に旅行する人に最適"
+    },
+    "max": {
+      "name": "マックス",
+      "price": "¥2,000",
+      "description": "デジタルノマドに最適"
+    },
+    "cta": "今すぐ登録"
+  },
+  "faq": {
+    "title": "よくある質問",
+    "q1": "eSIMとは何ですか？",
+    "a1": "eSIMは物理的なSIMカードを使用せずに携帯プランを有効化できるデジタルSIMです。"
+  },
+  "footer": {
+    "company": "会社情報",
+    "about": "会社概要",
+    "careers": "採用情報",
+    "privacy": "プライバシーポリシー",
+    "terms": "利用規約",
+    "contact": "お問い合わせ",
+    "copyright": "© 2024 Romio Mobile. All rights reserved."
+  },
+  "language": {
+    "en": "英語",
+    "de": "ドイツ語",
+    "fr": "フランス語",
+    "es": "スペイン語",
+    "it": "イタリア語",
+    "ar": "アラビア語",
+    "ja": "日本語",
+    "ru": "ロシア語",
+    "zh": "中国語",
+    "detectedCountry": "検出された国"
+  },
+  "locale": {
+    "language": "言語",
+    "currency": "通貨"
+  }
+} 

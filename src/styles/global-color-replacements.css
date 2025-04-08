@@ -1,0 +1,55 @@
+/* Global color replacements - this file overrides all signal-blue instances */
+
+:root {
+  --signal-blue: #242323; /* Dark theme color replacement */
+  --signal-blue-hover: #3a3939; /* Dark theme hover color */
+  --signal-blue-light: #4a4a4a; /* Dark theme light color */
+}
+
+/* Replace all instances of .text-signal-blue with the dark theme color */
+.text-signal-blue {
+  color: var(--signal-blue) !important;
+}
+
+/* Replace all instances of .bg-signal-blue with the dark theme color */
+.bg-signal-blue {
+  background-color: var(--signal-blue) !important;
+}
+
+/* Replace all instances of .border-signal-blue with the dark theme color */
+.border-signal-blue {
+  border-color: var(--signal-blue) !important;
+}
+
+/* Replace hover:bg-blue-700 instances */
+.hover\:bg-blue-700:hover {
+  background-color: var(--signal-blue-hover) !important;
+}
+
+/* Replace hover:bg-signal-blue instances */
+.hover\:bg-signal-blue:hover {
+  background-color: var(--signal-blue) !important;
+}
+
+/* Replace focus:ring-signal-blue instances */
+.focus\:ring-signal-blue:focus {
+  --tw-ring-color: var(--signal-blue) !important;
+}
+
+/* Replace focus:border-signal-blue instances */
+.focus\:border-signal-blue:focus {
+  border-color: var(--signal-blue) !important;
+}
+
+/* Animate ping with dark theme color */
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite !important;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+    border-color: var(--signal-blue);
+  }
+} 

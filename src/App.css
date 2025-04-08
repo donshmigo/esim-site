@@ -1,0 +1,47 @@
+/* Custom Styles for Romio eSIM */
+
+/* Ensures smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove outline on mobile tap */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Fix for sticky header anchor positioning */
+:target::before {
+  content: "";
+  display: block;
+  height: 80px; /* Height of your header */
+  margin-top: -80px;
+  visibility: hidden;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Button hover effect */
+.btn-primary:hover, .btn-secondary:hover {
+  transform: translateY(-1px);
+}
+
+/* Custom focus states */
+a:focus, button:focus {
+  outline: 2px solid #242323;
+  outline-offset: 2px;
+} 

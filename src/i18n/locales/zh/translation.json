@@ -1,0 +1,169 @@
+{
+  "header": {
+    "features": "功能",
+    "howItWorks": "工作原理",
+    "coverage": "覆盖范围",
+    "pricing": "价格",
+    "faq": "常见问题",
+    "login": "登录",
+    "subscribe": "订阅",
+    "dashboard": "我的账户",
+    "logout": "退出登录"
+  },
+  "dashboard": {
+    "sidebar": {
+      "profile": "个人资料",
+      "myPlans": "我的套餐",
+      "usage": "使用情况",
+      "planSettings": "套餐设置",
+      "billing": "账单",
+      "adminPanel": "管理面板",
+      "user": "用户",
+      "closeAriaLabel": "关闭侧边栏",
+      "openAriaLabel": "打开侧边栏",
+      "close": "关闭",
+      "menu": "菜单"
+    },
+    "plans": {
+      "availablePlans": "可用套餐",
+      "premiumPlan": "高级套餐",
+      "globalConnectivity": "高速数据全球连接",
+      "data": "数据",
+      "validFor30Days": "有效期30天",
+      "coverageIn150Countries": "覆盖150多个国家",
+      "support247": "24/7支持",
+      "selectPlan": "选择套餐"
+    },
+    "profile": {
+      "myProfile": "我的个人资料",
+      "editProfile": "编辑个人资料",
+      "yourName": "您的姓名",
+      "email": "电子邮件",
+      "phone": "电话",
+      "location": "位置",
+      "unitedStates": "美国",
+      "memberSince": "会员开始日期",
+      "january2023": "2023年1月"
+    },
+    "usage": {
+      "planUsage": "套餐使用情况",
+      "dataUsed": "已使用数据",
+      "dataRemaining": "剩余数据",
+      "daysRemaining": "剩余天数",
+      "days": "天",
+      "topUpYourPlan": "充值您的套餐",
+      "small": "小",
+      "medium": "中",
+      "large": "大"
+    },
+    "settings": {
+      "planSettings": "套餐设置",
+      "premiumGlobalPlan": "全球高级套餐",
+      "startDate": "开始日期",
+      "november1": "2023年11月1日",
+      "endDate": "结束日期",
+      "december1": "2023年12月1日",
+      "autoRenew": "自动续订",
+      "enabled": "已启用",
+      "changePlan": "更改套餐",
+      "disableAutoRenew": "禁用自动续订",
+      "paymentMethods": "支付方式",
+      "visaEndingIn": "尾号为",
+      "expires": "过期",
+      "edit": "编辑"
+    },
+    "billing": {
+      "billingHistory": "账单历史",
+      "date": "日期",
+      "description": "描述",
+      "amount": "金额",
+      "status": "状态",
+      "nov1": "2023年11月1日",
+      "oct15": "2023年10月15日",
+      "oct1": "2023年10月1日",
+      "sep18": "2023年9月18日",
+      "premiumGlobalPlan": "全球高级套餐",
+      "dataTopUp": "数据充值",
+      "completed": "已完成"
+    },
+    "error": {
+      "retry": "重试",
+      "pleaseLogIn": "请登录以查看您的仪表板。"
+    }
+  },
+  "hero": {
+    "title": "全球连接，月度自由",
+    "subtitle": "在80多个国家保持连接，无漫游费",
+    "ctaButton": "开始使用",
+    "learnMore": "了解更多"
+  },
+  "features": {
+    "title": "为什么选择Romio eSIM",
+    "subtitle": "通过我们先进的eSIM技术，体验全球无缝连接"
+  },
+  "howItWorks": {
+    "title": "工作原理",
+    "step1": "选择您的套餐",
+    "step2": "用手机扫描二维码",
+    "step3": "激活并保持连接"
+  },
+  "coverage": {
+    "title": "全球覆盖",
+    "subtitle": "连接全球80多个国家",
+    "searchPlaceholder": "搜索国家..."
+  },
+  "pricing": {
+    "title": "简单定价",
+    "subtitle": "选择适合您的套餐",
+    "monthly": "月付",
+    "yearly": "年付",
+    "savingTag": "节省20%",
+    "mostPopular": "最受欢迎",
+    "lite": {
+      "name": "轻量版",
+      "price": "¥30",
+      "description": "适合偶尔旅行者"
+    },
+    "traveler": {
+      "name": "旅行者",
+      "price": "¥60",
+      "description": "适合经常旅行者"
+    },
+    "max": {
+      "name": "高级版",
+      "price": "¥120",
+      "description": "最适合数字游民"
+    },
+    "cta": "立即订阅"
+  },
+  "faq": {
+    "title": "常见问题",
+    "q1": "什么是eSIM？",
+    "a1": "eSIM是一种数字SIM卡，可让您激活蜂窝计划而无需使用物理SIM卡。"
+  },
+  "footer": {
+    "company": "公司",
+    "about": "关于我们",
+    "careers": "招聘",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "contact": "联系我们",
+    "copyright": "© 2024 Romio Mobile. 保留所有权利。"
+  },
+  "language": {
+    "en": "英语",
+    "de": "德语",
+    "fr": "法语",
+    "es": "西班牙语",
+    "it": "意大利语",
+    "ar": "阿拉伯语",
+    "ja": "日语",
+    "ru": "俄语",
+    "zh": "中文",
+    "detectedCountry": "检测到的国家"
+  },
+  "locale": {
+    "language": "语言",
+    "currency": "货币"
+  }
+} 

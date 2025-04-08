@@ -16,12 +16,12 @@ import { getStorage } from 'firebase/storage';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBLPMdBXWcSTX1r0VKg3MdKKBm-zY6HF_4",
-  authDomain: "romio-mobile-website.firebaseapp.com",
-  projectId: "romio-mobile-website",
-  storageBucket: "romio-mobile-website.firebasestorage.app",
-  messagingSenderId: "826466976256",
-  appId: "1:826466976256:web:f9ac09c7cdedba08ff4ee5"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 // Track initialization state

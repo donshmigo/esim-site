@@ -10,33 +10,33 @@ export default function Features() {
 
   const features = [
     {
-      name: 'Global Coverage',
-      description: 'Stay connected in over 190+ countries with our extensive network coverage',
-      icon: GlobeAltIcon,
-    },
-    {
-      name: 'Instant Activation',
-      description: 'Get connected immediately with our self-service activation process',
-      icon: BoltIcon,
-    },
-    {
-      name: 'Keep Your Phone Number',
-      description: 'Use your existing number while enjoying Romio eSIM data worldwide',
-      icon: PhoneIcon,
-    },
-    {
-      name: 'Flexible Plans',
-      description: 'Choose from a variety of data plans that suit your travel needs',
-      icon: CurrencyDollarIcon,
-    },
-    {
-      name: 'Easy Device Setup',
-      description: 'Simple QR code scanning process to activate your eSIM on any compatible device',
+      name: 'Feature 3 Title',
+      description: 'Feature 3 Description',
       icon: DevicePhoneMobileIcon,
     },
     {
-      name: 'Seamless Switching',
-      description: 'Easily switch between different data plans as your needs change',
+      name: 'Feature 2 Title',
+      description: 'Feature 2 Description',
+      icon: GlobeAltIcon,
+    },
+    {
+      name: 'Feature 1 Title',
+      description: 'Feature 1 Description',
+      icon: BoltIcon,
+    },
+    {
+      name: "Keep Your Phone Number",
+      description: "Use your existing number while enjoying Romio eSIM data worldwide",
+      icon: PhoneIcon,
+    },
+    {
+      name: 'Feature 5 Title',
+      description: 'Feature 5 Description',
+      icon: CurrencyDollarIcon,
+    },
+    {
+      name: 'Feature 6 Title',
+      description: 'Feature 6 Description',
       icon: ArrowPathIcon,
     },
   ];
@@ -65,9 +65,9 @@ export default function Features() {
     <section id="features" className="section-spacing bg-steel-gray">
       <div className="container-custom mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-8 md:mb-16">
-          <h2 className="section-title">Why Choose Romio eSIM</h2>
+          <h2 className="section-title">Features Title</h2>
           <p className="text-lg text-cool-slate">
-            Experience seamless connectivity with our innovative eSIM technology
+            Features Subtitle
           </p>
         </div>
 

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { useAuth } from '../../firebase/AuthContext';
 import { doc, updateDoc, getDoc, setDoc, arrayUnion, serverTimestamp } from 'firebase/firestore';
-import { db } from '../../firebase/firebase';
+import { db } from '@/firebase/firebase';
 import { useCurrency } from '../../../hooks/useCurrency';
 import './TopUp.css';
 
@@ -43,9 +42,7 @@ const TOP_UP_OPTIONS: TopUpOption[] = [
 ];
 
 const TopUp: React.FC<TopUpProps> = ({ userId, onSuccess }) => {
-  const { currentUser } = useAuth();
   const { formatPrice, convertFromUSD } = useCurrency();
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);

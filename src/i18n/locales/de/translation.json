@@ -58,7 +58,7 @@
     },
     "settings": {
       "planSettings": "Tarifeinstellungen",
-      "premiumGlobalPlan": "Premium Global Tarif",
+      "premiumGlobalPlan": "Premium Global-Tarif",
       "startDate": "Startdatum",
       "november1": "1. November 2023",
       "endDate": "Enddatum",
@@ -68,133 +68,190 @@
       "changePlan": "Tarif ändern",
       "disableAutoRenew": "Automatische Verlängerung deaktivieren",
       "paymentMethods": "Zahlungsmethoden",
-      "visaEndingIn": "Visa endet auf",
-      "expires": "Läuft ab",
+      "visaEndingIn": "Visa, endet mit",
+      "expires": "Gültig bis",
       "edit": "Bearbeiten"
     },
     "billing": {
-      "billingHistory": "Abrechnungsverlauf",
+      "billingHistory": "Abrechnungshistorie",
       "date": "Datum",
       "description": "Beschreibung",
       "amount": "Betrag",
       "status": "Status",
-      "nov1": "1. Nov 2023",
-      "oct15": "15. Okt 2023",
-      "oct1": "1. Okt 2023",
-      "sep18": "18. Sep 2023",
-      "premiumGlobalPlan": "Premium Global Tarif",
-      "dataTopUp": "Daten-Aufladung",
+      "nov1": "1. November 2023",
+      "oct15": "15. Oktober 2023",
+      "oct1": "1. Oktober 2023",
+      "sep18": "18. September 2023",
+      "premiumGlobalPlan": "Premium Global-Tarif",
+      "dataTopUp": "Datenaufladung",
       "completed": "Abgeschlossen"
     },
     "error": {
       "retry": "Wiederholen",
-      "pleaseLogIn": "Bitte melden Sie sich an, um Ihr Dashboard anzuzeigen."
-    }
+      "pleaseLogIn": "Bitte melden Sie sich an, um das Dashboard zu sehen."
+    },
+    "welcome": "Willkommen, {{name}}!",
+    "overview": "Übersicht",
+    "myESims": "Meine eSIMs",
+    "activeESims": "Aktive eSIMs",
+    "expiredESims": "Abgelaufene eSIMs",
+    "upcomingTrips": "Kommende Reisen",
+    "recentActivity": "Letzte Aktivität",
+    "dataUsage": "Datennutzung",
+    "validUntil": "Gültig bis",
+    "activateESim": "eSIM aktivieren",
+    "topUpData": "Daten aufladen",
+    "manageESim": "eSIM verwalten",
+    "buyNewESim": "Neue eSIM kaufen",
+    "noActiveESims": "Keine aktiven eSIMs",
+    "viewAll": "Alle anzeigen",
+    "help": "Hilfe"
   },
   "hero": {
-    "title": "Globale Konnektivität, monatliche Freiheit",
-    "subtitle": "Bleiben Sie in über 80 Ländern ohne Roaming-Gebühren verbunden",
-    "ctaButton": "Loslegen",
-    "learnMore": "Mehr erfahren"
+    "title": "Globale Konnektivität,",
+    "titleHighlight": "vereinfacht",
+    "description": "Bleiben Sie in über 80 Ländern mit einem einzigen eSIM-Tarif verbunden. Keine Roaming-Gebühren, keine komplizierte Einrichtung, sofortiger Zugang zu Hochgeschwindigkeitsdaten, wo immer Sie sind.",
+    "primaryCta": "Verbinden",
+    "secondaryCta": "Wie es funktioniert",
+    "features": {
+      "global": {
+        "title": "Globale Abdeckung",
+        "description": "80+ Länder"
+      },
+      "setup": {
+        "title": "Sofortige Einrichtung",
+        "description": "Aktivierung in Sekunden"
+      },
+      "speed": {
+        "title": "Hochgeschwindigkeitsdaten",
+        "description": "4G/5G-Netzwerke"
+      }
+    },
+    "indicator": {
+      "status": "Aktiviert",
+      "ready": "Bereit zur Verbindung",
+      "network": "Globales Netzwerk",
+      "countries": "80+ Länder"
+    }
   },
   "features": {
     "title": "Warum Romio eSIM wählen",
-    "subtitle": "Erleben Sie nahtlose Konnektivität weltweit mit unserer fortschrittlichen eSIM-Technologie",
+    "subtitle": "Erleben Sie nahtlose Konnektivität weltweit mit der neuesten eSIM-Technologie",
     "feature1": {
       "title": "Sofortige Aktivierung",
       "description": "Einrichtung in Minuten mit einem einfachen QR-Code-Scan"
     },
     "feature2": {
       "title": "Globale Abdeckung",
-      "description": "Verbinden Sie sich in über 80 Ländern mit zuverlässigem Service"
+      "description": "Zuverlässiger Service in über 80 Ländern"
     },
     "feature3": {
-      "title": "Keine Verträge",
-      "description": "Flexible monatliche Tarife ohne langfristige Verpflichtungen"
+      "title": "Lokale und Auslandsnutzung",
+      "description": "Verfügbar zu Hause und auf Reisen, ohne Roaming-Gebühren"
     },
     "feature4": {
       "title": "24/7 Support",
-      "description": "Erhalten Sie jederzeit und überall Hilfe von unserem globalen Team"
+      "description": "Erhalten Sie jederzeit und überall Support von unserem globalen Team"
     },
     "feature5": {
-      "title": "Kosteneffektiv",
-      "description": "Sparen Sie bis zu 70% im Vergleich zu herkömmlichen Roaming-Gebühren"
+      "title": "Kostengünstig",
+      "description": "Sparen Sie bis zu 70% im Vergleich zu traditionellen Roaming-Tarifen"
     },
     "feature6": {
-      "title": "Dual-SIM-fähig",
-      "description": "Behalten Sie Ihre lokale Nummer bei der Nutzung unserer globalen Daten"
+      "title": "Dual-SIM-Unterstützung",
+      "description": "Behalten Sie Ihre lokale Nummer, während Sie globale Daten nutzen"
     }
   },
   "howItWorks": {
     "title": "Wie es funktioniert",
-    "subtitle": "Die Verbindung mit Romio eSIM ist einfach und schnell",
+    "subtitle": "Mit Romio eSIM verbinden ist einfach und schnell",
     "step1": {
       "title": "Wählen Sie Ihren Tarif",
-      "description": "Wählen Sie aus unserer Reihe von flexiblen Datentarifen"
+      "description": "Wählen Sie aus flexiblen Datentarifen"
     },
     "step2": {
-      "title": "QR-Code scannen",
-      "description": "Verwenden Sie Ihre Handykamera, um den bereitgestellten QR-Code zu scannen"
+      "title": "Scannen Sie den QR-Code",
+      "description": "Scannen Sie den bereitgestellten QR-Code mit der Kamera Ihres Smartphones"
     },
     "step3": {
-      "title": "Beginnen Sie mit der Nutzung",
+      "title": "Fertig!",
       "description": "Sofortige Verbindung zu lokalen Netzwerken weltweit"
     },
-    "cta": "Jetzt loslegen"
+    "step4": {
+      "title": "Verwalten und aufladen",
+      "description": "Laden Sie Daten jederzeit über das Dashboard auf"
+    },
+    "cta": "Jetzt starten"
   },
   "coverage": {
     "title": "Globale Abdeckung",
     "subtitle": "Verbunden in über 80 Ländern weltweit",
     "searchPlaceholder": "Land suchen...",
-    "mapAlt": "Weltkarte mit Abdeckungsregionen",
-    "moreCountries": "weitere Länder",
+    "mapAlt": "Weltkarte mit Abdeckungsgebieten",
+    "moreCountries": "Weitere Länder",
+    "covered": "Abgedeckt",
+    "notCovered": "Nicht abgedeckt",
+    "resetMap": "Kartenansicht zurücksetzen",
+    "zoomIn": "Vergrößern",
+    "zoomOut": "Verkleinern",
+    "world": "Welt",
     "regions": {
       "europe": "Europa",
       "americas": "Amerika",
       "asiaPacific": "Asien-Pazifik",
-      "middleEastAfrica": "Naher Osten & Afrika"
+      "middleEastAfrica": "Naher Osten und Afrika"
     },
     "viewAll": "Alle Länder anzeigen"
   },
   "techAnimation": {
     "title": "Next-Gen eSIM-Technologie",
-    "subtitle": "Unterstützt durch die neuesten digitalen SIM-Innovationen",
-    "feature1": "Sofortige digitale Lieferung",
-    "feature2": "Kompatibel mit allen eSIM-Handys",
-    "feature3": "Sichere Ende-zu-Ende-Verschlüsselung",
+    "subtitle": "Angetrieben von der neuesten Innovation in digitalen SIM-Karten",
+    "feature1": "Sofortige digitale Bereitstellung",
+    "feature2": "Kompatibel mit allen eSIM-fähigen Telefonen",
+    "feature3": "Ende-zu-Ende-Verschlüsselung für Sicherheit",
     "learnMore": "Mehr über eSIM erfahren",
     "signalStrength": "Signalstärke",
     "instantConnection": "Sofortige Verbindung",
     "globalCoverage": "Globale Abdeckung",
     "countries": "Länder",
-    "uptime": "Betriebszeit",
+    "uptime": "Verfügbarkeit",
     "activation": "Aktivierung"
   },
   "pricing": {
-    "title": "Einfache Preisgestaltung",
-    "subtitle": "Wählen Sie den Tarif, der für Sie geeignet ist",
+    "title": "Einfache Preise",
+    "subtitle": "Wählen Sie den Tarif, der zu Ihnen passt",
     "monthly": "Monatlich",
     "yearly": "Jährlich",
     "savingTag": "20% sparen",
     "mostPopular": "Am beliebtesten",
+    "commonFeatures": {
+      "feature1": "Gültig für 30 Tage",
+      "feature2": "Hochgeschwindigkeitsdaten (4G/5G)",
+      "feature3": "Abdeckung in über 80 Ländern",
+      "feature4": "Sichere Verbindung",
+      "feature5": "Globaler Kundenservice",
+      "feature6": "24/7 Kundenservice",
+      "feature7": "Behalten Sie Ihre Nummer",
+      "feature8": "E-Mail-Support"
+    },
     "lite": {
       "name": "Lite",
-      "price": "4,99 €",
-      "yearlyPrice": "47,88 €",
+      "price": "€4,90",
+      "yearlyPrice": "€47,80",
       "data": "1GB Daten",
       "countries": "40+ Länder",
-      "description": "Perfekt für gelegentliche Reisende",
+      "description": "Ideal für Gelegenheitsreisende",
       "features": [
         "Gültig für 30 Tage",
         "Nur Daten",
         "Keine Geschwindigkeitsbegrenzungen",
-        "Grundlegender Kundensupport"
+        "Grundlegender Kundenservice"
       ]
     },
     "traveler": {
       "name": "Traveler",
-      "price": "9,99 €",
-      "yearlyPrice": "95,88 €",
+      "price": "€9,90",
+      "yearlyPrice": "€95,80",
       "data": "5GB Daten",
       "countries": "60+ Länder",
       "description": "Ideal für häufige Reisende",
@@ -202,47 +259,90 @@
         "Gültig für 30 Tage",
         "Nur Daten",
         "Keine Geschwindigkeitsbegrenzungen",
-        "24/7 Kundensupport",
-        "Multi-Geräte-Unterstützung"
+        "24/7 Kundenservice",
+        "Unterstützung für mehrere Geräte"
       ]
     },
     "max": {
       "name": "Max",
-      "price": "19,99 €",
-      "yearlyPrice": "191,88 €",
+      "price": "€19,90",
+      "yearlyPrice": "€191,80",
       "data": "Unbegrenzte Daten",
       "countries": "80+ Länder",
-      "description": "Am besten für digitale Nomaden",
+      "description": "Ideal für digitale Nomaden",
       "features": [
         "Gültig für 30 Tage",
         "Nur Daten",
         "Keine Geschwindigkeitsbegrenzungen",
-        "Prioritäts-24/7-Support",
-        "Multi-Geräte-Unterstützung",
-        "Familien-Sharing (bis zu 3 Geräte)"
+        "Prioritäts-Support 24/7",
+        "Unterstützung für mehrere Geräte",
+        "Familiennutzung (bis zu 3 Geräten)"
       ]
     },
     "cta": "Jetzt abonnieren",
-    "customPlan": "Benötigen Sie einen individuellen Tarif?",
+    "customPlan": "Benötigen Sie einen maßgeschneiderten Tarif?",
     "contactUs": "Kontaktieren Sie uns"
   },
   "faq": {
     "title": "Häufig gestellte Fragen",
     "subtitle": "Finden Sie Antworten auf häufige Fragen zu unserem Service",
     "q1": "Was ist eine eSIM?",
-    "a1": "Eine eSIM ist eine digitale SIM, mit der Sie einen Mobilfunktarif aktivieren können, ohne eine physische SIM-Karte verwenden zu müssen. Sie ist in den meisten neueren Smartphones eingebaut und ermöglicht einen einfacheren Wechsel zwischen Mobilfunkanbietern.",
+    "a1": "Eine eSIM ist eine digitale SIM-Karte, die es Ihnen ermöglicht, einen Mobilfunkplan zu aktivieren, ohne eine physische SIM-Karte verwenden zu müssen.",
     "q2": "Ist mein Gerät mit eSIM kompatibel?",
-    "a2": "Die meisten neueren Smartphones (iPhone XS und neuer, Google Pixel 3 und neuer, Samsung Galaxy S20 und neuer) unterstützen die eSIM-Technologie. Sie können die Spezifikationen Ihres Telefons überprüfen oder uns kontaktieren, um die Kompatibilität zu überprüfen.",
+    "a2": "Die meisten aktuellen Smartphones (iPhone XS und neuer, Google Pixel 3 und neuer, Samsung Galaxy S20 und neuer) sind mit der eSIM-Technologie kompatibel. Überprüfen Sie die Spezifikationen Ihres Telefons oder kontaktieren Sie uns für eine Kompatibilitätsprüfung.",
     "q3": "Wie aktiviere ich meine eSIM?",
-    "a3": "Nach dem Kauf erhalten Sie einen QR-Code per E-Mail. Gehen Sie auf Ihrem Telefon zu Einstellungen > Mobilfunk > Mobilfunktarif hinzufügen und scannen Sie dann den QR-Code. Folgen Sie den Anweisungen auf dem Bildschirm, um die Aktivierung abzuschließen.",
-    "q4": "Kann ich meine eSIM und physische SIM gleichzeitig nutzen?",
-    "a4": "Ja! Das ist einer der Vorteile der eSIM-Technologie. Sie können Ihre reguläre SIM für Anrufe und Textnachrichten aktiv halten, während Sie die eSIM für Daten beim Reisen nutzen.",
+    "a3": "Nach dem Kauf erhalten Sie einen QR-Code per E-Mail. Gehen Sie auf Ihrem Telefon zu Einstellungen > Mobile Daten > Plan hinzufügen und scannen Sie den QR-Code. Befolgen Sie die Anweisungen auf dem Bildschirm, um die Aktivierung abzuschließen.",
+    "q4": "Kann ich eSIM und physische SIM-Karte gleichzeitig verwenden?",
+    "a4": "Ja! Das ist einer der Vorteile der eSIM-Technologie. Sie können Ihre eSIM für Daten auf Reisen verwenden, während Sie Ihre reguläre SIM-Karte für Anrufe und SMS aktiv halten.",
     "q5": "Was passiert, wenn meine Daten aufgebraucht sind?",
-    "a5": "Wenn Ihr Datenkontingent erschöpft ist, können Sie über Ihr Konto-Dashboard zusätzliche Daten kaufen oder die automatische Verlängerung einrichten, um Unterbrechungen zu vermeiden.",
+    "a5": "Wenn Sie Ihr Datenlimit aufgebraucht haben, können Sie jederzeit über Ihr Konto-Dashboard zusätzliche Daten kaufen oder die automatische Verlängerung einrichten, um Unterbrechungen zu vermeiden.",
     "q6": "Kann ich mein Abonnement jederzeit kündigen?",
-    "a6": "Ja, Sie können Ihr Abonnement jederzeit über Ihr Konto-Dashboard kündigen. Es gibt keine Kündigungsgebühren oder langfristigen Verträge.",
-    "moreQuestions": "Haben Sie weitere Fragen?",
+    "a6": "Ja, Sie können Ihr Abonnement jederzeit über Ihr Konto-Dashboard kündigen. Es gibt keine Kündigungsgebühren oder langfristige Verträge.",
+    "moreQuestions": "Weitere Fragen?",
     "contactSupport": "Support kontaktieren"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Kontaktieren Sie unser Team für Support, Vertriebsinformationen oder Details zu globalen eSIM-Lösungen.",
+    "getInTouch": "Kontakt aufnehmen",
+    "getInTouchText": "Haben Sie Fragen zu unserem eSIM-Service? Unser Team steht Ihnen zur Verfügung. Kontaktieren Sie uns auf eine der folgenden Arten:",
+    "emailUs": "E-Mail senden",
+    "callUs": "Anrufen",
+    "office": "Büro",
+    "followUs": "Folgen Sie uns",
+    "sendMessage": "Nachricht senden",
+    "fullName": "Vollständiger Name",
+    "emailAddress": "E-Mail-Adresse",
+    "company": "Unternehmen",
+    "phone": "Telefon",
+    "subject": "Betreff",
+    "message": "Nachricht",
+    "placeholder": {
+      "name": "Max Mustermann",
+      "email": "max@beispiel.de",
+      "company": "Ihr Unternehmen (optional)",
+      "phone": "+49 123 456789",
+      "subject": "Wie können wir Ihnen helfen?",
+      "message": "Bitte geben Sie Details zu Ihrer Anfrage..."
+    },
+    "sending": "Wird gesendet...",
+    "sendButton": "Nachricht senden",
+    "success": {
+      "title": "Nachricht gesendet!",
+      "text": "Vielen Dank für Ihre Anfrage. Wir werden uns so schnell wie möglich bei Ihnen melden.",
+      "button": "Weitere Nachricht senden"
+    },
+    "error": "Beim Senden des Formulars ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.",
+    "faqSection": {
+      "title": "Häufig gestellte Fragen",
+      "text": "Finden Sie Antworten auf häufige Fragen zu unserem Service oder kontaktieren Sie das Support-Team für weitere Unterstützung.",
+      "button": "FAQ anzeigen"
+    },
+    "businessSection": {
+      "title": "Geschäftslösungen",
+      "text": "Suchen Sie nach Konnektivitätslösungen für Unternehmen? Kontaktieren Sie unser Geschäftsteam, um über maßgeschneiderte Tarife für Ihre Organisation zu sprechen.",
+      "button": "Geschäftstarife erkunden"
+    }
   },
   "footer": {
     "company": "Unternehmen",
@@ -255,18 +355,18 @@
     "contact": "Kontakt",
     "privacy": "Datenschutzrichtlinie",
     "terms": "Nutzungsbedingungen",
-    "legal": "Rechtliches",
+    "legal": "Rechtliche Informationen",
     "copyright": "© 2024 Romio Mobile. Alle Rechte vorbehalten.",
     "newsletter": {
       "title": "Bleiben Sie verbunden",
       "subtitle": "Abonnieren Sie unseren Newsletter für Updates und Sonderangebote",
-      "placeholder": "Ihre E-Mail-Adresse",
+      "placeholder": "E-Mail-Adresse",
       "button": "Abonnieren",
       "consent": "Mit dem Abonnieren stimmen Sie unserer Datenschutzrichtlinie zu"
     },
     "socialMedia": "Folgen Sie uns",
-    "disclaimer": "Die Verfügbarkeit des Dienstes kann je nach Standort und Gerätekompatibilität variieren.",
-    "tagline": "Global verbinden mit Romio eSIM-Technologie",
+    "disclaimer": "Die Serviceverfügbarkeit kann je nach Standort und Gerätekompatibilität variieren.",
+    "tagline": "Global verbunden mit Romios eSIM-Technologie",
     "currency": "EUR",
     "company": {
       "title": "Unternehmen",
@@ -305,5 +405,158 @@
   "locale": {
     "language": "Sprache",
     "currency": "Währung"
+  },
+  "currency": {
+    "title": "Währung",
+    "USD": "US-Dollar",
+    "EUR": "Euro",
+    "GBP": "Britisches Pfund",
+    "JPY": "Japanischer Yen",
+    "CAD": "Kanadischer Dollar",
+    "AUD": "Australischer Dollar",
+    "CNY": "Chinesischer Yuan",
+    "RUB": "Russischer Rubel",
+    "detectedCurrency": "Erkannte Währung",
+    "changeCurrency": "Währung ändern"
+  },
+  "validation": {
+    "required": "Dieses Feld ist erforderlich",
+    "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+    "minLength": "Bitte geben Sie mindestens {{count}} Zeichen ein",
+    "maxLength": "Bitte geben Sie höchstens {{count}} Zeichen ein",
+    "passwordMatch": "Passwörter stimmen nicht überein",
+    "phoneNumber": "Bitte geben Sie eine gültige Telefonnummer ein",
+    "onlyNumbers": "Bitte geben Sie nur Zahlen ein",
+    "onlyLetters": "Bitte geben Sie nur Buchstaben ein",
+    "onlyAlphanumeric": "Bitte geben Sie nur Buchstaben und Zahlen ein"
+  },
+  "errors": {
+    "generic": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
+    "notFound": "Seite nicht gefunden",
+    "unauthorized": "Sie haben keine Berechtigung, auf diese Seite zuzugreifen",
+    "forbidden": "Zugriff verweigert",
+    "networkError": "Netzwerkfehler. Bitte überprüfen Sie Ihre Internetverbindung.",
+    "serverError": "Serverfehler. Bitte versuchen Sie es später erneut.",
+    "noResults": "Keine Ergebnisse gefunden",
+    "sessionExpired": "Ihre Sitzung ist abgelaufen. Bitte melden Sie sich erneut an."
+  },
+  "alerts": {
+    "success": "Operation erfolgreich abgeschlossen",
+    "error": "Ein Fehler ist aufgetreten",
+    "warning": "Warnung",
+    "info": "Information",
+    "loginSuccess": "Anmeldung erfolgreich",
+    "logoutSuccess": "Abmeldung erfolgreich",
+    "signupSuccess": "Registrierung erfolgreich abgeschlossen",
+    "passwordReset": "Passwort zurückgesetzt",
+    "emailSent": "E-Mail erfolgreich gesendet",
+    "dataUpdated": "Daten erfolgreich aktualisiert",
+    "confirmDelete": "Sind Sie sicher, dass Sie dieses Element löschen möchten?"
+  },
+  "auth": {
+    "signin": "Anmelden",
+    "signup": "Registrieren",
+    "signout": "Abmelden",
+    "forgotPassword": "Passwort vergessen?",
+    "resetPassword": "Passwort zurücksetzen",
+    "createAccount": "Konto erstellen",
+    "alreadyHaveAccount": "Haben Sie bereits ein Konto?",
+    "dontHaveAccount": "Kein Konto?",
+    "orContinueWith": "Oder fortfahren mit",
+    "rememberMe": "Angemeldet bleiben",
+    "verifyEmail": "E-Mail bestätigen",
+    "verificationCode": "Bestätigungscode",
+    "resendCode": "Code erneut senden",
+    "emailVerified": "E-Mail erfolgreich bestätigt",
+    "passwordChanged": "Passwort erfolgreich geändert"
+  },
+  "account": {
+    "myAccount": "Mein Konto",
+    "profile": "Profil",
+    "personalInfo": "Persönliche Informationen",
+    "billing": "Abrechnung",
+    "paymentMethods": "Zahlungsmethoden",
+    "subscriptions": "Abonnements",
+    "security": "Sicherheit",
+    "notifications": "Benachrichtigungen",
+    "preferences": "Einstellungen",
+    "language": "Sprache",
+    "deleteAccount": "Konto löschen",
+    "confirmDeleteAccount": "Sind Sie sicher, dass Sie Ihr Konto löschen möchten? Diese Aktion kann nicht rückgängig gemacht werden.",
+    "updateProfile": "Profil aktualisieren",
+    "changePassword": "Passwort ändern",
+    "currentPassword": "Aktuelles Passwort",
+    "newPassword": "Neues Passwort",
+    "confirmPassword": "Passwort bestätigen"
+  },
+  "support": {
+    "customerSupport": "Kundenservice",
+    "contactUs": "Kontakt",
+    "contactSupport": "Support kontaktieren",
+    "helpCenter": "Hilfecenter",
+    "FAQs": "Häufig gestellte Fragen",
+    "getTouchWithUs": "Kontakt aufnehmen",
+    "supportTeam": "Unser Support-Team ist rund um die Uhr verfügbar",
+    "submitTicket": "Ticket einreichen",
+    "liveChat": "Live-Chat",
+    "emailUs": "E-Mail senden",
+    "phoneSupport": "Telefonischer Support",
+    "responseTime": "Typische Antwortzeit: innerhalb von 24 Stunden"
+  },
+  "checkout": {
+    "checkout": "Zur Kasse",
+    "orderSummary": "Bestellübersicht",
+    "paymentDetails": "Zahlungsdetails",
+    "billingAddress": "Rechnungsadresse",
+    "shippingAddress": "Lieferadresse",
+    "sameAsBilling": "Gleich wie Rechnungsadresse",
+    "paymentMethod": "Zahlungsmethode",
+    "creditCard": "Kreditkarte",
+    "payPal": "PayPal",
+    "applePay": "Apple Pay",
+    "googlePay": "Google Pay",
+    "cardNumber": "Kartennummer",
+    "nameOnCard": "Name auf der Karte",
+    "expiryDate": "Ablaufdatum",
+    "cvv": "CVV",
+    "placeOrder": "Bestellung aufgeben",
+    "termsConditions": "Allgemeine Geschäftsbedingungen",
+    "privacyPolicy": "Datenschutzrichtlinie",
+    "agreeToTerms": "Ich akzeptiere die Allgemeinen Geschäftsbedingungen und die Datenschutzrichtlinie",
+    "subtotal": "Zwischensumme",
+    "discount": "Rabatt",
+    "tax": "Steuer",
+    "total": "Gesamt",
+    "promoCode": "Gutscheincode",
+    "apply": "Anwenden",
+    "orderConfirmation": "Bestellbestätigung",
+    "thankYouOrder": "Vielen Dank für Ihre Bestellung!",
+    "orderNumber": "Bestellnummer",
+    "orderDate": "Bestelldatum",
+    "orderDetails": "Bestelldetails"
+  },
+  "product": {
+    "esim": "eSIM",
+    "dataPackage": "Datenpaket",
+    "dataLimit": "Datenlimit",
+    "validity": "Gültigkeit",
+    "coverage": "Abdeckung",
+    "networks": "Netzwerke",
+    "speed": "Geschwindigkeit",
+    "specifications": "Spezifikationen",
+    "compatibility": "Kompatibilität",
+    "addToCart": "In den Warenkorb",
+    "buyNow": "Jetzt kaufen",
+    "viewDetails": "Details anzeigen",
+    "compareESims": "eSIMs vergleichen",
+    "popularDestinations": "Beliebte Reiseziele",
+    "includedCountries": "Eingeschlossene Länder",
+    "travelDuration": "Reisedauer",
+    "dataNeeds": "Datenbedarf",
+    "highSpeed": "Hochgeschwindigkeit",
+    "unlimited": "Unbegrenzt",
+    "recommended": "Empfohlen",
+    "bestSeller": "Bestseller",
+    "specialOffer": "Sonderangebot"
   }
 } 

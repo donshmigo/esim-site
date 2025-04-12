@@ -51,7 +51,7 @@
       "dataRemaining": "残りデータ",
       "daysRemaining": "残り日数",
       "days": "日",
-      "topUpYourPlan": "プランをチャージ",
+      "topUpYourPlan": "プランを追加",
       "small": "小",
       "medium": "中",
       "large": "大"
@@ -68,7 +68,7 @@
       "changePlan": "プラン変更",
       "disableAutoRenew": "自動更新を無効にする",
       "paymentMethods": "支払い方法",
-      "visaEndingIn": "末尾が次の番号のVisa",
+      "visaEndingIn": "Visa、末尾",
       "expires": "有効期限",
       "edit": "編集"
     },
@@ -77,78 +77,318 @@
       "date": "日付",
       "description": "説明",
       "amount": "金額",
-      "status": "状態",
+      "status": "ステータス",
       "nov1": "2023年11月1日",
       "oct15": "2023年10月15日",
       "oct1": "2023年10月1日",
       "sep18": "2023年9月18日",
       "premiumGlobalPlan": "プレミアムグローバルプラン",
-      "dataTopUp": "データチャージ",
+      "dataTopUp": "データ追加",
       "completed": "完了"
     },
     "error": {
       "retry": "再試行",
       "pleaseLogIn": "ダッシュボードを表示するにはログインしてください。"
-    }
+    },
+    "welcome": "ようこそ、{{name}}さん！",
+    "overview": "概要",
+    "myESims": "マイeSIM",
+    "activeESims": "アクティブなeSIM",
+    "expiredESims": "期限切れのeSIM",
+    "upcomingTrips": "今後の旅行",
+    "recentActivity": "最近のアクティビティ",
+    "dataUsage": "データ使用量",
+    "validUntil": "有効期限",
+    "activateESim": "eSIMをアクティブ化",
+    "topUpData": "データを追加",
+    "manageESim": "eSIMを管理",
+    "buyNewESim": "新しいeSIMを購入",
+    "noActiveESims": "アクティブなeSIMはありません",
+    "viewAll": "すべて表示",
+    "help": "ヘルプ"
   },
   "hero": {
-    "title": "グローバル接続、月額自由",
-    "subtitle": "ローミング料金なしで80カ国以上で接続を維持",
-    "ctaButton": "始める",
-    "learnMore": "詳細を見る"
+    "title": "グローバル接続、",
+    "titleHighlight": "シンプル化",
+    "description": "単一のeSIMプランで80カ国以上で接続を維持。ローミング料金なし、複雑な設定なし、どこでも高速データに即時アクセス。",
+    "primaryCta": "接続する",
+    "secondaryCta": "使い方を見る",
+    "features": {
+      "global": {
+        "title": "グローバルカバレッジ",
+        "description": "80カ国以上"
+      },
+      "setup": {
+        "title": "即時設定",
+        "description": "数秒でアクティベート"
+      },
+      "speed": {
+        "title": "高速データ",
+        "description": "4G/5Gネットワーク"
+      }
+    },
+    "indicator": {
+      "status": "アクティブ",
+      "ready": "接続準備完了",
+      "network": "グローバルネットワーク",
+      "countries": "80カ国以上"
+    }
   },
   "features": {
-    "title": "なぜRomio eSIMを選ぶのか",
-    "subtitle": "最先端のeSIM技術で世界中でシームレスな接続を体験"
+    "title": "Romio eSIMを選ぶ理由",
+    "subtitle": "最先端のeSIM技術によるグローバルなシームレスな接続を体験",
+    "feature1": {
+      "title": "即時アクティベーション",
+      "description": "簡単なQRコードスキャンで数分で設定完了"
+    },
+    "feature2": {
+      "title": "グローバルカバレッジ",
+      "description": "80カ国以上で信頼性の高いサービス接続"
+    },
+    "feature3": {
+      "title": "国内・海外での使用",
+      "description": "国内と旅行中に使用可能、ローミング料金なし"
+    },
+    "feature4": {
+      "title": "24/7サポート",
+      "description": "グローバルチームからいつでもどこでもサポートを受けることができます"
+    },
+    "feature5": {
+      "title": "経済的",
+      "description": "従来のローミングプランと比較して最大70%節約"
+    },
+    "feature6": {
+      "title": "デュアルSIMサポート",
+      "description": "グローバルデータを使用しながらローカル番号を保持"
+    }
   },
   "howItWorks": {
     "title": "使い方",
-    "step1": "プランを選択",
-    "step2": "スマートフォンでQRコードをスキャン",
-    "step3": "アクティベーションして接続を維持"
+    "subtitle": "Romio eSIMでの接続は簡単で迅速",
+    "step1": {
+      "title": "プランを選択",
+      "description": "柔軟なデータプランから選択"
+    },
+    "step2": {
+      "title": "QRコードをスキャン",
+      "description": "携帯電話のカメラで提供されたQRコードをスキャン"
+    },
+    "step3": {
+      "title": "使用開始",
+      "description": "世界中のローカルネットワークに即時接続"
+    },
+    "step4": {
+      "title": "管理と追加",
+      "description": "ダッシュボードからいつでもデータを追加"
+    },
+    "cta": "今すぐ始める"
   },
   "coverage": {
     "title": "グローバルカバレッジ",
-    "subtitle": "世界80カ国以上でつながる",
-    "searchPlaceholder": "国を検索..."
+    "subtitle": "世界中の80カ国以上で接続",
+    "searchPlaceholder": "国を検索...",
+    "mapAlt": "カバレッジ地域を示す世界地図",
+    "moreCountries": "その他の国",
+    "covered": "カバレッジあり",
+    "notCovered": "カバレッジなし",
+    "resetMap": "地図ビューをリセット",
+    "zoomIn": "拡大",
+    "zoomOut": "縮小",
+    "world": "世界",
+    "regions": {
+      "europe": "ヨーロッパ",
+      "americas": "アメリカ",
+      "asiaPacific": "アジア太平洋",
+      "middleEastAfrica": "中東とアフリカ"
+    },
+    "viewAll": "すべての国を表示"
+  },
+  "techAnimation": {
+    "title": "次世代eSIM技術",
+    "subtitle": "最新のデジタルSIMカードイノベーションによるサポート",
+    "feature1": "即時デジタル配信",
+    "feature2": "すべてのeSIM対応電話と互換性",
+    "feature3": "エンドツーエンド暗号化セキュリティ",
+    "learnMore": "eSIMについてもっと知る",
+    "signalStrength": "信号強度",
+    "instantConnection": "即時接続",
+    "globalCoverage": "グローバルカバレッジ",
+    "countries": "国",
+    "uptime": "稼働時間",
+    "activation": "アクティベーション"
   },
   "pricing": {
     "title": "シンプルな料金",
-    "subtitle": "あなたに合ったプランを選んでください",
+    "subtitle": "あなたに合ったプランを選択",
     "monthly": "月額",
     "yearly": "年額",
     "savingTag": "20%節約",
     "mostPopular": "最も人気",
+    "commonFeatures": {
+      "feature1": "30日間有効",
+      "feature2": "高速データ（4G/5G）",
+      "feature3": "80カ国以上でのカバレッジ",
+      "feature4": "安全な接続",
+      "feature5": "グローバルカスタマーサポート",
+      "feature6": "24/7カスタマーサポート",
+      "feature7": "番号を保持",
+      "feature8": "メールサポート"
+    },
     "lite": {
       "name": "ライト",
-      "price": "¥500",
-      "description": "時々旅行する人に最適"
+      "price": "¥4,900",
+      "yearlyPrice": "¥47,800",
+      "data": "1GBデータ",
+      "countries": "40+カ国",
+      "description": "たまに旅行する人に最適",
+      "features": [
+        "30日間有効",
+        "データのみ",
+        "速度制限なし",
+        "基本的なカスタマーサポート"
+      ]
     },
     "traveler": {
       "name": "トラベラー",
-      "price": "¥1,000",
-      "description": "頻繁に旅行する人に最適"
+      "price": "¥9,900",
+      "yearlyPrice": "¥95,800",
+      "data": "5GBデータ",
+      "countries": "60+カ国",
+      "description": "頻繁に旅行する人に最適",
+      "features": [
+        "30日間有効",
+        "データのみ",
+        "速度制限なし",
+        "24/7カスタマーサポート",
+        "複数デバイスサポート"
+      ]
     },
     "max": {
       "name": "マックス",
-      "price": "¥2,000",
-      "description": "デジタルノマドに最適"
+      "price": "¥19,900",
+      "yearlyPrice": "¥191,800",
+      "data": "無制限データ",
+      "countries": "80+カ国",
+      "description": "デジタルノマドに最適",
+      "features": [
+        "30日間有効",
+        "データのみ",
+        "速度制限なし",
+        "24/7優先サポート",
+        "複数デバイスサポート",
+        "家族利用（最大3デバイス）"
+      ]
     },
-    "cta": "今すぐ登録"
+    "cta": "今すぐ登録",
+    "customPlan": "カスタムプランが必要ですか？",
+    "contactUs": "お問い合わせ"
   },
   "faq": {
     "title": "よくある質問",
+    "subtitle": "当社のサービスに関する一般的な質問の回答を見つける",
     "q1": "eSIMとは何ですか？",
-    "a1": "eSIMは物理的なSIMカードを使用せずに携帯プランを有効化できるデジタルSIMです。"
+    "a1": "eSIMは、物理的なSIMカードを使用せずにモバイルプランをアクティブ化できるデジタルSIMカードです。",
+    "q2": "私のデバイスはeSIMと互換性がありますか？",
+    "a2": "ほとんどの最新のスマートフォン（iPhone XS以降、Google Pixel 3以降、Samsung Galaxy S20以降）がeSIM技術をサポートしています。電話の仕様を確認するか、互換性を確認するためにご連絡ください。",
+    "q3": "eSIMをアクティブ化するにはどうすればよいですか？",
+    "a3": "購入後、メールでQRコードを受け取ります。電話で、設定 > セルラー > プランを追加に移動し、QRコードをスキャンします。画面の指示に従ってアクティベーションを完了します。",
+    "q4": "eSIMと物理的なSIMカードを同時に使用できますか？",
+    "a4": "はい！これがeSIM技術の利点の1つです。旅行中にデータ用にeSIMを使用しながら、通話やテキストメッセージ用に通常のSIMカードをアクティブにしておくことができます。",
+    "q5": "データを使い切った場合はどうなりますか？",
+    "a5": "データ制限を使い切った場合、アカウントダッシュボードからいつでもデータを追加購入するか、中断を避けるために自動更新を設定できます。",
+    "q6": "いつでもサブスクリプションをキャンセルできますか？",
+    "a6": "はい、アカウントダッシュボードからいつでもサブスクリプションをキャンセルできます。キャンセル料金や長期契約はありません。",
+    "moreQuestions": "他に質問がありますか？",
+    "contactSupport": "サポートに連絡"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "subtitle": "サポート、販売情報、またはグローバルeSIMソリューションについての詳細を入手するために、当社のチームにお問い合わせください。",
+    "getInTouch": "お問い合わせ",
+    "getInTouchText": "eSIMサービスについて質問がありますか？当社のチームがお手伝いする準備ができています。以下のいずれかの方法でご連絡ください。",
+    "emailUs": "メールを送信",
+    "callUs": "電話をかける",
+    "office": "オフィス",
+    "followUs": "フォローする",
+    "sendMessage": "メッセージを送信",
+    "fullName": "フルネーム",
+    "emailAddress": "メールアドレス",
+    "company": "会社",
+    "phone": "電話番号",
+    "subject": "件名",
+    "message": "メッセージ",
+    "placeholder": {
+      "name": "山田太郎",
+      "email": "yamada@example.com",
+      "company": "あなたの会社（任意）",
+      "phone": "+81 90 1234 5678",
+      "subject": "どのようにお手伝いできますか？",
+      "message": "お問い合わせの詳細を提供してください..."
+    },
+    "sending": "送信中...",
+    "sendButton": "メッセージを送信",
+    "success": {
+      "title": "メッセージが送信されました！",
+      "text": "お問い合わせありがとうございます。できるだけ早くご返信いたします。",
+      "button": "別のメッセージを送信"
+    },
+    "error": "フォームの送信中にエラーが発生しました。後でもう一度お試しください。",
+    "faqSection": {
+      "title": "よくある質問",
+      "text": "当社のサービスに関する一般的な質問の回答を見つけるか、追加のサポートのためにサポートチームにお問い合わせください。",
+      "button": "FAQを表示"
+    },
+    "businessSection": {
+      "title": "ビジネスソリューション",
+      "text": "ビジネス接続ソリューションをお探しですか？組織のカスタムプランについて議論するためにビジネスチームにお問い合わせください。",
+      "button": "ビジネスプランを探索"
+    }
   },
   "footer": {
-    "company": "会社情報",
+    "company": "会社",
     "about": "会社概要",
     "careers": "採用情報",
+    "blog": "ブログ",
+    "press": "プレス",
+    "support": "サポート",
+    "help": "ヘルプセンター",
+    "contact": "お問い合わせ",
     "privacy": "プライバシーポリシー",
     "terms": "利用規約",
-    "contact": "お問い合わせ",
-    "copyright": "© 2024 Romio Mobile. All rights reserved."
+    "legal": "法的情報",
+    "copyright": "© 2024 Romio Mobile. すべての権利を保有。",
+    "newsletter": {
+      "title": "つながりを保つ",
+      "subtitle": "更新と特別オファーを受け取るためにニュースレターを購読",
+      "placeholder": "メールアドレス",
+      "button": "購読",
+      "consent": "購読することで、プライバシーポリシーに同意したことになります"
+    },
+    "socialMedia": "フォローする",
+    "disclaimer": "サービスの可用性は、場所とデバイスの互換性によって異なる場合があります。",
+    "tagline": "Romio eSIM技術でグローバルに接続",
+    "currency": "JPY",
+    "company": {
+      "title": "会社",
+      "about": "会社概要",
+      "careers": "採用情報",
+      "press": "プレス",
+      "blog": "ブログ"
+    },
+    "product": {
+      "title": "製品",
+      "features": "機能",
+      "pricing": "料金",
+      "coverage": "対応エリア",
+      "support": "サポート"
+    },
+    "resources": {
+      "title": "リソース",
+      "helpCenter": "ヘルプセンター",
+      "partnerProgram": "パートナープログラム",
+      "privacyPolicy": "プライバシーポリシー",
+      "termsOfService": "利用規約"
+    }
   },
   "language": {
     "en": "英語",
@@ -165,5 +405,158 @@
   "locale": {
     "language": "言語",
     "currency": "通貨"
+  },
+  "currency": {
+    "title": "通貨",
+    "USD": "米ドル",
+    "EUR": "ユーロ",
+    "GBP": "英ポンド",
+    "JPY": "日本円",
+    "CAD": "カナダドル",
+    "AUD": "オーストラリアドル",
+    "CNY": "中国元",
+    "RUB": "ロシアルーブル",
+    "detectedCurrency": "検出された通貨",
+    "changeCurrency": "通貨を変更"
+  },
+  "validation": {
+    "required": "このフィールドは必須です",
+    "email": "有効なメールアドレスを入力してください",
+    "minLength": "少なくとも{{count}}文字を入力してください",
+    "maxLength": "{{count}}文字以下で入力してください",
+    "passwordMatch": "パスワードが一致しません",
+    "phoneNumber": "有効な電話番号を入力してください",
+    "onlyNumbers": "数字のみを入力してください",
+    "onlyLetters": "文字のみを入力してください",
+    "onlyAlphanumeric": "文字と数字のみを入力してください"
+  },
+  "errors": {
+    "generic": "エラーが発生しました。後でもう一度お試しください。",
+    "notFound": "ページが見つかりません",
+    "unauthorized": "このページにアクセスする権限がありません",
+    "forbidden": "アクセスが拒否されました",
+    "networkError": "ネットワークエラー。インターネット接続を確認してください。",
+    "serverError": "サーバーエラー。後でもう一度お試しください。",
+    "noResults": "結果が見つかりません",
+    "sessionExpired": "セッションが期限切れです。再度ログインしてください。"
+  },
+  "alerts": {
+    "success": "操作が正常に完了しました",
+    "error": "エラーが発生しました",
+    "warning": "警告",
+    "info": "情報",
+    "loginSuccess": "ログインに成功しました",
+    "logoutSuccess": "ログアウトに成功しました",
+    "signupSuccess": "登録が正常に完了しました",
+    "passwordReset": "パスワードがリセットされました",
+    "emailSent": "メールが正常に送信されました",
+    "dataUpdated": "データが正常に更新されました",
+    "confirmDelete": "このアイテムを削除してもよろしいですか？"
+  },
+  "auth": {
+    "signin": "ログイン",
+    "signup": "登録",
+    "signout": "ログアウト",
+    "forgotPassword": "パスワードをお忘れですか？",
+    "resetPassword": "パスワードをリセット",
+    "createAccount": "アカウントを作成",
+    "alreadyHaveAccount": "すでにアカウントをお持ちですか？",
+    "dontHaveAccount": "アカウントをお持ちでないですか？",
+    "orContinueWith": "または次で続行",
+    "rememberMe": "ログイン情報を保存",
+    "verifyEmail": "メールを確認",
+    "verificationCode": "確認コード",
+    "resendCode": "コードを再送信",
+    "emailVerified": "メールが正常に確認されました",
+    "passwordChanged": "パスワードが正常に変更されました"
+  },
+  "account": {
+    "myAccount": "マイアカウント",
+    "profile": "プロフィール",
+    "personalInfo": "個人情報",
+    "billing": "請求",
+    "paymentMethods": "支払い方法",
+    "subscriptions": "サブスクリプション",
+    "security": "セキュリティ",
+    "notifications": "通知",
+    "preferences": "設定",
+    "language": "言語",
+    "deleteAccount": "アカウントを削除",
+    "confirmDeleteAccount": "アカウントを削除してもよろしいですか？この操作は元に戻せません。",
+    "updateProfile": "プロフィールを更新",
+    "changePassword": "パスワードを変更",
+    "currentPassword": "現在のパスワード",
+    "newPassword": "新しいパスワード",
+    "confirmPassword": "パスワードを確認"
+  },
+  "support": {
+    "customerSupport": "カスタマーサポート",
+    "contactUs": "お問い合わせ",
+    "contactSupport": "サポートに連絡",
+    "helpCenter": "ヘルプセンター",
+    "FAQs": "よくある質問",
+    "getTouchWithUs": "お問い合わせ",
+    "supportTeam": "サポートチームは24/7対応しています",
+    "submitTicket": "チケットを提出",
+    "liveChat": "ライブチャット",
+    "emailUs": "メールを送信",
+    "phoneSupport": "電話サポート",
+    "responseTime": "通常の応答時間：24時間以内"
+  },
+  "checkout": {
+    "checkout": "チェックアウト",
+    "orderSummary": "注文概要",
+    "paymentDetails": "支払い詳細",
+    "billingAddress": "請求先住所",
+    "shippingAddress": "配送先住所",
+    "sameAsBilling": "請求先住所と同じ",
+    "paymentMethod": "支払い方法",
+    "creditCard": "クレジットカード",
+    "payPal": "PayPal",
+    "applePay": "Apple Pay",
+    "googlePay": "Google Pay",
+    "cardNumber": "カード番号",
+    "nameOnCard": "カード名義人",
+    "expiryDate": "有効期限",
+    "cvv": "CVV",
+    "placeOrder": "注文する",
+    "termsConditions": "利用規約",
+    "privacyPolicy": "プライバシーポリシー",
+    "agreeToTerms": "利用規約とプライバシーポリシーに同意します",
+    "subtotal": "小計",
+    "discount": "割引",
+    "tax": "税",
+    "total": "合計",
+    "promoCode": "プロモーションコード",
+    "apply": "適用",
+    "orderConfirmation": "注文確認",
+    "thankYouOrder": "ご注文ありがとうございます！",
+    "orderNumber": "注文番号",
+    "orderDate": "注文日",
+    "orderDetails": "注文詳細"
+  },
+  "product": {
+    "esim": "eSIM",
+    "dataPackage": "データパッケージ",
+    "dataLimit": "データ制限",
+    "validity": "有効期限",
+    "coverage": "対応エリア",
+    "networks": "ネットワーク",
+    "speed": "速度",
+    "specifications": "仕様",
+    "compatibility": "互換性",
+    "addToCart": "カートに追加",
+    "buyNow": "今すぐ購入",
+    "viewDetails": "詳細を表示",
+    "compareESims": "eSIMを比較",
+    "popularDestinations": "人気の目的地",
+    "includedCountries": "含まれる国",
+    "travelDuration": "旅行期間",
+    "dataNeeds": "データニーズ",
+    "highSpeed": "高速",
+    "unlimited": "無制限",
+    "recommended": "おすすめ",
+    "bestSeller": "ベストセラー",
+    "specialOffer": "特別オファー"
   }
 } 

@@ -1,15 +1,13 @@
-import React, { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+// import { useEffect } from 'react';
+// import { useTranslation } from 'react-i18next';
 import Header from '../../layouts/Header';
 import Footer from '../../layouts/Footer';
 
 const BusinessPage: React.FC = () => {
-  const { t } = useTranslation();
-
   // Scroll to top on mount
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   return (
     <>

@@ -14,7 +14,7 @@ interface Plan {
 }
 
 const Plans: React.FC = () => {
-  const { currentUser } = useAuth();
+  const { currentUser, loginWithGoogle } = useAuth();
   const [plans, setPlans] = useState<Plan[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);

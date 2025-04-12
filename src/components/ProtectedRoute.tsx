@@ -1,5 +1,5 @@
 import { ReactNode, useEffect } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { useAuth } from '../firebase/AuthContext';
 
 interface ProtectedRouteProps {
@@ -8,7 +8,6 @@ interface ProtectedRouteProps {
 
 const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
   const { currentUser, loading } = useAuth();
-  const navigate = useNavigate();
   
   useEffect(() => {
     console.log('ProtectedRoute: Authentication status', { 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useAuth } from '../../firebase/AuthContext';
+// import { useAuth } from '../../firebase/AuthContext';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase/firebase';
 import { useTranslation } from 'react-i18next';
@@ -17,7 +17,6 @@ interface Plan {
 
 const Plans: React.FC = () => {
   const { t } = useTranslation();
-  const { currentUser } = useAuth();
   const navigate = useNavigate();
   const [plans, setPlans] = useState<Plan[]>([]);
   const [loading, setLoading] = useState<boolean>(true);

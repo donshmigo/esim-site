@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ArrowRightIcon, SignalIcon, DevicePhoneMobileIcon, GlobeAltIcon, BoltIcon, ClockIcon } from '@heroicons/react/24/outline';
-import { useTranslation } from 'react-i18next';
 
 const PhoneHero = () => {
-  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   
   useEffect(() => {

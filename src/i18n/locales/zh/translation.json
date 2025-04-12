@@ -1,14 +1,14 @@
 {
   "header": {
     "features": "功能",
-    "howItWorks": "工作原理",
+    "howItWorks": "使用方法",
     "coverage": "覆盖范围",
     "pricing": "价格",
     "faq": "常见问题",
     "login": "登录",
     "subscribe": "订阅",
     "dashboard": "我的账户",
-    "logout": "退出登录"
+    "logout": "退出"
   },
   "dashboard": {
     "sidebar": {
@@ -27,7 +27,7 @@
     "plans": {
       "availablePlans": "可用套餐",
       "premiumPlan": "高级套餐",
-      "globalConnectivity": "高速数据全球连接",
+      "globalConnectivity": "全球高速互联网连接",
       "data": "数据",
       "validFor30Days": "有效期30天",
       "coverageIn150Countries": "覆盖150多个国家",
@@ -42,34 +42,34 @@
       "phone": "电话",
       "location": "位置",
       "unitedStates": "美国",
-      "memberSince": "会员开始日期",
+      "memberSince": "会员时间",
       "january2023": "2023年1月"
     },
     "usage": {
       "planUsage": "套餐使用情况",
-      "dataUsed": "已使用数据",
+      "dataUsed": "已用数据",
       "dataRemaining": "剩余数据",
       "daysRemaining": "剩余天数",
       "days": "天",
-      "topUpYourPlan": "充值您的套餐",
+      "topUpYourPlan": "充值套餐",
       "small": "小",
       "medium": "中",
       "large": "大"
     },
     "settings": {
       "planSettings": "套餐设置",
-      "premiumGlobalPlan": "全球高级套餐",
+      "premiumGlobalPlan": "高级全球套餐",
       "startDate": "开始日期",
       "november1": "2023年11月1日",
       "endDate": "结束日期",
       "december1": "2023年12月1日",
-      "autoRenew": "自动续订",
+      "autoRenew": "自动续费",
       "enabled": "已启用",
       "changePlan": "更改套餐",
-      "disableAutoRenew": "禁用自动续订",
+      "disableAutoRenew": "禁用自动续费",
       "paymentMethods": "支付方式",
-      "visaEndingIn": "尾号为",
-      "expires": "过期",
+      "visaEndingIn": "Visa卡，尾号",
+      "expires": "到期",
       "edit": "编辑"
     },
     "billing": {
@@ -82,73 +82,292 @@
       "oct15": "2023年10月15日",
       "oct1": "2023年10月1日",
       "sep18": "2023年9月18日",
-      "premiumGlobalPlan": "全球高级套餐",
+      "premiumGlobalPlan": "高级全球套餐",
       "dataTopUp": "数据充值",
       "completed": "已完成"
     },
     "error": {
       "retry": "重试",
       "pleaseLogIn": "请登录以查看您的仪表板。"
-    }
+    },
+    "welcome": "欢迎，{{name}}！",
+    "overview": "概览",
+    "myESims": "我的eSIM",
+    "activeESims": "活跃的eSIM",
+    "expiredESims": "过期的eSIM",
+    "upcomingTrips": "即将到来的旅行",
+    "recentActivity": "最近活动",
+    "dataUsage": "数据使用",
+    "validUntil": "有效期至",
+    "activateESim": "激活eSIM",
+    "topUpData": "充值数据",
+    "manageESim": "管理eSIM",
+    "buyNewESim": "购买新eSIM",
+    "noActiveESims": "您没有活跃的eSIM",
+    "viewAll": "查看全部",
+    "help": "帮助"
   },
   "hero": {
-    "title": "全球连接，月度自由",
-    "subtitle": "在80多个国家保持连接，无漫游费",
+    "title": "全球连接，简单化",
+    "subtitle": "在80多个国家保持连接，无需漫游费用",
     "ctaButton": "开始使用",
     "learnMore": "了解更多"
   },
   "features": {
     "title": "为什么选择Romio eSIM",
-    "subtitle": "通过我们先进的eSIM技术，体验全球无缝连接"
+    "subtitle": "体验我们先进的eSIM技术带来的全球无缝连接",
+    "feature1": {
+      "title": "即时激活",
+      "description": "通过简单的二维码扫描，几分钟内完成设置"
+    },
+    "feature2": {
+      "title": "全球覆盖",
+      "description": "在80多个国家提供可靠的服务连接"
+    },
+    "feature3": {
+      "title": "国内和国外使用",
+      "description": "在您的国家和旅行期间都能使用，无需漫游费用"
+    },
+    "feature4": {
+      "title": "24/7支持",
+      "description": "随时随地从我们的全球团队获得帮助"
+    },
+    "feature5": {
+      "title": "经济实惠",
+      "description": "比传统漫游套餐节省高达70%"
+    },
+    "feature6": {
+      "title": "双卡支持",
+      "description": "使用我们的全球数据时保留您的本地号码"
+    }
   },
   "howItWorks": {
-    "title": "工作原理",
-    "step1": "选择您的套餐",
-    "step2": "用手机扫描二维码",
-    "step3": "激活并保持连接"
+    "title": "使用方法",
+    "subtitle": "使用Romio eSIM连接简单快捷",
+    "step1": {
+      "title": "选择您的套餐",
+      "description": "从我们灵活的数据套餐中选择"
+    },
+    "step2": {
+      "title": "扫描二维码",
+      "description": "使用手机相机扫描提供的二维码"
+    },
+    "step3": {
+      "title": "开始使用",
+      "description": "立即连接到全球本地网络"
+    },
+    "step4": {
+      "title": "管理和充值",
+      "description": "随时通过您的仪表板添加更多数据"
+    },
+    "cta": "立即开始"
   },
   "coverage": {
     "title": "全球覆盖",
-    "subtitle": "连接全球80多个国家",
-    "searchPlaceholder": "搜索国家..."
+    "subtitle": "在全球80多个国家连接",
+    "searchPlaceholder": "搜索国家...",
+    "mapAlt": "显示覆盖区域的世界地图",
+    "moreCountries": "更多国家",
+    "covered": "有覆盖",
+    "notCovered": "无覆盖",
+    "resetMap": "重置地图视图",
+    "zoomIn": "放大",
+    "zoomOut": "缩小",
+    "world": "世界",
+    "regions": {
+      "europe": "欧洲",
+      "americas": "美洲",
+      "asiaPacific": "亚太地区",
+      "middleEastAfrica": "中东和非洲"
+    },
+    "viewAll": "查看所有国家"
+  },
+  "techAnimation": {
+    "title": "下一代eSIM技术",
+    "subtitle": "由最新的数字SIM卡创新支持",
+    "feature1": "即时数字交付",
+    "feature2": "兼容所有eSIM手机",
+    "feature3": "端到端加密安全",
+    "learnMore": "了解更多关于eSIM",
+    "signalStrength": "信号强度",
+    "instantConnection": "即时连接",
+    "globalCoverage": "全球覆盖",
+    "countries": "国家",
+    "uptime": "运行时间",
+    "activation": "激活"
   },
   "pricing": {
     "title": "简单定价",
     "subtitle": "选择适合您的套餐",
-    "monthly": "月付",
-    "yearly": "年付",
+    "monthly": "每月",
+    "yearly": "每年",
     "savingTag": "节省20%",
     "mostPopular": "最受欢迎",
+    "commonFeatures": {
+      "feature1": "有效期30天",
+      "feature2": "高速数据（4G/5G）",
+      "feature3": "覆盖80多个国家",
+      "feature4": "安全连接",
+      "feature5": "全球客户支持",
+      "feature6": "24/7客户支持",
+      "feature7": "保留您的号码",
+      "feature8": "电子邮件支持"
+    },
     "lite": {
       "name": "轻量版",
-      "price": "¥30",
-      "description": "适合偶尔旅行者"
+      "price": "¥49",
+      "yearlyPrice": "¥478",
+      "data": "1GB数据",
+      "countries": "40+国家",
+      "description": "适合偶尔旅行者",
+      "features": [
+        "有效期30天",
+        "仅数据",
+        "无速度限制",
+        "基本客户支持"
+      ]
     },
     "traveler": {
       "name": "旅行者",
-      "price": "¥60",
-      "description": "适合经常旅行者"
+      "price": "¥99",
+      "yearlyPrice": "¥958",
+      "data": "5GB数据",
+      "countries": "60+国家",
+      "description": "适合经常旅行者",
+      "features": [
+        "有效期30天",
+        "仅数据",
+        "无速度限制",
+        "24/7客户支持",
+        "多设备支持"
+      ]
     },
     "max": {
-      "name": "高级版",
-      "price": "¥120",
-      "description": "最适合数字游民"
+      "name": "最大版",
+      "price": "¥199",
+      "yearlyPrice": "¥1,918",
+      "data": "无限数据",
+      "countries": "80+国家",
+      "description": "数字游民的最佳选择",
+      "features": [
+        "有效期30天",
+        "仅数据",
+        "无速度限制",
+        "24/7优先支持",
+        "多设备支持",
+        "家庭使用（最多3个设备）"
+      ]
     },
-    "cta": "立即订阅"
+    "cta": "立即订阅",
+    "customPlan": "需要定制套餐？",
+    "contactUs": "联系我们"
   },
   "faq": {
     "title": "常见问题",
+    "subtitle": "查找关于我们服务的常见问题答案",
     "q1": "什么是eSIM？",
-    "a1": "eSIM是一种数字SIM卡，可让您激活蜂窝计划而无需使用物理SIM卡。"
+    "a1": "eSIM是一种数字SIM卡，允许您无需使用实体SIM卡即可激活移动套餐。",
+    "q2": "我的设备是否兼容eSIM？",
+    "a2": "大多数现代智能手机（iPhone XS及更新机型、Google Pixel 3及更新机型、Samsung Galaxy S20及更新机型）都支持eSIM技术。您可以查看手机规格或联系我们检查兼容性。",
+    "q3": "如何激活我的eSIM？",
+    "a3": "购买后，您将通过电子邮件收到二维码。在手机上，进入设置 > 蜂窝网络 > 添加套餐，然后扫描二维码。按照屏幕上的说明完成激活。",
+    "q4": "我可以同时使用eSIM和实体SIM卡吗？",
+    "a4": "是的！这是eSIM技术的优势之一。您可以在旅行时保留普通SIM卡用于通话和短信，同时使用eSIM获取数据。",
+    "q5": "当我的数据用完时会发生什么？",
+    "a5": "当您的数据限额用完时，您可以随时通过账户仪表板购买更多数据，或设置自动续费以避免中断。",
+    "q6": "我可以随时取消订阅吗？",
+    "a6": "是的，您可以随时通过账户仪表板取消订阅。没有取消费用或长期合同。",
+    "moreQuestions": "还有其他问题？",
+    "contactSupport": "联系支持"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "联系我们的团队获取支持、销售信息或了解更多关于我们的全球eSIM解决方案。",
+    "getInTouch": "联系我们",
+    "getInTouchText": "对我们的eSIM服务有疑问？我们的团队随时准备帮助。使用以下任一方式联系我们。",
+    "emailUs": "给我们发电子邮件",
+    "callUs": "给我们打电话",
+    "office": "办公室",
+    "followUs": "关注我们",
+    "sendMessage": "发送消息",
+    "fullName": "全名",
+    "emailAddress": "电子邮件地址",
+    "company": "公司",
+    "phone": "电话号码",
+    "subject": "主题",
+    "message": "消息",
+    "placeholder": {
+      "name": "张三",
+      "email": "zhangsan@example.com",
+      "company": "您的公司（可选）",
+      "phone": "+86 123 4567 8900",
+      "subject": "我们如何帮助您？",
+      "message": "请提供您的查询详情..."
+    },
+    "sending": "发送中...",
+    "sendButton": "发送消息",
+    "success": {
+      "title": "消息已发送！",
+      "text": "感谢您联系我们。我们会尽快回复您的消息。",
+      "button": "发送另一条消息"
+    },
+    "error": "发送表单时出错。请稍后重试。",
+    "faqSection": {
+      "title": "常见问题",
+      "text": "查找关于我们服务的常见问题答案，或联系我们的支持团队获取额外帮助。",
+      "button": "查看常见问题"
+    },
+    "businessSection": {
+      "title": "企业解决方案",
+      "text": "寻找企业连接解决方案？联系我们的业务团队讨论您组织的定制套餐。",
+      "button": "探索企业套餐"
+    }
   },
   "footer": {
     "company": "公司",
     "about": "关于我们",
-    "careers": "招聘",
-    "privacy": "隐私政策",
-    "terms": "服务条款",
+    "careers": "职业机会",
+    "blog": "博客",
+    "press": "新闻",
+    "support": "支持",
+    "help": "帮助中心",
     "contact": "联系我们",
-    "copyright": "© 2024 Romio Mobile. 保留所有权利。"
+    "privacy": "隐私政策",
+    "terms": "使用条款",
+    "legal": "法律信息",
+    "copyright": "© 2024 Romio Mobile. 保留所有权利。",
+    "newsletter": {
+      "title": "保持联系",
+      "subtitle": "订阅我们的新闻通讯获取更新和特别优惠",
+      "placeholder": "您的电子邮件地址",
+      "button": "订阅",
+      "consent": "订阅即表示您同意我们的隐私政策"
+    },
+    "socialMedia": "关注我们",
+    "disclaimer": "服务可用性可能因您的位置和设备兼容性而异。",
+    "tagline": "使用Romio eSIM技术全球连接",
+    "currency": "CNY",
+    "company": {
+      "title": "公司",
+      "about": "关于我们",
+      "careers": "职业机会",
+      "press": "新闻",
+      "blog": "博客"
+    },
+    "product": {
+      "title": "产品",
+      "features": "功能",
+      "pricing": "价格",
+      "coverage": "覆盖范围",
+      "support": "支持"
+    },
+    "resources": {
+      "title": "资源",
+      "helpCenter": "帮助中心",
+      "partnerProgram": "合作伙伴计划",
+      "privacyPolicy": "隐私政策",
+      "termsOfService": "服务条款"
+    }
   },
   "language": {
     "en": "英语",
@@ -165,5 +384,158 @@
   "locale": {
     "language": "语言",
     "currency": "货币"
+  },
+  "currency": {
+    "title": "货币",
+    "USD": "美元",
+    "EUR": "欧元",
+    "GBP": "英镑",
+    "JPY": "日元",
+    "CAD": "加元",
+    "AUD": "澳元",
+    "CNY": "人民币",
+    "RUB": "卢布",
+    "detectedCurrency": "检测到的货币",
+    "changeCurrency": "更改货币"
+  },
+  "validation": {
+    "required": "此字段为必填项",
+    "email": "请输入有效的电子邮件地址",
+    "minLength": "请输入至少{{count}}个字符",
+    "maxLength": "请输入不超过{{count}}个字符",
+    "passwordMatch": "密码不匹配",
+    "phoneNumber": "请输入有效的电话号码",
+    "onlyNumbers": "请只输入数字",
+    "onlyLetters": "请只输入字母",
+    "onlyAlphanumeric": "请只输入字母和数字"
+  },
+  "errors": {
+    "generic": "发生错误。请稍后重试。",
+    "notFound": "页面未找到",
+    "unauthorized": "您无权访问此页面",
+    "forbidden": "访问被拒绝",
+    "networkError": "网络错误。请检查您的网络连接。",
+    "serverError": "服务器错误。请稍后重试。",
+    "noResults": "未找到结果",
+    "sessionExpired": "您的会话已过期。请重新登录。"
+  },
+  "alerts": {
+    "success": "操作成功完成",
+    "error": "发生错误",
+    "warning": "警告",
+    "info": "信息",
+    "loginSuccess": "登录成功",
+    "logoutSuccess": "退出成功",
+    "signupSuccess": "注册成功完成",
+    "passwordReset": "您的密码已重置",
+    "emailSent": "电子邮件已成功发送",
+    "dataUpdated": "数据已成功更新",
+    "confirmDelete": "您确定要删除此项目吗？"
+  },
+  "auth": {
+    "signin": "登录",
+    "signup": "注册",
+    "signout": "退出",
+    "forgotPassword": "忘记密码？",
+    "resetPassword": "重置密码",
+    "createAccount": "创建账户",
+    "alreadyHaveAccount": "已有账户？",
+    "dontHaveAccount": "没有账户？",
+    "orContinueWith": "或继续使用",
+    "rememberMe": "记住我",
+    "verifyEmail": "验证您的电子邮件",
+    "verificationCode": "验证码",
+    "resendCode": "重新发送代码",
+    "emailVerified": "电子邮件验证成功",
+    "passwordChanged": "密码更改成功"
+  },
+  "account": {
+    "myAccount": "我的账户",
+    "profile": "个人资料",
+    "personalInfo": "个人信息",
+    "billing": "账单",
+    "paymentMethods": "支付方式",
+    "subscriptions": "订阅",
+    "security": "安全",
+    "notifications": "通知",
+    "preferences": "偏好设置",
+    "language": "语言",
+    "deleteAccount": "删除账户",
+    "confirmDeleteAccount": "您确定要删除您的账户吗？此操作无法撤销。",
+    "updateProfile": "更新个人资料",
+    "changePassword": "更改密码",
+    "currentPassword": "当前密码",
+    "newPassword": "新密码",
+    "confirmPassword": "确认密码"
+  },
+  "support": {
+    "customerSupport": "客户支持",
+    "contactUs": "联系我们",
+    "contactSupport": "联系支持",
+    "helpCenter": "帮助中心",
+    "FAQs": "常见问题",
+    "getTouchWithUs": "联系我们",
+    "supportTeam": "我们的支持团队24/7待命",
+    "submitTicket": "提交工单",
+    "liveChat": "在线聊天",
+    "emailUs": "给我们发电子邮件",
+    "phoneSupport": "电话支持",
+    "responseTime": "典型响应时间：24小时内"
+  },
+  "checkout": {
+    "checkout": "结账",
+    "orderSummary": "订单摘要",
+    "paymentDetails": "支付详情",
+    "billingAddress": "账单地址",
+    "shippingAddress": "配送地址",
+    "sameAsBilling": "与账单地址相同",
+    "paymentMethod": "支付方式",
+    "creditCard": "信用卡",
+    "payPal": "PayPal",
+    "applePay": "Apple Pay",
+    "googlePay": "Google Pay",
+    "cardNumber": "卡号",
+    "nameOnCard": "卡片上的姓名",
+    "expiryDate": "有效期",
+    "cvv": "CVV",
+    "placeOrder": "下单",
+    "termsConditions": "条款和条件",
+    "privacyPolicy": "隐私政策",
+    "agreeToTerms": "我同意条款和条件和隐私政策",
+    "subtotal": "小计",
+    "discount": "折扣",
+    "tax": "税费",
+    "total": "总计",
+    "promoCode": "优惠码",
+    "apply": "应用",
+    "orderConfirmation": "订单确认",
+    "thankYouOrder": "感谢您的订单！",
+    "orderNumber": "订单号",
+    "orderDate": "订单日期",
+    "orderDetails": "订单详情"
+  },
+  "product": {
+    "esim": "eSIM",
+    "dataPackage": "数据套餐",
+    "dataLimit": "数据限额",
+    "validity": "有效期",
+    "coverage": "覆盖范围",
+    "networks": "网络",
+    "speed": "速度",
+    "specifications": "规格",
+    "compatibility": "兼容性",
+    "addToCart": "添加到购物车",
+    "buyNow": "立即购买",
+    "viewDetails": "查看详情",
+    "compareESims": "比较eSIM",
+    "popularDestinations": "热门目的地",
+    "includedCountries": "包含的国家",
+    "travelDuration": "旅行时长",
+    "dataNeeds": "数据需求",
+    "highSpeed": "高速",
+    "unlimited": "无限",
+    "recommended": "推荐",
+    "bestSeller": "畅销",
+    "specialOffer": "特别优惠"
   }
 } 

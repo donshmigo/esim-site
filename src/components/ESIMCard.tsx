@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ESIM } from '../services/api';
+// import { ESIM } from '../services/api';
 import useESIM from '../hooks/useESIM';
 
 interface ESIMCardProps {

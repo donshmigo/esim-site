@@ -1,10 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { 
-  detectCountry, 
-  getLanguageFromCountry, 
-  getCurrencyFromCountry 
-} from '../utils/locationDetection';
+import { detectCountry } from '../utils/locationDetection';
 import { useCurrency } from './useCurrency';
 
 type LocalizationInfo = {

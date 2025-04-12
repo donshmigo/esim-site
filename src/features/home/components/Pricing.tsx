@@ -1,20 +1,17 @@
 import { CheckIcon, ArrowRightIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useCurrency } from '../../../contexts/CurrencyContext';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Pricing() {
   const { t } = useTranslation();
   const { formatPrice, convertFromUSD } = useCurrency();
   const [activeIndex, setActiveIndex] = useState(1); // Default to the popular plan (Traveler)
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [isScrolling, setIsScrolling] = useState(false);
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchStartY, setTouchStartY] = useState(0);
   const [isHorizontalSwipe, setIsHorizontalSwipe] = useState(false);
   const [swipeLocked, setSwipeLocked] = useState(false);
-  const navigate = useNavigate();
 
   const plans = [
     {
@@ -140,19 +137,6 @@ export default function Pricing() {
     setActiveIndex(index);
   };
 
-  // Handle scroll events to update the active index
-  const handleScroll = () => {
-    if (scrollContainerRef.current && !isScrolling) {
-      const scrollLeft = scrollContainerRef.current.scrollLeft;
-      const cardWidth = scrollContainerRef.current.scrollWidth / plansWithFallback.length;
-      const newIndex = Math.round(scrollLeft / cardWidth);
-      
-      if (newIndex !== activeIndex) {
-        setActiveIndex(newIndex);
-      }
-    }
-  };
-
   // Handle touch events for swipe gestures
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStartX(e.touches[0].clientX);
@@ -207,11 +191,6 @@ export default function Pricing() {
     // Reset states
     setIsHorizontalSwipe(false);
     setSwipeLocked(false);
-  };
-
-  // Instead of handleSubscribe, let's use a direct navigation to plan pages
-  const navigateToPlan = (path: string) => {
-    navigate(path);
   };
 
   // Update the data attribute when the active index changes

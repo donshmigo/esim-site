@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../firebase/AuthContext';
-import { collection, query, where, getDocs, doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase/firebase';
 import TopUp from '../../components/dashboard/TopUp';
 import './PlanUsage.css';
@@ -38,7 +38,7 @@ const generateMockData = (): UsageData => {
 };
 
 const PlanUsage: React.FC<PlanUsageProps> = ({ userId }) => {
-  const { currentUser } = useAuth();
+  const { } = useAuth();
   const [usageData, setUsageData] = useState<UsageData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

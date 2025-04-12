@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { XMarkIcon, Bars3Icon, SignalIcon } from '@heroicons/react/24/outline';
 import { useAuth } from '../firebase/AuthContext';
 import { useTranslation } from 'react-i18next';
@@ -13,10 +13,9 @@ const logoPath = '/images/logo.png';
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
   const { currentUser, logout } = useAuth();
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   // Add scroll effect
   useEffect(() => {

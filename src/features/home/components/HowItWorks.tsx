@@ -4,8 +4,6 @@ import { useState, useRef, useEffect } from 'react';
 export default function HowItWorks() {
   const { t } = useTranslation();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [maxScroll, setMaxScroll] = useState(0);
   const [activeStep, setActiveStep] = useState(0);
   
   const steps = [
@@ -35,9 +33,8 @@ export default function HowItWorks() {
   useEffect(() => {
     const updateMaxScroll = () => {
       if (scrollContainerRef.current) {
-        const containerWidth = scrollContainerRef.current.scrollWidth;
-        const viewportWidth = scrollContainerRef.current.clientWidth;
-        setMaxScroll(containerWidth - viewportWidth);
+        // const containerWidth = scrollContainerRef.current.scrollWidth;
+        // const viewportWidth = scrollContainerRef.current.clientWidth;
       }
     };
 
@@ -53,7 +50,7 @@ export default function HowItWorks() {
   const handleScroll = () => {
     if (scrollContainerRef.current) {
       const newPosition = scrollContainerRef.current.scrollLeft;
-      setScrollPosition(newPosition);
+      // setScrollPosition(newPosition);
       
       // Calculate active step based on scroll position
       const stepWidth = scrollContainerRef.current.scrollWidth / steps.length;
@@ -90,7 +87,7 @@ export default function HowItWorks() {
         <div className="md:hidden">
           {/* Step indicators at the top */}
           <div className="flex justify-center mb-6 space-x-2">
-            {steps.map((step, idx) => (
+            {steps.map((_, idx) => (
               <button 
                 key={`indicator-${idx}`}
                 onClick={() => goToStep(idx)}
@@ -112,7 +109,7 @@ export default function HowItWorks() {
             onScroll={handleScroll}
             style={{ scrollBehavior: 'smooth' }}
           >
-            {steps.map((step, idx) => (
+            {steps.map((_, idx) => (
               <div 
                 key={`mobile-step-${idx}`}
                 className="flex-shrink-0 w-full snap-center px-4"
@@ -120,11 +117,11 @@ export default function HowItWorks() {
                 <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
                   <div className="flex items-center mb-4">
                     <div className="flex-shrink-0 w-12 h-12 rounded-full bg-dark-theme bg-opacity-10 flex items-center justify-center text-xl font-bold text-dark-theme">
-                      {step.number}
+                      {steps[idx].number}
                     </div>
-                    <h3 className="ml-4 text-xl font-semibold text-romio-black">{step.title}</h3>
+                    <h3 className="ml-4 text-xl font-semibold text-romio-black">{steps[idx].title}</h3>
                   </div>
-                  <p className="text-cool-slate pl-16">{step.description}</p>
+                  <p className="text-cool-slate pl-16">{steps[idx].description}</p>
                 </div>
               </div>
             ))}
@@ -156,13 +153,13 @@ export default function HowItWorks() {
 
         {/* Desktop View: Grid layout with connector lines */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step, idx) => (
+          {steps.map((_, idx) => (
             <div key={`desktop-step-${idx}`} className="relative">
               <div className="mb-6">
-                <span className="text-6xl font-bold text-signal-blue opacity-20">{step.number}</span>
+                <span className="text-6xl font-bold text-signal-blue opacity-20">{steps[idx].number}</span>
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-romio-black">{step.title}</h3>
-              <p className="text-cool-slate">{step.description}</p>
+              <h3 className="text-xl font-semibold mb-4 text-romio-black">{steps[idx].title}</h3>
+              <p className="text-cool-slate">{steps[idx].description}</p>
             </div>
           ))}
         </div>

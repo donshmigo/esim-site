@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { useState } from 'react';
 import { ChevronDownIcon, CurrencyDollarIcon } from '@heroicons/react/24/outline';
 import { useCurrency } from '../contexts/CurrencyContext';
 
@@ -10,7 +9,6 @@ type CurrencyOption = {
 };
 
 const CurrencySelector: React.FC = () => {
-  const { t } = useTranslation();
   const { currencyInfo, setCurrencyManually } = useCurrency();
   const [isOpen, setIsOpen] = useState(false);
   

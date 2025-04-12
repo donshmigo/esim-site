@@ -84,7 +84,6 @@ const InteractiveWorldMap: React.FC<InteractiveWorldMapProps> = ({ regions }) =>
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
   const [pulseState, setPulseState] = useState(0);
   const mapRef = useRef<HTMLDivElement>(null);
-  const [hasError, setHasError] = useState(false);
 
   // Add Vietnam and Japan to the regions
   useEffect(() => {
@@ -197,12 +196,6 @@ const InteractiveWorldMap: React.FC<InteractiveWorldMapProps> = ({ regions }) =>
   // Pulse effect calculation
   const pulseOpacity = 0.2 + (Math.sin(pulseState / 15) + 1) / 10;
 
-  // Fallback to static map or placeholder if there's an error
-  const handleError = () => {
-    console.error("Error loading map");
-    setHasError(true);
-  };
-
   return (
     <div 
       className="relative"
@@ -214,98 +207,92 @@ const InteractiveWorldMap: React.FC<InteractiveWorldMapProps> = ({ regions }) =>
         touchAction: "manipulation"
       }}
     >
-      {hasError ? (
-        <div className="flex items-center justify-center h-full bg-white rounded-xl">
-          <p>Unable to load map. Please check your connection.</p>
-        </div>
-      ) : (
-        <div 
-          className="world-map-container rounded-xl overflow-hidden shadow-sm bg-white"
-          style={{ 
-            height: "100%", 
-            width: "100%"
+      <div 
+        className="world-map-container rounded-xl overflow-hidden shadow-sm bg-white"
+        style={{ 
+          height: "100%", 
+          width: "100%"
+        }}
+      >
+        <ComposableMap
+          projection="geoMercator"
+          projectionConfig={{
+            scale: 100,
+            center: [0, 0]
+          }}
+          style={{
+            width: "100%",
+            height: "100%"
           }}
         >
-          <ComposableMap
-            projection="geoMercator"
-            projectionConfig={{
-              scale: 100,
-              center: [0, 0]
-            }}
-            style={{
-              width: "100%",
-              height: "100%"
-            }}
+          <ZoomableGroup
+            zoom={position.zoom}
+            center={position.coordinates as [number, number]}
+            // Disable panning
+            onMoveStart={undefined}
+            onMoveEnd={undefined}
+            // Fixed zoom settings
+            minZoom={1}
+            maxZoom={4}
           >
-            <ZoomableGroup
-              zoom={position.zoom}
-              center={position.coordinates as [number, number]}
-              // Disable panning
-              onMoveStart={undefined}
-              onMoveEnd={undefined}
-              // Fixed zoom settings
-              minZoom={1}
-              maxZoom={4}
-            >
-              <Geographies geography={geoUrl}>
-                {({ geographies }) =>
-                  geographies
-                    .filter(geo => {
-                      // Filter out Antarctica by code, name or coordinates
-                      const geoISO = geo.properties.ISO_A3 || geo.properties.iso_a3;
-                      const geoName = geo.properties.NAME || geo.properties.name;
-                      
-                      if (geoISO === 'ATA' || geoName === 'Antarctica') {
-                        return false;
-                      }
-                      
-                      return true;
-                    })
-                    .map((geo) => {
-                      const geoName = geo.properties.NAME || geo.properties.name;
-                      const geoISO = geo.properties.ISO_A3 || geo.properties.iso_a3;
-                      const isHighlighted = isCountryCovered(geoName, geoISO);
-                      
-                      return (
-                        <Geography
-                          key={geo.rsmKey}
-                          geography={geo}
-                          onMouseEnter={() => {
-                            setTooltipContent(isHighlighted ? `${geoName} - ${t('coverage.covered')}` : geoName);
-                          }}
-                          onMouseLeave={() => {
-                            setTooltipContent("");
-                          }}
-                          style={{
-                            default: {
-                              fill: isHighlighted ? `rgba(36, 35, 35, ${pulseOpacity + 0.6})` : "#D6D6DA",
-                              outline: "none",
-                              stroke: "#FFFFFF",
-                              strokeWidth: 0.5,
-                            },
-                            hover: {
-                              fill: isHighlighted ? "#4a4a4a" : "#F53",
-                              outline: "none",
-                              cursor: "pointer",
-                              stroke: "#FFFFFF",
-                              strokeWidth: 0.75,
-                            },
-                            pressed: {
-                              fill: isHighlighted ? "#3a3939" : "#E42",
-                              outline: "none",
-                              stroke: "#FFFFFF",
-                              strokeWidth: 0.75,
-                            },
-                          }}
-                        />
-                      );
-                    })
-                }
-              </Geographies>
-            </ZoomableGroup>
-          </ComposableMap>
-        </div>
-      )}
+            <Geographies geography={geoUrl}>
+              {({ geographies }) =>
+                geographies
+                  .filter(geo => {
+                    // Filter out Antarctica by code, name or coordinates
+                    const geoISO = geo.properties.ISO_A3 || geo.properties.iso_a3;
+                    const geoName = geo.properties.NAME || geo.properties.name;
+                    
+                    if (geoISO === 'ATA' || geoName === 'Antarctica') {
+                      return false;
+                    }
+                    
+                    return true;
+                  })
+                  .map((geo) => {
+                    const geoName = geo.properties.NAME || geo.properties.name;
+                    const geoISO = geo.properties.ISO_A3 || geo.properties.iso_a3;
+                    const isHighlighted = isCountryCovered(geoName, geoISO);
+                    
+                    return (
+                      <Geography
+                        key={geo.rsmKey}
+                        geography={geo}
+                        onMouseEnter={() => {
+                          setTooltipContent(isHighlighted ? `${geoName} - ${t('coverage.covered')}` : geoName);
+                        }}
+                        onMouseLeave={() => {
+                          setTooltipContent("");
+                        }}
+                        style={{
+                          default: {
+                            fill: isHighlighted ? `rgba(36, 35, 35, ${pulseOpacity + 0.6})` : "#D6D6DA",
+                            outline: "none",
+                            stroke: "#FFFFFF",
+                            strokeWidth: 0.5,
+                          },
+                          hover: {
+                            fill: isHighlighted ? "#4a4a4a" : "#F53",
+                            outline: "none",
+                            cursor: "pointer",
+                            stroke: "#FFFFFF",
+                            strokeWidth: 0.75,
+                          },
+                          pressed: {
+                            fill: isHighlighted ? "#3a3939" : "#E42",
+                            outline: "none",
+                            stroke: "#FFFFFF",
+                            strokeWidth: 0.75,
+                          },
+                        }}
+                      />
+                    );
+                  })
+              }
+            </Geographies>
+          </ZoomableGroup>
+        </ComposableMap>
+      </div>
       
       {tooltipContent && (
         <div 

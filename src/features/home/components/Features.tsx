@@ -1,47 +1,46 @@
 import { GlobeAltIcon, DevicePhoneMobileIcon, CurrencyDollarIcon, BoltIcon, PhoneIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 import { useState, useRef, useEffect } from 'react';
 
 export default function Features() {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [maxScroll, setMaxScroll] = useState(0);
 
   const features = [
     {
-      name: t('features.feature3.title'),
-      description: t('features.feature3.description'),
-      icon: DevicePhoneMobileIcon,
-    },
-    {
-      name: t('features.feature2.title'),
-      description: t('features.feature2.description'),
+      name: 'Global Coverage',
+      description: 'Stay connected in over 190+ countries with our extensive network coverage',
       icon: GlobeAltIcon,
     },
     {
-      name: t('features.feature1.title'),
-      description: t('features.feature1.description'),
+      name: 'Instant Activation',
+      description: 'Get connected immediately with our self-service activation process',
       icon: BoltIcon,
     },
     {
-      name: "Keep Your Phone Number",
-      description: "Use your existing number while enjoying Romio eSIM data worldwide",
+      name: 'Keep Your Phone Number',
+      description: 'Use your existing number while enjoying Romio eSIM data worldwide',
       icon: PhoneIcon,
     },
     {
-      name: t('features.feature5.title'),
-      description: t('features.feature5.description'),
+      name: 'Flexible Plans',
+      description: 'Choose from a variety of data plans that suit your travel needs',
       icon: CurrencyDollarIcon,
     },
     {
-      name: t('features.feature6.title'),
-      description: t('features.feature6.description'),
+      name: 'Easy Device Setup',
+      description: 'Simple QR code scanning process to activate your eSIM on any compatible device',
+      icon: DevicePhoneMobileIcon,
+    },
+    {
+      name: 'Seamless Switching',
+      description: 'Easily switch between different data plans as your needs change',
       icon: ArrowPathIcon,
     },
   ];
 
-  // Calculate max scroll value when component mounts or window resizes
   useEffect(() => {
     const updateMaxScroll = () => {
       if (scrollContainerRef.current) {
@@ -51,15 +50,11 @@ export default function Features() {
       }
     };
 
-    // Update on mount
     updateMaxScroll();
-    
-    // Update on resize
     window.addEventListener('resize', updateMaxScroll);
     return () => window.removeEventListener('resize', updateMaxScroll);
   }, []);
 
-  // Update scroll position when user scrolls
   const handleScroll = () => {
     if (scrollContainerRef.current) {
       setScrollPosition(scrollContainerRef.current.scrollLeft);
@@ -70,9 +65,9 @@ export default function Features() {
     <section id="features" className="section-spacing bg-steel-gray">
       <div className="container-custom mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-8 md:mb-16">
-          <h2 className="section-title">{t('features.title')}</h2>
+          <h2 className="section-title">Why Choose Romio eSIM</h2>
           <p className="text-lg text-cool-slate">
-            {t('features.subtitle')}
+            Experience seamless connectivity with our innovative eSIM technology
           </p>
         </div>
 
@@ -84,7 +79,7 @@ export default function Features() {
             onScroll={handleScroll}
             style={{ scrollBehavior: 'smooth' }}
           >
-            {features.map((feature, idx) => (
+            {features.map((feature) => (
               <div 
                 key={feature.name} 
                 className="flex-shrink-0 w-[80%] mx-2 first:ml-4 last:mr-4 snap-center bg-white rounded-xl p-4 shadow-sm"

@@ -1,13 +1,12 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../firebase/AuthContext';
-import { doc, getDoc, updateDoc, setDoc } from 'firebase/firestore';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import { updateProfile } from 'firebase/auth';
 import { db } from '../../firebase/firebase';
 import { UserCircleIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
-import { UserData } from './Dashboard';
 
 interface ProfileProps {
-  userData: UserData;
+  userData: any;
   onProfileUpdate: () => Promise<void>;
 }
 

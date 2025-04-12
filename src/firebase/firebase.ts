@@ -1,16 +1,14 @@
 import { initializeApp } from 'firebase/app';
-import { 
-  getAuth, 
-  setPersistence, 
+import {
+  getAuth,
+  setPersistence,
   browserLocalPersistence,
-  connectAuthEmulator 
 } from 'firebase/auth';
-import { 
-  getFirestore, 
-  enableIndexedDbPersistence, 
-  connectFirestoreEmulator,
+import {
+  getFirestore,
+  enableIndexedDbPersistence,
   enableNetwork,
-  disableNetwork
+  disableNetwork,
 } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 

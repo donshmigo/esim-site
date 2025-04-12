@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useAuth } from '../../firebase/AuthContext';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase/firebase';
 
@@ -14,7 +13,6 @@ interface Plan {
 }
 
 const Plans: React.FC = () => {
-  const { currentUser, loginWithGoogle } = useAuth();
   const [plans, setPlans] = useState<Plan[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);

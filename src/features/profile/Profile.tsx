@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../firebase/AuthContext';
-import { doc, getDoc, updateDoc, setDoc } from 'firebase/firestore';
+import { doc, updateDoc } from 'firebase/firestore';
 import { updateProfile } from 'firebase/auth';
 import { db } from '../../firebase/firebase';
 import { UserCircleIcon, ArrowPathIcon } from '@heroicons/react/24/outline';

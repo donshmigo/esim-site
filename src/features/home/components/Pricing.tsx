@@ -13,60 +13,6 @@ export default function Pricing() {
   const [isHorizontalSwipe, setIsHorizontalSwipe] = useState(false);
   const [swipeLocked, setSwipeLocked] = useState(false);
 
-  const plans = [
-    {
-      name: t('pricing.lite.name'),
-      price: 19.99,
-      dataAmount: t('pricing.lite.data'),
-      features: [
-        t('pricing.commonFeatures.feature1'),
-        t('pricing.commonFeatures.feature2'),
-        t('pricing.commonFeatures.feature3'),
-        t('pricing.commonFeatures.feature4'),
-        t('pricing.commonFeatures.feature5'),
-        t('pricing.lite.features.feature1')
-      ],
-      popular: false,
-      ctaText: t('pricing.cta'),
-      path: '/plans/lite'
-    },
-    {
-      name: t('pricing.traveler.name'),
-      price: 39.99,
-      dataAmount: t('pricing.traveler.data'),
-      features: [
-        t('pricing.commonFeatures.feature1'),
-        t('pricing.commonFeatures.feature2'),
-        t('pricing.commonFeatures.feature3'),
-        t('pricing.commonFeatures.feature4'),
-        t('pricing.commonFeatures.feature5'),
-        t('pricing.traveler.features.feature1'),
-        t('pricing.traveler.features.feature2')
-      ],
-      popular: true,
-      ctaText: t('pricing.cta'),
-      path: '/plans/traveler'
-    },
-    {
-      name: t('pricing.max.name'),
-      price: 59.99,
-      dataAmount: t('pricing.max.data'),
-      features: [
-        t('pricing.commonFeatures.feature1'),
-        t('pricing.commonFeatures.feature2'),
-        t('pricing.commonFeatures.feature3'),
-        t('pricing.commonFeatures.feature4'),
-        t('pricing.commonFeatures.feature5'),
-        t('pricing.max.features.feature1'),
-        t('pricing.max.features.feature2'),
-        t('pricing.max.features.feature3')
-      ],
-      popular: false,
-      ctaText: t('pricing.cta'),
-      path: '/plans/max'
-    }
-  ];
-
   // Create a helper function to generate features arrays with fallbacks
   const getFeatures = (planKey: string) => {
     const commonFeatures = [
@@ -311,19 +257,6 @@ export default function Pricing() {
               </div>
             )}
           </div>
-          
-          {/* Mobile-only custom plan option */}
-          <div className="mt-8 px-4 md:hidden">
-            <div className="bg-steel-gray rounded-xl p-6 text-center">
-              <h3 className="text-lg font-semibold mb-3">{t('pricing.customPlan')}</h3>
-              <p className="text-cool-slate text-sm mb-4">
-                {t('pricing.contactUs')}
-              </p>
-              <Link to="/contact" className="btn-secondary inline-block text-sm py-2 px-4">
-                {t('pricing.contactUs')}
-              </Link>
-            </div>
-          </div>
         </div>
 
         {/* Desktop View - Grid Layout */}
@@ -369,16 +302,6 @@ export default function Pricing() {
               </Link>
             </div>
           ))}
-        </div>
-        
-        <div className="mt-16 bg-steel-gray rounded-xl p-8 text-center hidden md:block">
-          <h3 className="text-xl font-semibold mb-4">{t('pricing.customPlan')}</h3>
-          <p className="text-cool-slate mb-6">
-            {t('pricing.contactUs')}
-          </p>
-          <Link to="/contact" className="btn-secondary inline-block">
-            {t('pricing.contactUs')}
-          </Link>
         </div>
       </div>
     </section>

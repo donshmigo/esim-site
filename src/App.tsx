@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/home';
 
 // Import plan pages
@@ -9,6 +9,10 @@ import TravelerPlan from './pages/plans/TravelerPlan';
 import MaxPlan from './pages/plans/MaxPlan';
 import BusinessPage from './pages/business';
 import ContactPage from './pages/contact';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
+import Partners from './pages/Partners';
+import AboutUs from './pages/AboutUs';
 
 // Import auth pages and components
 import { AuthProvider } from './firebase/AuthContext';
@@ -26,6 +30,10 @@ function App() {
     <AuthProvider>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/partners" element={<Partners />} />
         <Route path="/plans" element={<Plans />} />
         <Route path="/plans/lite" element={<LitePlan />} />
         <Route path="/plans/traveler" element={<TravelerPlan />} />
@@ -55,6 +63,7 @@ function App() {
           </ProtectedRoute>
         } />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </AuthProvider>
   );

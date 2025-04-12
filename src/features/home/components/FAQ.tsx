@@ -124,9 +124,6 @@ export default function FAQ() {
         
         <div className="max-w-2xl mx-auto text-center mt-8 md:mt-16">
           <h3 className="text-lg md:text-xl font-semibold mb-3 md:mb-4">{t('faq.moreQuestions')}</h3>
-          <p className="text-sm md:text-base text-cool-slate mb-4 md:mb-6">
-            {t('faq.contactSupport')}
-          </p>
           <Link to="/contact" className="btn-primary inline-block text-sm md:text-base py-2 px-4 md:py-3 md:px-5">
             {t('faq.contactSupport')}
           </Link>

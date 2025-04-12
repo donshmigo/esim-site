@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useLocalization } from './useLocalization';
-import { getCurrencyFromCountry } from '../utils/locationDetection';
 
 export type CurrencyInfo = {
   code: string;

@@ -5,8 +5,6 @@ import { useCreateOrder } from '../hooks/useCreateOrder';
 import { DataPlan, OrderRequest } from '../services/api';
 import { useAuth } from '../firebase/AuthContext';
 import { getAnalytics, logEvent } from 'firebase/analytics';
-import { db } from '../firebase/firebase';
-import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 
 export const Checkout: React.FC = () => {
   const location = useLocation();

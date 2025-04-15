@@ -296,9 +296,9 @@
       "button": "View FAQ"
     },
     "businessSection": {
-      "title": "Business Solutions",
-      "text": "Looking for enterprise connectivity solutions? Contact our business team to discuss custom plans for your organization.",
-      "button": "Explore Business Plans"
+      "title": "Romio for Business",
+      "description": "Connect your business globally with our enterprise eSIM solutions",
+      "button": "Contact Sales"
     }
   },
   "footer": {
@@ -327,7 +327,7 @@
     "currency": "USD",
     "company": {
       "title": "Company",
-      "about": "About Us",
+      "about": "About",
       "careers": "Careers",
       "press": "Press",
       "blog": "Blog"
@@ -341,11 +341,17 @@
     },
     "resources": {
       "title": "Resources",
-      "helpCenter": "Help Center",
+      "fairUsagePolicy": "Fair Usage Policy",
       "partnerProgram": "Partner Program",
       "privacyPolicy": "Privacy Policy",
       "termsOfService": "Terms of Service"
-    }
+    },
+    "businessSection": {
+      "title": "Romio for Business",
+      "description": "Connect your business globally with our enterprise eSIM solutions",
+      "button": "Contact Sales"
+    },
+    "copyright": "© {{year}} Romio Mobile. All rights reserved."
   },
   "language": {
     "en": "English",

@@ -11,6 +11,7 @@ import BusinessPage from './pages/business';
 import ContactPage from './pages/contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
+import FairUsagePolicy from './pages/FairUsagePolicy';
 import Partners from './pages/Partners';
 import AboutUs from './pages/AboutUs';
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-of-service" element={<TermsOfService />} />
+        <Route path="/fair-usage-policy" element={<FairUsagePolicy />} />
         <Route path="/partners" element={<Partners />} />
         <Route path="/plans" element={<Plans />} />
         <Route path="/plans/lite" element={<LitePlan />} />

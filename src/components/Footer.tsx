@@ -1,38 +1,40 @@
 // import logo from '../assets/images/logo.svg';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 // Use the logo from the public directory instead
 const logoPath = '/images/logo.png';
 
 export default function Footer() {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
   
   const footerLinks = [
     {
-      title: 'Company',
+      title: t('footer.company.title'),
       links: [
-        { name: 'About', href: '/', isLink: true },
-        { name: 'Careers', href: '/', isLink: true },
-        { name: 'Press', href: '/', isLink: true },
-        { name: 'Blog', href: '/', isLink: true },
+        { name: t('footer.company.about'), href: '/about', isLink: true },
+        { name: t('footer.company.careers'), href: '/careers', isLink: true },
+        { name: t('footer.company.press'), href: '/press', isLink: true },
+        { name: t('footer.company.blog'), href: '/blog', isLink: true },
       ],
     },
     {
-      title: 'Product',
+      title: t('footer.product.title'),
       links: [
-        { name: 'Features', href: '/plans', isLink: true },
-        { name: 'Pricing', href: '/plans', isLink: true },
-        { name: 'Coverage', href: '/', isLink: true },
-        { name: 'Support', href: '/contact', isLink: true },
+        { name: t('footer.product.features'), href: '/plans', isLink: true },
+        { name: t('footer.product.pricing'), href: '/plans', isLink: true },
+        { name: t('footer.product.coverage'), href: '/coverage', isLink: true },
+        { name: t('footer.product.support'), href: '/contact', isLink: true },
       ],
     },
     {
-      title: 'Resources',
+      title: t('footer.resources.title'),
       links: [
-        { name: 'Help Center', href: '/contact', isLink: true },
-        { name: 'Partner Program', href: '/contact', isLink: true },
-        { name: 'Privacy Policy', href: '/', isLink: true },
-        { name: 'Terms of Service', href: '/', isLink: true },
+        { name: t('footer.resources.fairUsagePolicy'), href: '/fair-usage-policy', isLink: true },
+        { name: t('footer.resources.partnerProgram'), href: '/partners', isLink: true },
+        { name: t('footer.resources.privacyPolicy'), href: '/privacy-policy', isLink: true },
+        { name: t('footer.resources.termsOfService'), href: '/terms-of-service', isLink: true },
       ],
     },
   ];
@@ -47,7 +49,7 @@ export default function Footer() {
               <img src={logoPath} alt="Romio eSIM" className="h-16 brightness-0 invert" />
             </Link>
             <p className="text-steel-gray mb-6">
-              Global connectivity made simple. Travel with confidence in 80+ countries.
+              {t('footer.tagline')}
             </p>
             <div className="flex space-x-4">
               {/* Social media icons - keep as anchor tags since they are external */}
@@ -96,13 +98,24 @@ export default function Footer() {
         </div>
 
         {/* Bottom section */}
-        <div className="mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-steel-gray text-sm">
-            &copy; {currentYear} Romio eSIM. All rights reserved.
-          </p>
-          <div className="mt-4 md:mt-0 flex items-center space-x-4">
-            <Link to="/" className="text-steel-gray hover:text-signal-blue transition-colors text-sm">Privacy Policy</Link>
-            <Link to="/" className="text-steel-gray hover:text-signal-blue transition-colors text-sm">Terms of Service</Link>
+        <div className="mt-8 pt-8 border-t border-gray-800">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center space-x-4 mb-4 md:mb-0">
+              <img
+                className="h-8 w-auto"
+                src="/romio-logo.svg"
+                alt="Romio Mobile"
+              />
+              <span className="text-sm text-gray-400">© {new Date().getFullYear()} Romio Mobile</span>
+            </div>
+            <div className="flex space-x-6">
+              <Link to="/privacy-policy" className="text-sm text-gray-400 hover:text-white">
+                {t('footer.resources.privacyPolicy')}
+              </Link>
+              <Link to="/terms-of-service" className="text-sm text-gray-400 hover:text-white">
+                {t('footer.resources.termsOfService')}
+              </Link>
+            </div>
           </div>
         </div>
       </div>

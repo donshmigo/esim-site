@@ -15,9 +15,10 @@ export default function Footer() {
     {
       title: t('footer.company.title'),
       links: [
-        { name: t('footer.company.aboutUs'), href: '/about', isLink: true },
-        { name: t('footer.company.partnerProgram'), href: '/partners', isLink: true },
-        { name: t('footer.company.contact'), href: '/contact', isLink: true },
+        { name: t('footer.company.about'), href: '/about', isLink: true },
+        { name: t('footer.company.careers'), href: '/careers', isLink: true },
+        { name: t('footer.company.press'), href: '/press', isLink: true },
+        { name: t('footer.company.blog'), href: '/blog', isLink: true },
       ],
     },
     {
@@ -25,15 +26,15 @@ export default function Footer() {
       links: [
         { name: t('footer.product.features'), href: '/plans', isLink: true },
         { name: t('footer.product.pricing'), href: '/plans', isLink: true },
-        { name: t('footer.product.coverage'), href: '/', isLink: true },
+        { name: t('footer.product.coverage'), href: '/coverage', isLink: true },
         { name: t('footer.product.support'), href: '/contact', isLink: true },
       ],
     },
     {
       title: t('footer.resources.title'),
       links: [
-        { name: t('footer.resources.blog'), href: '/blog', isLink: true },
-        { name: t('footer.resources.helpCenter'), href: '/help', isLink: true },
+        { name: t('footer.resources.fairUsagePolicy'), href: '/fair-usage-policy', isLink: true },
+        { name: t('footer.resources.partnerProgram'), href: '/partners', isLink: true },
         { name: t('footer.resources.privacyPolicy'), href: '/privacy-policy', isLink: true },
         { name: t('footer.resources.termsOfService'), href: '/terms-of-service', isLink: true },
       ],
@@ -144,39 +145,46 @@ export default function Footer() {
             ))}
           </div>
         </div>
+      </div>
 
-        {/* Business Section */}
-        <div className="mt-8 pt-6 border-t border-gray-800">
-          <div className="flex flex-col md:flex-row items-center justify-between bg-white p-4 rounded-lg">
-            <div className="mb-4 md:mb-0 text-center md:text-left">
-              <h3 className="text-lg font-semibold mb-2 text-romio-black">Romio for Business</h3>
-              <p className="text-cool-slate text-sm max-w-lg">
-                Enterprise connectivity solutions for teams of all sizes. Manage multiple eSIMs, track usage, and get priority support.
+      {/* Business Section */}
+      <div className="mt-8 pt-6 border-t border-gray-800">
+        <div className="bg-white rounded-lg p-8 px-12">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="text-center md:text-left">
+              <h3 className="text-2xl font-bold text-romio-black mb-3">{t('footer.businessSection.title')}</h3>
+              <p className="text-cool-slate text-base max-w-xl">
+                {t('footer.businessSection.description')}
               </p>
             </div>
-            <Link 
+            <Link
               to="/business" 
-              className="bg-signal-blue hover:bg-opacity-90 text-white py-2 px-6 rounded-lg transition-colors whitespace-nowrap text-sm"
+              className="bg-signal-blue hover:bg-opacity-90 text-white py-3 px-8 rounded-lg transition-colors whitespace-nowrap text-sm font-semibold"
             >
-              Learn More
+              {t('footer.businessSection.button')}
             </Link>
           </div>
         </div>
+      </div>
 
-        {/* Bottom section */}
-        <div className="mt-8 pt-6 border-t border-gray-800">
-          <div className="flex flex-col sm:flex-row justify-between items-center">
-            <p className="text-steel-gray text-xs mb-4 sm:mb-0">
-              &copy; {currentYear} Romio Mobile. {t('footer.copyright')}
-            </p>
-            <div className="flex items-center space-x-4">
-              <Link to="/privacy-policy" className="text-steel-gray hover:text-white transition-colors text-xs">
-                {t('footer.privacy')}
-              </Link>
-              <Link to="/" className="text-steel-gray hover:text-white transition-colors text-xs">
-                {t('footer.terms')}
-              </Link>
-            </div>
+      {/* Bottom section */}
+      <div className="mt-8 pt-8 border-t border-gray-800">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex items-center space-x-4 mb-4 md:mb-0">
+            <img
+              className="h-8 w-auto"
+              src="/romio-logo.svg"
+              alt="Romio Mobile"
+            />
+            <span className="text-sm text-gray-400">© {new Date().getFullYear()} Romio Mobile</span>
+          </div>
+          <div className="flex space-x-6">
+            <Link to="/privacy-policy" className="text-sm text-gray-400 hover:text-white">
+              {t('footer.resources.privacyPolicy')}
+            </Link>
+            <Link to="/terms-of-service" className="text-sm text-gray-400 hover:text-white">
+              {t('footer.resources.termsOfService')}
+            </Link>
           </div>
         </div>
       </div>

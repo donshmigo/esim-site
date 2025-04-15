@@ -10,18 +10,18 @@ export default function Features() {
 
   const features = [
     {
-      name: 'Feature 3 Title',
-      description: 'Feature 3 Description',
+      name: 'Instant Activation',
+      description: 'Get connected immediately after purchase with our digital eSIM technology',
       icon: DevicePhoneMobileIcon,
     },
     {
-      name: 'Feature 2 Title',
-      description: 'Feature 2 Description',
+      name: 'Global Coverage',
+      description: 'Stay connected in over 190 countries with our extensive network coverage',
       icon: GlobeAltIcon,
     },
     {
-      name: 'Feature 1 Title',
-      description: 'Feature 1 Description',
+      name: 'Fast 5G/4G Speeds',
+      description: 'Enjoy high-speed internet access wherever you travel',
       icon: BoltIcon,
     },
     {
@@ -30,13 +30,13 @@ export default function Features() {
       icon: PhoneIcon,
     },
     {
-      name: 'Feature 5 Title',
-      description: 'Feature 5 Description',
+      name: 'Affordable Plans',
+      description: 'Choose from flexible data plans that fit your travel needs and budget',
       icon: CurrencyDollarIcon,
     },
     {
-      name: 'Feature 6 Title',
-      description: 'Feature 6 Description',
+      name: 'Easy Management',
+      description: 'Monitor your data usage and manage your eSIM through our user-friendly app',
       icon: ArrowPathIcon,
     },
   ];
@@ -65,9 +65,9 @@ export default function Features() {
     <section id="features" className="section-spacing bg-steel-gray">
       <div className="container-custom mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-8 md:mb-16">
-          <h2 className="section-title">Features Title</h2>
+          <h2 className="section-title">Why Choose Romio eSIM?</h2>
           <p className="text-lg text-cool-slate">
-            Features Subtitle
+            Experience seamless connectivity worldwide with our innovative eSIM solutions
           </p>
         </div>
 

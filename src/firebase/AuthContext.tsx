@@ -10,11 +10,13 @@ interface User {
 interface AuthContextType {
   currentUser: User | null;
   login: (email: string, password: string) => Promise<void>;
-  signup: (email: string, password: string) => Promise<void>;
+  signup: (email: string, password: string, name?: string) => Promise<void>;
   logout: () => Promise<void>;
   resetPassword: (email: string) => Promise<void>;
   updateUserProfile: (displayName: string) => Promise<void>;
   isAuthenticated: boolean;
+  loading: boolean;
+  loginWithGoogle: () => Promise<void>;
 }
 
 // Create context with default values
@@ -26,6 +28,8 @@ const AuthContext = createContext<AuthContextType>({
   resetPassword: async () => {},
   updateUserProfile: async () => {},
   isAuthenticated: false,
+  loading: false,
+  loginWithGoogle: async () => {},
 });
 
 // Auth provider component
@@ -34,11 +38,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const authValue: AuthContextType = {
     currentUser: null,
     isAuthenticated: false,
+    loading: false,
     login: async () => {},
-    signup: async () => {},
+    signup: async (email, password, name) => {},
     logout: async () => {},
     resetPassword: async () => {},
     updateUserProfile: async () => {},
+    loginWithGoogle: async () => {},
   };
 
   return <AuthContext.Provider value={authValue}>{children}</AuthContext.Provider>;

@@ -61,6 +61,10 @@ const Home: React.FC = () => {
 
   return (
     <div className="home-container pb-16 md:pb-0">
+      {/* Test banner to verify deployment */}
+      <div className="bg-dark-theme text-white py-2 text-center">
+        Deployment verification banner - New version
+      </div>
       <Header />
       <PhoneHero />
       <Features />

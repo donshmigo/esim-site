@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ChevronDownIcon, GlobeAltIcon } from '@heroicons/react/24/outline';
-import { detectCountry } from '../utils/locationDetection';
+import { detectCountry, getLanguageFromCountry } from '../utils/locationDetection';
 
 const LanguageSelector: React.FC = () => {
   const { t, i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [detectedCountry, setDetectedCountry] = useState<string | null>(null);
+  const [isAutoDetected, setIsAutoDetected] = useState(false);
   
   const currentLanguage = i18n.language;
   
@@ -25,8 +26,25 @@ const LanguageSelector: React.FC = () => {
   useEffect(() => {
     // Get detected country
     const fetchCountry = async () => {
-      const country = await detectCountry();
-      setDetectedCountry(country);
+      // Check if we already have a detected country in localStorage
+      const savedCountry = localStorage.getItem('detectedCountry');
+      
+      if (savedCountry) {
+        setDetectedCountry(savedCountry);
+        
+        // Check if current language was auto-detected
+        const userSelectedLanguage = localStorage.getItem('userSelectedLanguage');
+        if (!userSelectedLanguage) {
+          setIsAutoDetected(true);
+        }
+      } else {
+        // Detect country if not already in localStorage
+        const country = await detectCountry();
+        if (country) {
+          setDetectedCountry(country);
+          localStorage.setItem('detectedCountry', country);
+        }
+      }
     };
     
     fetchCountry();
@@ -35,8 +53,11 @@ const LanguageSelector: React.FC = () => {
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
     setIsOpen(false);
-    // Save to localStorage
+    
+    // Mark this as a user-selected language
     localStorage.setItem('i18nextLng', lng);
+    localStorage.setItem('userSelectedLanguage', 'true');
+    setIsAutoDetected(false);
   };
   
   // Get current language display name
@@ -56,7 +77,7 @@ const LanguageSelector: React.FC = () => {
           aria-haspopup="true"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {detectedCountry && (
+          {isAutoDetected && detectedCountry && (
             <GlobeAltIcon className="mr-2 h-4 w-4 text-signal-blue" aria-hidden="true" />
           )}
           {getCurrentLanguageName()}
@@ -66,7 +87,7 @@ const LanguageSelector: React.FC = () => {
 
       {isOpen && (
         <div
-          className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+          className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="language-menu-button"
@@ -74,7 +95,14 @@ const LanguageSelector: React.FC = () => {
         >
           {detectedCountry && (
             <div className="px-4 py-2 text-xs text-gray-500 border-b">
-              {t('language.detectedCountry')}: {detectedCountry}
+              {isAutoDetected ? (
+                <span className="flex items-center">
+                  <GlobeAltIcon className="mr-1 h-3 w-3 text-signal-blue" aria-hidden="true" />
+                  {t('language.detectedCountry')}: {detectedCountry}
+                </span>
+              ) : (
+                <span>{t('language.detectedCountry')}: {detectedCountry}</span>
+              )}
             </div>
           )}
           <div className="py-1" role="none">
@@ -91,6 +119,9 @@ const LanguageSelector: React.FC = () => {
                 tabIndex={-1}
               >
                 {language.name}
+                {detectedCountry && getLanguageFromCountry(detectedCountry) === language.code && !isAutoDetected && (
+                  <span className="ml-2 text-xs text-gray-400">({t('language.detectedCountry')})</span>
+                )}
               </button>
             ))}
           </div>

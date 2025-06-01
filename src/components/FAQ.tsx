@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     question: 'Can I keep my current phone number with Romio?',
-    answer: 'Romio is primarily a data eSIM service. However, with our optional VoIP add-on, you can keep receiving calls and texts to your existing number over data. This feature is included in our Global plan and available as an add-on for other plans.'
+    answer: 'Romio is primarily a data eSIM service. However, with our optional VoIP add-on (coming soon), you can keep receiving calls and texts to your existing number over data. This feature will be included in our Global plan and available as an add-on for other plans.'
   },
   {
     question: 'Does my eSIM work in multiple countries or do I need separate eSIMs?',

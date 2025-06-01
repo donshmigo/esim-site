@@ -1,8 +1,10 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeftIcon, CheckIcon, DevicePhoneMobileIcon, GlobeAltIcon, SignalIcon, WifiIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline';
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const MaxPlan = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   
   // Scroll to top when component mounts
@@ -13,8 +15,8 @@ const MaxPlan = () => {
   const handleSubscribe = () => {
     const planDetails = {
       id: 'max',
-      name: 'Romio Max – 30GB Global eSIM Plan',
-      description: 'Our most powerful plan for remote workers and digital explorers',
+      name: t('pricing.max.name') + ' – 30GB ' + t('plans.esimPlan'),
+      description: t('pricing.max.description'),
       data_amount: 30,
       data_unit: 'GB',
       price: {
@@ -33,7 +35,7 @@ const MaxPlan = () => {
         <div className="mb-4">
           <Link to="/#pricing" className="inline-flex items-center text-signal-blue hover:underline group">
             <ArrowLeftIcon className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-            Back to All Plans
+            {t('common.backToAllPlans')}
           </Link>
         </div>
 
@@ -41,30 +43,30 @@ const MaxPlan = () => {
         <div className="mb-4 max-w-3xl">
           <div className="flex items-center gap-2 mb-2">
             <SignalIcon className="h-5 w-5 text-signal-blue animate-signal" />
-            <span className="text-signal-blue font-medium">30GB Data Plan</span>
+            <span className="text-signal-blue font-medium">30GB {t('plans.dataPlan')}</span>
           </div>
           
           <h1 className="text-4xl md:text-5xl font-bold text-romio-black mb-4 tech-accent">
-            Romio Max – 30GB Global eSIM Plan
+            {t('pricing.max.name')} – 30GB {t('plans.esimPlan')}
           </h1>
           
           <div className="flex flex-col lg:flex-row lg:items-start">
             <p className="text-xl text-cool-slate lg:max-w-xl">
-              Our most powerful plan for remote workers and digital explorers. Go further, stay longer, connect more.
+              {t('pricing.max.description')}
             </p>
             
             {/* Mobile subscription box - visible only on mobile - NOW ALIGNED WITH DESCRIPTION */}
             <div className="lg:hidden mt-4">
               <div className="bg-white rounded-xl border-2 border-signal-blue p-4 shadow-lg">
                 <div className="mb-2 text-center">
-                  <h3 className="text-lg font-medium mb-1">Monthly Subscription: <span className="text-2xl font-bold text-signal-blue">$59.99</span></h3>
+                  <h3 className="text-lg font-medium mb-1">{t('pricing.monthly')}: <span className="text-2xl font-bold text-signal-blue">$59.99</span></h3>
                 </div>
 
                 <button 
                   onClick={handleSubscribe}
                   className="btn-primary w-full text-center block py-3"
                 >
-                  Subscribe Now
+                  {t('pricing.cta')}
                 </button>
               </div>
             </div>
@@ -76,21 +78,19 @@ const MaxPlan = () => {
           {/* Left column - Plan details */}
           <div className="lg:col-span-2">
             <div className="prose prose-lg max-w-none">
-              <h2 className="text-2xl font-bold mb-4">Plan Overview</h2>
+              <h2 className="text-2xl font-bold mb-4">{t('plans.overview')}</h2>
               <p>
-                Romio Max was made for people who live online — from airports and cafés to islands and coworking hubs. 
-                With 30GB of global data, it supports everything from heavy video usage to hotspotting your laptop. 
-                It's your full-time data plan that works across borders without skipping a beat.
+                {t('plans.maxOverview')}
               </p>
 
               {/* Key features */}
               <div className="mt-8 mb-12 grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
-                  "Supports streaming, uploading, Zoom, and more",
-                  "High-speed LTE coverage in 80+ countries",
-                  "Auto-renewing, easy to manage",
-                  "Designed for remote work, travel, and hybrid life",
-                  "VoIP and insurance add-ons available"
+                  t('plans.features.streaming'),
+                  t('plans.features.highSpeedCoverage'),
+                  t('plans.features.autoRenewing'),
+                  t('plans.features.remoteWork'),
+                  t('plans.features.addons')
                 ].map((feature, idx) => (
                   <div key={idx} className="flex items-start">
                     <CheckIcon className="h-5 w-5 text-signal-blue flex-shrink-0 mr-2 mt-1" />
@@ -99,71 +99,69 @@ const MaxPlan = () => {
                 ))}
               </div>
 
-              <h2 className="text-2xl font-bold mb-4">What You Can Do with 30GB</h2>
+              <h2 className="text-2xl font-bold mb-4">{t('plans.whatYouCanDo')} 30GB</h2>
               <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                 <div className="card-tech">
                   <div className="flex items-center mb-2">
                     <GlobeAltIcon className="h-6 w-6 text-signal-blue mr-2" />
-                    <h3 className="font-bold">40+ hours</h3>
+                    <h3 className="font-bold">40+ {t('common.hours')}</h3>
                   </div>
-                  <p className="text-cool-slate">HD video streaming</p>
+                  <p className="text-cool-slate">{t('plans.usage.hdVideo')}</p>
                 </div>
                 
                 <div className="card-tech">
                   <div className="flex items-center mb-2">
                     <DevicePhoneMobileIcon className="h-6 w-6 text-signal-blue mr-2" />
-                    <h3 className="font-bold">15+ hours</h3>
+                    <h3 className="font-bold">15+ {t('common.hours')}</h3>
                   </div>
-                  <p className="text-cool-slate">Zoom calls</p>
+                  <p className="text-cool-slate">{t('plans.usage.zoomCalls')}</p>
                 </div>
                 
                 <div className="card-tech">
                   <div className="flex items-center mb-2">
                     <WifiIcon className="h-6 w-6 text-signal-blue mr-2" />
-                    <h3 className="font-bold">WiFi backup</h3>
+                    <h3 className="font-bold">{t('plans.usage.wifiBackup')}</h3>
                   </div>
-                  <p className="text-cool-slate">Use as a mobile hotspot</p>
+                  <p className="text-cool-slate">{t('plans.usage.hotspot')}</p>
                 </div>
                 
                 <div className="card-tech">
                   <div className="flex items-center mb-2">
                     <ComputerDesktopIcon className="h-6 w-6 text-signal-blue mr-2" />
-                    <h3 className="font-bold">Unlimited</h3>
+                    <h3 className="font-bold">{t('plans.usage.unlimited')}</h3>
                   </div>
-                  <p className="text-cool-slate">Stream, scroll, work — anywhere</p>
+                  <p className="text-cool-slate">{t('plans.usage.anywhere')}</p>
                 </div>
               </div>
 
-              <h2 className="text-2xl font-bold mb-4">Perfect For</h2>
+              <h2 className="text-2xl font-bold mb-4">{t('plans.perfectFor')}</h2>
               <ul className="list-disc pl-5 mb-8 space-y-2">
-                <li>Remote workers</li>
-                <li>Digital nomads</li>
-                <li>Full-time travelers</li>
-                <li>Content creators</li>
-                <li>Heavy data users</li>
+                <li>{t('plans.userTypes.remoteWorkers')}</li>
+                <li>{t('plans.userTypes.digitalNomads')}</li>
+                <li>{t('plans.userTypes.fullTimeTravelers')}</li>
+                <li>{t('plans.userTypes.contentCreators')}</li>
+                <li>{t('plans.userTypes.heavyUsers')}</li>
               </ul>
               
-              <h2 className="text-2xl font-bold mb-4">Premium Add-ons Available</h2>
+              <h2 className="text-2xl font-bold mb-4">{t('plans.premiumAddons')}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                 <div className="bg-steel-gray bg-opacity-10 p-4 rounded-lg">
-                  <h3 className="font-bold mb-2">VoIP Services</h3>
+                  <h3 className="font-bold mb-2">{t('plans.voipComingSoon')}</h3>
                   <p className="text-cool-slate text-sm">
-                    Keep your phone number while traveling with our VoIP service. Make and receive calls using your home number from anywhere.
+                    {t('plans.voipDescription')}
                   </p>
                 </div>
                 
                 <div className="bg-steel-gray bg-opacity-10 p-4 rounded-lg">
-                  <h3 className="font-bold mb-2">Device Insurance</h3>
+                  <h3 className="font-bold mb-2">{t('plans.deviceInsurance')}</h3>
                   <p className="text-cool-slate text-sm">
-                    Protect your devices against loss or damage with our global device protection plan, valid in any country your eSIM works.
+                    {t('plans.insuranceDescription')}
                   </p>
                 </div>
               </div>
               
               <p>
-                The Max plan is built for those who need uncompromising connectivity. When your livelihood, content creation, 
-                or digital lifestyle depends on having stable internet, Max gives you the headroom you need without constantly 
-                worrying about hitting data limits.
+                {t('plans.maxConclusion')}
               </p>
             </div>
           </div>
@@ -172,23 +170,23 @@ const MaxPlan = () => {
           <div className="hidden lg:block lg:col-span-1">
             <div className="sticky top-24 bg-white rounded-xl border-2 border-signal-blue p-6 shadow-lg">
               <div className="mb-6 text-center">
-                <h3 className="text-lg font-medium mb-1">Monthly Subscription</h3>
-                <div className="text-4xl font-bold text-signal-blue mb-2">$59.99 <span className="text-lg font-normal text-cool-slate">/month</span></div>
-                <p className="text-cool-slate text-sm">Renews automatically. Cancel anytime.</p>
+                <h3 className="text-lg font-medium mb-1">{t('pricing.monthly')}</h3>
+                <div className="text-4xl font-bold text-signal-blue mb-2">$59.99 <span className="text-lg font-normal text-cool-slate">/{t('common.month')}</span></div>
+                <p className="text-cool-slate text-sm">{t('plans.autoRenew')}</p>
               </div>
 
               <div className="mb-6">
-                <h4 className="font-medium mb-2">Plan Includes:</h4>
+                <h4 className="font-medium mb-2">{t('plans.includes')}:</h4>
                 <ul className="space-y-3">
                   {[
-                    "30GB high-speed data",
-                    "Valid for 30 days",
-                    "Global coverage in 80+ countries",
-                    "Secure connection",
-                    "Worldwide customer support",
-                    "24/7 customer support", 
-                    "Keep your number",
-                    "Email support"
+                    `30GB ${t('plans.highSpeedData')}`,
+                    t('pricing.commonFeatures.feature1'),
+                    t('pricing.commonFeatures.feature3'),
+                    t('pricing.commonFeatures.feature4'),
+                    t('pricing.commonFeatures.feature5'),
+                    t('pricing.commonFeatures.feature6'), 
+                    t('pricing.commonFeatures.feature7'),
+                    t('pricing.commonFeatures.feature8')
                   ].map((feature, idx) => (
                     <li key={idx} className="flex items-start">
                       <CheckIcon className="h-5 w-5 text-signal-blue flex-shrink-0 mr-2" />
@@ -202,7 +200,7 @@ const MaxPlan = () => {
                 onClick={handleSubscribe}
                 className="btn-primary w-full text-center block py-3"
               >
-                Subscribe Now
+                {t('pricing.cta')}
               </button>
             </div>
           </div>
@@ -210,24 +208,24 @@ const MaxPlan = () => {
 
         {/* Other plans section */}
         <div className="mt-16 pt-12 border-t border-steel-gray">
-          <h2 className="text-2xl font-bold mb-8 text-center">Browse Other Plans</h2>
+          <h2 className="text-2xl font-bold mb-8 text-center">{t('plans.browseOther')}</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="rounded-xl border border-steel-gray p-6 hover:border-signal-blue hover:shadow-md transition-all">
-              <h3 className="text-xl font-bold mb-1">Romio Lite – 5GB</h3>
-              <p className="text-cool-slate mb-4">A lightweight plan for short trips or casual use. Stay connected across 80+ countries with 5GB of high-speed data.</p>
+              <h3 className="text-xl font-bold mb-1">{t('pricing.lite.name')} – 5GB</h3>
+              <p className="text-cool-slate mb-4">{t('pricing.lite.description')}</p>
               <div className="flex justify-between items-center">
-                <span className="font-bold text-xl text-signal-blue">$19.99<span className="text-sm font-normal text-cool-slate">/mo</span></span>
-                <Link to="/plans/lite" className="btn-secondary text-sm">Learn More</Link>
+                <span className="font-bold text-xl text-signal-blue">$19.99<span className="text-sm font-normal text-cool-slate">/{t('common.mo')}</span></span>
+                <Link to="/plans/lite" className="btn-secondary text-sm">{t('common.learnMore')}</Link>
               </div>
             </div>
             
             <div className="rounded-xl border border-steel-gray p-6 hover:border-signal-blue hover:shadow-md transition-all">
-              <h3 className="text-xl font-bold mb-1">Romio Traveler – 20GB</h3>
-              <p className="text-cool-slate mb-4">Perfect for digital nomads, content creators, and longer trips. More data, same freedom — in 80+ countries.</p>
+              <h3 className="text-xl font-bold mb-1">{t('pricing.traveler.name')} – 20GB</h3>
+              <p className="text-cool-slate mb-4">{t('pricing.traveler.description')}</p>
               <div className="flex justify-between items-center">
-                <span className="font-bold text-xl text-signal-blue">$39.99<span className="text-sm font-normal text-cool-slate">/mo</span></span>
-                <Link to="/plans/traveler" className="btn-secondary text-sm">Learn More</Link>
+                <span className="font-bold text-xl text-signal-blue">$39.99<span className="text-sm font-normal text-cool-slate">/{t('common.mo')}</span></span>
+                <Link to="/plans/traveler" className="btn-secondary text-sm">{t('common.learnMore')}</Link>
               </div>
             </div>
           </div>

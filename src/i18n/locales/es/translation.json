@@ -110,13 +110,16 @@
   "hero": {
     "title": "Conectividad global,",
     "titleHighlight": "simplificada",
-    "description": "Mantente conectado en más de 80 países con un solo plan eSIM. Sin cargos de roaming, sin configuración complicada, acceso instantáneo a datos de alta velocidad donde quiera que vayas.",
+    "description": "Mantente conectado en más de 90 países con un solo plan eSIM. Sin cargos de roaming, sin configuración complicada, acceso instantáneo a datos de alta velocidad donde quiera que vayas.",
     "primaryCta": "Conectar",
     "secondaryCta": "Ver cómo funciona",
+    "nextGenConnectivity": "Conectividad de nueva generación",
+    "reviews": "de más de 2.000 reseñas",
+    "imgAlt": "Conectividad global Romio eSIM",
     "features": {
       "global": {
         "title": "Cobertura global",
-        "description": "80+ países"
+        "description": "90+ países"
       },
       "setup": {
         "title": "Configuración instantánea",
@@ -131,35 +134,59 @@
       "status": "Activado",
       "ready": "Listo para conectar",
       "network": "Red global",
-      "countries": "80+ países"
+      "countries": "90+ países"
     }
   },
   "features": {
-    "title": "Por qué elegir Romio eSIM",
-    "subtitle": "Experimenta una conectividad perfecta en todo el mundo con la última tecnología eSIM",
+    "title": "Sin contratos, sin cargos por roaming, sin complicaciones",
+    "subtitle": "Romio eSIM reemplaza tu plan telefónico tradicional con una suscripción mensual que te da acceso instantáneo a datos en el momento en que aterrizas.",
     "feature1": {
       "title": "Activación instantánea",
       "description": "Configuración en minutos con un simple escaneo de código QR"
     },
     "feature2": {
-      "title": "Cobertura global",
-      "description": "Servicio confiable en más de 80 países"
+      "title": "Calidad de red confiable",
+      "description": "Velocidades 4G/5G constantes en redes locales premium"
     },
     "feature3": {
-      "title": "Uso local y en el extranjero",
-      "description": "Disponible en casa y en viajes, sin cargos de roaming"
+      "title": "Uso en casa y en el extranjero",
+      "description": "Funciona en tu país de origen y mientras viajas, sin cargos por roaming"
     },
     "feature4": {
       "title": "Soporte 24/7",
-      "description": "Obtén soporte en cualquier momento y lugar de nuestro equipo global"
+      "description": "Obtén ayuda en cualquier momento y lugar de nuestro equipo global"
     },
     "feature5": {
-      "title": "Económico",
-      "description": "Ahorra hasta un 70% en comparación con los planes de roaming tradicionales"
+      "title": "Rentable",
+      "description": "Ahorra hasta un 70% en comparación con las tarifas de roaming tradicionales"
     },
     "feature6": {
-      "title": "Soporte para doble SIM",
-      "description": "Mantén tu número local mientras usas datos globales"
+      "title": "Compatible con Dual SIM",
+      "description": "Mantén tu número local mientras usas nuestros datos globales"
+    },
+    "global": {
+      "title": "Cobertura global en más de 90 países",
+      "description": "Mantente conectado en Europa, América del Norte, Asia y más — con un solo plan, un solo código QR."
+    },
+    "subscription": {
+      "title": "Planes de suscripción mensual",
+      "description": "Elige entre planes de 5GB, 20GB o 30GB, desde 19,99€/mes. Los planes se renuevan automáticamente y pueden cancelarse en cualquier momento."
+    },
+    "activation": {
+      "title": "Activación instantánea",
+      "description": "Simplemente escanea tu código QR y listo. Sin SIM física, sin visitas a la tienda, sin retrasos."
+    },
+    "usage": {
+      "title": "Uso en casa y en el extranjero",
+      "description": "Romio funciona en tu país de origen y mientras viajas, lo que lo hace ideal para viajeros a tiempo completo, trabajadores remotos o expatriados de larga duración."
+    },
+    "keepNumber": {
+      "title": "Mantén tu número (próximamente)",
+      "description": "Agrega nuestro plan VoIP para mantener tu número de teléfono, recibir llamadas a través de datos y usar aplicaciones como WhatsApp sin interrupciones."
+    },
+    "topUp": {
+      "title": "Flexibilidad de recarga",
+      "description": "¿Necesitas más datos antes de que termine el mes? Recarga fácilmente desde tu portal o aplicación."
     }
   },
   "howItWorks": {
@@ -185,7 +212,7 @@
   },
   "coverage": {
     "title": "Cobertura global",
-    "subtitle": "Conectado en más de 80 países en todo el mundo",
+    "subtitle": "Conectado en más de 90 países en todo el mundo",
     "searchPlaceholder": "Buscar país...",
     "mapAlt": "Mapa mundial con áreas de cobertura",
     "moreCountries": "Más países",
@@ -227,19 +254,19 @@
     "commonFeatures": {
       "feature1": "Válido por 30 días",
       "feature2": "Datos de alta velocidad (4G/5G)",
-      "feature3": "Cobertura en más de 80 países",
+      "feature3": "Cobertura en más de 90 países",
       "feature4": "Conexión segura",
       "feature5": "Servicio al cliente global",
       "feature6": "Servicio al cliente 24/7",
-      "feature7": "Mantén tu número",
+      "feature7": "Mantén tu número (próximamente)",
       "feature8": "Soporte por correo electrónico"
     },
     "lite": {
       "name": "Lite",
       "price": "€4,90",
       "yearlyPrice": "€47,80",
-      "data": "1GB de datos",
-      "countries": "40+ países",
+      "data": "5GB de datos",
+      "countries": "90+ países",
       "description": "Ideal para viajeros ocasionales",
       "features": [
         "Válido por 30 días",
@@ -252,8 +279,8 @@
       "name": "Traveler",
       "price": "€9,90",
       "yearlyPrice": "€95,80",
-      "data": "5GB de datos",
-      "countries": "60+ países",
+      "data": "20GB de datos",
+      "countries": "90+ países",
       "description": "Ideal para viajeros frecuentes",
       "features": [
         "Válido por 30 días",
@@ -267,8 +294,8 @@
       "name": "Max",
       "price": "€19,90",
       "yearlyPrice": "€191,80",
-      "data": "Datos ilimitados",
-      "countries": "80+ países",
+      "data": "30GB de datos",
+      "countries": "90+ países",
       "description": "Ideal para nómadas digitales",
       "features": [
         "Válido por 30 días",
@@ -558,5 +585,79 @@
     "recommended": "Recomendado",
     "bestSeller": "Más vendido",
     "specialOffer": "Oferta especial"
+  },
+  "common": {
+    "backToAllPlans": "Volver a todos los planes",
+    "hours": "horas",
+    "month": "mes",
+    "mo": "mes",
+    "learnMore": "Más información",
+    "daily": "Diario"
+  },
+  "plans": {
+    "availablePlans": "Planes disponibles",
+    "selectPlan": "Seleccionar plan",
+    "dataPlan": "Plan de datos",
+    "esimPlan": "Plan eSIM global",
+    "overview": "Descripción del plan",
+    "liteOverview": "Romio Lite está diseñado para viajeros que solo necesitan lo esencial: mensajes, mapas, correos electrónicos y navegación ligera. Ya sea que viaje a Europa por unos días o pase un fin de semana en México, este plan le ofrece cobertura perfecta sin las complicaciones de cambiar tarjetas SIM o pagar cargos de roaming.",
+    "travelerOverview": "Romio Traveler es su pasaporte mensual para una conectividad global confiable. Con 20GB de datos de alta velocidad y sin contratos, es ideal para trabajo, redes sociales, navegación y contenido en movimiento. Es el plan que la mayoría de los usuarios de Romio mantienen a largo plazo: suficiente potencia, sin demasiados extras.",
+    "maxOverview": "Romio Max fue creado para personas que viven en línea, desde aeropuertos y cafés hasta islas y espacios de coworking. Con 30GB de datos globales, soporta todo, desde uso intensivo de video hasta compartir conexión con su laptop. Es su plan de datos a tiempo completo que funciona a través de fronteras sin interrupciones.",
+    "features": {
+      "instantDelivery": "Entrega instantánea de eSIM mediante código QR",
+      "globalCoverage": "Conexión en más de 90 países",
+      "validity": "Validez de 30 días desde la primera activación",
+      "useAnywhere": "Uso en casa o en el extranjero",
+      "cancelAnytime": "Cancele o actualice en cualquier momento",
+      "streaming": "Compatible con streaming, cargas, Zoom y más",
+      "highSpeedCoverage": "Cobertura LTE de alta velocidad en más de 90 países",
+      "autoRenewing": "Renovación automática, fácil de gestionar",
+      "remoteWork": "Diseñado para trabajo remoto, viajes y vida híbrida",
+      "addons": "VoIP (próximamente) y complementos de seguro disponibles"
+    },
+    "whatYouCanDo": "Qué puede hacer con",
+    "usage": {
+      "maps": "Navegación con Google Maps",
+      "instagram": "Publicaciones en Instagram",
+      "browsing": "Navegación web",
+      "light": "Uso ligero",
+      "voiceCalls": "Llamadas de voz en WhatsApp/Telegram",
+      "videoStreaming": "Streaming de video",
+      "zoomCalls": "Llamadas de Zoom",
+      "socialMedia": "Publicaciones en redes sociales",
+      "streaming": "Streaming de Spotify o YouTube",
+      "hdVideo": "Streaming de video HD",
+      "wifiBackup": "Respaldo de WiFi",
+      "unlimited": "Ilimitado",
+      "hotspot": "Usar como punto de acceso móvil",
+      "anywhere": "Transmitir, navegar, trabajar — en cualquier lugar"
+    },
+    "perfectFor": "Perfecto para",
+    "userTypes": {
+      "weekendTravelers": "Viajeros de fin de semana",
+      "businessTrips": "Viajes de negocios",
+      "lightUsers": "Usuarios de datos ligeros",
+      "firstTime": "Usuarios de eSIM por primera vez",
+      "backup": "Conectividad de respaldo",
+      "digitalNomads": "Nómadas digitales",
+      "contentCreators": "Creadores de contenido",
+      "frequentTravelers": "Viajeros frecuentes",
+      "extendedStay": "Turistas de larga estancia",
+      "remoteWorkers": "Trabajadores remotos",
+      "fullTimeTravelers": "Viajeros a tiempo completo",
+      "heavyUsers": "Usuarios intensivos"
+    },
+    "autoRenew": "Se renueva automáticamente. Cancele en cualquier momento.",
+    "includes": "El plan incluye",
+    "highSpeedData": "datos de alta velocidad",
+    "browseOther": "Explorar otros planes",
+    "whyPopular": "Por qué este plan es popular",
+    "travelerWhyPopular": "El plan Traveler ofrece el equilibrio perfecto entre asequibilidad y capacidad. La mayoría de los suscriptores encuentran que 20GB les proporciona más que suficientes datos para un mes de uso regular, incluyendo videollamadas, streaming y navegación, sin el precio premium de nuestro plan Max.",
+    "premiumAddons": "Complementos premium disponibles",
+    "voipComingSoon": "Servicios VoIP (próximamente)",
+    "voipDescription": "Mantenga su número de teléfono mientras viaja con nuestro servicio VoIP. Realice y reciba llamadas usando su número local desde cualquier lugar.",
+    "deviceInsurance": "Seguro de dispositivo",
+    "insuranceDescription": "Proteja sus dispositivos contra pérdida o daños con nuestro plan de protección global de dispositivos, válido en cualquier país donde funcione su eSIM.",
+    "maxConclusion": "El plan Max está diseñado para quienes necesitan conectividad sin compromisos. Cuando su sustento, creación de contenido o estilo de vida digital depende de tener internet estable, Max le brinda el espacio que necesita sin preocuparse constantemente por alcanzar límites de datos."
   }
 } 

@@ -16,7 +16,6 @@ export default defineConfig({
       '@pages': resolve(__dirname, './src/pages'),
       '@layouts': resolve(__dirname, './src/layouts'),
       '@components': resolve(__dirname, './src/components'),
-      '@firebase': resolve(__dirname, './src/firebase'),
       '@assets': resolve(__dirname, './src/assets'),
       '@utils': resolve(__dirname, './src/utils'),
     },

@@ -45,8 +45,6 @@ export default function Coverage() {
     }
   ];
 
-  const totalCountries = regions.reduce((total, region) => total + region.countries.length, 0);
-
   const toggleRegion = (regionName: string) => {
     if (activeRegion === regionName) {
       setActiveRegion(null);
@@ -72,7 +70,7 @@ export default function Coverage() {
         {/* Country count indicator */}
         <div className="flex justify-center mb-6">
           <div className="bg-dark-theme bg-opacity-10 rounded-full px-4 py-2 inline-flex items-center">
-            <span className="text-dark-theme font-semibold">{totalCountries}+ {t('coverage.subtitle')}</span>
+            <span className="text-dark-theme font-semibold">{t('coverage.subtitle')}</span>
           </div>
         </div>
 

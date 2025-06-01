@@ -1,68 +1,71 @@
 import { CheckIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
-
-const plans = [
-  {
-    name: 'Lite',
-    price: 19.99,
-    dataAmount: '5GB',
-    features: [
-      'Valid for 30 days',
-      'High-speed data (4G/5G)',
-      'Global coverage in 80+ countries',
-      'Secure connection',
-      'Worldwide customer support',
-      '24/7 customer support',
-      'Keep your number'
-    ],
-    popular: false,
-    ctaText: 'View Plan Details',
-    path: '/plans/lite'
-  },
-  {
-    name: 'Traveler',
-    price: 39.99,
-    dataAmount: '20GB',
-    features: [
-      'Valid for 30 days',
-      'High-speed data (4G/5G)',
-      'Global coverage in 80+ countries',
-      'Secure connection',
-      'Worldwide customer support',
-      '24/7 customer support',
-      'Keep your number'
-    ],
-    popular: true,
-    ctaText: 'View Plan Details',
-    path: '/plans/traveler'
-  },
-  {
-    name: 'Max',
-    price: 59.99,
-    dataAmount: '30GB',
-    features: [
-      'Valid for 30 days',
-      'High-speed data (4G/5G)',
-      'Global coverage in 80+ countries',
-      'Secure connection',
-      'Worldwide customer support',
-      '24/7 customer support',
-      'Keep your number'
-    ],
-    popular: false,
-    ctaText: 'View Plan Details',
-    path: '/plans/max'
-  }
-];
+import { useTranslation } from 'react-i18next';
 
 export default function Pricing() {
+  const { t } = useTranslation();
+  
+  const plans = [
+    {
+      name: 'Lite',
+      price: 19.99,
+      dataAmount: '5GB',
+      features: [
+        t('pricing.commonFeatures.feature1'),
+        t('pricing.commonFeatures.feature2'),
+        t('pricing.commonFeatures.feature3'),
+        t('pricing.commonFeatures.feature4'),
+        t('pricing.commonFeatures.feature5'),
+        t('pricing.commonFeatures.feature6'),
+        t('pricing.commonFeatures.feature7')
+      ],
+      popular: false,
+      ctaText: t('pricing.lite.ctaText', 'View Plan Details'),
+      path: '/plans/lite'
+    },
+    {
+      name: 'Traveler',
+      price: 39.99,
+      dataAmount: '20GB',
+      features: [
+        t('pricing.commonFeatures.feature1'),
+        t('pricing.commonFeatures.feature2'),
+        t('pricing.commonFeatures.feature3'),
+        t('pricing.commonFeatures.feature4'),
+        t('pricing.commonFeatures.feature5'),
+        t('pricing.commonFeatures.feature6'),
+        t('pricing.commonFeatures.feature7')
+      ],
+      popular: true,
+      ctaText: t('pricing.traveler.ctaText', 'View Plan Details'),
+      path: '/plans/traveler'
+    },
+    {
+      name: 'Max',
+      price: 59.99,
+      dataAmount: '30GB',
+      features: [
+        t('pricing.commonFeatures.feature1'),
+        t('pricing.commonFeatures.feature2'),
+        t('pricing.commonFeatures.feature3'),
+        t('pricing.commonFeatures.feature4'),
+        t('pricing.commonFeatures.feature5'),
+        t('pricing.commonFeatures.feature6'),
+        t('pricing.commonFeatures.feature7')
+      ],
+      popular: false,
+      ctaText: t('pricing.max.ctaText', 'View Plan Details'),
+      path: '/plans/max'
+    }
+  ];
+
   return (
     <section id="pricing" className="section-spacing bg-white">
       <div className="container-custom mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="section-title">Simple, Transparent Pricing</h2>
+          <h2 className="section-title">{t('pricing.title')}</h2>
           <p className="text-lg text-cool-slate">
-            Choose a plan that works for your travel needs. All plans automatically renew monthly and can be canceled anytime.
+            {t('pricing.subtitle')}
           </p>
         </div>
 
@@ -74,14 +77,14 @@ export default function Pricing() {
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-signal-blue text-white px-4 py-1 rounded-full text-sm font-medium">
-                  Most Popular
+                  {t('pricing.mostPopular')}
                 </div>
               )}
               <h3 className="text-2xl font-bold text-romio-black">{plan.name}</h3>
               <div className="mt-4 mb-6">
                 <span className="text-4xl font-bold text-romio-black">${plan.price}</span>
-                <span className="text-cool-slate">/month</span>
-                <div className="mt-1 text-lg font-medium text-signal-blue">{plan.dataAmount} Data</div>
+                <span className="text-cool-slate">/{t('pricing.monthly').toLowerCase()}</span>
+                <div className="mt-1 text-lg font-medium text-signal-blue">{plan.dataAmount} {t('dashboard.plans.data')}</div>
               </div>
               
               <ul className="mb-8 space-y-4">
@@ -108,12 +111,12 @@ export default function Pricing() {
         </div>
         
         <div className="mt-16 bg-steel-gray rounded-xl p-8 text-center">
-          <h3 className="text-xl font-semibold mb-4">Need a Custom Solution?</h3>
+          <h3 className="text-xl font-semibold mb-4">{t('pricing.customPlan')}</h3>
           <p className="text-cool-slate mb-6">
-            For teams, families, or special travel requirements, we offer custom plans.
+            {t('contact.businessSection.text')}
           </p>
           <Link to="/contact" className="btn-secondary inline-block">
-            Contact Sales
+            {t('pricing.contactUs')}
           </Link>
         </div>
       </div>

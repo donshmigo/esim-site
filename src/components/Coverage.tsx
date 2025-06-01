@@ -40,7 +40,7 @@ export default function Coverage() {
     <section id="coverage" className="section-spacing bg-steel-gray">
       <div className="container-custom mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="section-title">Global Coverage in 80+ Countries</h2>
+          <h2 className="section-title">Global Coverage in 90+ Countries</h2>
           <p className="text-lg text-cool-slate">
             Stay connected wherever your travels take you with our extensive global network coverage.
           </p>

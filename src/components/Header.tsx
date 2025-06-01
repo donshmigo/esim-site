@@ -1,22 +1,24 @@
 import { useState, useEffect } from 'react';
 import { XMarkIcon, Bars3Icon, SignalIcon } from '@heroicons/react/24/outline';
-import { useAuth } from '../firebase/AuthContext';
 import { useNavigate, Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LocaleSelector from './LocaleSelector';
+import TextLogo from './TextLogo';
 // import logo from '../assets/images/logo.svg';
 
-// Use the logo from the public directory instead
-const logoPath = '/images/logo.png';
+// Removing logo path reference since we're using text-based logo
+// const logoPath = '/images/logo.png';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { currentUser, logout } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const { t } = useTranslation();
   const isHomePage = location.pathname === '/';
+
+  // External login URL - to be updated later
+  const externalLoginUrl = 'https://example.com/login';
 
   // Add scroll effect
   useEffect(() => {
@@ -35,16 +37,6 @@ export default function Header() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [scrolled]);
-
-  // Handle logout
-  const handleLogout = async () => {
-    try {
-      await logout();
-      navigate('/');
-    } catch (error) {
-      console.error('Failed to log out', error);
-    }
-  };
 
   // Handle navigation with section scrolling on homepage
   const handleNavigation = (linkTo: string): void => {
@@ -78,7 +70,7 @@ export default function Header() {
       <nav className="container-custom mx-auto py-4 flex items-center justify-between">
         {/* Logo with signal animation */}
         <Link to="/" className="flex items-center group">
-          <img src={logoPath} alt="Romio Mobile" className="h-16" />
+          <TextLogo className="h-16" />
           <span className="ml-2 flex items-center">
             <SignalIcon className="h-4 w-4 text-signal-blue animate-signal hidden md:block" />
           </span>
@@ -107,43 +99,20 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-4">
           <LocaleSelector />
           
-          {currentUser ? (
-            <>
-              <Link 
-                to="/dashboard" 
-                className="text-romio-black hover:text-signal-blue transition-colors animate-fade-in-right animate-delay-500"
-              >
-                {t('header.dashboard')}
-              </Link>
-              <button
-                onClick={handleLogout}
-                className="text-romio-black hover:text-signal-blue transition-colors animate-fade-in-right animate-delay-500"
-              >
-                {t('header.logout')}
-              </button>
-              <Link 
-                to="/plans" 
-                className="btn-primary animate-fade-in-right animate-delay-600 hover:animate-pulse-subtle"
-              >
-                {t('header.subscribe')}
-              </Link>
-            </>
-          ) : (
-            <>
-              <Link 
-                to="/login" 
+          <a 
+            href={externalLoginUrl}
+            target="_blank" 
+            rel="noopener noreferrer" 
                 className="text-romio-black hover:text-signal-blue transition-colors animate-fade-in-right animate-delay-500"
               >
                 {t('header.login')}
-              </Link>
+          </a>
               <Link 
                 to="/plans" 
                 className="btn-primary animate-fade-in-right animate-delay-500 hover:animate-pulse-subtle"
               >
                 {t('header.subscribe')}
               </Link>
-            </>
-          )}
         </div>
         
         {/* Mobile menu button with animation */}
@@ -162,7 +131,7 @@ export default function Header() {
             <div className="p-4">
               <div className="flex items-center justify-between">
                 <Link to="/" className="flex items-center" onClick={() => setMobileMenuOpen(false)}>
-                  <img src={logoPath} alt="Romio Mobile" className="h-16" />
+                  <TextLogo className="h-16" />
                 </Link>
                 <button
                   type="button"
@@ -197,41 +166,15 @@ export default function Header() {
                   <LocaleSelector />
                 </div>
                 <div className="mt-2 flex flex-col gap-4">
-                  {currentUser ? (
-                    <>
-                      <Link 
-                        to="/dashboard" 
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="text-center py-2 text-romio-black hover:text-signal-blue animate-fade-in-up animate-delay-500"
-                      >
-                        {t('header.dashboard')}
-                      </Link>
-                      <button
-                        onClick={() => {
-                          handleLogout();
-                          setMobileMenuOpen(false);
-                        }}
-                        className="text-center py-2 text-romio-black hover:text-signal-blue animate-fade-in-up animate-delay-550"
-                      >
-                        {t('header.logout')}
-                      </button>
-                      <Link 
-                        to="/plans" 
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="btn-primary text-center animate-fade-in-up animate-delay-600"
-                      >
-                        {t('header.subscribe')}
-                      </Link>
-                    </>
-                  ) : (
-                    <>
-                      <Link 
-                        to="/login" 
+                  <a 
+                    href={externalLoginUrl}
+                    target="_blank" 
+                    rel="noopener noreferrer"
                         onClick={() => setMobileMenuOpen(false)}
                         className="text-center py-2 text-romio-black hover:text-signal-blue animate-fade-in-up animate-delay-500"
                       >
                         {t('header.login')}
-                      </Link>
+                  </a>
                       <Link 
                         to="/plans" 
                         onClick={() => setMobileMenuOpen(false)}
@@ -239,8 +182,6 @@ export default function Header() {
                       >
                         {t('header.subscribe')}
                       </Link>
-                    </>
-                  )}
                 </div>
               </div>
             </div>

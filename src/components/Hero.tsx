@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import { GlobeAltIcon, SignalIcon, DevicePhoneMobileIcon } from '@heroicons/react/24/outline';
 import heroImage from '../assets/images/hero-image.svg';
+import { useTranslation } from 'react-i18next';
 
 export default function Hero() {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   
   useEffect(() => {
@@ -41,25 +43,24 @@ export default function Hero() {
           <div className={`flex flex-col items-start justify-start transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <div className="flex items-center gap-2 mb-4">
               <SignalIcon className="h-5 w-5 text-signal-blue animate-signal" />
-              <span className="text-signal-blue font-medium">Next Generation Connectivity</span>
+              <span className="text-signal-blue font-medium">{t('hero.nextGenConnectivity', 'Next Generation Connectivity')}</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold text-romio-black mb-6 tech-accent">
-              Seamless Global Connectivity, Monthly Freedom
+              {t('hero.title')} <span className="text-signal-blue">{t('hero.titleHighlight')}</span>
             </h1>
             
             <p className="text-lg text-cool-slate mb-8 animate-fade-in-up animate-delay-200">
-              Stay connected across 80+ countries with one eSIM plan. No roaming fees, no SIM swapping, 
-              just instant connectivity the moment you land.
+              {t('hero.description')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animate-delay-300">
               <a href="#pricing" className="btn-primary text-center sm:text-left group">
-                Choose Your Plan
+                {t('hero.primaryCta')}
                 <span className="ml-2 inline-block transition-transform group-hover:translate-x-1">→</span>
               </a>
               <a href="#how-it-works" className="btn-secondary text-center sm:text-left hover-glitch">
-                How It Works
+                {t('hero.secondaryCta')}
               </a>
             </div>
             
@@ -74,16 +75,16 @@ export default function Hero() {
                 ))}
               </div>
               <p className="text-cool-slate">
-                <span className="font-semibold">4.9/5</span> from 2,000+ reviews
+                <span className="font-semibold">4.9/5</span> {t('hero.reviews', 'from 2,000+ reviews')}
               </p>
             </div>
             
             {/* Tech features list */}
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 animate-fade-in-up animate-delay-500">
               {[
-                { icon: GlobeAltIcon, text: "80+ Countries" },
-                { icon: DevicePhoneMobileIcon, text: "Instant Activation" },
-                { icon: SignalIcon, text: "High-Speed Data" }
+                { icon: GlobeAltIcon, text: t('hero.features.global.description') },
+                { icon: DevicePhoneMobileIcon, text: t('hero.features.setup.description') },
+                { icon: SignalIcon, text: t('hero.features.speed.description') }
               ].map((feature, index) => (
                 <div key={index} className="flex items-center">
                   <feature.icon className="h-5 w-5 text-signal-blue mr-2" />
@@ -99,7 +100,7 @@ export default function Hero() {
               <div className="absolute inset-0 bg-signal-blue rounded-full opacity-10 blur-xl animate-pulse scale-90"></div>
               <img 
                 src={heroImage} 
-                alt="Romio eSIM global connectivity" 
+                alt={t('hero.imgAlt', 'Romio eSIM global connectivity')} 
                 className="w-full max-w-md lg:max-w-lg relative z-10 hover-glitch"
               />
               

@@ -108,15 +108,18 @@
     "help": "ヘルプ"
   },
   "hero": {
-    "title": "グローバル接続、",
-    "titleHighlight": "シンプル化",
-    "description": "単一のeSIMプランで80カ国以上で接続を維持。ローミング料金なし、複雑な設定なし、どこでも高速データに即時アクセス。",
+    "title": "グローバルコネクティビティ、",
+    "titleHighlight": "シンプルに",
+    "description": "1つのeSIMプランで90カ国以上に接続できます。ローミング料金なし、複雑な設定なし、どこにいても高速データへの即時アクセスが可能です。",
     "primaryCta": "接続する",
-    "secondaryCta": "使い方を見る",
+    "secondaryCta": "仕組みを見る",
+    "nextGenConnectivity": "次世代コネクティビティ",
+    "reviews": "2,000件以上のレビューから",
+    "imgAlt": "Romio eSIMグローバルコネクティビティ",
     "features": {
       "global": {
         "title": "グローバルカバレッジ",
-        "description": "80カ国以上"
+        "description": "90+カ国"
       },
       "setup": {
         "title": "即時設定",
@@ -128,38 +131,62 @@
       }
     },
     "indicator": {
-      "status": "アクティブ",
+      "status": "アクティベート済み",
       "ready": "接続準備完了",
       "network": "グローバルネットワーク",
-      "countries": "80カ国以上"
+      "countries": "90+カ国"
     }
   },
   "features": {
-    "title": "Romio eSIMを選ぶ理由",
-    "subtitle": "最先端のeSIM技術によるグローバルなシームレスな接続を体験",
+    "title": "契約なし、ローミング料金なし、手間なし",
+    "subtitle": "Romio eSIMは、従来の電話プランを月額サブスクリプションに置き換え、到着した瞬間からデータにすぐアクセスできます。",
     "feature1": {
       "title": "即時アクティベーション",
-      "description": "簡単なQRコードスキャンで数分で設定完了"
+      "description": "QRコードを簡単にスキャンするだけで数分でセットアップ"
     },
     "feature2": {
-      "title": "グローバルカバレッジ",
-      "description": "80カ国以上で信頼性の高いサービス接続"
+      "title": "信頼性の高いネットワーク品質",
+      "description": "プレミアムローカルネットワークでの安定した4G/5G速度"
     },
     "feature3": {
-      "title": "国内・海外での使用",
-      "description": "国内と旅行中に使用可能、ローミング料金なし"
+      "title": "自宅と海外での使用",
+      "description": "自国と旅行先で使用可能、ローミング料金なし"
     },
     "feature4": {
       "title": "24/7サポート",
-      "description": "グローバルチームからいつでもどこでもサポートを受けることができます"
+      "description": "グローバルチームからいつでもどこでもサポートを受けられます"
     },
     "feature5": {
-      "title": "経済的",
-      "description": "従来のローミングプランと比較して最大70%節約"
+      "title": "コスト効率",
+      "description": "従来のローミング料金と比較して最大70%節約"
     },
     "feature6": {
-      "title": "デュアルSIMサポート",
-      "description": "グローバルデータを使用しながらローカル番号を保持"
+      "title": "デュアルSIM対応",
+      "description": "グローバルデータを使用しながらローカル番号を維持"
+    },
+    "global": {
+      "title": "90カ国以上のグローバルカバレッジ",
+      "description": "ヨーロッパ、北米、アジアなどで接続を維持 — 1つのプラン、1つのQRコードで。"
+    },
+    "subscription": {
+      "title": "月額サブスクリプションプラン",
+      "description": "5GB、20GB、30GBのプランから選択可能、月額1,999円から。プランは自動更新され、いつでもキャンセル可能です。"
+    },
+    "activation": {
+      "title": "即時アクティベーション",
+      "description": "QRコードをスキャンするだけですぐに使用開始。物理的なSIMカードなし、店舗訪問なし、遅延なし。"
+    },
+    "usage": {
+      "title": "自宅と海外での使用",
+      "description": "Romioは自国と旅行中に機能し、フルタイム旅行者、リモートワーカー、長期滞在の駐在員に最適です。"
+    },
+    "keepNumber": {
+      "title": "番号を保持 (近日公開)",
+      "description": "当社のVoIPプランを追加して、電話番号を保持し、データ経由で通話を受け、WhatsAppなどのアプリを中断なく使用できます。"
+    },
+    "topUp": {
+      "title": "トップアップの柔軟性",
+      "description": "月末前にさらにデータが必要ですか？ポータルやアプリから簡単にトップアップできます。"
     }
   },
   "howItWorks": {
@@ -185,7 +212,7 @@
   },
   "coverage": {
     "title": "グローバルカバレッジ",
-    "subtitle": "世界中の80カ国以上で接続",
+    "subtitle": "世界中の90カ国以上で接続",
     "searchPlaceholder": "国を検索...",
     "mapAlt": "カバレッジ地域を示す世界地図",
     "moreCountries": "その他の国",
@@ -226,20 +253,20 @@
     "mostPopular": "最も人気",
     "commonFeatures": {
       "feature1": "30日間有効",
-      "feature2": "高速データ（4G/5G）",
-      "feature3": "80カ国以上でのカバレッジ",
+      "feature2": "高速データ (4G/5G)",
+      "feature3": "90カ国以上でのカバレッジ",
       "feature4": "安全な接続",
       "feature5": "グローバルカスタマーサポート",
       "feature6": "24/7カスタマーサポート",
-      "feature7": "番号を保持",
+      "feature7": "番号を保持 (近日公開)",
       "feature8": "メールサポート"
     },
     "lite": {
       "name": "ライト",
       "price": "¥4,900",
       "yearlyPrice": "¥47,800",
-      "data": "1GBデータ",
-      "countries": "40+カ国",
+      "data": "5GBデータ",
+      "countries": "90+カ国",
       "description": "たまに旅行する人に最適",
       "features": [
         "30日間有効",
@@ -252,8 +279,8 @@
       "name": "トラベラー",
       "price": "¥9,900",
       "yearlyPrice": "¥95,800",
-      "data": "5GBデータ",
-      "countries": "60+カ国",
+      "data": "20GBデータ",
+      "countries": "90+カ国",
       "description": "頻繁に旅行する人に最適",
       "features": [
         "30日間有効",
@@ -267,8 +294,8 @@
       "name": "マックス",
       "price": "¥19,900",
       "yearlyPrice": "¥191,800",
-      "data": "無制限データ",
-      "countries": "80+カ国",
+      "data": "30GBデータ",
+      "countries": "90+カ国",
       "description": "デジタルノマドに最適",
       "features": [
         "30日間有効",
@@ -558,5 +585,79 @@
     "recommended": "おすすめ",
     "bestSeller": "ベストセラー",
     "specialOffer": "特別オファー"
+  },
+  "common": {
+    "backToAllPlans": "すべてのプランに戻る",
+    "hours": "時間",
+    "month": "月",
+    "mo": "月",
+    "learnMore": "詳細を見る",
+    "daily": "毎日"
+  },
+  "plans": {
+    "availablePlans": "利用可能なプラン",
+    "selectPlan": "プランを選択",
+    "dataPlan": "データプラン",
+    "esimPlan": "グローバルeSIMプラン",
+    "overview": "プラン概要",
+    "liteOverview": "Romio Liteは、メッセージ、マップ、メール、軽いブラウジングなど、必要最低限のことだけを必要とする旅行者向けに設計されています。ヨーロッパに数日間行く場合でも、メキシコで週末を過ごす場合でも、このプランはSIMカードの交換やローミング料金の心配なく、シームレスなカバレッジを提供します。",
+    "travelerOverview": "Romio Travelerは、信頼性の高いグローバル接続のための月額パスポートです。20GBの高速データと契約なしで、仕事、ソーシャルメディア、ナビゲーション、移動中のコンテンツに最適です。これは、ほとんどのRomioユーザーが長期的に利用するプランです - 十分なパワーで、余分な機能はありません。",
+    "maxOverview": "Romio Maxは、空港やカフェから島やコワーキングハブまで、オンラインで生活する人々のために作られました。30GBのグローバルデータで、大量のビデオ使用からノートパソコンのテザリングまで、すべてをサポートします。これは、国境を越えてもシームレスに機能する、フルタイムのデータプランです。",
+    "features": {
+      "instantDelivery": "QRコードによる即時eSIM配信",
+      "globalCoverage": "90カ国以上で接続",
+      "validity": "初回アクティベーションから30日間有効",
+      "useAnywhere": "自宅や海外での使用",
+      "cancelAnytime": "いつでもキャンセルまたはアップグレード可能",
+      "streaming": "ストリーミング、アップロード、Zoomなどをサポート",
+      "highSpeedCoverage": "90カ国以上での高速LTEカバレッジ",
+      "autoRenewing": "自動更新、管理が簡単",
+      "remoteWork": "リモートワーク、旅行、ハイブリッドライフ向けに設計",
+      "addons": "VoIP（近日公開）と保険アドオンが利用可能"
+    },
+    "whatYouCanDo": "できること",
+    "usage": {
+      "maps": "Google マップナビゲーション",
+      "instagram": "Instagramのアップロード",
+      "browsing": "ウェブブラウジング",
+      "light": "軽い使用",
+      "voiceCalls": "WhatsApp/Telegramの音声通話",
+      "videoStreaming": "ビデオストリーミング",
+      "zoomCalls": "Zoom通話",
+      "socialMedia": "ソーシャルメディア投稿",
+      "streaming": "SpotifyやYouTubeのストリーミング",
+      "hdVideo": "HDビデオストリーミング",
+      "wifiBackup": "WiFiバックアップ",
+      "unlimited": "無制限",
+      "hotspot": "モバイルホットスポットとして使用",
+      "anywhere": "ストリーミング、スクロール、作業 — どこでも"
+    },
+    "perfectFor": "最適な利用者",
+    "userTypes": {
+      "weekendTravelers": "週末の旅行者",
+      "businessTrips": "ビジネス出張",
+      "lightUsers": "軽度のデータユーザー",
+      "firstTime": "初めてのeSIMユーザー",
+      "backup": "バックアップ接続",
+      "digitalNomads": "デジタルノマド",
+      "contentCreators": "コンテンツクリエイター",
+      "frequentTravelers": "頻繁に旅行する人",
+      "extendedStay": "長期滞在の観光客",
+      "remoteWorkers": "リモートワーカー",
+      "fullTimeTravelers": "フルタイムの旅行者",
+      "heavyUsers": "ヘビーユーザー"
+    },
+    "autoRenew": "自動更新します。いつでもキャンセル可能。",
+    "includes": "プランに含まれるもの",
+    "highSpeedData": "高速データ",
+    "browseOther": "他のプランを見る",
+    "whyPopular": "このプランが人気の理由",
+    "travelerWhyPopular": "Travelerプランは手頃な価格と容量のバランスが完璧です。ほとんどの加入者は、20GBあれば、ビデオ通話、ストリーミング、ナビゲーションなど、通常の使用で1ヶ月を過ごすのに十分以上のデータがあると感じています。Maxプランのプレミアム価格はかかりません。",
+    "premiumAddons": "利用可能なプレミアムアドオン",
+    "voipComingSoon": "VoIPサービス（近日公開）",
+    "voipDescription": "当社のVoIPサービスで旅行中も電話番号を維持。どこからでも自宅の番号で通話の発信と受信ができます。",
+    "deviceInsurance": "デバイス保険",
+    "insuranceDescription": "eSIMが機能するどの国でも有効なグローバルデバイス保護プランで、デバイスの紛失や損傷から保護します。",
+    "maxConclusion": "Maxプランは妥協のない接続性を必要とする人向けに設計されています。生計、コンテンツ作成、デジタルライフスタイルが安定したインターネットに依存している場合、Maxはデータ制限に常に悩まされることなく、必要なスペースを提供します。"
   }
 } 

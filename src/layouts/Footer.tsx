@@ -2,11 +2,16 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline';
+import TextLogo from '../components/TextLogo';
 
-// Logo will be referenced directly from public directory
-const logoPath = '/images/logo.png';
+// Removing logo path reference since we're using text-based logo
+// const logoPath = '/images/logo.png';
 
-export default function Footer() {
+interface FooterProps {
+  hideBusinessSection?: boolean;
+}
+
+export default function Footer({ hideBusinessSection = false }: FooterProps) {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
@@ -55,7 +60,7 @@ export default function Footer() {
           {/* Logo and company info */}
           <div className="col-span-1">
             <Link to="/" className="inline-block mb-3">
-              <img src={logoPath} alt="Romio Mobile" className="h-12 brightness-0 invert" />
+              <TextLogo className="text-3xl" inverted={true} />
             </Link>
             <p className="text-steel-gray mb-3 text-sm">
               {t('footer.tagline')}
@@ -148,46 +153,30 @@ export default function Footer() {
       </div>
 
       {/* Business Section */}
-      <div className="mt-8 pt-6 border-t border-gray-800">
-        <div className="bg-white rounded-lg p-8 px-12">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="text-center md:text-left">
-              <h3 className="text-2xl font-bold text-romio-black mb-3">{t('footer.businessSection.title')}</h3>
-              <p className="text-cool-slate text-base max-w-xl">
-                {t('footer.businessSection.description')}
-              </p>
+      {!hideBusinessSection && (
+        <div className="mt-8 pt-6 border-t border-gray-800">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="bg-white rounded-lg p-6 md:p-8">
+              <div className="flex flex-col md:flex-row items-start justify-between gap-6">
+                <div className="text-left">
+                  <h3 className="text-2xl font-bold text-romio-black mb-3">{t('footer.businessSection.title')}</h3>
+                  <p className="text-cool-slate text-base max-w-xl">
+                    {t('footer.businessSection.description')}
+                  </p>
+                </div>
+                <Link
+                  to="/business" 
+                  className="bg-signal-blue hover:bg-opacity-90 text-white py-3 px-8 rounded-lg transition-colors whitespace-nowrap text-sm font-semibold"
+                >
+                  {t('footer.businessSection.button')}
+                </Link>
+              </div>
             </div>
-            <Link
-              to="/business" 
-              className="bg-signal-blue hover:bg-opacity-90 text-white py-3 px-8 rounded-lg transition-colors whitespace-nowrap text-sm font-semibold"
-            >
-              {t('footer.businessSection.button')}
-            </Link>
           </div>
         </div>
-      </div>
+      )}
 
-      {/* Bottom section */}
-      <div className="mt-8 pt-8 border-t border-gray-800">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center space-x-4 mb-4 md:mb-0">
-            <img
-              className="h-8 w-auto"
-              src="/romio-logo.svg"
-              alt="Romio Mobile"
-            />
-            <span className="text-sm text-gray-400">© {new Date().getFullYear()} Romio Mobile</span>
-          </div>
-          <div className="flex space-x-6">
-            <Link to="/privacy-policy" className="text-sm text-gray-400 hover:text-white">
-              {t('footer.resources.privacyPolicy')}
-            </Link>
-            <Link to="/terms-of-service" className="text-sm text-gray-400 hover:text-white">
-              {t('footer.resources.termsOfService')}
-            </Link>
-          </div>
-        </div>
-      </div>
+      {/* Bottom copyright section - REMOVED */}
     </footer>
   );
 } 

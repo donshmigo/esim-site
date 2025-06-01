@@ -1,9 +1,10 @@
 // import logo from '../assets/images/logo.svg';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import TextLogo from './TextLogo';
 
-// Use the logo from the public directory instead
-const logoPath = '/images/logo.png';
+// Removing logo path reference since we're using text-based logo
+// const logoPath = '/images/logo.png';
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -46,7 +47,7 @@ export default function Footer() {
           {/* Logo and company info */}
           <div className="col-span-1">
             <Link to="/" className="inline-block mb-6">
-              <img src={logoPath} alt="Romio eSIM" className="h-16 brightness-0 invert" />
+              <TextLogo className="h-16" inverted={true} />
             </Link>
             <p className="text-steel-gray mb-6">
               {t('footer.tagline')}
@@ -101,12 +102,8 @@ export default function Footer() {
         <div className="mt-8 pt-8 border-t border-gray-800">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-4 mb-4 md:mb-0">
-              <img
-                className="h-8 w-auto"
-                src="/romio-logo.svg"
-                alt="Romio Mobile"
-              />
-              <span className="text-sm text-gray-400">© {new Date().getFullYear()} Romio Mobile</span>
+              <TextLogo className="h-8" inverted={true} />
+              <span className="text-sm text-gray-400">© {currentYear} Romio Mobile</span>
             </div>
             <div className="flex space-x-6">
               <Link to="/privacy-policy" className="text-sm text-gray-400 hover:text-white">

@@ -1,42 +1,42 @@
 import { GlobeAltIcon, DevicePhoneMobileIcon, CurrencyDollarIcon, BoltIcon, PhoneIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
-// import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { useState, useRef, useEffect } from 'react';
 
 export default function Features() {
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [maxScroll, setMaxScroll] = useState(0);
 
   const features = [
     {
-      name: 'Instant Activation',
-      description: 'Get connected immediately after purchase with our digital eSIM technology',
+      name: t('features.activation.title'),
+      description: t('features.activation.description'),
       icon: DevicePhoneMobileIcon,
     },
     {
-      name: 'Global Coverage',
-      description: 'Stay connected in over 190 countries with our extensive network coverage',
+      name: t('features.global.title'),
+      description: t('features.global.description'),
       icon: GlobeAltIcon,
     },
     {
-      name: 'Fast 5G/4G Speeds',
-      description: 'Enjoy high-speed internet access wherever you travel',
+      name: t('features.feature2.title'),
+      description: t('features.feature2.description'),
       icon: BoltIcon,
     },
     {
-      name: "Keep Your Phone Number",
-      description: "Use your existing number while enjoying Romio eSIM data worldwide",
+      name: t('features.keepNumber.title'),
+      description: t('features.keepNumber.description'),
       icon: PhoneIcon,
     },
     {
-      name: 'Affordable Plans',
-      description: 'Choose from flexible data plans that fit your travel needs and budget',
+      name: t('features.feature5.title'),
+      description: t('features.feature5.description'),
       icon: CurrencyDollarIcon,
     },
     {
-      name: 'Easy Management',
-      description: 'Monitor your data usage and manage your eSIM through our user-friendly app',
+      name: t('features.topUp.title'),
+      description: t('features.topUp.description'),
       icon: ArrowPathIcon,
     },
   ];
@@ -65,9 +65,9 @@ export default function Features() {
     <section id="features" className="section-spacing bg-steel-gray">
       <div className="container-custom mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-8 md:mb-16">
-          <h2 className="section-title">Why Choose Romio eSIM?</h2>
+          <h2 className="section-title">{t('features.title')}</h2>
           <p className="text-lg text-cool-slate">
-            Experience seamless connectivity worldwide with our innovative eSIM solutions
+            {t('features.subtitle')}
           </p>
         </div>
 

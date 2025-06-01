@@ -92,21 +92,45 @@
     }
   },
   "hero": {
-    "title": "Global Connectivity, Simplified",
-    "subtitle": "Stay connected in 80+ countries with no roaming fees",
-    "ctaButton": "Get Started",
-    "learnMore": "Learn More"
+    "title": "Global Connectivity,",
+    "titleHighlight": "simplified",
+    "description": "Stay connected in over 90 countries with a single eSIM plan. No roaming fees, no complicated setup, instant access to high-speed data wherever you go.",
+    "primaryCta": "Connect",
+    "secondaryCta": "How It Works",
+    "nextGenConnectivity": "Next Generation Connectivity",
+    "reviews": "from 2,000+ reviews",
+    "imgAlt": "Romio eSIM global connectivity",
+    "features": {
+      "global": {
+        "title": "Global Coverage",
+        "description": "90+ countries"
+      },
+      "setup": {
+        "title": "Instant Setup",
+        "description": "Activation in seconds"
+      },
+      "speed": {
+        "title": "High-Speed Data",
+        "description": "4G/5G networks"
+      }
+    },
+    "indicator": {
+      "status": "Activated",
+      "ready": "Ready to Connect",
+      "network": "Global Network",
+      "countries": "90+ countries"
+    }
   },
   "features": {
-    "title": "Why Choose Romio eSIM",
-    "subtitle": "Experience seamless connectivity worldwide with our advanced eSIM technology",
+    "title": "No Contracts, No Roaming Fees, No Hassle",
+    "subtitle": "Romio eSIM replaces your traditional phone plan with a monthly subscription that gives you instant data access the moment you land.",
     "feature1": {
       "title": "Instant Activation",
       "description": "Setup in minutes with a simple QR code scan"
     },
     "feature2": {
-      "title": "Global Coverage",
-      "description": "Connect in over 80 countries with reliable service"
+      "title": "Reliable Network Quality",
+      "description": "Consistent 4G/5G speeds on premium local networks"
     },
     "feature3": {
       "title": "Use at Home & Abroad",
@@ -123,6 +147,30 @@
     "feature6": {
       "title": "Dual SIM Ready",
       "description": "Keep your local number while using our global data"
+    },
+    "global": {
+      "title": "Global Coverage in 90+ Countries",
+      "description": "Stay connected across Europe, North America, Asia, and more — with one plan, one QR code."
+    },
+    "subscription": {
+      "title": "Monthly Subscription Plans",
+      "description": "Choose from 5GB, 20GB, or 30GB plans, starting at $19.99/month. Plans automatically renew and can be canceled anytime."
+    },
+    "activation": {
+      "title": "Instant Activation",
+      "description": "Just scan your QR code and go. No physical SIM, no store visits, no delays."
+    },
+    "usage": {
+      "title": "Use at Home and Abroad",
+      "description": "Romio works in your home country and while traveling, making it ideal for full-time travelers, remote workers, or long-stay expats."
+    },
+    "keepNumber": {
+      "title": "Keep Your Number (Coming Soon)",
+      "description": "Add our VoIP plan to keep your phone number, take calls over data, and use apps like WhatsApp without interruption."
+    },
+    "topUp": {
+      "title": "Top-Up Flexibility",
+      "description": "Need more data before the month ends? Easily top up from your portal or app."
     }
   },
   "howItWorks": {
@@ -148,7 +196,7 @@
   },
   "coverage": {
     "title": "Global Coverage",
-    "subtitle": "Connected in over 80 countries worldwide",
+    "subtitle": "Stay connected in 90+ countries worldwide",
     "searchPlaceholder": "Search country...",
     "mapAlt": "World map showing coverage regions",
     "moreCountries": "more countries",
@@ -190,11 +238,11 @@
     "commonFeatures": {
       "feature1": "Valid for 30 days",
       "feature2": "High-speed data (4G/5G)",
-      "feature3": "Global coverage in 80+ countries",
+      "feature3": "Global coverage in 90+ countries",
       "feature4": "Secure connection",
       "feature5": "Worldwide customer support",
       "feature6": "24/7 customer support",
-      "feature7": "Keep your number",
+      "feature7": "Keep your number (coming soon)",
       "feature8": "Email support"
     },
     "lite": {
@@ -202,7 +250,7 @@
       "price": "$4.99",
       "yearlyPrice": "$47.88",
       "data": "5GB Data",
-      "countries": "80+ Countries",
+      "countries": "90+ Countries",
       "description": "Perfect for occasional travelers who need basic connectivity during short trips. Ideal for messaging and light browsing.",
       "features": {
         "feature1": "Basic customer support",
@@ -215,7 +263,7 @@
       "price": "$9.99",
       "yearlyPrice": "$95.88",
       "data": "20GB Data",
-      "countries": "80+ Countries",
+      "countries": "90+ Countries",
       "description": "Ideal for frequent travelers who need reliable connectivity for work and leisure. Great for social media and video streaming.",
       "features": {
         "feature1": "24/7 customer support",
@@ -228,7 +276,7 @@
       "price": "$19.99",
       "yearlyPrice": "$191.88",
       "data": "30GB Data",
-      "countries": "80+ Countries",
+      "countries": "90+ Countries",
       "description": "Best for digital nomads and business travelers who need unlimited connectivity across the globe. Perfect for heavy data usage.",
       "features": {
         "feature1": "Priority 24/7 support",
@@ -381,5 +429,79 @@
     "RUB": "Russian Ruble",
     "detectedCurrency": "Detected Currency",
     "changeCurrency": "Change Currency"
+  },
+  "common": {
+    "backToAllPlans": "Back to All Plans",
+    "hours": "hours",
+    "month": "month",
+    "mo": "mo",
+    "learnMore": "Learn More",
+    "daily": "Daily"
+  },
+  "plans": {
+    "availablePlans": "Available Plans",
+    "selectPlan": "Select Plan",
+    "dataPlan": "Data Plan",
+    "esimPlan": "Global eSIM Plan",
+    "overview": "Plan Overview",
+    "liteOverview": "Romio Lite is built for travelers who just need the essentials — messages, maps, emails, and light browsing. Whether you're popping over to Europe for a few days or hitting a weekend in Mexico, this plan gives you seamless coverage without the hassle of SIM swaps or roaming charges.",
+    "travelerOverview": "Romio Traveler is your monthly passport to reliable global connectivity. With 20GB of high-speed data and no contracts, it's ideal for work, social media, navigation, and content on the go. It's the plan most Romio users stick with long term — just enough power, not too much fluff.",
+    "maxOverview": "Romio Max was made for people who live online — from airports and cafés to islands and coworking hubs. With 30GB of global data, it supports everything from heavy video usage to hotspotting your laptop. It's your full-time data plan that works across borders without skipping a beat.",
+    "features": {
+      "instantDelivery": "Instant eSIM delivery via QR code",
+      "globalCoverage": "Connect in 90+ countries",
+      "validity": "30-day validity from first activation",
+      "useAnywhere": "Use at home or abroad",
+      "cancelAnytime": "Cancel or upgrade anytime",
+      "streaming": "Supports streaming, uploading, Zoom, and more",
+      "highSpeedCoverage": "High-speed LTE coverage in 90+ countries",
+      "autoRenewing": "Auto-renewing, easy to manage",
+      "remoteWork": "Designed for remote work, travel, and hybrid life",
+      "addons": "VoIP (coming soon) and insurance add-ons available"
+    },
+    "whatYouCanDo": "What You Can Do with",
+    "usage": {
+      "maps": "Google Maps navigation",
+      "instagram": "Instagram uploads",
+      "browsing": "Web browsing",
+      "light": "Light use",
+      "voiceCalls": "WhatsApp/Telegram voice calls",
+      "videoStreaming": "Video streaming",
+      "zoomCalls": "Zoom calls",
+      "socialMedia": "Social media posts",
+      "streaming": "Stream Spotify or YouTube",
+      "hdVideo": "HD video streaming",
+      "wifiBackup": "WiFi backup",
+      "unlimited": "Unlimited",
+      "hotspot": "Use as a mobile hotspot",
+      "anywhere": "Stream, scroll, work — anywhere"
+    },
+    "perfectFor": "Perfect For",
+    "userTypes": {
+      "weekendTravelers": "Weekend travelers",
+      "businessTrips": "Short business trips",
+      "lightUsers": "Light data users",
+      "firstTime": "First-time eSIM users",
+      "backup": "Backup connectivity",
+      "digitalNomads": "Digital nomads",
+      "contentCreators": "Content creators",
+      "frequentTravelers": "Frequent travelers",
+      "extendedStay": "Extended stay tourists",
+      "remoteWorkers": "Remote workers",
+      "fullTimeTravelers": "Full-time travelers",
+      "heavyUsers": "Heavy data users"
+    },
+    "autoRenew": "Renews automatically. Cancel anytime.",
+    "includes": "Plan Includes",
+    "highSpeedData": "high-speed data",
+    "browseOther": "Browse Other Plans",
+    "whyPopular": "Why This Plan Is Popular",
+    "travelerWhyPopular": "The Traveler plan strikes the perfect balance between affordability and capacity. Most subscribers find that 20GB gives them more than enough data for a month of regular use, including video calls, streaming, and navigation, without the premium price of our Max plan.",
+    "premiumAddons": "Premium Add-ons Available",
+    "voipComingSoon": "VoIP Services (Coming Soon)",
+    "voipDescription": "Keep your phone number while traveling with our VoIP service. Make and receive calls using your home number from anywhere.",
+    "deviceInsurance": "Device Insurance",
+    "insuranceDescription": "Protect your devices against loss or damage with our global device protection plan, valid in any country your eSIM works.",
+    "maxConclusion": "The Max plan is built for those who need uncompromising connectivity. When your livelihood, content creation, or digital lifestyle depends on having stable internet, Max gives you the headroom you need without constantly worrying about hitting data limits."
   }
 } 

@@ -1,132 +1,73 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Header from '../layouts/Header';
 import Footer from '../layouts/Footer';
-import { useTranslation } from 'react-i18next';
+import TextLogo from '../components/TextLogo';
 
-const AboutUs: React.FC = () => {
+export default function AboutUs() {
   const { t } = useTranslation();
-  
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <>
       <Header />
-      <main className="pt-6 pb-6 md:pt-16 md:pb-16">
-        <div className="container mx-auto px-3 md:px-4 max-w-4xl">
-          <div className="mb-2 md:mb-8">
-            <Link to="/" className="text-signal-blue hover:underline inline-flex items-center text-xs md:text-base">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 md:h-4 md:w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-              </svg>
-              Back to Home
-            </Link>
+      <div className="container mx-auto py-10 px-4 max-w-4xl">
+        <div className="text-center mb-10">
+          <div className="flex justify-center mb-4">
+            <TextLogo className="h-20" />
           </div>
-
-          <h1 className="text-xl md:text-4xl font-bold mb-2 md:mb-6">About Romio Mobile</h1>
-          <p className="text-cool-slate mb-3 md:mb-8 text-xs md:text-base">Connecting travelers worldwide with seamless mobile connectivity.</p>
-
-          <div className="prose prose-xs md:prose-lg max-w-none">
-            <section className="mb-4 md:mb-12">
-              <h2 className="text-lg md:text-2xl font-semibold mb-2 md:mb-4">Our Story</h2>
-              <p className="text-xs md:text-base mb-2">
-                Romio Mobile was founded with a simple mission: to make international travel more connected and seamless. 
-                We recognized that traditional SIM cards and roaming services were outdated, expensive, and inconvenient for modern travelers.
-              </p>
-              <p className="text-xs md:text-base">
-                Our team of telecommunications experts and travel enthusiasts came together to create a solution that would 
-                revolutionize how people stay connected abroad. By leveraging eSIM technology, we've eliminated the need for 
-                physical SIM cards and simplified the process of getting connected in foreign countries.
-              </p>
-            </section>
-
-            <section className="mb-4 md:mb-12">
-              <h2 className="text-lg md:text-2xl font-semibold mb-2 md:mb-4">Our Mission</h2>
-              <p className="text-xs md:text-base mb-2">
-                At Romio Mobile, our mission is to provide affordable, reliable, and hassle-free mobile connectivity to travelers worldwide. 
-                We believe that staying connected should be simple, transparent, and cost-effective.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-6 mt-2 md:mt-6">
-                <div className="bg-white p-2 md:p-6 rounded-lg shadow-sm">
-                  <h3 className="text-sm md:text-xl font-medium mb-1">Accessibility</h3>
-                  <p className="text-cool-slate text-xs md:text-base">Making international connectivity available to everyone, everywhere.</p>
-                </div>
-                <div className="bg-white p-2 md:p-6 rounded-lg shadow-sm">
-                  <h3 className="text-sm md:text-xl font-medium mb-1">Transparency</h3>
-                  <p className="text-cool-slate text-xs md:text-base">Clear pricing and straightforward terms with no hidden fees.</p>
-                </div>
-                <div className="bg-white p-2 md:p-6 rounded-lg shadow-sm">
-                  <h3 className="text-sm md:text-xl font-medium mb-1">Innovation</h3>
-                  <p className="text-cool-slate text-xs md:text-base">Continuously improving our technology and service offerings.</p>
-                </div>
-                <div className="bg-white p-2 md:p-6 rounded-lg shadow-sm">
-                  <h3 className="text-sm md:text-xl font-medium mb-1">Customer Focus</h3>
-                  <p className="text-cool-slate text-xs md:text-base">Dedicated to providing exceptional support and user experience.</p>
-                </div>
-              </div>
-            </section>
-
-            <section className="mb-4 md:mb-12">
-              <h2 className="text-lg md:text-2xl font-semibold mb-2 md:mb-4">Our Technology</h2>
-              <p className="text-xs md:text-base mb-2">
-                Romio Mobile utilizes cutting-edge eSIM technology to provide instant connectivity without the need for physical SIM cards. 
-                Our platform offers:
-              </p>
-              <ul className="list-disc pl-4 md:pl-6 mb-2 md:mb-4 mt-1 md:mt-4 text-xs md:text-base space-y-0.5">
-                <li>Instant activation upon purchase</li>
-                <li>Compatibility with most modern smartphones</li>
-                <li>Seamless switching between networks</li>
-                <li>Real-time usage tracking and management</li>
-                <li>Secure and encrypted connections</li>
-              </ul>
-            </section>
-
-            <section className="mb-4 md:mb-12">
-              <h2 className="text-lg md:text-2xl font-semibold mb-2 md:mb-4">Our Impact</h2>
-              <p className="text-xs md:text-base mb-2">
-                Since our launch, Romio Mobile has helped thousands of travelers stay connected in over 190 countries. 
-                We've eliminated the frustration of searching for local SIM cards, dealing with language barriers, 
-                and paying exorbitant roaming fees.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 md:gap-6 mt-2 md:mt-6">
-                <div className="bg-white p-2 md:p-6 rounded-lg shadow-sm text-center">
-                  <h3 className="text-lg md:text-3xl font-bold text-signal-blue mb-1">50,000+</h3>
-                  <p className="text-cool-slate text-xs md:text-base">Active Users</p>
-                </div>
-                <div className="bg-white p-2 md:p-6 rounded-lg shadow-sm text-center">
-                  <h3 className="text-lg md:text-3xl font-bold text-signal-blue mb-1">190+</h3>
-                  <p className="text-cool-slate text-xs md:text-base">Countries Covered</p>
-                </div>
-                <div className="bg-white p-2 md:p-6 rounded-lg shadow-sm text-center">
-                  <h3 className="text-lg md:text-3xl font-bold text-signal-blue mb-1">98%</h3>
-                  <p className="text-cool-slate text-xs md:text-base">Customer Satisfaction</p>
-                </div>
-              </div>
-            </section>
-
-            <section className="mb-4 md:mb-12">
-              <h2 className="text-lg md:text-2xl font-semibold mb-2 md:mb-4">Join Us</h2>
-              <p className="text-xs md:text-base mb-2">
-                We're always looking for talented individuals who share our passion for connectivity and innovation. 
-                If you're interested in joining our team, check out our current openings.
-              </p>
-              <div className="mt-2 md:mt-6">
-                <Link 
-                  to="/contact" 
-                  className="inline-block bg-signal-blue hover:bg-opacity-90 text-white py-1.5 px-3 md:px-8 rounded-lg transition-colors text-xs md:text-base"
-                >
-                  Contact Us
-                </Link>
-              </div>
-            </section>
-          </div>
+          <h1 className="text-3xl font-bold mb-4">{t('aboutUs.title', 'About Us')}</h1>
+          <p className="text-xl text-gray-600">
+            {t('aboutUs.subtitle', 'Connecting you to the world with affordable, reliable eSIMs')}
+          </p>
         </div>
-      </main>
+
+        <div className="prose prose-lg mx-auto">
+          <h2>{t('aboutUs.mission.title', 'Our Mission')}</h2>
+          <p>
+            {t('aboutUs.mission.description', 'At Romio, we\'re committed to revolutionizing the way travelers stay connected. Our mission is to provide seamless, affordable connectivity solutions that eliminate the hassle of traditional SIM cards and expensive roaming charges.')}
+          </p>
+
+          <h2>{t('aboutUs.story.title', 'Our Story')}</h2>
+          <p>
+            {t('aboutUs.story.description', 'Founded in 2023, Romio was born from the frustration of dealing with connectivity issues while traveling. Our team of tech enthusiasts and frequent travelers came together with a vision: to create an eSIM service that\'s not only reliable but also incredibly easy to use.')}
+          </p>
+          <p>
+            {t('aboutUs.story.growth', 'Since then, we\'ve expanded our coverage to over 90 countries and continue to grow, driven by our passion for keeping people connected wherever they go.')}
+          </p>
+
+          <h2>{t('aboutUs.difference.title', 'The Romio Difference')}</h2>
+          <ul>
+            <li>
+              {t('aboutUs.difference.instant', 'Instant Activation: Get connected in minutes, not days.')}
+            </li>
+            <li>
+              {t('aboutUs.difference.global', 'Global Coverage: Stay connected in 90+ countries worldwide.')}
+            </li>
+            <li>
+              {t('aboutUs.difference.noRoaming', 'No Roaming Charges: Say goodbye to unexpected fees.')}
+            </li>
+            <li>
+              {t('aboutUs.difference.plans', 'Flexible Plans: Choose what works for your travel needs.')}
+            </li>
+            <li>
+              {t('aboutUs.difference.support', '24/7 Support: We\'re here whenever you need us.')}
+            </li>
+          </ul>
+
+          <h2>{t('aboutUs.team.title', 'Our Team')}</h2>
+          <p>
+            {t('aboutUs.team.description', 'We\'re a diverse team of tech enthusiasts, travel lovers, and customer experience experts. United by our passion for innovation and exploration, we work tirelessly to ensure Romio provides the best possible connectivity solution for travelers around the globe.')}
+          </p>
+
+          <h2>{t('aboutUs.future.title', 'Looking Forward')}</h2>
+          <p>
+            {t('aboutUs.future.description', 'The future of connectivity is eSIM technology, and we\'re excited to be at the forefront of this revolution. As we continue to expand our coverage and enhance our offerings, we remain committed to our core values of reliability, affordability, and exceptional customer service.')}
+          </p>
+          <p>
+            {t('aboutUs.future.join', 'Join us on this journey and experience the freedom of staying connected anywhere in the world with Romio eSIM.')}
+          </p>
+        </div>
+      </div>
       <Footer />
     </>
   );
-};
-
-export default AboutUs; 
+} 

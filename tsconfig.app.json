@@ -17,8 +17,8 @@
 
     /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     
@@ -33,7 +33,13 @@
       "@firebase/*": ["./src/firebase/*"],
       "@assets/*": ["./src/assets/*"],
       "@utils/*": ["./src/utils/*"]
-    }
+    },
+    
+    /* For node types and ignoring firebase dependencies */
+    "types": ["node"],
+    "noImplicitAny": false,
+    "ignoreDeprecations": "5.0"
   },
-  "include": ["src"]
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

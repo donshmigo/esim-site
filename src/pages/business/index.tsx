@@ -218,7 +218,7 @@ const BusinessPage: React.FC = () => {
           </div>
         </section>
       </main>
-      <Footer />
+      <Footer hideBusinessSection={true} />
     </>
   );
 };

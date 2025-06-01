@@ -108,37 +108,85 @@
     "help": "帮助"
   },
   "hero": {
-    "title": "全球连接，简单化",
-    "subtitle": "在80多个国家保持连接，无需漫游费用",
-    "ctaButton": "开始使用",
-    "learnMore": "了解更多"
+    "title": "全球连接，",
+    "titleHighlight": "简单化",
+    "description": "通过单一eSIM套餐在90多个国家保持连接。没有漫游费，没有复杂设置，无论您去哪里都能即时访问高速数据。",
+    "primaryCta": "连接",
+    "secondaryCta": "了解工作原理",
+    "nextGenConnectivity": "下一代连接",
+    "reviews": "来自2,000多条评论",
+    "imgAlt": "Romio eSIM全球连接",
+    "features": {
+      "global": {
+        "title": "全球覆盖",
+        "description": "90+国家"
+      },
+      "setup": {
+        "title": "即时设置",
+        "description": "几秒钟内激活"
+      },
+      "speed": {
+        "title": "高速数据",
+        "description": "4G/5G网络"
+      }
+    },
+    "indicator": {
+      "status": "已激活",
+      "ready": "准备连接",
+      "network": "全球网络",
+      "countries": "90+国家"
+    }
   },
   "features": {
-    "title": "为什么选择Romio eSIM",
-    "subtitle": "体验我们先进的eSIM技术带来的全球无缝连接",
+    "title": "无合约，无漫游费，无麻烦",
+    "subtitle": "Romio eSIM用月度订阅替代您的传统手机套餐，让您在落地瞬间即可访问数据。",
     "feature1": {
       "title": "即时激活",
       "description": "通过简单的二维码扫描，几分钟内完成设置"
     },
     "feature2": {
-      "title": "全球覆盖",
-      "description": "在80多个国家提供可靠的服务连接"
+      "title": "可靠的网络质量",
+      "description": "高级本地网络上的稳定4G/5G速度"
     },
     "feature3": {
-      "title": "国内和国外使用",
-      "description": "在您的国家和旅行期间都能使用，无需漫游费用"
+      "title": "家庭和国外使用",
+      "description": "在您的本国和旅行时均可使用，无漫游费"
     },
     "feature4": {
       "title": "24/7支持",
-      "description": "随时随地从我们的全球团队获得帮助"
+      "description": "随时随地从我们的全球团队获取帮助"
     },
     "feature5": {
-      "title": "经济实惠",
-      "description": "比传统漫游套餐节省高达70%"
+      "title": "成本效益",
+      "description": "与传统漫游费相比节省高达70%"
     },
     "feature6": {
-      "title": "双卡支持",
-      "description": "使用我们的全球数据时保留您的本地号码"
+      "title": "双卡就绪",
+      "description": "在使用我们的全球数据的同时保留您的本地号码"
+    },
+    "global": {
+      "title": "90多个国家的全球覆盖",
+      "description": "在欧洲、北美、亚洲等地保持连接 — 一个套餐，一个二维码。"
+    },
+    "subscription": {
+      "title": "月度订阅计划",
+      "description": "从5GB、20GB或30GB计划中选择，起价¥199/月。计划自动续订，可随时取消。"
+    },
+    "activation": {
+      "title": "即时激活",
+      "description": "只需扫描您的二维码即可使用。无实体SIM卡，无需店面访问，无延迟。"
+    },
+    "usage": {
+      "title": "在家和国外使用",
+      "description": "Romio在您的本国和旅行时都能工作，非常适合全职旅行者、远程工作者或长期居住的外籍人士。"
+    },
+    "keepNumber": {
+      "title": "保留您的号码（即将推出）",
+      "description": "添加我们的VoIP计划以保留您的电话号码，通过数据接听电话，并不间断地使用WhatsApp等应用程序。"
+    },
+    "topUp": {
+      "title": "充值灵活性",
+      "description": "月底前需要更多数据？从您的门户网站或应用轻松充值。"
     }
   },
   "howItWorks": {
@@ -164,7 +212,7 @@
   },
   "coverage": {
     "title": "全球覆盖",
-    "subtitle": "在全球80多个国家连接",
+    "subtitle": "在全球90多个国家保持连接",
     "searchPlaceholder": "搜索国家...",
     "mapAlt": "显示覆盖区域的世界地图",
     "moreCountries": "更多国家",
@@ -206,19 +254,19 @@
     "commonFeatures": {
       "feature1": "有效期30天",
       "feature2": "高速数据（4G/5G）",
-      "feature3": "覆盖80多个国家",
+      "feature3": "覆盖90多个国家",
       "feature4": "安全连接",
       "feature5": "全球客户支持",
       "feature6": "24/7客户支持",
-      "feature7": "保留您的号码",
+      "feature7": "保留您的号码（即将推出）",
       "feature8": "电子邮件支持"
     },
     "lite": {
       "name": "轻量版",
       "price": "¥49",
       "yearlyPrice": "¥478",
-      "data": "1GB数据",
-      "countries": "40+国家",
+      "data": "5GB数据",
+      "countries": "90+国家",
       "description": "适合偶尔旅行者",
       "features": [
         "有效期30天",
@@ -231,8 +279,8 @@
       "name": "旅行者",
       "price": "¥99",
       "yearlyPrice": "¥958",
-      "data": "5GB数据",
-      "countries": "60+国家",
+      "data": "20GB数据",
+      "countries": "90+国家",
       "description": "适合经常旅行者",
       "features": [
         "有效期30天",
@@ -246,8 +294,8 @@
       "name": "最大版",
       "price": "¥199",
       "yearlyPrice": "¥1,918",
-      "data": "无限数据",
-      "countries": "80+国家",
+      "data": "30GB数据",
+      "countries": "90+国家",
       "description": "数字游民的最佳选择",
       "features": [
         "有效期30天",
@@ -537,5 +585,79 @@
     "recommended": "推荐",
     "bestSeller": "畅销",
     "specialOffer": "特别优惠"
+  },
+  "common": {
+    "backToAllPlans": "返回所有套餐",
+    "hours": "小时",
+    "month": "月",
+    "mo": "月",
+    "learnMore": "了解更多",
+    "daily": "每日"
+  },
+  "plans": {
+    "availablePlans": "可用套餐",
+    "selectPlan": "选择套餐",
+    "dataPlan": "数据套餐",
+    "esimPlan": "全球eSIM套餐",
+    "overview": "套餐概览",
+    "liteOverview": "Romio Lite专为只需要基础功能的旅行者设计，包括消息、地图、电子邮件和轻度浏览。无论您是去欧洲几天还是在墨西哥度周末，这个套餐都能提供无缝覆盖，无需更换SIM卡或支付漫游费用的麻烦。",
+    "travelerOverview": "Romio Traveler是您可靠全球连接的月度通行证。拥有20GB的高速数据且无合约，非常适合工作、社交媒体、导航和移动内容。这是大多数Romio用户长期使用的套餐——足够强大，没有太多多余功能。",
+    "maxOverview": "Romio Max是为在线生活的人设计的——从机场和咖啡馆到岛屿和联合办公空间。拥有30GB的全球数据，支持从大量视频使用到笔记本电脑热点共享的所有功能。这是您的全职数据套餐，可在跨境时无缝运行。",
+    "features": {
+      "instantDelivery": "通过二维码即时交付eSIM",
+      "globalCoverage": "在90多个国家连接",
+      "validity": "首次激活后30天有效期",
+      "useAnywhere": "在家或国外使用",
+      "cancelAnytime": "随时取消或升级",
+      "streaming": "支持流媒体、上传、Zoom等",
+      "highSpeedCoverage": "90多个国家的高速LTE覆盖",
+      "autoRenewing": "自动续费，易于管理",
+      "remoteWork": "专为远程工作、旅行和混合生活方式设计",
+      "addons": "提供VoIP（即将推出）和保险附加服务"
+    },
+    "whatYouCanDo": "您可以用",
+    "usage": {
+      "maps": "谷歌地图导航",
+      "instagram": "Instagram上传",
+      "browsing": "网页浏览",
+      "light": "轻度使用",
+      "voiceCalls": "WhatsApp/Telegram语音通话",
+      "videoStreaming": "视频流媒体",
+      "zoomCalls": "Zoom通话",
+      "socialMedia": "社交媒体帖子",
+      "streaming": "流媒体Spotify或YouTube",
+      "hdVideo": "HD视频流",
+      "wifiBackup": "WiFi备份",
+      "unlimited": "无限制",
+      "hotspot": "用作移动热点",
+      "anywhere": "流媒体、滚动、工作 — 随时随地"
+    },
+    "perfectFor": "非常适合",
+    "userTypes": {
+      "weekendTravelers": "周末旅行者",
+      "businessTrips": "商务旅行",
+      "lightUsers": "轻度数据用户",
+      "firstTime": "首次eSIM用户",
+      "backup": "备用连接",
+      "digitalNomads": "数字游民",
+      "contentCreators": "内容创作者",
+      "frequentTravelers": "频繁旅行者",
+      "extendedStay": "长期停留的游客",
+      "remoteWorkers": "远程工作者",
+      "fullTimeTravelers": "全职旅行者",
+      "heavyUsers": "重度用户"
+    },
+    "autoRenew": "自动续订。随时可取消。",
+    "includes": "套餐包括",
+    "highSpeedData": "高速数据",
+    "browseOther": "浏览其他套餐",
+    "whyPopular": "为什么这个套餐很受欢迎",
+    "travelerWhyPopular": "Traveler套餐在经济实惠和容量之间取得了完美平衡。大多数用户发现20GB的数据足以满足一个月的正常使用，包括视频通话、流媒体和导航，而且没有我们Max套餐的高级价格。",
+    "premiumAddons": "可用的高级附加服务",
+    "voipComingSoon": "VoIP服务（即将推出）",
+    "voipDescription": "使用我们的VoIP服务在旅行时保留您的电话号码。使用您的家庭号码从任何地方拨打和接收电话。",
+    "deviceInsurance": "设备保险",
+    "insuranceDescription": "使用我们的全球设备保护计划保护您的设备免受丢失或损坏，该计划在您的eSIM工作的任何国家都有效。",
+    "maxConclusion": "Max套餐专为需要不妥协连接的用户设计。当您的生计、内容创作或数字生活方式依赖于稳定的互联网时，Max为您提供所需的空间，无需经常担心达到数据限制。"
   }
 } 

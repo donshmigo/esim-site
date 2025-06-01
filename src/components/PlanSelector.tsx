@@ -1,44 +1,56 @@
 import React, { useState } from 'react';
-import useDataPlans from '../hooks/useDataPlans';
-import { DataPlan } from '../services/api';
+import { DataPlan } from '../types/plans';
 
 interface PlanSelectorProps {
   onSelectPlan: (plan: DataPlan) => void;
-  countryCode?: string;
+  selectedPlan: DataPlan | null;
 }
 
-export const PlanSelector: React.FC<PlanSelectorProps> = ({ onSelectPlan, countryCode }) => {
-  const { plans, loading, error } = useDataPlans(countryCode);
-  const [selectedPlanId, setSelectedPlanId] = useState<string | null>(null);
+// Mock data for plans
+const mockPlans: DataPlan[] = [
+  {
+    id: 'lite',
+    name: 'Lite Plan',
+    data: '5GB',
+    description: 'Perfect for occasional travelers',
+    price: {
+      amount: 4.99,
+      currency: 'USD'
+    }
+  },
+  {
+    id: 'traveler',
+    name: 'Traveler Plan',
+    data: '20GB',
+    description: 'Ideal for frequent travelers',
+    price: {
+      amount: 9.99,
+      currency: 'USD'
+    }
+  },
+  {
+    id: 'max',
+    name: 'Max Plan',
+    data: '30GB',
+    description: 'Best for digital nomads',
+    price: {
+      amount: 19.99,
+      currency: 'USD'
+    }
+  }
+];
+
+export const PlanSelector: React.FC<PlanSelectorProps> = ({ onSelectPlan, selectedPlan }) => {
+  const [selectedPlanId, setSelectedPlanId] = useState<string | null>(selectedPlan?.id || null);
 
   const handleSelectPlan = (plan: DataPlan) => {
     setSelectedPlanId(plan.id);
     onSelectPlan(plan);
   };
 
-  if (loading) {
-    return <div className="flex justify-center py-8">Loading plans...</div>;
-  }
-
-  if (error) {
-    return (
-      <div className="text-red-500 py-4">
-        Error loading plans: {error.message}
-      </div>
-    );
-  }
-
-  if (plans.length === 0) {
-    return (
-      <div className="py-4">
-        No plans available {countryCode ? `for ${countryCode}` : ''}.
-      </div>
-    );
-  }
-
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {plans.map((plan) => (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {mockPlans.map((plan) => (
         <div 
           key={plan.id}
           className={`border rounded-lg p-4 cursor-pointer transition-all
@@ -54,22 +66,22 @@ export const PlanSelector: React.FC<PlanSelectorProps> = ({ onSelectPlan, countr
           <div className="flex justify-between items-center">
             <div>
               <span className="font-bold text-lg">
-                {plan.data_amount} {plan.data_unit}
+                {plan.data}
               </span>
               <span className="block text-sm text-gray-500">
-                Valid for {plan.validity_days} days
+                Valid for 30 days
               </span>
             </div>
             
             <div className="text-right">
               <span className="font-bold text-xl text-blue-600">
-                {plan.price.currency} {plan.price.amount.toFixed(2)}
+                {plan.price?.currency} {typeof plan.price?.amount === 'number' ? plan.price?.amount.toFixed(2) : plan.price?.amount}
               </span>
             </div>
           </div>
           
           <div className="mt-4 text-sm text-gray-500">
-            <span>Available in {plan.countries.length} countries</span>
+            <span>Available in 90+ countries</span>
           </div>
         </div>
       ))}

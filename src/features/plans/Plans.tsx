@@ -1,7 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
-// import { useAuth } from '../../firebase/AuthContext';
-import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../firebase/firebase';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
@@ -20,149 +17,131 @@ const Plans: React.FC = () => {
   const navigate = useNavigate();
   const [plans, setPlans] = useState<Plan[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
 
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const fetchPlans = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-    
-    try {
-      const plansCollection = collection(db, 'plans');
-      const plansSnapshot = await getDocs(plansCollection);
-      
-      if (!plansSnapshot.empty) {
-        const plansData = plansSnapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        })) as Plan[];
-        
-        setPlans(plansData);
-      } else {
-        // If no plans in database, show mock plans
-        setPlans([
-          {
-            id: 'basic',
-            name: 'Basic Plan',
-            price: 9.99,
-            dataAmount: '1GB',
-            duration: '30 days',
-            description: 'Perfect for light travelers who need basic connectivity.',
-            features: ['1GB Data', 'Valid for 30 days', 'Coverage in 100+ countries']
-          },
-          {
-            id: 'standard',
-            name: 'Standard Plan',
-            price: 19.99,
-            dataAmount: '3GB',
-            duration: '30 days',
-            description: 'Our most popular plan for regular travelers.',
-            features: ['3GB Data', 'Valid for 30 days', 'Coverage in 130+ countries', 'Priority support']
-          },
-          {
-            id: 'premium',
-            name: 'Premium Plan',
-            price: 29.99,
-            dataAmount: '5GB',
-            duration: '30 days',
-            description: 'For heavy data users who need reliable connectivity.',
-            features: ['5GB Data', 'Valid for 30 days', 'Coverage in 150+ countries', 'Priority support', 'Unlimited texting']
-          }
-        ]);
-      }
-    } catch (err) {
-      console.error('Error fetching plans:', err);
-      setError('Failed to load available plans. Please try again.');
-      
-      // Fallback to mock data
+  useEffect(() => {
+    // Simulate API loading
+    setTimeout(() => {
       setPlans([
         {
-          id: 'basic',
-          name: 'Basic Plan',
+          id: 'lite',
+          name: t('plans.lite.name', 'Lite Plan'),
           price: 9.99,
-          dataAmount: '1GB',
+          dataAmount: '5GB',
           duration: '30 days',
-          description: 'Perfect for light travelers who need basic connectivity.',
-          features: ['1GB Data', 'Valid for 30 days', 'Coverage in 100+ countries']
+          description: t('plans.lite.description', 'Perfect for occasional travelers who need basic connectivity.'),
+          features: [
+            t('plans.lite.feature1', '5GB Data'),
+            t('plans.lite.feature2', 'Valid for 30 days'),
+            t('plans.lite.feature3', 'Coverage in 90+ countries'),
+            t('plans.lite.feature4', 'Standard support')
+          ]
         },
         {
-          id: 'standard',
-          name: 'Standard Plan',
+          id: 'traveler',
+          name: t('plans.traveler.name', 'Traveler Plan'),
           price: 19.99,
-          dataAmount: '3GB',
+          dataAmount: '20GB',
           duration: '30 days',
-          description: 'Our most popular plan for regular travelers.',
-          features: ['3GB Data', 'Valid for 30 days', 'Coverage in 130+ countries', 'Priority support']
+          description: t('plans.traveler.description', 'Our most popular plan for regular travelers.'),
+          features: [
+            t('plans.traveler.feature1', '20GB Data'),
+            t('plans.traveler.feature2', 'Valid for 30 days'),
+            t('plans.traveler.feature3', 'Coverage in 90+ countries'),
+            t('plans.traveler.feature4', 'Priority support'),
+            t('plans.traveler.feature5', 'Data rollover')
+          ]
+        },
+        {
+          id: 'max',
+          name: t('plans.max.name', 'Max Plan'),
+          price: 29.99,
+          dataAmount: '30GB',
+          duration: '30 days',
+          description: t('plans.max.description', 'For heavy data users who need reliable connectivity.'),
+          features: [
+            t('plans.max.feature1', '30GB Data'),
+            t('plans.max.feature2', 'Valid for 30 days'),
+            t('plans.max.feature3', 'Coverage in 90+ countries'),
+            t('plans.max.feature4', 'Premium support'),
+            t('plans.max.feature5', 'Data rollover'),
+            t('plans.max.feature6', 'Higher network priority')
+          ]
         }
       ]);
-    } finally {
       setLoading(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    fetchPlans();
-  }, [fetchPlans]);
-
-  const handleRetry = () => {
-    fetchPlans();
-  };
+    }, 800); // Simulate loading delay
+  }, [t]);
 
   const handleSelectPlan = (planId: string) => {
-    navigate('/checkout', { state: { selectedPlanId: planId } });
+    const selectedPlan = plans.find(plan => plan.id === planId);
+    if (selectedPlan) {
+      navigate('/checkout', { 
+        state: { 
+          selectedPlan: {
+            id: selectedPlan.id,
+            name: selectedPlan.name,
+            data: selectedPlan.dataAmount,
+            description: selectedPlan.description,
+            price: {
+              amount: selectedPlan.price,
+              currency: 'USD'
+            }
+          }
+        } 
+      });
+    }
   };
 
   if (loading) {
     return (
-      <div className="loading-placeholder">
-        <div className="loading-spinner"></div>
-        <p>{t('dashboard.loading', 'Loading available plans...')}</p>
-      </div>
-    );
-  }
-
-  if (error && plans.length === 0) {
-    return (
-      <div className="error-container">
-        <p className="error-message">{error}</p>
-        <button className="retry-button" onClick={handleRetry}>
-          {t('dashboard.error.retry', 'Retry')}
-        </button>
+      <div className="container mx-auto px-4 py-8 text-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mx-auto mb-4"></div>
+        <p className="text-gray-600">{t('general.loading', 'Loading available plans...')}</p>
       </div>
     );
   }
 
   return (
-    <div className="plans-container">
-      <h1>{t('dashboard.plans.availablePlans', 'Available Plans')}</h1>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold text-center mb-8">{t('plans.title', 'Choose Your eSIM Plan')}</h1>
       
-      <div className="plans-grid">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {plans.map((plan) => (
-          <div key={plan.id} className="plan-card">
-            <div className="plan-header">
-              <h2>{plan.name}</h2>
-              <p className="plan-price">${plan.price.toFixed(2)}</p>
+          <div key={plan.id} className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:shadow-lg hover:-translate-y-1">
+            <div className="bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-4">
+              <h2 className="text-xl font-bold text-white">{plan.name}</h2>
+              <div className="flex items-end mt-2">
+                <span className="text-3xl font-bold text-white">${plan.price.toFixed(2)}</span>
+                <span className="text-white opacity-80 ml-1">/ {plan.duration}</span>
+              </div>
+              <p className="text-sm text-white mt-2">{plan.dataAmount} Data</p>
             </div>
             
-            <div className="plan-details">
-              <p className="plan-description">{plan.description}</p>
-              <ul className="plan-features">
+            <div className="p-6">
+              <p className="text-gray-600 mb-4">{plan.description}</p>
+              <ul className="space-y-2 mb-6">
                 {plan.features.map((feature, index) => (
-                  <li key={index}>{feature}</li>
+                  <li key={index} className="flex items-start">
+                    <svg className="h-5 w-5 text-green-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>{feature}</span>
+                  </li>
                 ))}
               </ul>
+              
+              <button 
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
+                onClick={() => handleSelectPlan(plan.id)}
+              >
+                {t('plans.selectButton', 'Select Plan')}
+              </button>
             </div>
-            
-            <button 
-              className="select-plan-button"
-              onClick={() => handleSelectPlan(plan.id)}
-            >
-              {t('dashboard.plans.selectPlan', 'Select Plan')}
-            </button>
           </div>
         ))}
       </div>

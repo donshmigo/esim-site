@@ -1,47 +1,49 @@
 import { GlobeAltIcon, DevicePhoneMobileIcon, CurrencyDollarIcon, BoltIcon, PhoneIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
-
-const features = [
-  {
-    name: 'Global Coverage in 80+ Countries',
-    description: 'Stay connected across Europe, North America, Asia, and more — with one plan, one QR code.',
-    icon: GlobeAltIcon,
-  },
-  {
-    name: 'Monthly Subscription Plans',
-    description: 'Choose from 5GB, 20GB, or 30GB plans, starting at $19.99/month. Plans automatically renew and can be canceled anytime.',
-    icon: CurrencyDollarIcon,
-  },
-  {
-    name: 'Instant Activation',
-    description: 'Just scan your QR code and go. No physical SIM, no store visits, no delays.',
-    icon: BoltIcon,
-  },
-  {
-    name: 'Use at Home and Abroad',
-    description: 'Romio works in your home country and while traveling, making it ideal for full-time travelers, remote workers, or long-stay expats.',
-    icon: DevicePhoneMobileIcon,
-  },
-  {
-    name: 'Keep Your Number',
-    description: 'Add our VoIP plan to keep your phone number, take calls over data, and use apps like WhatsApp without interruption.',
-    icon: PhoneIcon,
-  },
-  {
-    name: 'Top-Up Flexibility',
-    description: 'Need more data before the month ends? Easily top up from your portal or app.',
-    icon: ArrowPathIcon,
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 export default function Features() {
+  const { t } = useTranslation();
+
+  const features = [
+    {
+      name: t('features.global.title'),
+      description: t('features.global.description'),
+      icon: GlobeAltIcon,
+    },
+    {
+      name: t('features.subscription.title'),
+      description: t('features.subscription.description'),
+      icon: CurrencyDollarIcon,
+    },
+    {
+      name: t('features.activation.title'),
+      description: t('features.activation.description'),
+      icon: BoltIcon,
+    },
+    {
+      name: t('features.usage.title'),
+      description: t('features.usage.description'),
+      icon: DevicePhoneMobileIcon,
+    },
+    {
+      name: t('features.keepNumber.title'),
+      description: t('features.keepNumber.description'),
+      icon: PhoneIcon,
+    },
+    {
+      name: t('features.topUp.title'),
+      description: t('features.topUp.description'),
+      icon: ArrowPathIcon,
+    },
+  ];
+
   return (
     <section id="features" className="section-spacing bg-steel-gray">
       <div className="container-custom mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <h2 className="section-title">No Contracts, No Roaming Fees, No Hassle</h2>
+          <h2 className="section-title">{t('features.title')}</h2>
           <p className="text-lg text-cool-slate">
-            Romio eSIM replaces your traditional phone plan with a monthly subscription that gives you
-            instant data access the moment you land.
+            {t('features.subtitle')}
           </p>
         </div>
 

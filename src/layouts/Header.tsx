@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../firebase/AuthContext';
 import { useTranslation } from 'react-i18next';
 import LocaleSelector from '../components/LocaleSelector';
+import TextLogo from '../components/TextLogo';
 // Replace the logo import
 // import logo from '../assets/images/logo.svg';
 
-// Logo will be referenced directly from public directory
-const logoPath = '/images/logo.png';
+// Removing logo path reference since we're using text-based logo
+// const logoPath = '/images/logo.png';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { currentUser, logout } = useAuth();
   const { t } = useTranslation();
   const navigate = useNavigate();
+
+  // External login URL - to be updated later
+  const externalLoginUrl = 'https://example.com/login';
 
   // Add scroll effect
   useEffect(() => {
@@ -33,16 +35,6 @@ const Header: React.FC = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [scrolled]);
-
-  // Handle logout
-  const handleLogout = async () => {
-    try {
-      await logout();
-      navigate('/');
-    } catch (error) {
-      console.error('Failed to log out', error);
-    }
-  };
 
   // Check if current path is home
   const isHome = location.pathname === '/';
@@ -97,10 +89,8 @@ const Header: React.FC = () => {
       <nav className="container mx-auto px-6 py-3">
         <div className="flex justify-between items-center">
           {/* Left side - Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="flex items-center">
-              <img src={logoPath} alt="Romio Mobile" className="h-16" />
-            </div>
+          <Link to="/" className="flex items-center">
+            <TextLogo className="text-3xl py-1" /> {/* Added py-1 for vertical alignment */}
           </Link>
 
           {/* Mobile menu button */}
@@ -133,7 +123,7 @@ const Header: React.FC = () => {
           {/* Desktop navigation */}
           <div className="hidden md:flex md:items-center">
             {/* Center - Navigation links */}
-            <div className="flex items-center space-x-6 mr-6">
+            <div className="flex items-center space-x-8 mr-8"> {/* Increased spacing */}
               <button 
                 onClick={() => handleNavigation(isHome ? '#features' : '/plans')} 
                 className="text-base font-medium text-gray-500 hover:text-gray-900 bg-transparent border-0 cursor-pointer p-0"
@@ -164,30 +154,20 @@ const Header: React.FC = () => {
             <div className="flex items-center space-x-3">
               <LocaleSelector />
               
-              {currentUser ? (
-                <>
-                  <Link to="/esim-dashboard" className="text-base font-medium text-gray-500 hover:text-gray-900">{t('header.dashboard')}</Link>
-                  <button onClick={handleLogout} className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-dark-theme hover:bg-opacity-90">
-                    {t('header.logout')}
-                  </button>
+              <a 
+                href={externalLoginUrl}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-base font-medium text-gray-500 hover:text-gray-900"
+              >
+                {t('header.login')}
+              </a>
                   <button
                     onClick={handleSubscribeClick}
                     className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-signal-blue hover:bg-opacity-90"
                   >
                     {t('header.subscribe')}
                   </button>
-                </>
-              ) : (
-                <>
-                  <Link to="/login" className="text-base font-medium text-gray-500 hover:text-gray-900">{t('header.login')}</Link>
-                  <button
-                    onClick={handleSubscribeClick}
-                    className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-signal-blue hover:bg-opacity-90"
-                  >
-                    {t('header.subscribe')}
-                  </button>
-                </>
-              )}
             </div>
           </div>
         </div>
@@ -233,42 +213,23 @@ const Header: React.FC = () => {
                 {t('header.faq')}
               </button>
               
-              {currentUser ? (
-                <>
-                  <Link to="/esim-dashboard" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">{t('header.dashboard')}</Link>
-                  <button 
-                    onClick={() => {
-                      handleLogout();
-                      setIsOpen(false);
-                    }}
-                    className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              <a 
+                href={externalLoginUrl}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
                   >
-                    {t('header.logout')}
-                  </button>
+                {t('header.login')}
+              </a>
                   <button
                     onClick={() => {
                       handleSubscribeClick();
                       setIsOpen(false);
                     }}
-                    className="block w-full text-center px-3 py-2 rounded-md shadow-sm text-base font-medium text-white bg-signal-blue hover:bg-opacity-90"
+                className="w-full text-left px-3 py-2 rounded-md text-base font-medium bg-signal-blue text-white hover:bg-opacity-90"
                   >
                     {t('header.subscribe')}
                   </button>
-                </>
-              ) : (
-                <>
-                  <Link to="/login" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">{t('header.login')}</Link>
-                  <button
-                    onClick={() => {
-                      handleSubscribeClick();
-                      setIsOpen(false);
-                    }}
-                    className="block w-full text-center px-3 py-2 rounded-md shadow-sm text-base font-medium text-white bg-signal-blue hover:bg-opacity-90"
-                  >
-                    {t('header.subscribe')}
-                  </button>
-                </>
-              )}
             </div>
           </div>
         )}

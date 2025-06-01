@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { ArrowRightIcon, SignalIcon, DevicePhoneMobileIcon, GlobeAltIcon, BoltIcon, ClockIcon } from '@heroicons/react/24/outline';
+import { useTranslation } from 'react-i18next';
 
 const PhoneHero = () => {
+  const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
   
   useEffect(() => {
@@ -54,22 +56,21 @@ const PhoneHero = () => {
           <div className={`w-full lg:w-1/2 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <div className="inline-flex items-center px-3 py-1 mb-6 rounded-full bg-dark-theme bg-opacity-10">
               <SignalIcon className="h-4 w-4 text-dark-theme animate-signal" />
-              <span className="ml-2 text-sm font-medium text-dark-theme">Next-Gen eSIM Technology</span>
+              <span className="ml-2 text-sm font-medium text-dark-theme">{t('hero.nextGenConnectivity')}</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6 tech-accent">
-              Global Connectivity,
-              <span className="text-dark-theme"> Simplified</span>
+              {t('hero.title')}
+              <span className="text-dark-theme"> {t('hero.titleHighlight')}</span>
             </h1>
             
             <p className="text-lg text-cool-slate mb-8 animate-fade-in-up animate-delay-200">
-              Stay connected in 80+ countries with a single eSIM plan. No roaming fees,
-              no complicated setup, just instant access to high-speed data wherever you go.
+              {t('hero.description')}
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in-up animate-delay-300">
               <a href="#pricing" className="btn-primary group relative">
-                Get Connected
+                {t('hero.primaryCta')}
                 <ArrowRightIcon className="ml-2 h-4 w-4 inline-block transition-transform group-hover:translate-x-1" />
               </a>
               <a 
@@ -77,16 +78,16 @@ const PhoneHero = () => {
                 className="btn-secondary no-focus-outline"
                 style={{ outline: 'none' }}
               >
-                See How It Works
+                {t('hero.secondaryCta')}
               </a>
             </div>
             
             {/* Feature list */}
             <div className="grid grid-cols-3 gap-2 sm:gap-6 animate-fade-in-up animate-delay-400">
               {[
-                { icon: GlobeAltIcon, title: "Global Coverage", desc: "80+ countries" },
-                { icon: BoltIcon, title: "Instant Activation", desc: "Activate in seconds" },
-                { icon: ClockIcon, title: "No Contracts", desc: "Cancel anytime" }
+                { icon: GlobeAltIcon, title: t('hero.features.global.title'), desc: t('hero.features.global.description') },
+                { icon: BoltIcon, title: t('hero.features.setup.title'), desc: t('hero.features.setup.description') },
+                { icon: ClockIcon, title: t('features.feature5.title'), desc: t('pricing.commonFeatures.feature7') }
               ].map((feature, index) => (
                 <div key={index} className="flex flex-col items-center sm:items-start text-center sm:text-left">
                   <div className="mb-2 p-2 sm:p-3 rounded-lg bg-dark-theme bg-opacity-10 w-fit">
@@ -114,7 +115,7 @@ const PhoneHero = () => {
                     <div className="flex items-center">
                       <SignalIcon className="h-4 w-4 text-gray-400" />
                     </div>
-                    <div className="text-xs font-semibold text-gray-800">eSIM Active</div>
+                    <div className="text-xs font-semibold text-gray-800">{t('hero.indicator.status')}</div>
                     <div className="flex items-center">
                       <GlobeAltIcon className="h-4 w-4 text-gray-400" />
                     </div>
@@ -125,8 +126,8 @@ const PhoneHero = () => {
                     {/* Scrolling countries section */}
                     <div className="pt-6 pb-32 relative overflow-hidden">
                       <div className="flex items-center justify-between px-4 mb-4">
-                        <h4 className="text-sm font-semibold text-dark-theme">Available Countries</h4>
-                        <span className="text-xs font-medium bg-dark-theme bg-opacity-10 text-dark-theme px-2 py-1 rounded-full">80+ Countries</span>
+                        <h4 className="text-sm font-semibold text-dark-theme">{t('coverage.title')}</h4>
+                        <span className="text-xs font-medium bg-dark-theme bg-opacity-10 text-dark-theme px-2 py-1 rounded-full">{t('hero.features.global.description')}</span>
                       </div>
                       
                       {/* Single row of full-width square country cards - Made taller */}
@@ -150,7 +151,7 @@ const PhoneHero = () => {
                               
                               <div className="mt-auto flex items-center bg-dark-theme bg-opacity-5 px-4 py-2 rounded-full">
                                 <GlobeAltIcon className="h-4 w-4 text-gray-400 mr-2" />
-                                <span className="text-xs font-medium">Instant Connection</span>
+                                <span className="text-xs font-medium">{t('techAnimation.instantConnection')}</span>
                               </div>
                             </div>
                           ))}
@@ -165,27 +166,27 @@ const PhoneHero = () => {
                         <div className="flex items-center justify-between">
                           <div className="flex items-center">
                             <SignalIcon className="h-5 w-5 text-gray-400 mr-2" />
-                            <span className="font-semibold text-sm text-gray-800">Connected</span>
+                            <span className="font-semibold text-sm text-gray-800">{t('hero.indicator.ready')}</span>
                           </div>
-                          <span className="text-xs font-bold px-2 py-1 bg-dark-theme bg-opacity-10 rounded-full text-dark-theme">Active</span>
+                          <span className="text-xs font-bold px-2 py-1 bg-dark-theme bg-opacity-10 rounded-full text-dark-theme">{t('hero.indicator.status')}</span>
                         </div>
-                        <p className="text-xs font-medium text-cool-slate mt-1">High-speed data enabled</p>
+                        <p className="text-xs font-medium text-cool-slate mt-1">{t('pricing.commonFeatures.feature2')}</p>
                       </div>
                     </div>
                     
                     {/* App navigation bar */}
-                    <div className="absolute bottom-0 left-0 right-0 h-12 bg-white border-t border-gray-100 flex justify-around items-center px-4 shadow-[0_-2px_10px_rgba(0,0,0,0.03)]">
-                      <div className="flex flex-col items-center">
-                        <GlobeAltIcon className="h-5 w-5 text-gray-400" />
-                        <span className="text-[10px] mt-0.5 font-medium text-dark-theme">Countries</span>
+                    <div className="absolute bottom-0 left-0 right-0 h-14 bg-white border-t border-gray-100 flex justify-evenly items-center px-2 shadow-[0_-2px_10px_rgba(0,0,0,0.03)]">
+                      <div className="flex flex-col items-center justify-center w-1/3">
+                        <GlobeAltIcon className="h-5 w-5 text-gray-400 mb-1" />
+                        <span className="text-[10px] font-medium text-dark-theme text-center">{t('coverage.world')}</span>
                       </div>
-                      <div className="flex flex-col items-center">
-                        <DevicePhoneMobileIcon className="h-5 w-5 text-gray-400" />
-                        <span className="text-[10px] mt-0.5 font-medium text-gray-400">Devices</span>
+                      <div className="flex flex-col items-center justify-center w-1/3">
+                        <DevicePhoneMobileIcon className="h-5 w-5 text-gray-400 mb-1" />
+                        <span className="text-[10px] font-medium text-gray-400 text-center">{t('dashboard.sidebar.myPlans')}</span>
                       </div>
-                      <div className="flex flex-col items-center">
-                        <SignalIcon className="h-5 w-5 text-gray-400" />
-                        <span className="text-[10px] mt-0.5 font-medium text-gray-400">Plans</span>
+                      <div className="flex flex-col items-center justify-center w-1/3">
+                        <SignalIcon className="h-5 w-5 text-gray-400 mb-1" />
+                        <span className="text-[10px] font-medium text-gray-400 text-center">{t('dashboard.plans.availablePlans')}</span>
                       </div>
                     </div>
                   </div>

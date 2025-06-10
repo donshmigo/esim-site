@@ -10,7 +10,7 @@ export const TextLogo: React.FC<TextLogoProps> = ({ className = '', inverted = f
   
   return (
     <span className={`${textColor} font-extrabold tracking-tight ${className}`}>
-      Romio
+      Romio.
     </span>
   );
 };

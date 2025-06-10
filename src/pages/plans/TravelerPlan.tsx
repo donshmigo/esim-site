@@ -1,11 +1,10 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ArrowLeftIcon, CheckIcon, DevicePhoneMobileIcon, GlobeAltIcon, SignalIcon, VideoCameraIcon } from '@heroicons/react/24/outline';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const TravelerPlan = () => {
+const ProPlan = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
   
   // Scroll to top when component mounts
   useEffect(() => {
@@ -13,19 +12,7 @@ const TravelerPlan = () => {
   }, []);
   
   const handleSubscribe = () => {
-    const planDetails = {
-      id: 'traveler',
-      name: t('pricing.traveler.name') + ' – 20GB ' + t('plans.esimPlan'),
-      description: t('pricing.traveler.description'),
-      data_amount: 20,
-      data_unit: 'GB',
-      price: {
-        amount: 39.99,
-        currency: 'USD'
-      }
-    };
-    
-    navigate('/checkout', { state: { selectedPlan: planDetails, skipPlanSelection: true } });
+    window.open('https://shop.romiomobile.com/', '_blank');
   };
 
   return (
@@ -43,11 +30,11 @@ const TravelerPlan = () => {
         <div className="mb-4 max-w-3xl">
           <div className="flex items-center gap-2 mb-2">
             <SignalIcon className="h-5 w-5 text-signal-blue animate-signal" />
-            <span className="text-signal-blue font-medium">20GB {t('plans.dataPlan')}</span>
+            <span className="text-signal-blue font-medium">15GB {t('plans.dataPlan')}</span>
           </div>
           
           <h1 className="text-4xl md:text-5xl font-bold text-romio-black mb-4 tech-accent">
-            {t('pricing.traveler.name')} – 20GB {t('plans.esimPlan')}
+            {t('pricing.traveler.name')} – 15GB {t('plans.esimPlan')}
           </h1>
           
           <div className="flex flex-col lg:flex-row lg:items-start">
@@ -83,7 +70,7 @@ const TravelerPlan = () => {
             <div className="prose prose-lg max-w-none">
               <h2 className="text-2xl font-bold mb-4">{t('plans.overview')}</h2>
               <p>
-                {t('plans.travelerOverview')}
+                {t('plans.proOverview')}
               </p>
 
               {/* Key features */}
@@ -102,7 +89,7 @@ const TravelerPlan = () => {
                 ))}
               </div>
 
-              <h2 className="text-2xl font-bold mb-4">{t('plans.whatYouCanDo')} 20GB</h2>
+              <h2 className="text-2xl font-bold mb-4">{t('plans.whatYouCanDo')} 15GB</h2>
               <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                 <div className="card-tech">
                   <div className="flex items-center mb-2">
@@ -148,7 +135,7 @@ const TravelerPlan = () => {
               
               <h2 className="text-2xl font-bold mb-4">{t('plans.whyPopular')}</h2>
               <p>
-                {t('plans.travelerWhyPopular')}
+                {t('plans.proWhyPopular')}
               </p>
             </div>
           </div>
@@ -170,7 +157,7 @@ const TravelerPlan = () => {
                 <h4 className="font-medium mb-2">{t('plans.includes')}:</h4>
                 <ul className="space-y-3">
                   {[
-                    `20GB ${t('plans.highSpeedData')}`,
+                    `15GB ${t('plans.highSpeedData')}`,
                     t('pricing.commonFeatures.feature1'),
                     t('pricing.commonFeatures.feature3'),
                     t('pricing.commonFeatures.feature4'),
@@ -226,4 +213,4 @@ const TravelerPlan = () => {
   );
 };
 
-export default TravelerPlan; 
+export default ProPlan; 

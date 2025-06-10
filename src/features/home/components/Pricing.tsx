@@ -53,7 +53,8 @@ export default function Pricing() {
       features: getFeatures('lite'),
       popular: false,
       ctaText: t('pricing.cta'),
-      path: '/plans/lite'
+      path: '/plans/lite',
+      translationKey: 'lite'
     },
     {
       name: t('pricing.traveler.name'),
@@ -62,7 +63,8 @@ export default function Pricing() {
       features: getFeatures('traveler'),
       popular: true,
       ctaText: t('pricing.cta'),
-      path: '/plans/traveler'
+      path: '/plans/traveler',
+      translationKey: 'traveler'
     },
     {
       name: t('pricing.max.name'),
@@ -71,7 +73,8 @@ export default function Pricing() {
       features: getFeatures('max'),
       popular: false,
       ctaText: t('pricing.cta'),
-      path: '/plans/max'
+      path: '/plans/max',
+      translationKey: 'max'
     }
   ];
 
@@ -231,7 +234,7 @@ export default function Pricing() {
                   </div>
                   <div className="mt-1 text-lg font-medium text-signal-blue">{plansWithFallback[activeIndex].dataAmount}</div>
                   <p className="mt-2 text-sm text-cool-slate">
-                    {t(`pricing.${plansWithFallback[activeIndex].name.toLowerCase()}.description`)}
+                    {t(`pricing.${plansWithFallback[activeIndex].translationKey}.description`)}
                   </p>
                 </div>
                 
@@ -277,7 +280,7 @@ export default function Pricing() {
                 <span className="text-cool-slate">/{t('pricing.monthly')}</span>
                 <div className="mt-1 text-lg font-medium text-signal-blue">{plan.dataAmount}</div>
                 <p className="mt-2 text-sm text-cool-slate min-h-[80px]">
-                  {t(`pricing.${plan.name.toLowerCase()}.description`)}
+                  {t(`pricing.${plan.translationKey}.description`)}
                 </p>
               </div>
               

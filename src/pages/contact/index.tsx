@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import Header from '../../layouts/Header';
 import Footer from '../../layouts/Footer';
 import { EnvelopeIcon, PhoneIcon, MapPinIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+// import emailjs from '@emailjs/browser'; // Uncomment for EmailJS option
 
 const ContactPage = () => {
   const { t } = useTranslation();
@@ -33,27 +34,75 @@ const ContactPage = () => {
     setFormStatus('submitting');
     
     try {
-      // In a real implementation, you would send the form data to your backend or a service like Netlify forms
-      console.log('Form data submitted:', formData);
+      // Create FormData object for Netlify Forms
+      const formDataToSend = new FormData();
+      formDataToSend.append('form-name', 'contact');
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('subject', formData.subject);
+      formDataToSend.append('message', formData.message);
+      formDataToSend.append('company', formData.company);
+      formDataToSend.append('phone', formData.phone);
       
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      setFormStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-        company: '',
-        phone: ''
+      // Submit to Netlify
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formDataToSend as any).toString()
       });
+      
+      if (response.ok) {
+        setFormStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+          company: '',
+          phone: ''
+        });
+      } else {
+        throw new Error('Form submission failed');
+      }
     } catch (err) {
       console.error('Form submission error:', err);
       setFormStatus('error');
       setError(t('contact.error'));
     }
   };
+
+  /* 
+  // ALTERNATIVE: EmailJS Implementation
+  // Uncomment this section if you prefer EmailJS over Netlify Forms:
+
+  const handleSubmitEmailJS = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormStatus('submitting');
+    
+    try {
+      await emailjs.send(
+        'your_service_id',     // Get from EmailJS dashboard
+        'your_template_id',    // Get from EmailJS dashboard  
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          company: formData.company,
+          phone: formData.phone,
+        },
+        'your_public_key'      // Get from EmailJS dashboard
+      );
+      
+      setFormStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '', company: '', phone: '' });
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      setFormStatus('error');
+      setError(t('contact.error'));
+    }
+  };
+  */
 
   const contactInfo = [
     {
@@ -171,7 +220,11 @@ const ContactPage = () => {
                       </button>
                     </div>
                   ) : (
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                      {/* Hidden fields for Netlify */}
+                      <input type="hidden" name="form-name" value="contact" />
+                      <input type="hidden" name="bot-field" />
+                      
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">

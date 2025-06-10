@@ -20,13 +20,13 @@ export default function Pricing() {
         t('pricing.commonFeatures.feature7')
       ],
       popular: false,
-      ctaText: t('pricing.lite.ctaText', 'View Plan Details'),
+      ctaText: t('pricing.cta', 'View Plan Details'),
       path: '/plans/lite'
     },
     {
-      name: 'Traveler',
+      name: 'Pro',
       price: 39.99,
-      dataAmount: '20GB',
+      dataAmount: '15GB',
       features: [
         t('pricing.commonFeatures.feature1'),
         t('pricing.commonFeatures.feature2'),
@@ -37,12 +37,12 @@ export default function Pricing() {
         t('pricing.commonFeatures.feature7')
       ],
       popular: true,
-      ctaText: t('pricing.traveler.ctaText', 'View Plan Details'),
-      path: '/plans/traveler'
+      ctaText: t('pricing.cta', 'View Plan Details'),
+      path: '/plans/pro'
     },
     {
       name: 'Max',
-      price: 59.99,
+      price: 69.99,
       dataAmount: '30GB',
       features: [
         t('pricing.commonFeatures.feature1'),
@@ -54,7 +54,7 @@ export default function Pricing() {
         t('pricing.commonFeatures.feature7')
       ],
       popular: false,
-      ctaText: t('pricing.max.ctaText', 'View Plan Details'),
+      ctaText: t('pricing.cta', 'View Plan Details'),
       path: '/plans/max'
     }
   ];

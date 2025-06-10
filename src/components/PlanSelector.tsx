@@ -19,9 +19,9 @@ const mockPlans: DataPlan[] = [
     }
   },
   {
-    id: 'traveler',
-    name: 'Traveler Plan',
-    data: '20GB',
+    id: 'pro',
+    name: 'Pro Plan',
+    data: '15GB',
     description: 'Ideal for frequent travelers',
     price: {
       amount: 9.99,

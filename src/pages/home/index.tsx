@@ -18,7 +18,7 @@ const Home: React.FC = () => {
   // Plans data for the CTA
   const plans = [
     { name: 'Lite', path: '/plans/lite' },
-    { name: 'Traveler', path: '/plans/traveler' },
+    { name: 'Pro', path: '/plans/pro' },
     { name: 'Max', path: '/plans/max' }
   ];
   

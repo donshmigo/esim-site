@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import { ArrowLeftIcon, CheckIcon, DevicePhoneMobileIcon, GlobeAltIcon, SignalIcon } from '@heroicons/react/24/outline';
+import { ArrowLeftIcon, CheckIcon, DevicePhoneMobileIcon, GlobeAltIcon, SignalIcon, VideoCameraIcon } from '@heroicons/react/24/outline';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const LitePlan = () => {
+const ProPlan = () => {
   const { t } = useTranslation();
   
   // Scroll to top when component mounts
@@ -30,23 +30,26 @@ const LitePlan = () => {
         <div className="mb-4 max-w-3xl">
           <div className="flex items-center gap-2 mb-2">
             <SignalIcon className="h-5 w-5 text-signal-blue animate-signal" />
-            <span className="text-signal-blue font-medium">5GB {t('plans.dataPlan')}</span>
+            <span className="text-signal-blue font-medium">15GB {t('plans.dataPlan')}</span>
           </div>
           
           <h1 className="text-4xl md:text-5xl font-bold text-romio-black mb-4 tech-accent">
-            {t('pricing.lite.name')} – 5GB {t('plans.esimPlan')}
+            {t('pricing.traveler.name')} – 15GB {t('plans.esimPlan')}
           </h1>
           
           <div className="flex flex-col lg:flex-row lg:items-start">
             <p className="text-xl text-cool-slate lg:max-w-xl">
-              {t('pricing.lite.description')}
+              {t('pricing.traveler.description')}
             </p>
             
             {/* Mobile subscription box - visible only on mobile - NOW ALIGNED WITH DESCRIPTION */}
-            <div className="lg:hidden mt-4">
-              <div className="bg-white rounded-xl border-2 border-signal-blue p-4 shadow-lg">
+            <div className="lg:hidden mt-4 relative">
+              <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-signal-blue text-white px-4 py-1 rounded-full text-sm font-medium">
+                {t('pricing.mostPopular')}
+              </div>
+              <div className="bg-white rounded-xl border-2 border-signal-blue p-4 shadow-lg pt-8">
                 <div className="mb-2 text-center">
-                  <h3 className="text-lg font-medium mb-1">{t('pricing.monthly')}: <span className="text-2xl font-bold text-signal-blue">${'19.99'}</span></h3>
+                  <h3 className="text-lg font-medium mb-1">{t('pricing.monthly')}: <span className="text-2xl font-bold text-signal-blue">$39.99</span></h3>
                 </div>
 
                 <button 
@@ -67,16 +70,16 @@ const LitePlan = () => {
             <div className="prose prose-lg max-w-none">
               <h2 className="text-2xl font-bold mb-4">{t('plans.overview')}</h2>
               <p>
-                {t('plans.liteOverview')}
+                {t('plans.proOverview')}
               </p>
 
               {/* Key features */}
               <div className="mt-8 mb-12 grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
-                  t('plans.features.instantDelivery'),
                   t('plans.features.globalCoverage'),
-                  t('plans.features.validity'),
                   t('plans.features.useAnywhere'),
+                  t('pricing.commonFeatures.feature1'),
+                  "Supports video calls, social, hotspotting",
                   t('plans.features.cancelAnytime')
                 ].map((feature, idx) => (
                   <div key={idx} className="flex items-start">
@@ -86,58 +89,67 @@ const LitePlan = () => {
                 ))}
               </div>
 
-              <h2 className="text-2xl font-bold mb-4">{t('plans.whatYouCanDo')} 5GB</h2>
+              <h2 className="text-2xl font-bold mb-4">{t('plans.whatYouCanDo')} 15GB</h2>
               <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                 <div className="card-tech">
                   <div className="flex items-center mb-2">
-                    <GlobeAltIcon className="h-6 w-6 text-signal-blue mr-2" />
-                    <h3 className="font-bold">7 {t('common.hours')}</h3>
+                    <VideoCameraIcon className="h-6 w-6 text-signal-blue mr-2" />
+                    <h3 className="font-bold">25+ {t('common.hours')}</h3>
                   </div>
-                  <p className="text-cool-slate">{t('plans.usage.maps')}</p>
+                  <p className="text-cool-slate">{t('plans.usage.videoStreaming')}</p>
                 </div>
                 
                 <div className="card-tech">
                   <div className="flex items-center mb-2">
                     <DevicePhoneMobileIcon className="h-6 w-6 text-signal-blue mr-2" />
-                    <h3 className="font-bold">300+</h3>
+                    <h3 className="font-bold">10 {t('common.hours')}</h3>
                   </div>
-                  <p className="text-cool-slate">{t('plans.usage.instagram')}</p>
+                  <p className="text-cool-slate">{t('plans.usage.zoomCalls')}</p>
                 </div>
                 
                 <div className="card-tech">
                   <div className="flex items-center mb-2">
                     <GlobeAltIcon className="h-6 w-6 text-signal-blue mr-2" />
-                    <h3 className="font-bold">15 {t('common.hours')}</h3>
+                    <h3 className="font-bold">1,000+</h3>
                   </div>
-                  <p className="text-cool-slate">{t('plans.usage.browsing')}</p>
+                  <p className="text-cool-slate">{t('plans.usage.socialMedia')}</p>
                 </div>
                 
                 <div className="card-tech">
                   <div className="flex items-center mb-2">
                     <SignalIcon className="h-6 w-6 text-signal-blue mr-2" />
-                    <h3 className="font-bold">{t('plans.usage.light')}</h3>
+                    <h3 className="font-bold">{t('common.daily')}</h3>
                   </div>
-                  <p className="text-cool-slate">{t('plans.usage.voiceCalls')}</p>
+                  <p className="text-cool-slate">{t('plans.usage.streaming')}</p>
                 </div>
               </div>
 
               <h2 className="text-2xl font-bold mb-4">{t('plans.perfectFor')}</h2>
               <ul className="list-disc pl-5 mb-8 space-y-2">
-                <li>{t('plans.userTypes.weekendTravelers')}</li>
-                <li>{t('plans.userTypes.businessTrips')}</li>
-                <li>{t('plans.userTypes.lightUsers')}</li>
-                <li>{t('plans.userTypes.firstTime')}</li>
-                <li>{t('plans.userTypes.backup')}</li>
+                <li>{t('plans.userTypes.digitalNomads')}</li>
+                <li>{t('plans.userTypes.contentCreators')}</li>
+                <li>{t('plans.userTypes.frequentTravelers')}</li>
+                <li>{t('plans.userTypes.extendedStay')}</li>
+                <li>{t('plans.userTypes.remoteWorkers')}</li>
               </ul>
+              
+              <h2 className="text-2xl font-bold mb-4">{t('plans.whyPopular')}</h2>
+              <p>
+                {t('plans.proWhyPopular')}
+              </p>
             </div>
           </div>
 
           {/* Right column - Sidebar with pricing and CTA - visible only on desktop */}
           <div className="hidden lg:block lg:col-span-1">
             <div className="sticky top-24 bg-white rounded-xl border-2 border-signal-blue p-6 shadow-lg">
+              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-signal-blue text-white px-4 py-1 rounded-full text-sm font-medium">
+                {t('pricing.mostPopular')}
+              </div>
+            
               <div className="mb-6 text-center">
                 <h3 className="text-lg font-medium mb-1">{t('pricing.monthly')}</h3>
-                <div className="text-4xl font-bold text-signal-blue mb-2">$19.99 <span className="text-lg font-normal text-cool-slate">/{t('common.month')}</span></div>
+                <div className="text-4xl font-bold text-signal-blue mb-2">$39.99 <span className="text-lg font-normal text-cool-slate">/{t('common.month')}</span></div>
                 <p className="text-cool-slate text-sm">{t('plans.autoRenew')}</p>
               </div>
 
@@ -145,7 +157,7 @@ const LitePlan = () => {
                 <h4 className="font-medium mb-2">{t('plans.includes')}:</h4>
                 <ul className="space-y-3">
                   {[
-                    `5GB ${t('plans.highSpeedData')}`,
+                    `15GB ${t('plans.highSpeedData')}`,
                     t('pricing.commonFeatures.feature1'),
                     t('pricing.commonFeatures.feature3'),
                     t('pricing.commonFeatures.feature4'),
@@ -178,11 +190,11 @@ const LitePlan = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="rounded-xl border border-steel-gray p-6 hover:border-signal-blue hover:shadow-md transition-all">
-              <h3 className="text-xl font-bold mb-1">{t('pricing.traveler.name')} – 15GB</h3>
-              <p className="text-cool-slate mb-4">{t('pricing.traveler.description')}</p>
+              <h3 className="text-xl font-bold mb-1">{t('pricing.lite.name')} – 5GB</h3>
+              <p className="text-cool-slate mb-4">{t('pricing.lite.description')}</p>
               <div className="flex justify-between items-center">
-                <span className="font-bold text-xl text-signal-blue">$39.99<span className="text-sm font-normal text-cool-slate">/{t('common.mo')}</span></span>
-                <Link to="/plans/pro" className="btn-secondary text-sm">{t('common.learnMore')}</Link>
+                <span className="font-bold text-xl text-signal-blue">$19.99<span className="text-sm font-normal text-cool-slate">/{t('common.mo')}</span></span>
+                <Link to="/plans/lite" className="btn-secondary text-sm">{t('common.learnMore')}</Link>
               </div>
             </div>
             
@@ -201,4 +213,4 @@ const LitePlan = () => {
   );
 };
 
-export default LitePlan; 
+export default ProPlan; 

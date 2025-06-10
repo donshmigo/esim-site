@@ -154,7 +154,7 @@
     },
     "subscription": {
       "title": "Monthly Subscription Plans",
-      "description": "Choose from 5GB, 20GB, or 30GB plans, starting at $19.99/month. Plans automatically renew and can be canceled anytime."
+      "description": "Choose from 5GB, 15GB, or 30GB plans, starting at $19.99/month. Plans automatically renew and can be canceled anytime."
     },
     "activation": {
       "title": "Instant Activation",
@@ -259,10 +259,10 @@
       }
     },
     "traveler": {
-      "name": "Traveler",
+      "name": "Pro",
       "price": "$9.99",
       "yearlyPrice": "$95.88",
-      "data": "20GB Data",
+      "data": "15GB Data",
       "countries": "90+ Countries",
       "description": "Ideal for frequent travelers who need reliable connectivity for work and leisure. Great for social media and video streaming.",
       "features": {
@@ -273,8 +273,8 @@
     },
     "max": {
       "name": "Max",
-      "price": "$19.99",
-      "yearlyPrice": "$191.88",
+      "price": "$69.99",
+      "yearlyPrice": "$699.88",
       "data": "30GB Data",
       "countries": "90+ Countries",
       "description": "Best for digital nomads and business travelers who need unlimited connectivity across the globe. Perfect for heavy data usage.",
@@ -445,7 +445,8 @@
     "esimPlan": "Global eSIM Plan",
     "overview": "Plan Overview",
     "liteOverview": "Romio Lite is built for travelers who just need the essentials — messages, maps, emails, and light browsing. Whether you're popping over to Europe for a few days or hitting a weekend in Mexico, this plan gives you seamless coverage without the hassle of SIM swaps or roaming charges.",
-    "travelerOverview": "Romio Traveler is your monthly passport to reliable global connectivity. With 20GB of high-speed data and no contracts, it's ideal for work, social media, navigation, and content on the go. It's the plan most Romio users stick with long term — just enough power, not too much fluff.",
+    "travelerOverview": "Romio Pro is your monthly passport to reliable global connectivity. With 15GB of high-speed data and no contracts, it's ideal for work, social media, navigation, and content on the go. It's the plan most Romio users stick with long term — just enough power, not too much fluff.",
+    "proOverview": "Romio Pro is your monthly passport to reliable global connectivity. With 15GB of high-speed data and no contracts, it's ideal for work, social media, navigation, and content on the go. It's the plan most Romio users stick with long term — just enough power, not too much fluff.",
     "maxOverview": "Romio Max was made for people who live online — from airports and cafés to islands and coworking hubs. With 30GB of global data, it supports everything from heavy video usage to hotspotting your laptop. It's your full-time data plan that works across borders without skipping a beat.",
     "features": {
       "instantDelivery": "Instant eSIM delivery via QR code",
@@ -496,7 +497,8 @@
     "highSpeedData": "high-speed data",
     "browseOther": "Browse Other Plans",
     "whyPopular": "Why This Plan Is Popular",
-    "travelerWhyPopular": "The Traveler plan strikes the perfect balance between affordability and capacity. Most subscribers find that 20GB gives them more than enough data for a month of regular use, including video calls, streaming, and navigation, without the premium price of our Max plan.",
+    "travelerWhyPopular": "The Pro plan strikes the perfect balance between affordability and capacity. Most subscribers find that 15GB gives them more than enough data for a month of regular use, including video calls, streaming, and navigation, without the premium price of our Max plan.",
+    "proWhyPopular": "The Pro plan strikes the perfect balance between affordability and capacity. Most subscribers find that 15GB gives them more than enough data for a month of regular use, including video calls, streaming, and navigation, without the premium price of our Max plan.",
     "premiumAddons": "Premium Add-ons Available",
     "voipComingSoon": "VoIP Services (Coming Soon)",
     "voipDescription": "Keep your phone number while traveling with our VoIP service. Make and receive calls using your home number from anywhere.",

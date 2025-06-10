@@ -42,24 +42,24 @@ const Plans: React.FC = () => {
           ]
         },
         {
-          id: 'traveler',
-          name: t('plans.traveler.name', 'Traveler Plan'),
+          id: 'pro',
+          name: t('plans.pro.name', 'Pro Plan'),
           price: 19.99,
-          dataAmount: '20GB',
+          dataAmount: '15GB',
           duration: '30 days',
-          description: t('plans.traveler.description', 'Our most popular plan for regular travelers.'),
+          description: t('plans.pro.description', 'Our most popular plan for regular travelers.'),
           features: [
-            t('plans.traveler.feature1', '20GB Data'),
-            t('plans.traveler.feature2', 'Valid for 30 days'),
-            t('plans.traveler.feature3', 'Coverage in 90+ countries'),
-            t('plans.traveler.feature4', 'Priority support'),
-            t('plans.traveler.feature5', 'Data rollover')
+            t('plans.pro.feature1', '15GB Data'),
+            t('plans.pro.feature2', 'Valid for 30 days'),
+            t('plans.pro.feature3', 'Coverage in 90+ countries'),
+            t('plans.pro.feature4', 'Priority support'),
+            t('plans.pro.feature5', 'Data rollover')
           ]
         },
         {
           id: 'max',
           name: t('plans.max.name', 'Max Plan'),
-          price: 29.99,
+          price: 69.99,
           dataAmount: '30GB',
           duration: '30 days',
           description: t('plans.max.description', 'For heavy data users who need reliable connectivity.'),

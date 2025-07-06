@@ -1,11 +1,8 @@
 import React, { createContext, useContext, ReactNode } from 'react';
+import { User as FirebaseUser } from 'firebase/auth';
 
-// Mock auth types
-interface User {
-  uid: string;
-  email: string | null;
-  displayName: string | null;
-}
+// Use Firebase User type
+type User = FirebaseUser;
 
 interface AuthContextType {
   currentUser: User | null;

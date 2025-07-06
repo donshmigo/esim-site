@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../firebase/AuthContext';
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../firebase/firebase';
-import TopUp from '../../components/dashboard/TopUp';
+import TopUp from '../usage/components/TopUp';
 import './PlanUsage.css';
 
 interface PlanUsageProps {

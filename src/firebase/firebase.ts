@@ -1,43 +1,20 @@
-// Placeholder Firebase configuration
-// This is a minimal implementation to satisfy TypeScript imports during build
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
+import { getAuth } from 'firebase/auth';
 
-// Mock Firebase app
-export const app = {
-  name: '[DEFAULT]',
+// Initialize Firebase with empty config for build
+const firebaseConfig = {
+  apiKey: "",
+  authDomain: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: "",
+  appId: ""
 };
 
-// Mock Firestore database
-export const db = {
-  collection: () => ({
-    doc: () => ({
-      get: async () => ({
-        exists: false,
-        data: () => null,
-      }),
-      set: async () => {},
-      update: async () => {},
-    }),
-  }),
-  doc: () => ({
-    get: async () => ({
-      exists: false,
-      data: () => null,
-    }),
-    set: async () => {},
-    update: async () => {},
-  }),
-};
-
-// Mock Firebase auth
-export const auth = {
-  currentUser: null,
-  onAuthStateChanged: (callback: (user: null) => void) => {
-    callback(null);
-    return () => {};
-  },
-  signInWithEmailAndPassword: async () => ({ user: null }),
-  createUserWithEmailAndPassword: async () => ({ user: null }),
-  signOut: async () => {},
-};
+// Initialize Firebase
+export const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
+export const auth = getAuth(app);
 
 export default { app, db, auth }; 

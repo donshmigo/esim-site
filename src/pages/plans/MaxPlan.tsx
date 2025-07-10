@@ -1,15 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeftIcon, CheckIcon, DevicePhoneMobileIcon, GlobeAltIcon, SignalIcon, WifiIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { trackInitiateCheckout } from '../../utils/fbPixel';
+import { trackAddToCart, trackInitiateCheckout } from '../../utils/fbPixel';
 
 const MaxPlan = () => {
   const { t } = useTranslation();
-  const formRef = useRef<HTMLFormElement>(null);
   
-  // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -17,10 +15,14 @@ const MaxPlan = () => {
   const handleCheckout = async (e: React.MouseEvent) => {
     e.preventDefault();
     
-    // Track the event using the official package
+    // Track AddToCart first
+    trackAddToCart('Max Plan', 64.99);
+    
+    // Wait a bit then track InitiateCheckout
+    await new Promise(resolve => setTimeout(resolve, 100));
     trackInitiateCheckout('Max Plan', 64.99);
     
-    // Give Facebook time to track
+    // Give Facebook time to track both events
     await new Promise(resolve => setTimeout(resolve, 250));
     
     window.open('https://account.romiomobile.com/estore/purchase/d88cb722-aab6-4d3c-8509-2091228eb1f1', '_blank');

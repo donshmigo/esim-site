@@ -12,9 +12,7 @@ const LitePlan = () => {
     window.scrollTo(0, 0);
   }, []);
   
-  const handleCheckout = async (e: React.MouseEvent) => {
-    e.preventDefault();
-    
+  const handleCheckout = async () => {
     // Track AddToCart first
     trackAddToCart('Lite Plan', 19.99);
     
@@ -71,6 +69,7 @@ const LitePlan = () => {
                   data-fb-content-type="product"
                   data-fb-value="19.99"
                   data-fb-currency="USD"
+                  type="button"
                 >
                   {t('pricing.cta')}
                 </button>
@@ -190,6 +189,7 @@ const LitePlan = () => {
                 data-fb-content-type="product"
                 data-fb-value="19.99"
                 data-fb-currency="USD"
+                type="button"
               >
                 {t('pricing.cta')}
               </button>

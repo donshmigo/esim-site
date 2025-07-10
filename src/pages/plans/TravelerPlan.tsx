@@ -1,22 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeftIcon, CheckIcon, DevicePhoneMobileIcon, GlobeAltIcon, SignalIcon, VideoCameraIcon } from '@heroicons/react/24/outline';
-import { useEffect, useRef } from 'react';
+import { ArrowLeftIcon, CheckIcon, DevicePhoneMobileIcon, GlobeAltIcon, SignalIcon } from '@heroicons/react/24/outline';
+import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { trackAddToCart, trackInitiateCheckout } from '../../utils/fbPixel';
 
 const TravelerPlan = () => {
   const { t } = useTranslation();
-  const formRef = useRef<HTMLFormElement>(null);
   
-  // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   
-  const handleCheckout = async (e: React.MouseEvent) => {
-    e.preventDefault();
-    
+  const handleCheckout = async () => {
     // Track AddToCart first
     trackAddToCart('Traveler Plan', 39.99);
     
@@ -73,6 +69,7 @@ const TravelerPlan = () => {
                   data-fb-content-type="product"
                   data-fb-value="39.99"
                   data-fb-currency="USD"
+                  type="button"
                 >
                   {t('pricing.cta')}
                 </button>
@@ -170,6 +167,7 @@ const TravelerPlan = () => {
                 data-fb-content-type="product"
                 data-fb-value="39.99"
                 data-fb-currency="USD"
+                type="button"
               >
                 {t('pricing.cta')}
               </button>

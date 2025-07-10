@@ -12,9 +12,7 @@ const MaxPlan = () => {
     window.scrollTo(0, 0);
   }, []);
   
-  const handleCheckout = async (e: React.MouseEvent) => {
-    e.preventDefault();
-    
+  const handleCheckout = async () => {
     // Track AddToCart first
     trackAddToCart('Max Plan', 64.99);
     
@@ -71,6 +69,7 @@ const MaxPlan = () => {
                   data-fb-content-type="product"
                   data-fb-value="64.99"
                   data-fb-currency="USD"
+                  type="button"
                 >
                   {t('pricing.cta')}
                 </button>
@@ -211,6 +210,7 @@ const MaxPlan = () => {
                 data-fb-content-type="product"
                 data-fb-value="64.99"
                 data-fb-currency="USD"
+                type="button"
               >
                 {t('pricing.cta')}
               </button>

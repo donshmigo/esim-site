@@ -60,20 +60,38 @@
     // Disable automatic button tracking
     fbq.disableAutoConfig = true;
 
-    // Custom event tracking for specific buttons
-    document.addEventListener('click', function(e) {
-      const target = e.target.closest('[data-fb-track="true"]');
-      if (!target) return;
+    // Wait for DOM to be ready
+    document.addEventListener('DOMContentLoaded', function() {
+      // Custom event tracking for specific buttons
+      document.body.addEventListener('click', function(e) {
+        // Find closest button with data-fb-track
+        const target = e.target.closest('[data-fb-track="true"]');
+        if (!target) return;
 
-      const event = target.getAttribute('data-fb-event');
-      if (!event) return;
+        // Get event data
+        const event = target.getAttribute('data-fb-event');
+        if (!event) return;
 
-      fbq('track', event, {
-        content_name: target.getAttribute('data-fb-content-name'),
-        content_type: target.getAttribute('data-fb-content-type'),
-        value: parseFloat(target.getAttribute('data-fb-value')),
-        currency: target.getAttribute('data-fb-currency')
+        // Log for debugging
+        console.log('FB Pixel Event:', {
+          event,
+          content_name: target.getAttribute('data-fb-content-name'),
+          content_type: target.getAttribute('data-fb-content-type'),
+          value: parseFloat(target.getAttribute('data-fb-value')),
+          currency: target.getAttribute('data-fb-currency')
+        });
+
+        // Track the event
+        fbq('track', event, {
+          content_name: target.getAttribute('data-fb-content-name'),
+          content_type: target.getAttribute('data-fb-content-type'),
+          value: parseFloat(target.getAttribute('data-fb-value')),
+          currency: target.getAttribute('data-fb-currency')
+        });
       });
+
+      // Log all buttons with data-fb-track for debugging
+      console.log('Found trackable buttons:', document.querySelectorAll('[data-fb-track="true"]'));
     });
     </script>
     <noscript><img height="1" width="1" style="display:none"

@@ -63,12 +63,6 @@ const TravelerPlan = () => {
                 <button 
                   onClick={handleCheckout}
                   className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none w-full"
-                  data-fb-track="true"
-                  data-fb-event="AddToCart"
-                  data-fb-content-name="Traveler Plan"
-                  data-fb-content-type="product"
-                  data-fb-value="39.99"
-                  data-fb-currency="USD"
                   type="button"
                 >
                   {t('pricing.cta')}
@@ -161,12 +155,6 @@ const TravelerPlan = () => {
               <button 
                 onClick={handleCheckout}
                 className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none w-full"
-                data-fb-track="true"
-                data-fb-event="AddToCart"
-                data-fb-content-name="Traveler Plan"
-                data-fb-content-type="product"
-                data-fb-value="39.99"
-                data-fb-currency="USD"
                 type="button"
               >
                 {t('pricing.cta')}

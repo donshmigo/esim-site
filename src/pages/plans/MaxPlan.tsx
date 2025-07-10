@@ -63,12 +63,6 @@ const MaxPlan = () => {
                 <button 
                   onClick={handleCheckout}
                   className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none w-full"
-                  data-fb-track="true"
-                  data-fb-event="AddToCart"
-                  data-fb-content-name="Max Plan"
-                  data-fb-content-type="product"
-                  data-fb-value="64.99"
-                  data-fb-currency="USD"
                   type="button"
                 >
                   {t('pricing.cta')}
@@ -204,12 +198,6 @@ const MaxPlan = () => {
               <button 
                 onClick={handleCheckout}
                 className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none w-full"
-                data-fb-track="true"
-                data-fb-event="AddToCart"
-                data-fb-content-name="Max Plan"
-                data-fb-content-type="product"
-                data-fb-value="64.99"
-                data-fb-currency="USD"
                 type="button"
               >
                 {t('pricing.cta')}

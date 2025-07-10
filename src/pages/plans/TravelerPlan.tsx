@@ -63,8 +63,10 @@ const TravelerPlan = () => {
 
                 <button 
                   onClick={handleCheckout}
-                  className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none w-full"
+                  className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none w-full touch-manipulation"
                   type="button"
+                  style={{ touchAction: 'manipulation' }}
+                  disabled={isProcessing}
                 >
                   {t('pricing.cta')}
                 </button>
@@ -155,8 +157,10 @@ const TravelerPlan = () => {
             <div className="sticky top-24 bg-white rounded-xl border-2 border-signal-blue p-6 shadow-lg">
               <button 
                 onClick={handleCheckout}
-                className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none w-full"
+                className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none w-full touch-manipulation"
                 type="button"
+                style={{ touchAction: 'manipulation' }}
+                disabled={isProcessing}
               >
                 {t('pricing.cta')}
               </button>

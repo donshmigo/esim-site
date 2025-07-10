@@ -210,16 +210,17 @@ export default function Pricing() {
           
           {/* Visible plan for vertical scrolling */}
           <div className="px-4 relative">
-            {/* Swipe detection layer without visual indicators */}
-            <div 
-              className={`absolute inset-0 z-10 ${isHorizontalSwipe ? 'cursor-ew-resize' : ''}`}
-              onTouchStart={handleTouchStart}
-              onTouchMove={handleTouchMove}
-              onTouchEnd={handleTouchEnd}
-            ></div>
-            
             {plansWithFallback[activeIndex] && (
               <div className={`w-full rounded-xl p-6 flex flex-col ${plansWithFallback[activeIndex].popular ? 'border-2 border-signal-blue relative mt-4' : 'border-2 border-dark-theme'}`}>
+                {/* Swipe detection layer - exclude button area */}
+                <div 
+                  className={`absolute inset-0 z-10 ${isHorizontalSwipe ? 'cursor-ew-resize' : ''}`}
+                  style={{ bottom: '80px' }} // Exclude button area (approximate height)
+                  onTouchStart={handleTouchStart}
+                  onTouchMove={handleTouchMove}
+                  onTouchEnd={handleTouchEnd}
+                ></div>
+                
                 {plansWithFallback[activeIndex].popular && (
                   <div className="absolute -top-5 inset-x-0 flex justify-center z-20">
                     <span className="bg-signal-blue text-white px-4 py-1 rounded-full text-sm font-medium shadow-sm">
@@ -251,8 +252,9 @@ export default function Pricing() {
                 
                 <Link
                   to={plansWithFallback[activeIndex].path}
-                  className="btn-primary block text-center py-3 px-4 rounded-lg font-medium transition-colors pointer-events-auto z-20 relative"
+                  className="btn-primary block text-center py-3 px-4 rounded-lg font-medium transition-colors relative z-30 touch-manipulation"
                   onClick={() => trackAddToCart(plansWithFallback[activeIndex].name, plansWithFallback[activeIndex].price)}
+                  style={{ touchAction: 'manipulation' }}
                 >
                   {plansWithFallback[activeIndex].ctaText}
                 </Link>

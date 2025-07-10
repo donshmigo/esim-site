@@ -67,8 +67,10 @@ const ProPlan = () => {
 
                 <button 
                   onClick={handleCheckout}
-                  className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none w-full"
+                  className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none w-full touch-manipulation"
                   type="button"
+                  style={{ touchAction: 'manipulation' }}
+                  disabled={isProcessing}
                 >
                   {t('pricing.cta')}
                 </button>
@@ -190,8 +192,10 @@ const ProPlan = () => {
 
               <button 
                 onClick={handleCheckout}
-                className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none w-full"
+                className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none w-full touch-manipulation"
                 type="button"
+                style={{ touchAction: 'manipulation' }}
+                disabled={isProcessing}
               >
                 {t('pricing.cta')}
               </button>

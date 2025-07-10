@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeftIcon, CheckIcon, DevicePhoneMobileIcon, GlobeAltIcon, SignalIcon } from '@heroicons/react/24/outline';
 import { useTranslation } from 'react-i18next';
-import { trackAddToCart, trackInitiateCheckout } from '../../utils/fbPixel';
+import { trackInitiateCheckout } from '../../utils/fbPixel';
 
 const TravelerPlan = () => {
   const { t } = useTranslation();
@@ -20,8 +20,7 @@ const TravelerPlan = () => {
     // Open window immediately to avoid popup blockers
     const checkoutWindow = window.open('https://account.romiomobile.com/estore/purchase/d88cb722-aab6-4d3c-8509-2091228eb1f1', '_blank');
     
-    // Track events after opening (non-blocking)
-    trackAddToCart('Traveler Plan', 39.99);
+    // Track InitiateCheckout only (AddToCart happens on home page)
     trackInitiateCheckout('Traveler Plan', 39.99);
     
     // Reset processing state after a short delay

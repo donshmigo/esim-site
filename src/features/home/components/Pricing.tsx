@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useCurrency } from '../../../contexts/CurrencyContext';
 import { useState, useEffect } from 'react';
+import { trackAddToCart } from '../../../utils/fbPixel';
 
 
 export default function Pricing() {
@@ -251,6 +252,7 @@ export default function Pricing() {
                 <Link
                   to={plansWithFallback[activeIndex].path}
                   className="btn-primary block text-center py-3 px-4 rounded-lg font-medium transition-colors pointer-events-auto z-20 relative"
+                  onClick={() => trackAddToCart(plansWithFallback[activeIndex].name, plansWithFallback[activeIndex].price)}
                 >
                   {plansWithFallback[activeIndex].ctaText}
                 </Link>
@@ -293,6 +295,7 @@ export default function Pricing() {
               <Link
                 to={plan.path}
                 className="btn-primary block w-full text-center py-3 px-4 rounded-lg font-medium transition-colors"
+                                 onClick={() => trackAddToCart(plan.name, plan.price)}
               >
                 {plan.ctaText}
               </Link>

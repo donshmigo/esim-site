@@ -23,7 +23,7 @@ const TravelerPlan = () => {
     // Give Facebook time to track both events
     await new Promise(resolve => setTimeout(resolve, 250));
     
-    window.open('https://shop.romiomobile.com/', '_blank');
+    window.open('https://account.romiomobile.com/estore/purchase/d88cb722-aab6-4d3c-8509-2091228eb1f1', '_blank');
   };
 
   return (

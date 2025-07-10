@@ -23,7 +23,7 @@ const LitePlan = () => {
     // Give Facebook time to track both events
     await new Promise(resolve => setTimeout(resolve, 250));
     
-    window.open('https://shop.romiomobile.com/', '_blank');
+    window.open('https://account.romiomobile.com/estore/purchase/b69aa63e-dc99-4952-aeb8-016223af9ad8', '_blank');
   };
 
   return (

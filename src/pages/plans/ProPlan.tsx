@@ -1,7 +1,9 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeftIcon, CheckIcon, DevicePhoneMobileIcon, GlobeAltIcon, SignalIcon, VideoCameraIcon } from '@heroicons/react/24/outline';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { trackAddToCart, trackInitiateCheckout } from '../../utils/fbPixel';
 
 const ProPlan = () => {
   const { t } = useTranslation();
@@ -11,7 +13,17 @@ const ProPlan = () => {
     window.scrollTo(0, 0);
   }, []);
   
-  const handleSubscribe = () => {
+  const handleCheckout = async () => {
+    // Track AddToCart first
+    trackAddToCart('Pro Plan', 49.99);
+    
+    // Wait a bit then track InitiateCheckout
+    await new Promise(resolve => setTimeout(resolve, 100));
+    trackInitiateCheckout('Pro Plan', 49.99);
+    
+    // Give Facebook time to track both events
+    await new Promise(resolve => setTimeout(resolve, 250));
+    
     window.open('https://account.romiomobile.com/estore/purchase/35890baa-0611-4c9b-a7ae-ccb82810578f', '_blank');
   };
 
@@ -53,8 +65,15 @@ const ProPlan = () => {
                 </div>
 
                 <button 
-                  onClick={handleSubscribe}
-                  className="btn-primary w-full text-center block py-3"
+                  onClick={handleCheckout}
+                  className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none w-full"
+                  data-fb-track="true"
+                  data-fb-event="AddToCart"
+                  data-fb-content-name="Pro Plan"
+                  data-fb-content-type="product"
+                  data-fb-value="49.99"
+                  data-fb-currency="USD"
+                  type="button"
                 >
                   {t('pricing.cta')}
                 </button>
@@ -175,8 +194,15 @@ const ProPlan = () => {
               </div>
 
               <button 
-                onClick={handleSubscribe}
-                className="btn-primary w-full text-center block py-3"
+                onClick={handleCheckout}
+                className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none w-full"
+                data-fb-track="true"
+                data-fb-event="AddToCart"
+                data-fb-content-name="Pro Plan"
+                data-fb-content-type="product"
+                data-fb-value="49.99"
+                data-fb-currency="USD"
+                type="button"
               >
                 {t('pricing.cta')}
               </button>

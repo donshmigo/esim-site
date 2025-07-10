@@ -13,17 +13,12 @@ const MaxPlan = () => {
   }, []);
   
   const handleCheckout = async () => {
-    // Track AddToCart first
+    // Open window immediately to avoid popup blockers
+    const checkoutWindow = window.open('https://account.romiomobile.com/estore/purchase/d88cb722-aab6-4d3c-8509-2091228eb1f1', '_blank');
+    
+    // Track events after opening (non-blocking)
     trackAddToCart('Max Plan', 64.99);
-    
-    // Wait a bit then track InitiateCheckout
-    await new Promise(resolve => setTimeout(resolve, 100));
     trackInitiateCheckout('Max Plan', 64.99);
-    
-    // Give Facebook time to track both events
-    await new Promise(resolve => setTimeout(resolve, 250));
-    
-    window.open('https://account.romiomobile.com/estore/purchase/d88cb722-aab6-4d3c-8509-2091228eb1f1', '_blank');
   };
 
   return (

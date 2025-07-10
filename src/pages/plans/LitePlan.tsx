@@ -13,17 +13,12 @@ const LitePlan = () => {
   }, []);
   
   const handleCheckout = async () => {
-    // Track AddToCart first
+    // Open window immediately to avoid popup blockers
+    const checkoutWindow = window.open('https://account.romiomobile.com/estore/purchase/b69aa63e-dc99-4952-aeb8-016223af9ad8', '_blank');
+    
+    // Track events after opening (non-blocking)
     trackAddToCart('Lite Plan', 19.99);
-    
-    // Wait a bit then track InitiateCheckout
-    await new Promise(resolve => setTimeout(resolve, 100));
     trackInitiateCheckout('Lite Plan', 19.99);
-    
-    // Give Facebook time to track both events
-    await new Promise(resolve => setTimeout(resolve, 250));
-    
-    window.open('https://account.romiomobile.com/estore/purchase/b69aa63e-dc99-4952-aeb8-016223af9ad8', '_blank');
   };
 
   return (

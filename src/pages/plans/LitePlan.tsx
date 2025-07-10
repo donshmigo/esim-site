@@ -1,24 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeftIcon, CheckIcon, DevicePhoneMobileIcon, GlobeAltIcon, SignalIcon } from '@heroicons/react/24/outline';
-import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { trackAddToCart, trackInitiateCheckout } from '../../utils/fbPixel';
 
 const LitePlan = () => {
   const { t } = useTranslation();
+  const [isProcessing, setIsProcessing] = useState(false);
   
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   
   const handleCheckout = async () => {
+    // Prevent multiple rapid clicks
+    if (isProcessing) return;
+    setIsProcessing(true);
+    
     // Open window immediately to avoid popup blockers
     const checkoutWindow = window.open('https://account.romiomobile.com/estore/purchase/b69aa63e-dc99-4952-aeb8-016223af9ad8', '_blank');
     
     // Track events after opening (non-blocking)
     trackAddToCart('Lite Plan', 19.99);
     trackInitiateCheckout('Lite Plan', 19.99);
+    
+    // Reset processing state after a short delay
+    setTimeout(() => setIsProcessing(false), 1000);
   };
 
   return (

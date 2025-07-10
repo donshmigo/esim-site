@@ -1,24 +1,31 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeftIcon, CheckIcon, DevicePhoneMobileIcon, GlobeAltIcon, SignalIcon } from '@heroicons/react/24/outline';
-import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { trackAddToCart, trackInitiateCheckout } from '../../utils/fbPixel';
 
 const TravelerPlan = () => {
   const { t } = useTranslation();
+  const [isProcessing, setIsProcessing] = useState(false);
   
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   
   const handleCheckout = async () => {
+    // Prevent multiple rapid clicks
+    if (isProcessing) return;
+    setIsProcessing(true);
+    
     // Open window immediately to avoid popup blockers
     const checkoutWindow = window.open('https://account.romiomobile.com/estore/purchase/d88cb722-aab6-4d3c-8509-2091228eb1f1', '_blank');
     
     // Track events after opening (non-blocking)
     trackAddToCart('Traveler Plan', 39.99);
     trackInitiateCheckout('Traveler Plan', 39.99);
+    
+    // Reset processing state after a short delay
+    setTimeout(() => setIsProcessing(false), 1000);
   };
 
   return (

@@ -7,8 +7,8 @@ export default function Pricing() {
   
   const plans = [
     {
-      name: 'Lite',
-      price: 19.99,
+      name: t('pricing.lite.name'),
+      price: t('pricing.lite.price'),
       dataAmount: '5GB',
       features: [
         t('pricing.commonFeatures.feature1'),
@@ -24,8 +24,8 @@ export default function Pricing() {
       path: '/plans/lite'
     },
     {
-      name: 'Pro',
-      price: 39.99,
+      name: t('pricing.traveler.name'),
+      price: t('pricing.traveler.price'),
       dataAmount: '15GB',
       features: [
         t('pricing.commonFeatures.feature1'),
@@ -41,8 +41,8 @@ export default function Pricing() {
       path: '/plans/pro'
     },
     {
-      name: 'Max',
-      price: 69.99,
+      name: t('pricing.max.name'),
+      price: t('pricing.max.price'),
       dataAmount: '30GB',
       features: [
         t('pricing.commonFeatures.feature1'),
@@ -82,7 +82,7 @@ export default function Pricing() {
               )}
               <h3 className="text-2xl font-bold text-romio-black">{plan.name}</h3>
               <div className="mt-4 mb-6">
-                <span className="text-4xl font-bold text-romio-black">${plan.price}</span>
+                <span className="text-4xl font-bold text-romio-black">{plan.price}</span>
                 <span className="text-cool-slate">/{t('pricing.monthly').toLowerCase()}</span>
                 <div className="mt-1 text-lg font-medium text-signal-blue">{plan.dataAmount} {t('dashboard.plans.data')}</div>
               </div>
@@ -98,11 +98,7 @@ export default function Pricing() {
               
               <Link
                 to={plan.path}
-                className={`block text-center py-3 px-4 rounded-lg font-medium transition-colors ${
-                  plan.popular 
-                    ? 'bg-signal-blue text-white hover:bg-opacity-90' 
-                    : 'bg-transparent border border-signal-blue text-signal-blue hover:bg-signal-blue hover:bg-opacity-10'
-                }`}
+                className="btn-primary block text-center py-3 px-4 rounded-lg font-medium transition-colors"
               >
                 {plan.ctaText}
               </Link>

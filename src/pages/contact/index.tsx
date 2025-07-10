@@ -3,106 +3,19 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Header from '../../layouts/Header';
 import Footer from '../../layouts/Footer';
-import { EnvelopeIcon, PhoneIcon, MapPinIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
+import { EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
 // import emailjs from '@emailjs/browser'; // Uncomment for EmailJS option
 
 const ContactPage = () => {
   const { t } = useTranslation();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-    company: '',
-    phone: ''
-  });
-  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
 
   // Scroll to top on mount
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormStatus('submitting');
-    
-    try {
-      // Create FormData object for Netlify Forms
-      const formDataToSend = new FormData();
-      formDataToSend.append('form-name', 'contact');
-      formDataToSend.append('name', formData.name);
-      formDataToSend.append('email', formData.email);
-      formDataToSend.append('subject', formData.subject);
-      formDataToSend.append('message', formData.message);
-      formDataToSend.append('company', formData.company);
-      formDataToSend.append('phone', formData.phone);
-      
-      // Submit to Netlify
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formDataToSend as any).toString()
-      });
-      
-      if (response.ok) {
-        setFormStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: '',
-          company: '',
-          phone: ''
-        });
-      } else {
-        throw new Error('Form submission failed');
-      }
-    } catch (err) {
-      console.error('Form submission error:', err);
-      setFormStatus('error');
-      setError(t('contact.error'));
-    }
-  };
-
-  /* 
-  // ALTERNATIVE: EmailJS Implementation
-  // Uncomment this section if you prefer EmailJS over Netlify Forms:
-
-  const handleSubmitEmailJS = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormStatus('submitting');
-    
-    try {
-      await emailjs.send(
-        'your_service_id',     // Get from EmailJS dashboard
-        'your_template_id',    // Get from EmailJS dashboard  
-        {
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          company: formData.company,
-          phone: formData.phone,
-        },
-        'your_public_key'      // Get from EmailJS dashboard
-      );
-      
-      setFormStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '', company: '', phone: '' });
-    } catch (err) {
-      console.error('EmailJS error:', err);
-      setFormStatus('error');
-      setError(t('contact.error'));
-    }
-  };
-  */
 
   const contactInfo = [
     {
@@ -112,18 +25,41 @@ const ContactPage = () => {
       action: 'mailto:support@romiomobile.com'
     },
     {
-      icon: <PhoneIcon className="h-6 w-6" />,
-      title: t('contact.callUs'),
-      details: '+1 (888) 123-4567',
-      action: 'tel:+18881234567'
-    },
-    {
       icon: <MapPinIcon className="h-6 w-6" />,
       title: t('contact.office'),
-      details: 'San Francisco, CA, USA',
-      action: 'https://maps.google.com/?q=San+Francisco,CA,USA'
+      details: '30 N Gould St Ste R, Sheridan, WY 82801',
+      action: 'https://maps.google.com/?q=30+N+Gould+St+Ste+R+Sheridan+WY+82801'
     }
   ];
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setError('');
+    
+    try {
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+      
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as any).toString()
+      });
+      
+      if (response.ok) {
+        setSubmitted(true);
+        form.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch (err) {
+      console.error('Form submission error:', err);
+      setError(t('contact.error'));
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   return (
     <>
@@ -205,7 +141,7 @@ const ContactPage = () => {
                 <div className="bg-white rounded-xl shadow-sm p-6 md:p-8">
                   <h2 className="text-2xl font-semibold mb-6">{t('contact.sendMessage')}</h2>
                   
-                  {formStatus === 'success' ? (
+                  {submitted ? (
                     <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
                       <svg className="h-12 w-12 text-green-500 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -213,17 +149,26 @@ const ContactPage = () => {
                       <h3 className="text-xl font-medium text-green-800 mb-2">{t('contact.success.title')}</h3>
                       <p className="text-green-700 mb-4">{t('contact.success.text')}</p>
                       <button 
-                        onClick={() => setFormStatus('idle')}
+                        onClick={() => setSubmitted(false)}
                         className="btn-primary inline-block"
                       >
                         {t('contact.success.button')}
                       </button>
                     </div>
                   ) : (
-                    <form onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
-                      {/* Hidden fields for Netlify */}
+                    <form
+                      name="contact"
+                      method="POST"
+                      data-netlify="true"
+                      netlify-honeypot="bot-field"
+                      onSubmit={handleSubmit}
+                    >
                       <input type="hidden" name="form-name" value="contact" />
-                      <input type="hidden" name="bot-field" />
+                      <p className="hidden">
+                        <label>
+                          Don't fill this out if you're human: <input name="bot-field" />
+                        </label>
+                      </p>
                       
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
@@ -235,8 +180,6 @@ const ContactPage = () => {
                             id="name"
                             name="name"
                             required
-                            value={formData.name}
-                            onChange={handleInputChange}
                             className="block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-signal-blue"
                             placeholder={t('contact.placeholder.name')}
                           />
@@ -251,8 +194,6 @@ const ContactPage = () => {
                             id="email"
                             name="email"
                             required
-                            value={formData.email}
-                            onChange={handleInputChange}
                             className="block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-signal-blue"
                             placeholder={t('contact.placeholder.email')}
                           />
@@ -266,8 +207,6 @@ const ContactPage = () => {
                             type="text"
                             id="company"
                             name="company"
-                            value={formData.company}
-                            onChange={handleInputChange}
                             className="block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-signal-blue"
                             placeholder={t('contact.placeholder.company')}
                           />
@@ -281,8 +220,6 @@ const ContactPage = () => {
                             type="tel"
                             id="phone"
                             name="phone"
-                            value={formData.phone}
-                            onChange={handleInputChange}
                             className="block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-signal-blue"
                             placeholder={t('contact.placeholder.phone')}
                           />
@@ -297,8 +234,6 @@ const ContactPage = () => {
                             id="subject"
                             name="subject"
                             required
-                            value={formData.subject}
-                            onChange={handleInputChange}
                             className="block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-signal-blue"
                             placeholder={t('contact.placeholder.subject')}
                           />
@@ -313,15 +248,13 @@ const ContactPage = () => {
                             name="message"
                             required
                             rows={5}
-                            value={formData.message}
-                            onChange={handleInputChange}
                             className="block w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-signal-blue"
                             placeholder={t('contact.placeholder.message')}
                           />
                         </div>
                       </div>
                       
-                      {formStatus === 'error' && (
+                      {error && (
                         <div className="mt-4 text-red-600 bg-red-50 p-3 rounded-md">
                           <p>{error}</p>
                         </div>
@@ -330,12 +263,12 @@ const ContactPage = () => {
                       <div className="mt-6">
                         <button
                           type="submit"
-                          disabled={formStatus === 'submitting'}
+                          disabled={submitting}
                           className={`btn-primary w-full py-3 flex items-center justify-center ${
-                            formStatus === 'submitting' ? 'opacity-75 cursor-not-allowed' : ''
+                            submitting ? 'opacity-75 cursor-not-allowed' : ''
                           }`}
                         >
-                          {formStatus === 'submitting' ? (
+                          {submitting ? (
                             <>
                               <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
@@ -344,10 +277,7 @@ const ContactPage = () => {
                               {t('contact.sending')}
                             </>
                           ) : (
-                            <>
-                              {t('contact.sendButton')}
-                              <ArrowRightIcon className="ml-2 h-5 w-5" />
-                            </>
+                            t('contact.sendButton')
                           )}
                         </button>
                       </div>

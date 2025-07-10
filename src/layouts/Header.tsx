@@ -16,7 +16,7 @@ const Header: React.FC = () => {
   const navigate = useNavigate();
 
   // External login URL - to be updated later
-  const externalLoginUrl = 'https://example.com/login';
+  const externalLoginUrl = 'https://account.romiomobile.com/';
 
   // Add scroll effect
   useEffect(() => {

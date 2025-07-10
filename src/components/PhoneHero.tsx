@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ArrowRightIcon, SignalIcon, DevicePhoneMobileIcon, GlobeAltIcon, BoltIcon, ClockIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon, SignalIcon, DevicePhoneMobileIcon, GlobeAltIcon, BoltIcon } from '@heroicons/react/24/outline';
 import { useTranslation } from 'react-i18next';
 
 const PhoneHero = () => {
@@ -54,11 +54,6 @@ const PhoneHero = () => {
         <div className="flex flex-col lg:flex-row gap-12 items-center">
           {/* Left content */}
           <div className={`w-full lg:w-1/2 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-            <div className="inline-flex items-center px-3 py-1 mb-6 rounded-full bg-dark-theme bg-opacity-10">
-              <SignalIcon className="h-4 w-4 text-dark-theme animate-signal" />
-              <span className="ml-2 text-sm font-medium text-dark-theme">{t('hero.nextGenConnectivity')}</span>
-            </div>
-            
             <h1 className="text-4xl md:text-5xl font-bold mb-6 tech-accent">
               {t('hero.title')}
               <span className="text-dark-theme"> {t('hero.titleHighlight')}</span>
@@ -87,7 +82,7 @@ const PhoneHero = () => {
               {[
                 { icon: GlobeAltIcon, title: t('hero.features.global.title'), desc: t('hero.features.global.description') },
                 { icon: BoltIcon, title: t('hero.features.setup.title'), desc: t('hero.features.setup.description') },
-                { icon: ClockIcon, title: t('features.feature5.title'), desc: t('pricing.commonFeatures.feature7') }
+                { icon: DevicePhoneMobileIcon, title: t('features.keepNumber.title'), desc: "Voice calls over data" }
               ].map((feature, index) => (
                 <div key={index} className="flex flex-col items-center sm:items-start text-center sm:text-left">
                   <div className="mb-2 p-2 sm:p-3 rounded-lg bg-dark-theme bg-opacity-10 w-fit">

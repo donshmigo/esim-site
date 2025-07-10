@@ -81,7 +81,9 @@ export const PlanSelector: React.FC<PlanSelectorProps> = ({ onSelectPlan, select
           </div>
           
           <div className="mt-4 text-sm text-gray-500">
-            <span>Available in 90+ countries</span>
+            <div className="flex items-center space-x-2 text-xs text-gray-500">
+              <span>Available in 90+ countries</span>
+            </div>
           </div>
         </div>
       ))}

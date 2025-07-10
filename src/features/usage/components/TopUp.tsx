@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { doc, updateDoc, getDoc, setDoc, arrayUnion, serverTimestamp } from 'firebase/firestore';
-import { db } from '@/firebase/firebase';
 import { useCurrency } from '../../../hooks/useCurrency';
 import './TopUp.css';
 
@@ -11,213 +9,91 @@ interface TopUpProps {
 
 interface TopUpOption {
   id: string;
-  name: string;
   data: number;
   price: number;
-  description: string;
 }
 
 const TOP_UP_OPTIONS: TopUpOption[] = [
-  {
-    id: 'small',
-    name: 'Small',
-    data: 1,
-    price: 9.99,
-    description: 'Perfect for light usage'
-  },
-  {
-    id: 'medium',
-    name: 'Medium',
-    data: 3,
-    price: 19.99,
-    description: 'Ideal for regular usage'
-  },
-  {
-    id: 'large',
-    name: 'Large',
-    data: 5,
-    price: 29.99,
-    description: 'Best value for heavy usage'
-  }
+  { id: 'basic', data: 1, price: 10 },
+  { id: 'standard', data: 3, price: 25 },
+  { id: 'premium', data: 5, price: 40 }
 ];
 
 const TopUp: React.FC<TopUpProps> = ({ userId, onSuccess }) => {
-  const { formatPrice, convertFromUSD } = useCurrency();
-  const [error, setError] = useState<string | null>(null);
-  const [success, setSuccess] = useState<string | null>(null);
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const [showConfirmation, setShowConfirmation] = useState(false);
-  const [processingPayment, setProcessingPayment] = useState(false);
-
-  const handleOptionSelect = (optionId: string) => {
-    setSelectedOption(optionId);
-    setShowConfirmation(true);
-    setError(null);
-  };
-
-  const getSelectedOption = (): TopUpOption | undefined => {
-    return TOP_UP_OPTIONS.find(option => option.id === selectedOption);
-  };
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState(false);
+  const { formatPrice, convertFromUSD } = useCurrency();
 
   const handleTopUp = async () => {
-    const option = getSelectedOption();
-    if (!option || !userId) return;
+    if (!selectedOption) {
+      setError('Please select a top-up option');
+      return;
+    }
 
-    setProcessingPayment(true);
+    setLoading(true);
     setError(null);
+    setSuccess(false);
     
     try {
-      // Simulate payment processing
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1500));
       
-      // First update the user's data allowance in their profile
-      const userDocRef = doc(db, 'users', userId);
-      const userDoc = await getDoc(userDocRef);
-      
-      if (userDoc.exists()) {
-        // Get current data balance or set to 0 if not exists
-        const currentData = userDoc.data().dataBalance || 0;
-        const newBalance = currentData + option.data;
-        
-        await updateDoc(userDocRef, {
-          dataBalance: newBalance,
-          lastUpdated: serverTimestamp()
-        });
-        
-        // Then record the transaction in the user's billing history
-        const transactionData = {
-          id: `topup-${Date.now()}`,
-          date: new Date().toISOString(),
-          amount: option.price,
-          description: `Data Top-Up (${option.data}GB)`,
-          status: 'completed',
-          paymentMethod: 'Card ending in ****',
-          type: 'top-up'
-        };
-        
-        // Check if billing collection exists, if not create it
-        const billingDocRef = doc(db, 'billing', userId);
-        const billingDoc = await getDoc(billingDocRef);
-        
-        if (billingDoc.exists()) {
-          await updateDoc(billingDocRef, {
-            transactions: arrayUnion(transactionData)
-          });
-        } else {
-          await setDoc(billingDocRef, {
-            userId: userId,
-            transactions: [transactionData]
-          });
-        }
-        
-        setSuccess(`Successfully added ${option.data}GB to your account!`);
-        setShowConfirmation(false);
-        setSelectedOption(null);
-        
-        // Call the onSuccess callback if provided
+      // Simulate successful top-up
+      setSuccess(true);
         if (onSuccess) {
           onSuccess();
-        }
-      } else {
-        throw new Error('User profile not found');
       }
     } catch (err) {
       console.error('Error processing top-up:', err);
-      setError('Failed to process your top-up. Please try again later.');
+      setError('Failed to process top-up. Please try again.');
     } finally {
-      setProcessingPayment(false);
+      setLoading(false);
     }
   };
 
-  const handleCancel = () => {
-    setShowConfirmation(false);
-    setSelectedOption(null);
-  };
+  if (success) {
+    return (
+      <div className="top-up-success">
+        <h3>Top-Up Successful!</h3>
+        <p>Your data balance has been updated.</p>
+        <button 
+          onClick={() => setSuccess(false)}
+          className="reset-button"
+        >
+          Add More Data
+        </button>
+      </div>
+    );
+  }
 
   return (
     <div className="top-up-container">
       <h3>Add More Data</h3>
       
-      {error && (
-        <div className="error-message">
-          {error}
-        </div>
-      )}
-      
-      {success && (
-        <div className="success-message">
-          {success}
-        </div>
-      )}
-      
-      {!showConfirmation ? (
         <div className="top-up-options">
-          {TOP_UP_OPTIONS.map(option => (
+        {TOP_UP_OPTIONS.map((option) => (
             <div 
               key={option.id} 
               className={`top-up-option ${selectedOption === option.id ? 'selected' : ''}`}
-              onClick={() => handleOptionSelect(option.id)}
+            onClick={() => setSelectedOption(option.id)}
             >
-              <h4>{option.name}</h4>
-              <p className="data-amount">{option.data} GB</p>
-              <p className="option-description">{option.description}</p>
-              <p className="price">{formatPrice(convertFromUSD(option.price))}</p>
-              <button 
-                className="top-up-button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handleOptionSelect(option.id);
-                }}
-              >
-                Select
-              </button>
+            <h4>{option.data} GB</h4>
+            <p>{formatPrice(convertFromUSD(option.price))}</p>
             </div>
           ))}
         </div>
-      ) : (
-        <div className="confirmation-modal">
-          <h4>Confirm Your Purchase</h4>
-          {getSelectedOption() && (
-            <div className="confirmation-details">
-              <p>You are about to purchase:</p>
-              <div className="purchase-details">
-                <span className="detail-name">{getSelectedOption()?.name} Data Pack</span>
-                <span className="detail-value">{getSelectedOption()?.data} GB</span>
-              </div>
-              <div className="purchase-details">
-                <span className="detail-name">Price:</span>
-                <span className="detail-value">{formatPrice(convertFromUSD(getSelectedOption()?.price || 0))}</span>
-              </div>
-              <div className="payment-method">
-                <p>Payment Method: Visa ending in 4242</p>
-              </div>
-              <div className="confirmation-actions">
+
+      {error && <p className="error-message">{error}</p>}
+
                 <button 
-                  className="button cancel-button"
-                  onClick={handleCancel}
-                  disabled={processingPayment}
-                >
-                  Cancel
-                </button>
-                <button 
-                  className="button confirm-button"
                   onClick={handleTopUp}
-                  disabled={processingPayment}
-                >
-                  {processingPayment ? (
-                    <>
-                      <span className="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                      Processing...
-                    </>
-                  ) : (
-                    'Confirm Purchase'
-                  )}
+        disabled={loading || !selectedOption}
+        className="top-up-button"
+      >
+        {loading ? 'Processing...' : 'Add Data'}
                 </button>
-              </div>
-            </div>
-          )}
-        </div>
-      )}
     </div>
   );
 };

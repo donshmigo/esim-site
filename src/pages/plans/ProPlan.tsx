@@ -12,7 +12,7 @@ const ProPlan = () => {
   }, []);
   
   const handleSubscribe = () => {
-    window.open('https://shop.romiomobile.com/', '_blank');
+    window.open('https://account.romiomobile.com/estore/purchase/35890baa-0611-4c9b-a7ae-ccb82810578f', '_blank');
   };
 
   return (
@@ -49,7 +49,7 @@ const ProPlan = () => {
               </div>
               <div className="bg-white rounded-xl border-2 border-signal-blue p-4 shadow-lg pt-8">
                 <div className="mb-2 text-center">
-                  <h3 className="text-lg font-medium mb-1">{t('pricing.monthly')}: <span className="text-2xl font-bold text-signal-blue">$39.99</span></h3>
+                  <h3 className="text-lg font-medium mb-1">{t('pricing.monthly')}: <span className="text-2xl font-bold text-signal-blue">{t('pricing.traveler.price')}</span></h3>
                 </div>
 
                 <button 
@@ -149,7 +149,7 @@ const ProPlan = () => {
             
               <div className="mb-6 text-center">
                 <h3 className="text-lg font-medium mb-1">{t('pricing.monthly')}</h3>
-                <div className="text-4xl font-bold text-signal-blue mb-2">$39.99 <span className="text-lg font-normal text-cool-slate">/{t('common.month')}</span></div>
+                <div className="text-4xl font-bold text-signal-blue mb-2">{t('pricing.traveler.price')} <span className="text-lg font-normal text-cool-slate">/{t('common.month')}</span></div>
                 <p className="text-cool-slate text-sm">{t('plans.autoRenew')}</p>
               </div>
 
@@ -193,7 +193,7 @@ const ProPlan = () => {
               <h3 className="text-xl font-bold mb-1">{t('pricing.lite.name')} – 5GB</h3>
               <p className="text-cool-slate mb-4">{t('pricing.lite.description')}</p>
               <div className="flex justify-between items-center">
-                <span className="font-bold text-xl text-signal-blue">$19.99<span className="text-sm font-normal text-cool-slate">/{t('common.mo')}</span></span>
+                <span className="font-bold text-xl text-signal-blue">{t('pricing.lite.price')}<span className="text-sm font-normal text-cool-slate">/{t('common.mo')}</span></span>
                 <Link to="/plans/lite" className="btn-secondary text-sm">{t('common.learnMore')}</Link>
               </div>
             </div>

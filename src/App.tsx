@@ -5,7 +5,6 @@ import Home from './pages/home';
 // Import plan pages
 import Plans from './pages/plans';
 import LitePlan from './pages/plans/LitePlan';
-import TravelerPlan from './pages/plans/TravelerPlan';
 import ProPlan from './pages/plans/ProPlan';
 import MaxPlan from './pages/plans/MaxPlan';
 import BusinessPage from './pages/business';
@@ -30,7 +29,6 @@ function App() {
       <Route path="/partners" element={<Partners />} />
       <Route path="/plans" element={<Plans />} />
       <Route path="/plans/lite" element={<LitePlan />} />
-      <Route path="/plans/traveler" element={<Navigate to="/plans/pro" replace />} />
       <Route path="/plans/pro" element={<ProPlan />} />
       <Route path="/plans/max" element={<MaxPlan />} />
       <Route path="/business" element={<BusinessPage />} />

@@ -262,26 +262,26 @@
       "feature8": "电子邮件支持"
     },
     "lite": {
-      "name": "轻量版",
-      "price": "¥49",
-      "yearlyPrice": "¥478",
+      "name": "Lite",
+      "price": "$19.99",
+      "yearlyPrice": "$191.88",
       "data": "5GB数据",
       "countries": "90+国家",
-      "description": "适合偶尔旅行者",
+      "description": "适合需要基本连接用于消息、电子邮件和偶尔浏览的轻度用户。",
       "features": [
         "有效期30天",
         "仅数据",
         "无速度限制",
-        "基本客户支持"
+        "基础客户支持"
       ]
     },
     "traveler": {
-      "name": "旅行者",
-      "price": "¥99",
-      "yearlyPrice": "¥958",
-      "data": "20GB数据",
+      "name": "Pro",
+      "price": "$39.99",
+      "yearlyPrice": "$383.88",
+      "data": "15GB数据",
       "countries": "90+国家",
-      "description": "适合经常旅行者",
+      "description": "适合需要可靠连接用于工作、视频通话和社交媒体的专业人士和常规用户。",
       "features": [
         "有效期30天",
         "仅数据",
@@ -291,22 +291,22 @@
       ]
     },
     "max": {
-      "name": "最大版",
-      "price": "¥199",
-      "yearlyPrice": "¥1,918",
+      "name": "Max",
+      "price": "$64.99",
+      "yearlyPrice": "$623.88",
       "data": "30GB数据",
       "countries": "90+国家",
-      "description": "数字游民的最佳选择",
+      "description": "适合需要全球无限连接的数字游民和商务旅行者。",
       "features": [
         "有效期30天",
         "仅数据",
         "无速度限制",
-        "24/7优先支持",
+        "优先24/7支持",
         "多设备支持",
-        "家庭使用（最多3个设备）"
+        "家庭使用（最多3台设备）"
       ]
     },
-    "cta": "立即订阅",
+    "cta": "立即购买",
     "customPlan": "需要定制套餐？",
     "contactUs": "联系我们"
   },

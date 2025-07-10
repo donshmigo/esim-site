@@ -1,18 +1,29 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeftIcon, CheckIcon, DevicePhoneMobileIcon, GlobeAltIcon, SignalIcon, WifiIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { trackInitiateCheckout } from '../../utils/fbPixel';
 
 const MaxPlan = () => {
   const { t } = useTranslation();
+  const formRef = useRef<HTMLFormElement>(null);
   
   // Scroll to top when component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   
-  const handleSubscribe = () => {
-    window.open('https://shop.romiomobile.com/', '_blank');
+  const handleCheckout = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    
+    // Track the event using the official package
+    trackInitiateCheckout('Max Plan', 64.99);
+    
+    // Give Facebook time to track
+    await new Promise(resolve => setTimeout(resolve, 250));
+    
+    window.open('https://account.romiomobile.com/estore/purchase/d88cb722-aab6-4d3c-8509-2091228eb1f1', '_blank');
   };
 
   return (
@@ -46,15 +57,15 @@ const MaxPlan = () => {
             <div className="lg:hidden mt-4">
               <div className="bg-white rounded-xl border-2 border-signal-blue p-4 shadow-lg">
                 <div className="mb-2 text-center">
-                  <h3 className="text-lg font-medium mb-1">{t('pricing.monthly')}: <span className="text-2xl font-bold text-signal-blue">$69.99</span></h3>
+                  <h3 className="text-lg font-medium mb-1">{t('pricing.monthly')}: <span className="text-2xl font-bold text-signal-blue">{t('pricing.max.price')}</span></h3>
                 </div>
 
-                <button 
-                  onClick={handleSubscribe}
-                  className="btn-primary w-full text-center block py-3"
+                <article 
+                  onClick={handleCheckout}
+                  className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none"
                 >
                   {t('pricing.cta')}
-                </button>
+                </article>
               </div>
             </div>
           </div>
@@ -158,7 +169,7 @@ const MaxPlan = () => {
             <div className="sticky top-24 bg-white rounded-xl border-2 border-signal-blue p-6 shadow-lg">
               <div className="mb-6 text-center">
                 <h3 className="text-lg font-medium mb-1">{t('pricing.monthly')}</h3>
-                <div className="text-4xl font-bold text-signal-blue mb-2">$69.99 <span className="text-lg font-normal text-cool-slate">/{t('common.month')}</span></div>
+                <div className="text-4xl font-bold text-signal-blue mb-2">{t('pricing.max.price')} <span className="text-lg font-normal text-cool-slate">/{t('common.month')}</span></div>
                 <p className="text-cool-slate text-sm">{t('plans.autoRenew')}</p>
               </div>
 
@@ -183,12 +194,12 @@ const MaxPlan = () => {
                 </ul>
               </div>
 
-              <button 
-                onClick={handleSubscribe}
-                className="btn-primary w-full text-center block py-3"
+              <article 
+                onClick={handleCheckout}
+                className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none"
               >
                 {t('pricing.cta')}
-              </button>
+              </article>
             </div>
           </div>
         </div>
@@ -202,7 +213,7 @@ const MaxPlan = () => {
               <h3 className="text-xl font-bold mb-1">{t('pricing.lite.name')} – 5GB</h3>
               <p className="text-cool-slate mb-4">{t('pricing.lite.description')}</p>
               <div className="flex justify-between items-center">
-                <span className="font-bold text-xl text-signal-blue">$19.99<span className="text-sm font-normal text-cool-slate">/{t('common.mo')}</span></span>
+                <span className="font-bold text-xl text-signal-blue">{t('pricing.lite.price')}<span className="text-sm font-normal text-cool-slate">/{t('common.mo')}</span></span>
                 <Link to="/plans/lite" className="btn-secondary text-sm">{t('common.learnMore')}</Link>
               </div>
             </div>
@@ -211,7 +222,7 @@ const MaxPlan = () => {
               <h3 className="text-xl font-bold mb-1">{t('pricing.traveler.name')} – 15GB</h3>
               <p className="text-cool-slate mb-4">{t('pricing.traveler.description')}</p>
               <div className="flex justify-between items-center">
-                <span className="font-bold text-xl text-signal-blue">$39.99<span className="text-sm font-normal text-cool-slate">/{t('common.mo')}</span></span>
+                <span className="font-bold text-xl text-signal-blue">{t('pricing.traveler.price')}<span className="text-sm font-normal text-cool-slate">/{t('common.mo')}</span></span>
                 <Link to="/plans/pro" className="btn-secondary text-sm">{t('common.learnMore')}</Link>
               </div>
             </div>

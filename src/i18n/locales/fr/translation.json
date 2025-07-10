@@ -110,7 +110,7 @@
   "hero": {
     "title": "Connectivité mondiale,",
     "titleHighlight": "simplifiée",
-    "description": "Restez connecté dans plus de 90 pays avec un seul forfait eSIM. Sans frais de roaming, sans configuration complexe, accès instantané aux données haut débit où que vous alliez.",
+    "description": "Restez connecté dans plus de 75 pays avec un seul forfait eSIM. Pas de frais d'itinérance, pas de configuration compliquée, accès instantané aux données haut débit où que vous alliez.",
     "primaryCta": "Se connecter",
     "secondaryCta": "Voir comment ça marche",
     "nextGenConnectivity": "Connectivité de nouvelle génération",
@@ -119,7 +119,7 @@
     "features": {
       "global": {
         "title": "Couverture mondiale",
-        "description": "90+ pays"
+        "description": "75+ pays"
       },
       "setup": {
         "title": "Configuration instantanée",
@@ -134,7 +134,7 @@
       "status": "Activé",
       "ready": "Prêt à se connecter",
       "network": "Réseau mondial",
-      "countries": "90+ pays"
+      "countries": "75+ pays"
     }
   },
   "features": {
@@ -165,7 +165,7 @@
       "description": "Gardez votre numéro local tout en utilisant nos données mondiales"
     },
     "global": {
-      "title": "Couverture mondiale dans plus de 90 pays",
+      "title": "Couverture mondiale dans plus de 75 pays",
       "description": "Restez connecté en Europe, Amérique du Nord, Asie et plus — avec un seul forfait, un seul code QR."
     },
     "subscription": {
@@ -212,7 +212,7 @@
   },
   "coverage": {
     "title": "Couverture mondiale",
-    "subtitle": "Connecté dans plus de 90 pays à travers le monde",
+    "subtitle": "Connecté dans plus de 75 pays à travers le monde",
     "searchPlaceholder": "Rechercher un pays...",
     "mapAlt": "Carte du monde avec zones de couverture",
     "moreCountries": "Plus de pays",
@@ -254,7 +254,7 @@
     "commonFeatures": {
       "feature1": "Valable pendant 30 jours",
       "feature2": "Données à haut débit (4G/5G)",
-      "feature3": "Couverture dans plus de 90 pays",
+      "feature3": "Couverture mondiale dans plus de 75 pays",
       "feature4": "Connexion sécurisée",
       "feature5": "Service client mondial",
       "feature6": "Service client 24/7",
@@ -263,11 +263,11 @@
     },
     "lite": {
       "name": "Lite",
-      "price": "4,90 €",
-      "yearlyPrice": "47,80 €",
+      "price": "$19.99",
+      "yearlyPrice": "$191.88",
       "data": "5 Go de données",
-      "countries": "90+ pays",
-      "description": "Idéal pour les voyageurs occasionnels",
+      "countries": "75+ pays",
+      "description": "Parfait pour les utilisateurs occasionnels qui ont besoin d'une connectivité de base pour la messagerie, les e-mails et la navigation occasionnelle.",
       "features": [
         "Valable pendant 30 jours",
         "Données uniquement",
@@ -276,12 +276,12 @@
       ]
     },
     "traveler": {
-      "name": "Traveler",
-      "price": "9,90 €",
-      "yearlyPrice": "95,80 €",
-      "data": "20 Go de données",
-      "countries": "90+ pays",
-      "description": "Idéal pour les voyageurs fréquents",
+      "name": "Pro",
+      "price": "$39.99",
+      "yearlyPrice": "$383.88",
+      "data": "15 Go de données",
+      "countries": "75+ pays",
+      "description": "Parfait pour les professionnels et les utilisateurs réguliers qui ont besoin d'une connectivité fiable pour le travail, les appels vidéo et les réseaux sociaux.",
       "features": [
         "Valable pendant 30 jours",
         "Données uniquement",
@@ -292,11 +292,11 @@
     },
     "max": {
       "name": "Max",
-      "price": "19,90 €",
-      "yearlyPrice": "191,80 €",
+      "price": "$64.99",
+      "yearlyPrice": "$623.88",
       "data": "30 Go de données",
-      "countries": "90+ pays",
-      "description": "Idéal pour les nomades numériques",
+      "countries": "75+ pays",
+      "description": "Idéal pour les nomades numériques et les voyageurs d'affaires qui ont besoin d'une connectivité illimitée à travers le monde.",
       "features": [
         "Valable pendant 30 jours",
         "Données uniquement",
@@ -306,7 +306,7 @@
         "Utilisation familiale (jusqu'à 3 appareils)"
       ]
     },
-    "cta": "S'abonner maintenant",
+    "cta": "Acheter Maintenant",
     "customPlan": "Besoin d'un forfait personnalisé ?",
     "contactUs": "Contactez-nous"
   },
@@ -605,12 +605,12 @@
     "maxOverview": "Romio Max a été créé pour les personnes qui vivent en ligne — des aéroports et cafés aux îles et espaces de coworking. Avec 30 Go de données mondiales, il prend en charge tout, de l'utilisation intensive de vidéos au partage de connexion de votre ordinateur portable. C'est votre forfait de données à temps plein qui fonctionne au-delà des frontières sans interruption.",
     "features": {
       "instantDelivery": "Livraison instantanée d'eSIM via code QR",
-      "globalCoverage": "Connexion dans plus de 90 pays",
+      "globalCoverage": "Connexion dans plus de 75 pays",
       "validity": "Validité de 30 jours à partir de la première activation",
       "useAnywhere": "Utilisation à domicile ou à l'étranger",
       "cancelAnytime": "Annulez ou mettez à niveau à tout moment",
       "streaming": "Prend en charge le streaming, les téléchargements, Zoom et plus",
-      "highSpeedCoverage": "Couverture LTE haute vitesse dans plus de 90 pays",
+      "highSpeedCoverage": "Couverture LTE haute vitesse dans plus de 75 pays",
       "autoRenewing": "Renouvellement automatique, facile à gérer",
       "remoteWork": "Conçu pour le travail à distance, les voyages et la vie hybride",
       "addons": "VoIP (bientôt disponible) et modules complémentaires d'assurance disponibles"

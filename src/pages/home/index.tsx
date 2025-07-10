@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import PhoneHero from '../../components/PhoneHero';
 import Features from '../../features/home/components/Features';
 import HowItWorks from '../../features/home/components/HowItWorks';
@@ -14,13 +14,6 @@ const Home: React.FC = () => {
   const location = useLocation();
   const [showScrollTop, setShowScrollTop] = useState(false);
   const pricingSectionRef = useRef<HTMLElement | null>(null);
-  
-  // Plans data for the CTA
-  const plans = [
-    { name: 'Lite', path: '/plans/lite' },
-    { name: 'Pro', path: '/plans/pro' },
-    { name: 'Max', path: '/plans/max' }
-  ];
   
   // Show scroll-to-top button after scrolling down
   useEffect(() => {

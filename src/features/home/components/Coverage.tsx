@@ -6,6 +6,7 @@ import { ChevronDownIcon } from '@heroicons/react/24/outline';
 export default function Coverage() {
   const { t } = useTranslation();
   const [activeRegion, setActiveRegion] = useState<string | null>(null);
+  const [expandedRegions, setExpandedRegions] = useState<Set<string>>(new Set());
   
   const regions = [
     {
@@ -16,31 +17,31 @@ export default function Coverage() {
         'Faroe Islands', 'Finland', 'France', 'Germany', 'Greece', 'Hungary', 
         'Iceland', 'Ireland', 'Italy', 'Kosovo', 'Latvia', 'Liechtenstein', 
         'Lithuania', 'Luxembourg', 'Macedonia', 'Malta', 'Moldova', 'Montenegro',
-        'Netherlands', 'Norway', 'Poland', 'Portugal', 'Romania', 'Russian Federation',
-        'Serbia', 'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switzerland', 
-        'Ukraine', 'United Kingdom'
+        'Netherlands', 'Norway', 'Poland', 'Portugal', 'Romania', 'Serbia', 
+        'Slovakia', 'Slovenia', 'Spain', 'Sweden', 'Switzerland', 'Ukraine', 
+        'United Kingdom'
       ]
     },
     {
       name: t('coverage.regions.americas'),
       countries: [
-        'Brazil', 'Canada', 'United States'
+        'Canada', 'United States'
       ]
     },
     {
       name: t('coverage.regions.asiaPacific'),
       countries: [
-        'Australia', 'Azerbaijan', 'Bangladesh', 'Georgia', 'Hong Kong', 'India',
-        'Indonesia', 'Japan', 'Kazakhstan', 'Kyrgyzstan', 'Macao China', 'Malaysia', 
-        'New Zealand', 'Pakistan', 'Philippines', 'Singapore', 'South Korea', 
-        'Sri Lanka', 'Taiwan', 'Thailand', 'Uzbekistan', 'Vietnam'
+        'Australia', 'Bangladesh', 'China', 'Hong Kong', 'India', 'Indonesia', 
+        'Kazakhstan', 'Kyrgyzstan', 'Macao China', 'Malaysia', 'New Zealand', 
+        'Pakistan', 'Singapore', 'South Korea', 'Sri Lanka', 'Taiwan', 'Thailand', 
+        'Uzbekistan', 'Vietnam'
       ]
     },
     {
       name: t('coverage.regions.middleEastAfrica'),
       countries: [
-        'Algeria', 'Armenia', 'Bahrain', 'Egypt', 'Ghana', 'Iraq', 'Israel',
-        'Kuwait', 'Qatar', 'Reunion', 'Tunisia', 'Turkey', 'United Arab Emirates'
+        'Algeria', 'Armenia', 'Azerbaijan', 'Bahrain', 'Egypt', 'Georgia', 'Ghana', 
+        'Israel', 'Kuwait', 'Qatar', 'Reunion', 'Tunisia', 'Turkey', 'United Arab Emirates'
       ]
     }
   ];
@@ -51,6 +52,16 @@ export default function Coverage() {
     } else {
       setActiveRegion(regionName);
     }
+  };
+
+  const toggleRegionExpansion = (regionName: string) => {
+    const newExpanded = new Set(expandedRegions);
+    if (newExpanded.has(regionName)) {
+      newExpanded.delete(regionName);
+    } else {
+      newExpanded.add(regionName);
+    }
+    setExpandedRegions(newExpanded);
   };
 
   return (
@@ -79,7 +90,7 @@ export default function Coverage() {
           {regions.map((region) => (
             <div key={region.name} className="bg-white rounded-xl shadow-sm overflow-hidden">
               <button 
-                className="w-full px-6 py-4 flex justify-between items-center text-left"
+                className="w-full px-6 py-4 flex justify-between items-center text-left focus:outline-none"
                 onClick={() => toggleRegion(region.name)}
               >
                 <h3 className="text-lg font-semibold text-romio-black">{region.name}</h3>
@@ -108,24 +119,37 @@ export default function Coverage() {
 
         {/* Desktop view: Grid layout */}
         <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {regions.map((region) => (
-            <div key={region.name} className="bg-white rounded-xl p-6 shadow-sm">
-              <h3 className="text-xl font-semibold mb-4 text-romio-black">{region.name}</h3>
-              <ul className="text-cool-slate grid grid-cols-1 gap-y-2">
-                {region.countries.slice(0, 8).map((country) => (
-                  <li key={country} className="flex items-center">
-                    <span className="h-2 w-2 bg-signal-blue rounded-full mr-2"></span>
-                    {country}
-                  </li>
-                ))}
-                {region.countries.length > 8 && (
-                  <li className="text-signal-blue font-medium mt-2">
-                    +{region.countries.length - 8} {t('coverage.moreCountries')}
-                  </li>
-                )}
-              </ul>
-            </div>
-          ))}
+          {regions.map((region) => {
+            const isExpanded = expandedRegions.has(region.name);
+            const displayCountries = isExpanded ? region.countries : region.countries.slice(0, 8);
+            
+            return (
+              <div key={region.name} className="bg-white rounded-xl p-6 shadow-sm">
+                <h3 className="text-xl font-semibold mb-4 text-romio-black">{region.name}</h3>
+                <ul className="text-cool-slate grid grid-cols-1 gap-y-2">
+                  {displayCountries.map((country) => (
+                    <li key={country} className="flex items-center">
+                      <span className="h-2 w-2 bg-signal-blue rounded-full mr-2"></span>
+                      {country}
+                    </li>
+                  ))}
+                  {region.countries.length > 8 && (
+                    <li className="mt-2">
+                      <button 
+                        onClick={() => toggleRegionExpansion(region.name)}
+                        className="text-signal-blue font-medium hover:text-signal-blue hover:underline transition-colors text-sm focus:outline-none"
+                      >
+                        {isExpanded 
+                          ? '- Show less' 
+                          : `+${region.countries.length - 8} ${t('coverage.moreCountries')}`
+                        }
+                      </button>
+                    </li>
+                  )}
+                </ul>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

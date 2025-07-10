@@ -41,11 +41,6 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left column - Logo and Text content */}
           <div className={`flex flex-col items-start justify-start transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
-            <div className="flex items-center gap-2 mb-4">
-              <SignalIcon className="h-5 w-5 text-signal-blue animate-signal" />
-              <span className="text-signal-blue font-medium">{t('hero.nextGenConnectivity', 'Next Generation Connectivity')}</span>
-            </div>
-            
             <h1 className="text-4xl md:text-5xl font-bold text-romio-black mb-6 tech-accent">
               {t('hero.title')} <span className="text-signal-blue">{t('hero.titleHighlight')}</span>
             </h1>

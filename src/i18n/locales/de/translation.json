@@ -110,7 +110,7 @@
   "hero": {
     "title": "Globale Konnektivität,",
     "titleHighlight": "vereinfacht",
-    "description": "Bleiben Sie in über 90 Ländern mit einem einzigen eSIM-Tarif verbunden. Keine Roaming-Gebühren, keine komplizierte Einrichtung, sofortiger Zugang zu Hochgeschwindigkeitsdaten, wo immer Sie sind.",
+    "description": "Bleiben Sie in über 75 Ländern mit einem einzigen eSIM-Tarif verbunden. Keine Roaming-Gebühren, keine komplizierte Einrichtung, sofortiger Zugang zu Hochgeschwindigkeitsdaten, wo immer Sie sind.",
     "primaryCta": "Verbinden",
     "secondaryCta": "Wie es funktioniert",
     "nextGenConnectivity": "Konnektivität der nächsten Generation",
@@ -118,8 +118,8 @@
     "imgAlt": "Romio eSIM globale Konnektivität",
     "features": {
       "global": {
-        "title": "Globale Abdeckung",
-        "description": "90+ Länder"
+        "title": "Weltweite Abdeckung",
+        "description": "75+ Länder"
       },
       "setup": {
         "title": "Sofortige Einrichtung",
@@ -134,7 +134,7 @@
       "status": "Aktiviert",
       "ready": "Bereit zur Verbindung",
       "network": "Globales Netzwerk",
-      "countries": "90+ Länder"
+      "countries": "75+ Länder"
     }
   },
   "features": {
@@ -212,7 +212,7 @@
   },
   "coverage": {
     "title": "Globale Abdeckung",
-    "subtitle": "Verbunden in über 90 Ländern weltweit",
+    "subtitle": "Verbunden in über 75 Ländern weltweit",
     "searchPlaceholder": "Land suchen...",
     "mapAlt": "Weltkarte mit Abdeckungsgebieten",
     "moreCountries": "Weitere Länder",
@@ -254,7 +254,7 @@
     "commonFeatures": {
       "feature1": "Gültig für 30 Tage",
       "feature2": "Hochgeschwindigkeitsdaten (4G/5G)",
-      "feature3": "Abdeckung in über 90 Ländern",
+      "feature3": "Weltweite Abdeckung in über 75 Ländern",
       "feature4": "Sichere Verbindung",
       "feature5": "Globaler Kundenservice",
       "feature6": "24/7 Kundenservice",
@@ -263,11 +263,11 @@
     },
     "lite": {
       "name": "Lite",
-      "price": "€4,90",
-      "yearlyPrice": "€47,80",
+      "price": "$19.99",
+      "yearlyPrice": "$191.88",
       "data": "5GB Daten",
-      "countries": "90+ Länder",
-      "description": "Ideal für Gelegenheitsreisende",
+      "countries": "75+ Länder",
+      "description": "Perfekt für gelegentliche Nutzer, die eine grundlegende Verbindung für Nachrichten, E-Mails und gelegentliches Surfen benötigen.",
       "features": [
         "Gültig für 30 Tage",
         "Nur Daten",
@@ -276,12 +276,12 @@
       ]
     },
     "traveler": {
-      "name": "Traveler",
-      "price": "€9,90",
-      "yearlyPrice": "€95,80",
-      "data": "20GB Daten",
-      "countries": "90+ Länder",
-      "description": "Ideal für häufige Reisende",
+      "name": "Pro",
+      "price": "$39.99",
+      "yearlyPrice": "$383.88",
+      "data": "15GB Daten",
+      "countries": "75+ Länder",
+      "description": "Perfekt für Berufstätige und regelmäßige Nutzer, die zuverlässige Konnektivität für Arbeit, Videoanrufe und soziale Medien benötigen.",
       "features": [
         "Gültig für 30 Tage",
         "Nur Daten",
@@ -292,11 +292,11 @@
     },
     "max": {
       "name": "Max",
-      "price": "€19,90",
-      "yearlyPrice": "€191,80",
+      "price": "$64.99",
+      "yearlyPrice": "$623.88",
       "data": "30GB Daten",
-      "countries": "90+ Länder",
-      "description": "Ideal für digitale Nomaden",
+      "countries": "75+ Länder",
+      "description": "Ideal für digitale Nomaden und Geschäftsreisende, die unbegrenzte Konnektivität weltweit benötigen.",
       "features": [
         "Gültig für 30 Tage",
         "Nur Daten",
@@ -306,7 +306,7 @@
         "Familiennutzung (bis zu 3 Geräten)"
       ]
     },
-    "cta": "Jetzt abonnieren",
+    "cta": "Jetzt Kaufen",
     "customPlan": "Benötigen Sie einen maßgeschneiderten Tarif?",
     "contactUs": "Kontaktieren Sie uns"
   },

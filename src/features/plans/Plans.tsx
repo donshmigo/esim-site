@@ -59,7 +59,7 @@ const Plans: React.FC = () => {
         {
           id: 'max',
           name: t('plans.max.name', 'Max Plan'),
-          price: 69.99,
+          price: 64.99,
           dataAmount: '30GB',
           duration: '30 days',
           description: t('plans.max.description', 'For heavy data users who need reliable connectivity.'),

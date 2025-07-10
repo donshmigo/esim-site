@@ -13,7 +13,6 @@ interface FooterProps {
 
 export default function Footer({ hideBusinessSection = false }: FooterProps) {
   const { t } = useTranslation();
-  const currentYear = new Date().getFullYear();
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
   
   const footerLinks = [
@@ -21,9 +20,6 @@ export default function Footer({ hideBusinessSection = false }: FooterProps) {
       title: t('footer.company.title'),
       links: [
         { name: t('footer.company.about'), href: '/about', isLink: true },
-        { name: t('footer.company.careers'), href: '/careers', isLink: true },
-        { name: t('footer.company.press'), href: '/press', isLink: true },
-        { name: t('footer.company.blog'), href: '/blog', isLink: true },
       ],
     },
     {

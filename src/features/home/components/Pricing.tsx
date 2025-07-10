@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useCurrency } from '../../../contexts/CurrencyContext';
 import { useState, useEffect } from 'react';
+import { trackAddToCart } from '../../../utils/analytics';
 
 export default function Pricing() {
   const { t } = useTranslation();
@@ -63,12 +64,12 @@ export default function Pricing() {
       features: getFeatures('traveler'),
       popular: true,
       ctaText: t('pricing.cta'),
-      path: '/plans/traveler',
+      path: '/plans/pro',
       translationKey: 'traveler'
     },
     {
       name: t('pricing.max.name'),
-      price: 59.99,
+      price: 64.99,
       dataAmount: t('pricing.max.data'),
       features: getFeatures('max'),
       popular: false,
@@ -249,11 +250,8 @@ export default function Pricing() {
                 
                 <Link
                   to={plansWithFallback[activeIndex].path}
-                  className={`block text-center py-3 px-4 rounded-lg font-medium transition-colors pointer-events-auto z-20 relative ${
-                    plansWithFallback[activeIndex].popular 
-                      ? 'bg-signal-blue text-white hover:bg-opacity-90' 
-                      : 'bg-transparent border border-signal-blue text-signal-blue hover:bg-signal-blue hover:bg-opacity-10'
-                  }`}
+                  className="btn-primary block text-center py-3 px-4 rounded-lg font-medium transition-colors pointer-events-auto z-20 relative"
+                  onClick={() => trackAddToCart(plansWithFallback[activeIndex].name, plansWithFallback[activeIndex].price)}
                 >
                   {plansWithFallback[activeIndex].ctaText}
                 </Link>
@@ -295,11 +293,8 @@ export default function Pricing() {
               
               <Link
                 to={plan.path}
-                className={`block w-full text-center py-3 px-4 rounded-lg font-medium transition-colors ${
-                  plan.popular 
-                    ? 'bg-signal-blue text-white hover:bg-opacity-90' 
-                    : 'bg-transparent border border-signal-blue text-signal-blue hover:bg-signal-blue hover:bg-opacity-10'
-                }`}
+                className="btn-primary block w-full text-center py-3 px-4 rounded-lg font-medium transition-colors"
+                onClick={() => trackAddToCart(plan.name, plan.price)}
               >
                 {plan.ctaText}
               </Link>

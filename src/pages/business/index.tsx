@@ -83,9 +83,9 @@ const BusinessPage: React.FC = () => {
               <h2 className="text-3xl font-bold mb-4">Why Choose Romio for Business?</h2>
               <p className="text-gray-600">
                 Transform your business connectivity with enterprise-grade solutions designed for modern global operations.
-              </p>
+            </p>
             </div>
-
+            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {/* Cost Management */}
               <div className="bg-white p-8 rounded-lg shadow-sm">
@@ -122,7 +122,7 @@ const BusinessPage: React.FC = () => {
                   </div>
                 </div>
               </div>
-
+              
               {/* Flexible Plans */}
               <div className="bg-white p-8 rounded-lg shadow-sm">
                 <div className="flex items-start mb-4">
@@ -139,7 +139,7 @@ const BusinessPage: React.FC = () => {
                   </div>
                 </div>
               </div>
-
+              
               {/* Compliance & Security */}
               <div className="bg-white p-8 rounded-lg shadow-sm">
                 <div className="flex items-start mb-4">

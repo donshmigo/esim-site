@@ -12,28 +12,20 @@ const LitePlan = () => {
     window.scrollTo(0, 0);
   }, []);
   
-  const handleCheckout = async (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleCheckout = async (e: React.MouseEvent) => {
     e.preventDefault();
     
-    // Track both events
-    try {
-      // First AddToCart
-      trackAddToCart('Lite Plan', 19.99);
-      console.log('AddToCart event fired');
-      
-      // Small delay then InitiateCheckout
-      await new Promise(resolve => setTimeout(resolve, 100));
-      trackInitiateCheckout('Lite Plan', 19.99);
-      console.log('InitiateCheckout event fired');
-      
-      // Wait to ensure tracking completes
-      await new Promise(resolve => setTimeout(resolve, 250));
-      
-      // Redirect
-      window.open('https://shop.romiomobile.com/', '_blank');
-    } catch (error) {
-      console.error('Error tracking events:', error);
-    }
+    // Track AddToCart first
+    trackAddToCart('Lite Plan', 19.99);
+    
+    // Wait a bit then track InitiateCheckout
+    await new Promise(resolve => setTimeout(resolve, 100));
+    trackInitiateCheckout('Lite Plan', 19.99);
+    
+    // Give Facebook time to track both events
+    await new Promise(resolve => setTimeout(resolve, 250));
+    
+    window.open('https://shop.romiomobile.com/', '_blank');
   };
 
   return (
@@ -70,14 +62,12 @@ const LitePlan = () => {
                   <h3 className="text-lg font-medium mb-1">{t('pricing.monthly')}: <span className="text-2xl font-bold text-signal-blue">{t('pricing.lite.price')}</span></h3>
                 </div>
 
-                <button 
+                <article 
                   onClick={handleCheckout}
-                  type="button"
-                  data-event-type="initiate_checkout"
-                  className="w-full text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none"
+                  className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none"
                 >
                   {t('pricing.cta')}
-                </button>
+                </article>
               </div>
             </div>
           </div>
@@ -185,14 +175,12 @@ const LitePlan = () => {
                 </ul>
               </div>
 
-              <button 
+              <article 
                 onClick={handleCheckout}
-                type="button"
-                data-event-type="initiate_checkout"
-                className="w-full text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none"
+                className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none"
               >
                 {t('pricing.cta')}
-              </button>
+              </article>
             </div>
           </div>
         </div>

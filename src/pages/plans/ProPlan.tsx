@@ -15,11 +15,11 @@ const ProPlan = () => {
   
   const handleCheckout = async () => {
     // Track AddToCart first
-    trackAddToCart('Pro Plan', 49.99);
+    trackAddToCart('Pro Plan', 39.99);
     
     // Wait a bit then track InitiateCheckout
     await new Promise(resolve => setTimeout(resolve, 100));
-    trackInitiateCheckout('Pro Plan', 49.99);
+    trackInitiateCheckout('Pro Plan', 39.99);
     
     // Give Facebook time to track both events
     await new Promise(resolve => setTimeout(resolve, 250));
@@ -71,7 +71,7 @@ const ProPlan = () => {
                   data-fb-event="AddToCart"
                   data-fb-content-name="Pro Plan"
                   data-fb-content-type="product"
-                  data-fb-value="49.99"
+                  data-fb-value="39.99"
                   data-fb-currency="USD"
                   type="button"
                 >
@@ -200,7 +200,7 @@ const ProPlan = () => {
                 data-fb-event="AddToCart"
                 data-fb-content-name="Pro Plan"
                 data-fb-content-type="product"
-                data-fb-value="49.99"
+                data-fb-value="39.99"
                 data-fb-currency="USD"
                 type="button"
               >

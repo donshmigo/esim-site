@@ -56,7 +56,8 @@ const PhoneHero = () => {
           <div className={`w-full lg:w-1/2 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'}`}>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 tech-accent">
               {t('hero.title')}
-              <span className="text-dark-theme"> {t('hero.titleHighlight')}</span>
+              <br />
+              <span className="text-dark-theme">{t('hero.titleHighlight')}</span>
             </h1>
             
             <p className="text-lg text-cool-slate mb-8 animate-fade-in-up animate-delay-200">

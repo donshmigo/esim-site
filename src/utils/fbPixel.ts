@@ -1,13 +1,13 @@
-// Direct Facebook Pixel tracking
-declare global {
-  interface Window {
-    fbq: any;
-  }
+declare const fbq: any;
+
+// Initialize Facebook Pixel
+if (typeof window !== 'undefined') {
+  fbq('init', '1727807848112777');
 }
 
 export const trackAddToCart = (planName: string, price: number) => {
-  if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('track', 'AddToCart', {
+  if (typeof window !== 'undefined') {
+    fbq('track', 'AddToCart', {
       content_name: planName,
       content_type: 'product',
       value: price,
@@ -17,8 +17,8 @@ export const trackAddToCart = (planName: string, price: number) => {
 };
 
 export const trackInitiateCheckout = (planName: string, price: number) => {
-  if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('track', 'InitiateCheckout', {
+  if (typeof window !== 'undefined') {
+    fbq('track', 'InitiateCheckout', {
       content_name: planName,
       content_type: 'product',
       value: price,
@@ -28,8 +28,8 @@ export const trackInitiateCheckout = (planName: string, price: number) => {
 };
 
 export const trackViewContent = (planName: string, price: number) => {
-  if (typeof window !== 'undefined' && window.fbq) {
-    window.fbq('track', 'ViewContent', {
+  if (typeof window !== 'undefined') {
+    fbq('track', 'ViewContent', {
       content_name: planName,
       content_type: 'product',
       value: price,

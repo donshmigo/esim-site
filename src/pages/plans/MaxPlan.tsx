@@ -12,20 +12,28 @@ const MaxPlan = () => {
     window.scrollTo(0, 0);
   }, []);
   
-  const handleCheckout = async (e: React.MouseEvent) => {
+  const handleCheckout = async (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     
-    // Track AddToCart first
-    trackAddToCart('Max Plan', 64.99);
-    
-    // Wait a bit then track InitiateCheckout
-    await new Promise(resolve => setTimeout(resolve, 100));
-    trackInitiateCheckout('Max Plan', 64.99);
-    
-    // Give Facebook time to track both events
-    await new Promise(resolve => setTimeout(resolve, 250));
-    
-    window.open('https://account.romiomobile.com/estore/purchase/d88cb722-aab6-4d3c-8509-2091228eb1f1', '_blank');
+    // Track both events
+    try {
+      // First AddToCart
+      trackAddToCart('Max Plan', 64.99);
+      console.log('AddToCart event fired');
+      
+      // Small delay then InitiateCheckout
+      await new Promise(resolve => setTimeout(resolve, 100));
+      trackInitiateCheckout('Max Plan', 64.99);
+      console.log('InitiateCheckout event fired');
+      
+      // Wait to ensure tracking completes
+      await new Promise(resolve => setTimeout(resolve, 250));
+      
+      // Redirect
+      window.open('https://account.romiomobile.com/estore/purchase/d88cb722-aab6-4d3c-8509-2091228eb1f1', '_blank');
+    } catch (error) {
+      console.error('Error tracking events:', error);
+    }
   };
 
   return (
@@ -62,12 +70,14 @@ const MaxPlan = () => {
                   <h3 className="text-lg font-medium mb-1">{t('pricing.monthly')}: <span className="text-2xl font-bold text-signal-blue">{t('pricing.max.price')}</span></h3>
                 </div>
 
-                <article 
+                <button 
                   onClick={handleCheckout}
-                  className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none"
+                  type="button"
+                  data-event-type="initiate_checkout"
+                  className="w-full text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none"
                 >
                   {t('pricing.cta')}
-                </article>
+                </button>
               </div>
             </div>
           </div>
@@ -196,12 +206,14 @@ const MaxPlan = () => {
                 </ul>
               </div>
 
-              <article 
+              <button 
                 onClick={handleCheckout}
-                className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none"
+                type="button"
+                data-event-type="initiate_checkout"
+                className="w-full text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none"
               >
                 {t('pricing.cta')}
-              </article>
+              </button>
             </div>
           </div>
         </div>

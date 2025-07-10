@@ -8,6 +8,7 @@ const options = {
 ReactPixel.init('1727807848112777', undefined, options);
 
 export const trackAddToCart = (planName: string, price: number) => {
+  console.log('🛒 Tracking AddToCart:', { planName, price });
   ReactPixel.track('AddToCart', {
     content_name: planName,
     content_type: 'product',
@@ -17,6 +18,7 @@ export const trackAddToCart = (planName: string, price: number) => {
 };
 
 export const trackInitiateCheckout = (planName: string, price: number) => {
+  console.log('💳 Tracking InitiateCheckout:', { planName, price });
   ReactPixel.track('InitiateCheckout', {
     content_name: planName,
     content_type: 'product',
@@ -26,6 +28,7 @@ export const trackInitiateCheckout = (planName: string, price: number) => {
 };
 
 export const trackViewContent = (planName: string, price: number) => {
+  console.log('👁️ Tracking ViewContent:', { planName, price });
   ReactPixel.track('ViewContent', {
     content_name: planName,
     content_type: 'product',

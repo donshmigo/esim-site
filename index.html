@@ -56,6 +56,25 @@
     
     fbq('init', '1727807848112777');
     fbq('track', 'PageView');
+
+    // Disable automatic button tracking
+    fbq.disableAutoConfig = true;
+
+    // Custom event tracking for specific buttons
+    document.addEventListener('click', function(e) {
+      const target = e.target.closest('[data-fb-track="true"]');
+      if (!target) return;
+
+      const event = target.getAttribute('data-fb-event');
+      if (!event) return;
+
+      fbq('track', event, {
+        content_name: target.getAttribute('data-fb-content-name'),
+        content_type: target.getAttribute('data-fb-content-type'),
+        value: parseFloat(target.getAttribute('data-fb-value')),
+        currency: target.getAttribute('data-fb-currency')
+      });
+    });
     </script>
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1727807848112777&ev=PageView&noscript=1"

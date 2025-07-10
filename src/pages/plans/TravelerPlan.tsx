@@ -64,12 +64,18 @@ const TravelerPlan = () => {
                   <h3 className="text-lg font-medium mb-1">{t('pricing.monthly')}: <span className="text-2xl font-bold text-signal-blue">{t('pricing.traveler.price')}</span></h3>
                 </div>
 
-                <article 
+                <button 
                   onClick={handleCheckout}
-                  className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none"
+                  className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none w-full"
+                  data-fb-track="true"
+                  data-fb-event="AddToCart"
+                  data-fb-content-name="Traveler Plan"
+                  data-fb-content-type="product"
+                  data-fb-value="39.99"
+                  data-fb-currency="USD"
                 >
                   {t('pricing.cta')}
-                </article>
+                </button>
               </div>
             </div>
           </div>
@@ -155,12 +161,18 @@ const TravelerPlan = () => {
           {/* Right column - Sidebar with pricing and CTA - visible only on desktop */}
           <div className="hidden lg:block lg:col-span-1">
             <div className="sticky top-24 bg-white rounded-xl border-2 border-signal-blue p-6 shadow-lg">
-              <article 
+              <button 
                 onClick={handleCheckout}
-                className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none"
+                className="m-0 text-center py-3 bg-signal-blue text-white rounded-lg hover:bg-blue-600 transition-colors cursor-pointer select-none w-full"
+                data-fb-track="true"
+                data-fb-event="AddToCart"
+                data-fb-content-name="Traveler Plan"
+                data-fb-content-type="product"
+                data-fb-value="39.99"
+                data-fb-currency="USD"
               >
                 {t('pricing.cta')}
-              </article>
+              </button>
             </div>
           </div>
         </div>

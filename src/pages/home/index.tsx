@@ -57,12 +57,12 @@ const Home: React.FC = () => {
       <Header />
       <PhoneHero />
       <Features />
-      <div id="how-it-works">
-        <HowItWorks />
-      </div>
-      <Coverage />
       <div id="pricing">
         <Pricing />
+      </div>
+      <Coverage />
+      <div id="how-it-works">
+        <HowItWorks />
       </div>
       <FAQ />
       <Footer hideBusinessSection={false} />

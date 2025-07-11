@@ -93,14 +93,31 @@
       // Log all buttons with data-fb-track for debugging
       console.log('Found trackable buttons:', document.querySelectorAll('[data-fb-track="true"]'));
       
-      // Mobile-specific fix for button clicks - lighter approach
-      if (window.innerWidth <= 768) {
-        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(function(button) {
+      // Enhanced button click fixes for all devices
+      function ensureButtonsWork() {
+        document.querySelectorAll('.btn-primary, .btn-secondary, a[href*="account.romiomobile.com"]').forEach(function(button) {
           button.style.zIndex = '10000';
           button.style.position = 'relative';
           button.style.pointerEvents = 'auto';
+          button.style.touchAction = 'manipulation';
+          
+          // Add click event listener to ensure it works
+          button.addEventListener('click', function(e) {
+            // Ensure the click goes through
+            e.stopPropagation();
+            console.log('Button clicked:', this.textContent || this.href);
+          }, true);
         });
       }
+      
+      // Apply fixes immediately and on mobile
+      ensureButtonsWork();
+      
+      // Reapply fixes after a short delay to catch dynamically loaded content
+      setTimeout(ensureButtonsWork, 2000);
+      
+      // Also apply on window resize for mobile orientation changes
+      window.addEventListener('resize', ensureButtonsWork);
     });
     </script>
     <noscript><img height="1" width="1" style="display:none"
@@ -121,13 +138,25 @@
       var chatWidget = document.querySelector('#tawk-bubble-container');
       if (chatWidget) {
         chatWidget.style.zIndex = '9998';
+        chatWidget.style.position = 'fixed';
       }
       
-      // Ensure pricing buttons are clickable
-      document.querySelectorAll('.btn-primary, .btn-secondary').forEach(function(el) {
+      // More aggressive button fixes
+      document.querySelectorAll('.btn-primary, .btn-secondary, a[href*="account.romiomobile.com"]').forEach(function(el) {
         el.style.position = 'relative';
-        el.style.zIndex = '9999';
+        el.style.zIndex = '10000';
         el.style.pointerEvents = 'auto';
+        el.style.touchAction = 'manipulation';
+        
+        // Force click events to work
+        el.addEventListener('touchstart', function(e) {
+          e.stopPropagation();
+        }, { passive: false });
+        
+        el.addEventListener('click', function(e) {
+          e.stopPropagation();
+          console.log('Chatbot onLoad - Button clicked:', this.textContent || this.href);
+        }, true);
       });
     };
     

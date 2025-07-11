@@ -112,18 +112,29 @@
       min-height: 44px !important;
       touch-action: manipulation !important;
       -webkit-tap-highlight-color: transparent !important;
-    }
-    
-    /* Ensure pricing section buttons are always clickable */
-    #pricing a, #pricing button {
       position: relative !important;
       z-index: 10000 !important;
       pointer-events: auto !important;
     }
     
-    /* Keep chatbot visible on mobile */
+    /* Ensure pricing section buttons are always clickable */
+    #pricing a, #pricing button, a[href*="account.romiomobile.com"] {
+      position: relative !important;
+      z-index: 10000 !important;
+      pointer-events: auto !important;
+      touch-action: manipulation !important;
+      -webkit-tap-highlight-color: rgba(0,0,0,0.1) !important;
+    }
+    
+    /* Keep chatbot visible but lower priority */
     #tawk-bubble, #tawk-bubble-container {
       z-index: 9998 !important;
+    }
+    
+    /* Force all interactive elements above chatbot */
+    a, button, [role="button"] {
+      position: relative !important;
+      z-index: 9999 !important;
     }
   }
   

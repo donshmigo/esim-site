@@ -115,25 +115,23 @@
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     
-    // Prevent chatbot from interfering with button clicks while keeping it visible
+    // Ensure buttons work when chatbot loads
     Tawk_API.onLoad = function(){
-      setTimeout(function() {
-        var chatWidget = document.querySelector('#tawk-bubble-container');
-        if (chatWidget) {
-          chatWidget.style.zIndex = '9998';
-          chatWidget.style.visibility = 'visible';
-          chatWidget.style.display = 'block';
-        }
-        
-        // Only ensure pricing buttons are clickable
-        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(function(el) {
-          el.style.position = 'relative';
-          el.style.zIndex = '9999';
-          el.style.pointerEvents = 'auto';
-        });
-      }, 1000);
+      // Apply fixes immediately when chatbot loads
+      var chatWidget = document.querySelector('#tawk-bubble-container');
+      if (chatWidget) {
+        chatWidget.style.zIndex = '9998';
+      }
+      
+      // Ensure pricing buttons are clickable
+      document.querySelectorAll('.btn-primary, .btn-secondary').forEach(function(el) {
+        el.style.position = 'relative';
+        el.style.zIndex = '9999';
+        el.style.pointerEvents = 'auto';
+      });
     };
     
+    // Load chatbot immediately
     (function(){
     var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
     s1.async=true;

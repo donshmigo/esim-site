@@ -98,8 +98,6 @@
   #tawk-bubble, #tawk-bubble-container {
     pointer-events: auto !important;
     z-index: 9998 !important;
-    visibility: visible !important;
-    display: block !important;
   }
   
   /* Only buttons and links need higher z-index, not all elements */
@@ -126,8 +124,6 @@
     /* Keep chatbot visible on mobile */
     #tawk-bubble, #tawk-bubble-container {
       z-index: 9998 !important;
-      visibility: visible !important;
-      display: block !important;
     }
   }
   

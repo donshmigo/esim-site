@@ -94,14 +94,16 @@
     touch-action: manipulation !important;
   }
   
-  /* Comprehensive Tawk.to chatbot fixes */
-  #tawk-bubble, #tawk-bubble-container, .tawk-widget, .tawk-widget-container {
+  /* Tawk.to chatbot fixes - keep chatbot visible but not blocking */
+  #tawk-bubble, #tawk-bubble-container {
     pointer-events: auto !important;
     z-index: 9998 !important;
+    visibility: visible !important;
+    display: block !important;
   }
   
-  /* Ensure all interactive elements stay above chatbot */
-  a, button, input, select, textarea, [role="button"], [tabindex] {
+  /* Only buttons and links need higher z-index, not all elements */
+  .btn-primary, .btn-secondary, a[href*="account.romiomobile.com"] {
     position: relative;
     z-index: 9999 !important;
   }
@@ -121,9 +123,11 @@
       pointer-events: auto !important;
     }
     
-    /* Override any chatbot overlays */
-    .tawk-widget, .tawk-widget-container, #tawk-bubble {
+    /* Keep chatbot visible on mobile */
+    #tawk-bubble, #tawk-bubble-container {
       z-index: 9998 !important;
+      visibility: visible !important;
+      display: block !important;
     }
   }
   

@@ -93,24 +93,12 @@
       // Log all buttons with data-fb-track for debugging
       console.log('Found trackable buttons:', document.querySelectorAll('[data-fb-track="true"]'));
       
-      // Mobile-specific fix for button clicks
+      // Mobile-specific fix for button clicks - lighter approach
       if (window.innerWidth <= 768) {
-        // Add touch event listeners to ensure buttons work on mobile
         document.querySelectorAll('.btn-primary, .btn-secondary').forEach(function(button) {
-          button.addEventListener('touchstart', function(e) {
-            e.stopPropagation();
-            // Ensure the button stays above any overlays
-            this.style.zIndex = '10000';
-            this.style.position = 'relative';
-          }, { passive: false });
-          
-          button.addEventListener('touchend', function(e) {
-            e.stopPropagation();
-            // Trigger click if it's a tap
-            if (e.changedTouches.length === 1) {
-              this.click();
-            }
-          }, { passive: false });
+          button.style.zIndex = '10000';
+          button.style.position = 'relative';
+          button.style.pointerEvents = 'auto';
         });
       }
     });
@@ -127,17 +115,18 @@
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     
-    // Prevent chatbot from interfering with button clicks
+    // Prevent chatbot from interfering with button clicks while keeping it visible
     Tawk_API.onLoad = function(){
-      // Force chatbot to have lower z-index
       setTimeout(function() {
         var chatWidget = document.querySelector('#tawk-bubble-container');
         if (chatWidget) {
           chatWidget.style.zIndex = '9998';
+          chatWidget.style.visibility = 'visible';
+          chatWidget.style.display = 'block';
         }
         
-        // Ensure all buttons are clickable
-        document.querySelectorAll('.btn-primary, .btn-secondary, a[href], button').forEach(function(el) {
+        // Only ensure pricing buttons are clickable
+        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(function(el) {
           el.style.position = 'relative';
           el.style.zIndex = '9999';
           el.style.pointerEvents = 'auto';

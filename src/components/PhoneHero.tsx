@@ -37,7 +37,7 @@ const PhoneHero = () => {
   const allCountries = [...countries, ...countries];
   
   return (
-    <section className="relative overflow-hidden bg-white py-16">
+    <section className="relative overflow-hidden bg-white pt-8 pb-16 md:py-16">
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
         <div className="absolute top-0 -right-10 w-72 h-72 rounded-full bg-dark-theme opacity-5 blur-3xl"></div>

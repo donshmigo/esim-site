@@ -8,13 +8,6 @@
     <meta name="description" content="Romio eSIM - Global connectivity with monthly plans. Stay connected in 80+ countries with no roaming fees." />
     <title>Romio eSIM | Global Connectivity, Monthly Freedom</title>
     <meta property="og:image" content="/images/web preview.png" />
-    <!-- Safari Privacy and Compatibility -->
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="theme-color" content="#242323" />
-    <!-- Content Security Policy for third-party scripts -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://connect.facebook.net https://www.googletagmanager.com https://embed.tawk.to https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:;" />
     <!-- Facebook Meta Tags -->
     <meta name="facebook-domain-verification" content="your-verification-code" />
     <meta property="fb:app_id" content="1727807848112777" />
@@ -50,41 +43,22 @@
       <input name="bot-field" />
     </form>
     
-    <!-- Meta Pixel Code with Safari Privacy Compatibility -->
+    <!-- Meta Pixel Code -->
     <script>
-    // Check if tracking is allowed (Safari privacy-friendly approach)
-    function isTrackingAllowed() {
-      // Check if we're in a privacy-restricted environment
-      if (navigator.globalPrivacyControl || 
-          (navigator.doNotTrack && navigator.doNotTrack === '1') ||
-          (window.doNotTrack && window.doNotTrack === '1')) {
-        return false;
-      }
-      return true;
-    }
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    fbq('init', '1727807848112777');
+    fbq('track', 'PageView');
 
-    // Only load Facebook Pixel if tracking is allowed
-    if (isTrackingAllowed()) {
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      
-      fbq('init', '1727807848112777');
-      fbq('track', 'PageView');
-
-      // Disable automatic button tracking
-      fbq.disableAutoConfig = true;
-    } else {
-      // Create a fallback fbq function for when tracking is disabled
-      window.fbq = function() {
-        console.log('Facebook Pixel tracking disabled due to privacy settings');
-      };
-    }
+    // Disable automatic button tracking
+    fbq.disableAutoConfig = true;
 
     // Wait for DOM to be ready
     document.addEventListener('DOMContentLoaded', function() {
@@ -154,52 +128,47 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     
-    <!--Start of Tawk.to Script with Privacy Compatibility-->
+    <!--Start of Tawk.to Script-->
     <script type="text/javascript">
-    // Only load chatbot if privacy settings allow
-    if (isTrackingAllowed()) {
-      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    
+    // Ensure buttons work when chatbot loads
+    Tawk_API.onLoad = function(){
+      // Apply fixes immediately when chatbot loads
+      var chatWidget = document.querySelector('#tawk-bubble-container');
+      if (chatWidget) {
+        chatWidget.style.zIndex = '9998';
+        chatWidget.style.position = 'fixed';
+      }
       
-      // Ensure buttons work when chatbot loads
-      Tawk_API.onLoad = function(){
-        // Apply fixes immediately when chatbot loads
-        var chatWidget = document.querySelector('#tawk-bubble-container');
-        if (chatWidget) {
-          chatWidget.style.zIndex = '9998';
-          chatWidget.style.position = 'fixed';
-        }
+      // More aggressive button fixes
+      document.querySelectorAll('.btn-primary, .btn-secondary, a[href*="account.romiomobile.com"]').forEach(function(el) {
+        el.style.position = 'relative';
+        el.style.zIndex = '10000';
+        el.style.pointerEvents = 'auto';
+        el.style.touchAction = 'manipulation';
         
-        // More aggressive button fixes
-        document.querySelectorAll('.btn-primary, .btn-secondary, a[href*="account.romiomobile.com"]').forEach(function(el) {
-          el.style.position = 'relative';
-          el.style.zIndex = '10000';
-          el.style.pointerEvents = 'auto';
-          el.style.touchAction = 'manipulation';
-          
-          // Force click events to work
-          el.addEventListener('touchstart', function(e) {
-            e.stopPropagation();
-          }, { passive: false });
-          
-          el.addEventListener('click', function(e) {
-            e.stopPropagation();
-            console.log('Chatbot onLoad - Button clicked:', this.textContent || this.href);
-          }, true);
-        });
-      };
-      
-      // Load chatbot immediately
-      (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/6862bd7dd7950d190927aa05/1iv0r8ctn';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-      })();
-    } else {
-      console.log('Tawk.to chatbot disabled due to privacy settings');
-    }
+        // Force click events to work
+        el.addEventListener('touchstart', function(e) {
+          e.stopPropagation();
+        }, { passive: false });
+        
+        el.addEventListener('click', function(e) {
+          e.stopPropagation();
+          console.log('Chatbot onLoad - Button clicked:', this.textContent || this.href);
+        }, true);
+      });
+    };
+    
+    // Load chatbot immediately
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6862bd7dd7950d190927aa05/1iv0r8ctn';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
     </script>
     <!--End of Tawk.to Script-->
   </body>

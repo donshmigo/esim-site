@@ -64,15 +64,15 @@ const PhoneHero = () => {
               {t('hero.description')}
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in-up animate-delay-300">
-              <a href="#pricing" className="btn-primary group relative">
+            <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-fade-in-up animate-delay-300 relative z-50">
+              <a href="#pricing" className="btn-primary group relative z-50" style={{ position: 'relative', zIndex: 9999 }}>
                 {t('hero.primaryCta')}
                 <ArrowRightIcon className="ml-2 h-4 w-4 inline-block transition-transform group-hover:translate-x-1" />
               </a>
               <a 
                 href="#how-it-works" 
-                className="btn-secondary no-focus-outline"
-                style={{ outline: 'none' }}
+                className="btn-secondary no-focus-outline relative z-50"
+                style={{ outline: 'none', position: 'relative', zIndex: 9999 }}
               >
                 {t('hero.secondaryCta')}
               </a>

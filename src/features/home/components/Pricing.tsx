@@ -258,7 +258,7 @@ export default function Pricing() {
                   }}
                   onTouchStart={(e) => e.stopPropagation()}
                   onTouchEnd={(e) => e.stopPropagation()}
-                  style={{ touchAction: 'manipulation' }}
+                  style={{ touchAction: 'manipulation', position: 'relative', zIndex: 9999 }}
                 >
                   {plansWithFallback[activeIndex].ctaText}
                 </Link>
@@ -301,7 +301,8 @@ export default function Pricing() {
               <Link
                 to={plan.path}
                 className="btn-primary block w-full text-center py-3 px-4 rounded-lg font-medium transition-colors"
-                                 onClick={() => trackAddToCart(plan.name, plan.price)}
+                onClick={() => trackAddToCart(plan.name, plan.price)}
+                style={{ position: 'relative', zIndex: 9999 }}
               >
                 {plan.ctaText}
               </Link>

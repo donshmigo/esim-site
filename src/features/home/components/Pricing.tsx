@@ -1,9 +1,8 @@
 import { CheckIcon, ArrowRightIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useCurrency } from '../../../contexts/CurrencyContext';
 import { useState, useEffect } from 'react';
-import { trackAddToCart } from '../../../utils/fbPixel';
+import { trackInitiateCheckout } from '../../../utils/fbPixel';
 
 
 export default function Pricing() {
@@ -55,7 +54,7 @@ export default function Pricing() {
       features: getFeatures('lite'),
       popular: false,
       ctaText: t('pricing.cta'),
-      path: '/plans/lite',
+      checkoutUrl: 'https://account.romiomobile.com/estore/purchase/b69aa63e-dc99-4952-aeb8-016223af9ad8',
       translationKey: 'lite'
     },
     {
@@ -65,7 +64,7 @@ export default function Pricing() {
       features: getFeatures('traveler'),
       popular: true,
       ctaText: t('pricing.cta'),
-      path: '/plans/pro',
+      checkoutUrl: 'https://account.romiomobile.com/estore/purchase/d88cb722-aab6-4d3c-8509-2091228eb1f1',
       translationKey: 'traveler'
     },
     {
@@ -75,7 +74,7 @@ export default function Pricing() {
       features: getFeatures('max'),
       popular: false,
       ctaText: t('pricing.cta'),
-      path: '/plans/max',
+      checkoutUrl: 'https://account.romiomobile.com/estore/purchase/d88cb722-aab6-4d3c-8509-2091228eb1f1',
       translationKey: 'max'
     }
   ];
@@ -249,19 +248,21 @@ export default function Pricing() {
                   ))}
                 </ul>
                 
-                <Link
-                  to={plansWithFallback[activeIndex].path}
+                <a
+                  href={plansWithFallback[activeIndex].checkoutUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-primary block text-center py-3 px-4 rounded-lg font-medium transition-colors pointer-events-auto z-30 relative touch-manipulation"
-                  onClick={(e) => {
+                  onClick={(e: React.MouseEvent) => {
                     e.stopPropagation();
-                    trackAddToCart(plansWithFallback[activeIndex].name, plansWithFallback[activeIndex].price);
+                    trackInitiateCheckout(plansWithFallback[activeIndex].name, plansWithFallback[activeIndex].price);
                   }}
-                  onTouchStart={(e) => e.stopPropagation()}
-                  onTouchEnd={(e) => e.stopPropagation()}
+                  onTouchStart={(e: React.TouchEvent) => e.stopPropagation()}
+                  onTouchEnd={(e: React.TouchEvent) => e.stopPropagation()}
                   style={{ touchAction: 'manipulation', position: 'relative', zIndex: 9999 }}
                 >
                   {plansWithFallback[activeIndex].ctaText}
-                </Link>
+                </a>
               </div>
             )}
           </div>
@@ -298,14 +299,16 @@ export default function Pricing() {
                 ))}
               </ul>
               
-              <Link
-                to={plan.path}
+              <a
+                href={plan.checkoutUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary block w-full text-center py-3 px-4 rounded-lg font-medium transition-colors"
-                onClick={() => trackAddToCart(plan.name, plan.price)}
+                onClick={() => trackInitiateCheckout(plan.name, plan.price)}
                 style={{ position: 'relative', zIndex: 9999 }}
               >
                 {plan.ctaText}
-              </Link>
+              </a>
             </div>
           ))}
         </div>

@@ -91,11 +91,40 @@
   /* Ensure chatbot doesn't interfere with button clicks */
   .btn-primary, .btn-secondary {
     pointer-events: auto !important;
+    touch-action: manipulation !important;
   }
   
-  /* Ensure Tawk.to chatbot doesn't block interactions */
-  #tawk-bubble, #tawk-bubble-container {
+  /* Comprehensive Tawk.to chatbot fixes */
+  #tawk-bubble, #tawk-bubble-container, .tawk-widget, .tawk-widget-container {
     pointer-events: auto !important;
+    z-index: 9998 !important;
+  }
+  
+  /* Ensure all interactive elements stay above chatbot */
+  a, button, input, select, textarea, [role="button"], [tabindex] {
+    position: relative;
+    z-index: 9999 !important;
+  }
+  
+  /* Mobile-specific fixes for touch interactions */
+  @media (max-width: 768px) {
+    .btn-primary, .btn-secondary {
+      min-height: 44px !important;
+      touch-action: manipulation !important;
+      -webkit-tap-highlight-color: transparent !important;
+    }
+    
+    /* Ensure pricing section buttons are always clickable */
+    #pricing a, #pricing button {
+      position: relative !important;
+      z-index: 10000 !important;
+      pointer-events: auto !important;
+    }
+    
+    /* Override any chatbot overlays */
+    .tawk-widget, .tawk-widget-container, #tawk-bubble {
+      z-index: 9998 !important;
+    }
   }
   
   .card-tech {

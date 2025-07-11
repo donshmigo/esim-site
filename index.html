@@ -92,6 +92,27 @@
 
       // Log all buttons with data-fb-track for debugging
       console.log('Found trackable buttons:', document.querySelectorAll('[data-fb-track="true"]'));
+      
+      // Mobile-specific fix for button clicks
+      if (window.innerWidth <= 768) {
+        // Add touch event listeners to ensure buttons work on mobile
+        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(function(button) {
+          button.addEventListener('touchstart', function(e) {
+            e.stopPropagation();
+            // Ensure the button stays above any overlays
+            this.style.zIndex = '10000';
+            this.style.position = 'relative';
+          }, { passive: false });
+          
+          button.addEventListener('touchend', function(e) {
+            e.stopPropagation();
+            // Trigger click if it's a tap
+            if (e.changedTouches.length === 1) {
+              this.click();
+            }
+          }, { passive: false });
+        });
+      }
     });
     </script>
     <noscript><img height="1" width="1" style="display:none"
@@ -105,6 +126,25 @@
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    
+    // Prevent chatbot from interfering with button clicks
+    Tawk_API.onLoad = function(){
+      // Force chatbot to have lower z-index
+      setTimeout(function() {
+        var chatWidget = document.querySelector('#tawk-bubble-container');
+        if (chatWidget) {
+          chatWidget.style.zIndex = '9998';
+        }
+        
+        // Ensure all buttons are clickable
+        document.querySelectorAll('.btn-primary, .btn-secondary, a[href], button').forEach(function(el) {
+          el.style.position = 'relative';
+          el.style.zIndex = '9999';
+          el.style.pointerEvents = 'auto';
+        });
+      }, 1000);
+    };
+    
     (function(){
     var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
     s1.async=true;

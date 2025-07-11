@@ -53,6 +53,8 @@ export default function Pricing() {
       dataAmount: t('pricing.lite.data'),
       features: getFeatures('lite'),
       popular: false,
+      promotional: true,
+      promotionalText: 'First Month Free',
       ctaText: t('pricing.cta'),
       checkoutUrl: 'https://account.romiomobile.com/estore/purchase/b69aa63e-dc99-4952-aeb8-016223af9ad8',
       translationKey: 'lite'
@@ -63,6 +65,8 @@ export default function Pricing() {
       dataAmount: t('pricing.traveler.data'),
       features: getFeatures('traveler'),
       popular: true,
+      promotional: false,
+      promotionalText: '',
       ctaText: t('pricing.cta'),
       checkoutUrl: 'https://account.romiomobile.com/estore/purchase/d88cb722-aab6-4d3c-8509-2091228eb1f1',
       translationKey: 'traveler'
@@ -73,6 +77,8 @@ export default function Pricing() {
       dataAmount: t('pricing.max.data'),
       features: getFeatures('max'),
       popular: false,
+      promotional: false,
+      promotionalText: '',
       ctaText: t('pricing.cta'),
       checkoutUrl: 'https://account.romiomobile.com/estore/purchase/d88cb722-aab6-4d3c-8509-2091228eb1f1',
       translationKey: 'max'
@@ -218,11 +224,18 @@ export default function Pricing() {
             ></div>
             
             {plansWithFallback[activeIndex] && (
-              <div className={`w-full rounded-xl p-6 flex flex-col ${plansWithFallback[activeIndex].popular ? 'border-2 border-signal-blue relative mt-4' : 'border-2 border-dark-theme'}`}>
+              <div className={`w-full rounded-xl p-6 flex flex-col ${plansWithFallback[activeIndex].popular || plansWithFallback[activeIndex].promotional ? 'border-2 border-signal-blue relative mt-4' : 'border-2 border-dark-theme'}`}>
                 {plansWithFallback[activeIndex].popular && (
                   <div className="absolute -top-5 inset-x-0 flex justify-center z-20">
                     <span className="bg-signal-blue text-white px-4 py-1 rounded-full text-sm font-medium shadow-sm">
                       {t('pricing.mostPopular')}
+                    </span>
+                  </div>
+                )}
+                {plansWithFallback[activeIndex].promotional && (
+                  <div className="absolute -top-5 inset-x-0 flex justify-center z-20">
+                    <span className="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-medium shadow-sm">
+                      {plansWithFallback[activeIndex].promotionalText}
                     </span>
                   </div>
                 )}
@@ -273,11 +286,16 @@ export default function Pricing() {
           {plansWithFallback.map((plan) => (
             <div 
               key={`desktop-${plan.name}`} 
-              className={`relative rounded-xl p-8 ${plan.popular ? 'border-2 border-signal-blue' : 'border-2 border-dark-theme'}`}
+              className={`relative rounded-xl p-8 ${plan.popular || plan.promotional ? 'border-2 border-signal-blue' : 'border-2 border-dark-theme'}`}
             >
               {plan.popular && (
                 <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-signal-blue text-white px-4 py-1 rounded-full text-sm font-medium z-10 shadow-sm">
                   {t('pricing.mostPopular')}
+                </div>
+              )}
+              {plan.promotional && (
+                <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-1 rounded-full text-sm font-medium z-10 shadow-sm">
+                  {plan.promotionalText}
                 </div>
               )}
               <h3 className="text-2xl font-bold text-romio-black">{plan.name}</h3>

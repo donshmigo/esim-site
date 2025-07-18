@@ -56,7 +56,7 @@ export default function Pricing() {
       promotional: true,
       promotionalText: 'First Month Free',
       ctaText: t('pricing.cta'),
-      checkoutUrl: 'https://account.romiomobile.com/estore/purchase/b69aa63e-dc99-4952-aeb8-016223af9ad8',
+      checkoutUrl: 'https://buy.stripe.com/eVq5kF3V11Uge6Iee57Zu00',
       translationKey: 'lite'
     },
     {
@@ -68,7 +68,7 @@ export default function Pricing() {
       promotional: false,
       promotionalText: '',
       ctaText: t('pricing.cta'),
-      checkoutUrl: 'https://account.romiomobile.com/estore/purchase/d88cb722-aab6-4d3c-8509-2091228eb1f1',
+      checkoutUrl: 'https://buy.stripe.com/8x28wR0IPdCYbYA9XP7Zu01',
       translationKey: 'traveler'
     },
     {
@@ -80,7 +80,7 @@ export default function Pricing() {
       promotional: false,
       promotionalText: '',
       ctaText: t('pricing.cta'),
-      checkoutUrl: 'https://account.romiomobile.com/estore/purchase/d88cb722-aab6-4d3c-8509-2091228eb1f1',
+      checkoutUrl: 'https://buy.stripe.com/4gMbJ3fDJ42o5Ac7PH7Zu02',
       translationKey: 'max'
     }
   ];

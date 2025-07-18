@@ -267,12 +267,20 @@ export default function Pricing() {
                   rel="noopener noreferrer"
                   className="btn-primary block text-center py-3 px-4 rounded-lg font-medium transition-colors pointer-events-auto z-30 relative touch-manipulation"
                   onClick={(e: React.MouseEvent) => {
+                    // Track the event immediately
+                    try {
+                      trackInitiateCheckout(plansWithFallback[activeIndex].name, plansWithFallback[activeIndex].price);
+                      console.log('Mobile - InitiateCheckout tracked:', plansWithFallback[activeIndex].name, plansWithFallback[activeIndex].price);
+                    } catch (error) {
+                      console.error('Error tracking InitiateCheckout:', error);
+                    }
+                    
+                    // Don't prevent default - let the link work normally
                     e.stopPropagation();
-                    trackInitiateCheckout(plansWithFallback[activeIndex].name, plansWithFallback[activeIndex].price);
                   }}
                   onTouchStart={(e: React.TouchEvent) => e.stopPropagation()}
                   onTouchEnd={(e: React.TouchEvent) => e.stopPropagation()}
-                  style={{ touchAction: 'manipulation', position: 'relative', zIndex: 9999 }}
+                  style={{ touchAction: 'manipulation', position: 'relative', zIndex: 10000, pointerEvents: 'auto' }}
                 >
                   {plansWithFallback[activeIndex].ctaText}
                 </a>
@@ -322,8 +330,19 @@ export default function Pricing() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary block w-full text-center py-3 px-4 rounded-lg font-medium transition-colors"
-                onClick={() => trackInitiateCheckout(plan.name, plan.price)}
-                style={{ position: 'relative', zIndex: 9999 }}
+                onClick={(e: React.MouseEvent) => {
+                  // Track the event immediately
+                  try {
+                    trackInitiateCheckout(plan.name, plan.price);
+                    console.log('Desktop - InitiateCheckout tracked:', plan.name, plan.price);
+                  } catch (error) {
+                    console.error('Error tracking InitiateCheckout:', error);
+                  }
+                  
+                  // Don't prevent default - let the link work normally
+                  e.stopPropagation();
+                }}
+                style={{ position: 'relative', zIndex: 10000, pointerEvents: 'auto', touchAction: 'manipulation' }}
               >
                 {plan.ctaText}
               </a>

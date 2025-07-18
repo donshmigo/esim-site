@@ -18,13 +18,29 @@ export const trackAddToCart = (planName: string, price: number) => {
 };
 
 export const trackInitiateCheckout = (planName: string, price: number) => {
-  console.log('💳 PLAN PAGE - Tracking InitiateCheckout (Purchase Intent):', { planName, price });
-  ReactPixel.track('InitiateCheckout', {
-    content_name: planName,
-    content_type: 'product',
-    value: price,
-    currency: 'USD'
-  });
+  console.log('💳 PRICING PAGE - Tracking InitiateCheckout (Purchase Intent):', { planName, price });
+  
+  try {
+    // Use ReactPixel first
+    ReactPixel.track('InitiateCheckout', {
+      content_name: planName,
+      content_type: 'product',
+      value: price,
+      currency: 'USD'
+    });
+  } catch (error) {
+    console.warn('ReactPixel failed, using native fbq:', error);
+    
+    // Fallback to native Facebook Pixel
+    if (typeof window !== 'undefined' && (window as any).fbq) {
+      (window as any).fbq('track', 'InitiateCheckout', {
+        content_name: planName,
+        content_type: 'product',
+        value: price,
+        currency: 'USD'
+      });
+    }
+  }
 };
 
 export const trackViewContent = (planName: string, price: number) => {

@@ -274,7 +274,13 @@ export default function Pricing() {
                   }}
                   onTouchStart={(e: React.TouchEvent) => e.stopPropagation()}
                   onTouchEnd={(e: React.TouchEvent) => e.stopPropagation()}
-                  style={{ touchAction: 'manipulation', position: 'relative', zIndex: 9999 }}
+                  style={{ 
+                    touchAction: 'manipulation', 
+                    position: 'relative', 
+                    zIndex: 99999,
+                    pointerEvents: 'auto',
+                    cursor: 'pointer'
+                  }}
                 >
                   {plansWithFallback[activeIndex].ctaText}
                 </button>
@@ -329,7 +335,12 @@ export default function Pricing() {
                     window.open(plan.checkoutUrl, '_blank');
                   }, 100);
                 }}
-                style={{ position: 'relative', zIndex: 9999 }}
+                style={{ 
+                  position: 'relative', 
+                  zIndex: 99999,
+                  pointerEvents: 'auto',
+                  cursor: 'pointer'
+                }}
               >
                 {plan.ctaText}
               </button>

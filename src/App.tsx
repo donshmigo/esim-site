@@ -17,6 +17,7 @@ import AboutUs from './pages/AboutUs';
 
 // Import checkout
 import Checkout from './pages/Checkout';
+import ThankYou from './pages/thank-you';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
       <Route path="/business" element={<BusinessPage />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/checkout" element={<Checkout />} />
+      <Route path="/thank-you" element={<ThankYou />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );

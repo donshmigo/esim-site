@@ -261,29 +261,21 @@ export default function Pricing() {
                   ))}
                 </ul>
                 
-                <button
-                  className="btn-primary block w-full text-center py-3 px-4 rounded-lg font-medium transition-colors pointer-events-auto z-30 relative touch-manipulation"
+                <a
+                  href={plansWithFallback[activeIndex].checkoutUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary block text-center py-3 px-4 rounded-lg font-medium transition-colors pointer-events-auto z-30 relative touch-manipulation"
                   onClick={(e: React.MouseEvent) => {
                     e.stopPropagation();
-                    // Track the event first
                     trackInitiateCheckout(plansWithFallback[activeIndex].name, plansWithFallback[activeIndex].price);
-                    // Small delay to ensure tracking completes, then redirect
-                    setTimeout(() => {
-                      window.open(plansWithFallback[activeIndex].checkoutUrl, '_blank');
-                    }, 100);
                   }}
                   onTouchStart={(e: React.TouchEvent) => e.stopPropagation()}
                   onTouchEnd={(e: React.TouchEvent) => e.stopPropagation()}
-                  style={{ 
-                    touchAction: 'manipulation', 
-                    position: 'relative', 
-                    zIndex: 99999,
-                    pointerEvents: 'auto',
-                    cursor: 'pointer'
-                  }}
+                  style={{ touchAction: 'manipulation', position: 'relative', zIndex: 9999 }}
                 >
                   {plansWithFallback[activeIndex].ctaText}
-                </button>
+                </a>
               </div>
             )}
           </div>
@@ -325,25 +317,16 @@ export default function Pricing() {
                 ))}
               </ul>
               
-              <button
+              <a
+                href={plan.checkoutUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary block w-full text-center py-3 px-4 rounded-lg font-medium transition-colors"
-                onClick={() => {
-                  // Track the event first
-                  trackInitiateCheckout(plan.name, plan.price);
-                  // Small delay to ensure tracking completes, then redirect
-                  setTimeout(() => {
-                    window.open(plan.checkoutUrl, '_blank');
-                  }, 100);
-                }}
-                style={{ 
-                  position: 'relative', 
-                  zIndex: 99999,
-                  pointerEvents: 'auto',
-                  cursor: 'pointer'
-                }}
+                onClick={() => trackInitiateCheckout(plan.name, plan.price)}
+                style={{ position: 'relative', zIndex: 9999 }}
               >
                 {plan.ctaText}
-              </button>
+              </a>
             </div>
           ))}
         </div>

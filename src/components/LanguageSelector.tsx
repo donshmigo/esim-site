@@ -58,6 +58,21 @@ const LanguageSelector: React.FC = () => {
     localStorage.setItem('i18nextLng', lng);
     localStorage.setItem('userSelectedLanguage', 'true');
     setIsAutoDetected(false);
+    
+    console.log(`User manually selected language: ${lng}`);
+  };
+  
+  // Function to reset to auto-detection
+  const resetToAutoDetection = async () => {
+    localStorage.removeItem('userSelectedLanguage');
+    localStorage.removeItem('i18nextLng');
+    
+    // Re-run auto-detection
+    const { applyLocationSettings } = await import('../utils/locationDetection');
+    await applyLocationSettings();
+    
+    setIsOpen(false);
+    console.log('Reset to automatic language detection');
   };
   
   // Get current language display name
@@ -124,6 +139,20 @@ const LanguageSelector: React.FC = () => {
                 )}
               </button>
             ))}
+            {detectedCountry && (
+              <>
+                <hr className="my-1" />
+                <button
+                  onClick={resetToAutoDetection}
+                  className="block w-full text-left px-4 py-2 text-sm text-signal-blue hover:bg-gray-100"
+                  role="menuitem"
+                  tabIndex={-1}
+                >
+                  <GlobeAltIcon className="inline h-4 w-4 mr-2" />
+                  Auto-detect language
+                </button>
+              </>
+            )}
           </div>
         </div>
       )}

@@ -61,8 +61,11 @@ const LocaleSelector: React.FC = () => {
   
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
-    // Save to localStorage
+    // Save to localStorage and mark as user-selected
     localStorage.setItem('i18nextLng', lng);
+    localStorage.setItem('userSelectedLanguage', 'true');
+    
+    console.log(`User manually selected language: ${lng}`);
   };
   
   const changeCurrency = (currency: CurrencyOption) => {

@@ -95,7 +95,7 @@
       
       // Enhanced button click fixes for all devices
       function ensureButtonsWork() {
-        document.querySelectorAll('.btn-primary, .btn-secondary, button').forEach(function(button) {
+        document.querySelectorAll('.btn-primary, .btn-secondary, a[href*="account.romiomobile.com"]').forEach(function(button) {
           button.style.zIndex = '10000';
           button.style.position = 'relative';
           button.style.pointerEvents = 'auto';
@@ -115,22 +115,9 @@
       
       // Reapply fixes after a short delay to catch dynamically loaded content
       setTimeout(ensureButtonsWork, 2000);
-      setTimeout(ensureButtonsWork, 5000);
       
       // Also apply on window resize for mobile orientation changes
       window.addEventListener('resize', ensureButtonsWork);
-      
-      // Super aggressive button fix - runs every 3 seconds for 30 seconds
-      let buttonFixCount = 0;
-      const buttonFixInterval = setInterval(function() {
-        buttonFixCount++;
-        ensureButtonsWork();
-        
-        // Stop after 10 attempts (30 seconds)
-        if (buttonFixCount >= 10) {
-          clearInterval(buttonFixInterval);
-        }
-      }, 3000);
     });
     </script>
     <noscript><img height="1" width="1" style="display:none"
@@ -155,7 +142,7 @@
       }
       
       // More aggressive button fixes
-      document.querySelectorAll('.btn-primary, .btn-secondary, button').forEach(function(el) {
+      document.querySelectorAll('.btn-primary, .btn-secondary, a[href*="account.romiomobile.com"]').forEach(function(el) {
         el.style.position = 'relative';
         el.style.zIndex = '10000';
         el.style.pointerEvents = 'auto';

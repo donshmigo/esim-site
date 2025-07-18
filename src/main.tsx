@@ -8,24 +8,26 @@ import { applyLocationSettings } from './utils/locationDetection'
 import { CurrencyProvider } from './contexts/CurrencyContext'
 import { ApiProvider } from './contexts/ApiContext'
 
-// Initialize location-based settings
+// Initialize location-based settings in background
 // This will detect user's country and set language/currency accordingly
-// Do this before rendering the app
-applyLocationSettings().then(() => {
-  const router = createBrowserRouter([
-    {
-      path: '/*',
-      element: <App />
-    }
-  ])
+// Don't wait for it to complete - let the app load immediately
+applyLocationSettings().catch(error => {
+  console.error('Error applying location settings:', error);
+});
 
-  createRoot(document.getElementById('root')!).render(
-    <StrictMode>
-      <ApiProvider>
-        <CurrencyProvider>
-          <RouterProvider router={router} />
-        </CurrencyProvider>
-      </ApiProvider>
-    </StrictMode>
-  )
-})
+const router = createBrowserRouter([
+  {
+    path: '/*',
+    element: <App />
+  }
+])
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <ApiProvider>
+      <CurrencyProvider>
+        <RouterProvider router={router} />
+      </CurrencyProvider>
+    </ApiProvider>
+  </StrictMode>
+)

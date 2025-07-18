@@ -231,16 +231,19 @@ export const applyLocationSettings = async () => {
     // Language specified in URL takes highest priority
     i18n.changeLanguage(langParam);
     localStorage.setItem('i18nextLng', langParam);
+    localStorage.setItem('userSelectedLanguage', 'true');
     console.log(`Language set from URL parameter: ${langParam}`);
     return;
   }
   
-  // Check if user has manually set a language preference
+  // Check if user has MANUALLY set a language preference (not auto-detected)
+  const userSelectedLanguage = localStorage.getItem('userSelectedLanguage');
   const hasUserLanguagePreference = localStorage.getItem('i18nextLng');
   
-  if (!hasUserLanguagePreference) {
+  // Only skip auto-detection if user has manually selected a language
+  if (!userSelectedLanguage) {
     try {
-      console.log('No user language preference found, detecting country...');
+      console.log('No manual language preference found, detecting country...');
       // Try to detect country using IP geolocation
       let countryCode = await detectCountry();
       
@@ -250,9 +253,10 @@ export const applyLocationSettings = async () => {
         console.log(`Setting language to ${languageCode} based on detected country ${countryCode}`);
         i18n.changeLanguage(languageCode);
         
-        // Don't store in localStorage so user can still change language manually
-        // and it will persist on refresh
+        // Save the auto-detected language but don't mark as user-selected
+        localStorage.setItem('i18nextLng', languageCode);
         localStorage.setItem('detectedCountry', countryCode);
+        localStorage.removeItem('userSelectedLanguage'); // Ensure this is not set for auto-detection
         
         // Store currency info for use in components
         const currencyInfo = getCurrencyFromCountry(countryCode);
@@ -266,7 +270,7 @@ export const applyLocationSettings = async () => {
       console.error('Error applying location settings:', error);
     }
   } else {
-    console.log(`Using previously selected language: ${hasUserLanguagePreference}`);
+    console.log(`Using manually selected language: ${hasUserLanguagePreference}`);
   }
   
   return false;

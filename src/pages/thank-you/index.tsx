@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { CheckCircleIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import TextLogo from '../../components/TextLogo';
 
 const ThankYou: React.FC = () => {
   const { t } = useTranslation();
@@ -62,8 +63,8 @@ const ThankYou: React.FC = () => {
       {/* Header */}
       <header className="bg-white shadow-sm">
         <div className="container mx-auto px-6 py-4">
-          <Link to="/" className="text-2xl font-bold text-dark-theme">
-            Romio eSIM
+          <Link to="/" className="flex items-center">
+            <TextLogo className="text-3xl py-1" />
           </Link>
         </div>
       </header>

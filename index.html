@@ -95,7 +95,7 @@
       
       // Enhanced button click fixes for all devices
       function ensureButtonsWork() {
-        document.querySelectorAll('.btn-primary, .btn-secondary, a[href*="account.romiomobile.com"]').forEach(function(button) {
+        document.querySelectorAll('.btn-primary, .btn-secondary, button').forEach(function(button) {
           button.style.zIndex = '10000';
           button.style.position = 'relative';
           button.style.pointerEvents = 'auto';
@@ -142,7 +142,7 @@
       }
       
       // More aggressive button fixes
-      document.querySelectorAll('.btn-primary, .btn-secondary, a[href*="account.romiomobile.com"]').forEach(function(el) {
+      document.querySelectorAll('.btn-primary, .btn-secondary, button').forEach(function(el) {
         el.style.position = 'relative';
         el.style.zIndex = '10000';
         el.style.pointerEvents = 'auto';

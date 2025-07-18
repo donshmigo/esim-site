@@ -101,7 +101,7 @@
   }
   
   /* Only buttons and links need higher z-index, not all elements */
-  .btn-primary, .btn-secondary, a[href*="account.romiomobile.com"] {
+  .btn-primary, .btn-secondary, button {
     position: relative;
     z-index: 9999 !important;
   }
@@ -118,7 +118,7 @@
     }
     
     /* Ensure pricing section buttons are always clickable */
-    #pricing a, #pricing button, a[href*="account.romiomobile.com"] {
+    #pricing a, #pricing button, .btn-primary, .btn-secondary {
       position: relative !important;
       z-index: 10000 !important;
       pointer-events: auto !important;

@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function HowItWorks() {
   const steps = [
     {
@@ -13,7 +15,7 @@ export default function HowItWorks() {
     {
       number: '03',
       title: 'Stay Connected',
-      description: 'Use data across 80+ countries, all from the same eSIM.',
+      description: 'Use data across 90+ countries, all from the same eSIM.',
     },
     {
       number: '04',

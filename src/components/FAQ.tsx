@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { ChevronDownIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 
 const faqs = [
   {
     question: 'What is an eSIM and how does it work?',
-    answer: 'An eSIM (embedded SIM) is a digital SIM that allows you to activate a cellular plan without having to use a physical SIM card. It\'s built into your device. With Romio, you simply purchase a plan, scan the QR code we send you, and you\'re connected to data networks in 80+ countries.'
+    answer: 'An eSIM (embedded SIM) is a digital SIM that allows you to activate a cellular plan without having to use a physical SIM card. It\'s built into your device. With Romio, you simply purchase a plan, scan the QR code we send you, and you\'re connected to data networks in 90+ countries.'
   },
   {
     question: 'Is my device compatible with Romio eSIM?',
@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: 'Does my eSIM work in multiple countries or do I need separate eSIMs?',
-    answer: 'One Romio eSIM works across all 80+ countries we cover. There\'s no need to switch eSIMs or buy country-specific plans when crossing borders. Your data simply works as you travel between covered countries.'
+    answer: 'One Romio eSIM works across all 90+ countries we cover. There\'s no need to switch eSIMs or buy country-specific plans when crossing borders. Your data simply works as you travel between covered countries.'
   },
   {
     question: 'What happens if I run out of data before the month ends?',

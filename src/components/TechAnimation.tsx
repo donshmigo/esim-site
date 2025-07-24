@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { DevicePhoneMobileIcon, WifiIcon, GlobeAltIcon, ArrowPathIcon } from '@heroicons/react/24/solid';
 
 export default function TechAnimation() {
@@ -102,7 +102,7 @@ export default function TechAnimation() {
           <div className="absolute bottom-0 left-0 right-0 grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { number: "5G", label: "Network Ready", icon: WifiIcon },
-              { number: "80+", label: "Countries", icon: GlobeAltIcon },
+              { number: "90+", label: "Countries", icon: GlobeAltIcon },
               { number: "100%", label: "Digital", icon: DevicePhoneMobileIcon },
               { number: "24/7", label: "Support", icon: ArrowPathIcon }
             ].map((stat, i) => (

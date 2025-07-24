@@ -1,12 +1,50 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Trackdesk tracker begin -->
+    <script async src="//cdn.trackdesk.com/tracking.js"></script>
+    <script>
+    (function(t,d,k){(t[k]=t[k]||[]).push(d);t[d]=t[d]||t[k].f||function(){(t[d].q=t[d].q||[]).push(arguments)}})(window,"trackdesk","TrackdeskObject"); 
+
+    trackdesk('romio-mobile', 'click');
+    </script>
+    <!-- Trackdesk tracker end -->
+    
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/images/favicon light mode.png" media="(prefers-color-scheme: light)" />
     <link rel="icon" type="image/png" href="/images/favicon dark mode.png" media="(prefers-color-scheme: dark)" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Romio eSIM - Global connectivity with monthly plans. Stay connected in 80+ countries with no roaming fees." />
     <title>Romio eSIM | Global Connectivity, Monthly Freedom</title>
+    
+    <!-- Custom chat window styling -->
+    <style>
+      /* Prevent full-screen chat behavior */
+      #tawk-bubble-container iframe {
+        max-width: 400px !important;
+        max-height: 500px !important;
+        width: 400px !important;
+        height: 500px !important;
+      }
+      
+      @media (max-width: 768px) {
+        #tawk-bubble-container iframe {
+          max-width: 350px !important;
+          max-height: 450px !important;
+          width: 350px !important;
+          height: 450px !important;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        #tawk-bubble-container iframe {
+          max-width: 300px !important;
+          max-height: 400px !important;
+          width: 300px !important;
+          height: 400px !important;
+        }
+      }
+    </style>
     <meta property="og:image" content="/images/web preview.png" />
     <!-- Facebook Meta Tags -->
     <meta name="facebook-domain-verification" content="your-verification-code" />
@@ -101,12 +139,11 @@
           button.style.pointerEvents = 'auto';
           button.style.touchAction = 'manipulation';
           
-          // Add click event listener to ensure it works
+          // Add click event listener to ensure it works - but don't interfere with React handlers
           button.addEventListener('click', function(e) {
-            // Ensure the click goes through
-            e.stopPropagation();
+            // Don't stop propagation - let React handlers run first
             console.log('Button clicked:', this.textContent || this.href);
-          }, true);
+          }, false);
         });
       }
       
@@ -131,36 +168,6 @@
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    
-    // Ensure buttons work when chatbot loads
-    Tawk_API.onLoad = function(){
-      // Apply fixes immediately when chatbot loads
-      var chatWidget = document.querySelector('#tawk-bubble-container');
-      if (chatWidget) {
-        chatWidget.style.zIndex = '9998';
-        chatWidget.style.position = 'fixed';
-      }
-      
-      // More aggressive button fixes
-      document.querySelectorAll('.btn-primary, .btn-secondary, a[href*="account.romiomobile.com"]').forEach(function(el) {
-        el.style.position = 'relative';
-        el.style.zIndex = '10000';
-        el.style.pointerEvents = 'auto';
-        el.style.touchAction = 'manipulation';
-        
-        // Force click events to work
-        el.addEventListener('touchstart', function(e) {
-          e.stopPropagation();
-        }, { passive: false });
-        
-        el.addEventListener('click', function(e) {
-          e.stopPropagation();
-          console.log('Chatbot onLoad - Button clicked:', this.textContent || this.href);
-        }, true);
-      });
-    };
-    
-    // Load chatbot immediately
     (function(){
     var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
     s1.async=true;
@@ -171,5 +178,26 @@
     })();
     </script>
     <!--End of Tawk.to Script-->
+    
+    <!-- Trackdesk set client_reference_id help fuction begin -->
+    <script>
+    (function () {
+        var cookie = document.cookie.match('(^|;)\\s*trakdesk_cid\\s*=\\s*([^;]+)');
+        if (Array.isArray(cookie)) {
+            try {
+                var trakdeskCid = JSON.parse(cookie.pop());
+                var cid = trakdeskCid['cid'];
+                document.querySelectorAll('a[href^="https://buy.stripe.com/"]').forEach(function (a) {
+                    var url = new URL(a.href);
+                    url.searchParams.set('client_reference_id', cid);
+                    a.href = url.href;
+                });
+            } catch (e) {
+                console.log(e);
+            }
+        }
+    })();
+    </script>
+    <!-- Trackdesk set client_reference_id help fuction end -->
   </body>
 </html>

@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { GlobeAltIcon, SignalIcon, DevicePhoneMobileIcon } from '@heroicons/react/24/outline';
-import heroImage from '../../../assets/images/hero-image.svg';
 
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false);
@@ -44,7 +43,7 @@ export default function Hero() {
             </h1>
             
             <p className="text-lg text-cool-slate mb-8 animate-fade-in-up animate-delay-200">
-              Stay connected across 80+ countries with one eSIM plan. No roaming fees, no SIM swapping, 
+              Stay connected across 90+ countries with one eSIM plan. No roaming fees, no SIM swapping, 
               just instant connectivity the moment you land.
             </p>
             
@@ -76,7 +75,7 @@ export default function Hero() {
             {/* Tech features list */}
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 animate-fade-in-up animate-delay-500">
               {[
-                { icon: GlobeAltIcon, text: "80+ Countries" },
+                { icon: GlobeAltIcon, text: "90+ Countries" },
                 { icon: DevicePhoneMobileIcon, text: "Instant Activation" },
                 { icon: SignalIcon, text: "High-Speed Data" }
               ].map((feature, index) => (
@@ -92,11 +91,9 @@ export default function Hero() {
           <div className={`flex justify-center lg:justify-end transition-all duration-1000 ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'}`}>
             <div className="relative">
               <div className="absolute inset-0 bg-signal-blue rounded-full opacity-10 blur-xl animate-pulse scale-90"></div>
-              <img 
-                src={heroImage} 
-                alt="Romio eSIM global connectivity" 
-                className="w-full max-w-md lg:max-w-lg relative z-10 hover-glitch"
-              />
+              <div className="w-full max-w-md lg:max-w-lg h-64 bg-gray-200 rounded-lg relative z-10 hover-glitch flex items-center justify-center">
+                <p className="text-gray-500">Hero Image</p>
+              </div>
               
               {/* Animated data circles */}
               <div className="absolute top-5 -right-4 w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center animate-fade-in-right animate-delay-300">

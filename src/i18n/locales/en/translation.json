@@ -94,7 +94,7 @@
   "hero": {
     "title": "One Plan,",
     "titleHighlight": "Global Connectivity",
-    "description": "Stay connected in over 75+ countries with a single eSIM plan. No roaming fees, no complicated setup, instant access to high-speed data wherever you go.",
+          "description": "Stay connected in over 90+ countries with a single eSIM plan. No roaming fees, no complicated setup, instant access to high-speed data wherever you go.",
     "primaryCta": "Connect",
     "secondaryCta": "How It Works",
     "nextGenConnectivity": "Next Generation Connectivity",
@@ -103,7 +103,7 @@
     "features": {
       "global": {
         "title": "Global Coverage",
-        "description": "75+ countries"
+        "description": "90+ countries"
       },
       "setup": {
         "title": "Instant Setup",
@@ -118,7 +118,7 @@
       "status": "Activated",
       "ready": "Ready to Connect",
       "network": "Global Network",
-      "countries": "75+ countries"
+      "countries": "90+ countries"
     }
   },
   "features": {
@@ -141,15 +141,15 @@
       "description": "Get help anytime, anywhere from our global team"
     },
     "feature5": {
-      "title": "Cost Effective",
-      "description": "Save up to 70% compared to traditional roaming fees"
+      "title": "Multi-Device Support",
+      "description": "Use your eSIM data across multiple devices with mobile hotspot functionality"
     },
     "feature6": {
       "title": "Dual SIM Ready",
       "description": "Keep your local number while using our global data"
     },
     "global": {
-      "title": "Global Coverage in 75+ Countries",
+      "title": "Global Coverage in 90+ Countries",
       "description": "Stay connected across Europe, North America, Asia, and more — with one plan, one QR code."
     },
     "subscription": {
@@ -169,8 +169,8 @@
       "description": "Add our VoIP plan to keep your phone number, take calls over data, and use apps like WhatsApp without interruption."
     },
     "topUp": {
-      "title": "Top-Up Flexibility",
-      "description": "Need more data before the month ends? Easily top up from your portal or app."
+      "title": "No Roaming Fees",
+      "description": "Enjoy local data rates in all covered countries. No surprise bills or expensive roaming charges."
     }
   },
   "howItWorks": {
@@ -196,7 +196,7 @@
   },
   "coverage": {
     "title": "Global Coverage",
-    "subtitle": "Stay connected in 75+ countries worldwide",
+    "subtitle": "Stay connected in 90+ countries worldwide",
     "searchPlaceholder": "Search country...",
     "mapAlt": "World map showing coverage regions",
     "moreCountries": "more countries",
@@ -237,10 +237,10 @@
     "mostPopular": "Most Popular",
     "cta": "Buy Now",
     "commonFeatures": {
-      "feature1": "Valid for 30 days",
-      "feature2": "High-speed data (4G/5G)",
-      "feature3": "Global coverage in over 75+ countries",
-      "feature4": "Secure connection",
+      "feature1": "High-speed data (4G/5G)",
+      "feature2": "Global coverage in over 90+ countries",
+      "feature3": "Secure connection",
+      "feature4": "Airport lounge pass access",
       "feature5": "Worldwide customer support",
       "feature6": "24/7 customer support",
       "feature7": "Keep your number (coming soon)",
@@ -251,7 +251,7 @@
       "price": "$19.99",
       "yearlyPrice": "$191.88",
       "data": "5GB Data",
-      "countries": "75+ Countries",
+      "countries": "90+ Countries",
       "description": "Perfect for light users who need basic connectivity for messaging, emails, and occasional browsing. Great for staying connected without heavy data usage.",
       "features": {
         "feature1": "Basic customer support",
@@ -264,7 +264,7 @@
       "price": "$39.99",
       "yearlyPrice": "$383.88",
       "data": "15GB Data",
-      "countries": "75+ Countries",
+      "countries": "90+ Countries",
       "description": "Perfect for professionals and regular users who need reliable connectivity for work, video calls, streaming, and social media. Ideal for those who work online or need consistent access.",
       "features": {
         "feature1": "24/7 customer support",
@@ -276,8 +276,9 @@
       "name": "Max",
       "price": "$64.99",
       "yearlyPrice": "$623.88",
-      "data": "30GB Data",
-      "countries": "75+ Countries",
+      "data": "Unlimited",
+      "dataNote": "Throttled after 25GB",
+      "countries": "90+ Countries",
       "description": "Best for digital nomads and business travelers who need unlimited connectivity across the globe. Perfect for heavy data usage.",
       "features": {
         "feature1": "Priority 24/7 support",
@@ -450,12 +451,12 @@
     "maxOverview": "Romio Max was made for people who live online — from airports and cafés to islands and coworking hubs. With 30GB of global data, it supports everything from heavy video usage to hotspotting your laptop. It's your full-time data plan that works across borders without skipping a beat.",
     "features": {
       "instantDelivery": "Instant eSIM delivery via QR code",
-      "globalCoverage": "Connect in 75+ countries",
+      "globalCoverage": "Connect in 90+ countries",
       "validity": "30-day validity from first activation",
       "useAnywhere": "Use at home or abroad",
       "cancelAnytime": "Cancel or upgrade anytime",
       "streaming": "Supports streaming, uploading, Zoom, and more",
-      "highSpeedCoverage": "High-speed LTE coverage in 75+ countries",
+      "highSpeedCoverage": "High-speed LTE coverage in 90+ countries",
       "autoRenewing": "Auto-renewing, easy to manage",
       "remoteWork": "Designed for remote work, travel, and hybrid life",
       "addons": "VoIP (coming soon) and insurance add-ons available"

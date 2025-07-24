@@ -157,8 +157,8 @@
       "description": "随时随地从我们的全球团队获取帮助"
     },
     "feature5": {
-      "title": "成本效益",
-      "description": "与传统漫游费相比节省高达70%"
+      "title": "多设备支持",
+      "description": "通过移动热点功能在多个设备上使用您的eSIM数据"
     },
     "feature6": {
       "title": "双卡就绪",
@@ -185,8 +185,8 @@
       "description": "添加我们的VoIP计划以保留您的电话号码，通过数据接听电话，并不间断地使用WhatsApp等应用程序。"
     },
     "topUp": {
-      "title": "充值灵活性",
-      "description": "月底前需要更多数据？从您的门户网站或应用轻松充值。"
+      "title": "无漫游费",
+      "description": "在所有覆盖国家享受本地数据费率。无意外账单或昂贵的漫游费用。"
     }
   },
   "howItWorks": {
@@ -252,10 +252,10 @@
     "savingTag": "节省20%",
     "mostPopular": "最受欢迎",
     "commonFeatures": {
-      "feature1": "有效期30天",
-      "feature2": "高速数据（4G/5G）",
-      "feature3": "覆盖90多个国家",
-      "feature4": "安全连接",
+      "feature1": "高速数据（4G/5G）",
+      "feature2": "覆盖90+多个国家",
+      "feature3": "安全连接",
+      "feature4": "机场贵宾室通行证访问",
       "feature5": "全球客户支持",
       "feature6": "24/7客户支持",
       "feature7": "保留您的号码（即将推出）",

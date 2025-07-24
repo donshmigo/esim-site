@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRightIcon } from '@heroicons/react/24/outline';
 import { GlobeAltIcon, DevicePhoneMobileIcon, SignalIcon, BoltIcon } from '@heroicons/react/24/solid';
 
@@ -51,7 +51,7 @@ const AnimatedHero = () => {
             </h1>
             
             <p className="text-lg text-cool-slate mb-8 animate-fade-in-up animate-delay-200">
-              Stay connected in 80+ countries with a single eSIM plan. No roaming fees,
+              Stay connected in 90+ countries with a single eSIM plan. No roaming fees,
               no complicated setup, just instant access to high-speed data wherever you go.
             </p>
             
@@ -72,7 +72,7 @@ const AnimatedHero = () => {
             {/* Feature list */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-up animate-delay-400">
               {[
-                { icon: GlobeAltIcon, title: "Global Coverage", desc: "80+ countries", color: "bg-blue-50" },
+                { icon: GlobeAltIcon, title: "Global Coverage", desc: "90+ countries", color: "bg-blue-50" },
                 { icon: BoltIcon, title: "Instant Setup", desc: "Activate in seconds", color: "bg-amber-50" },
                 { icon: SignalIcon, title: "High-Speed Data", desc: "4G/5G networks", color: "bg-green-50" }
               ].map((feature, index) => (
@@ -152,7 +152,7 @@ const AnimatedHero = () => {
                   <GlobeAltIcon className="h-5 w-5 text-signal-blue mr-2" />
                   <span className="font-medium">Global Network</span>
                 </div>
-                <p className="text-xs text-cool-slate">80+ Countries</p>
+                <p className="text-xs text-cool-slate">90+ Countries</p>
               </div>
             </div>
           </div>

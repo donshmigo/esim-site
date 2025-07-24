@@ -18,28 +18,47 @@ export const trackAddToCart = (planName: string, price: number) => {
 };
 
 export const trackInitiateCheckout = (planName: string, price: number) => {
-  console.log('💳 PRICING PAGE - Tracking InitiateCheckout (Purchase Intent):', { planName, price });
+  console.log('💳 HOME PAGE - Tracking InitiateCheckout (Purchase Intent):', { planName, price });
   
-  try {
-    // Use ReactPixel first
+  // Check if Facebook Pixel is loaded
+  if (typeof window !== 'undefined' && (window as any).fbq) {
+    console.log('✅ Facebook Pixel is available, tracking event');
     ReactPixel.track('InitiateCheckout', {
       content_name: planName,
       content_type: 'product',
       value: price,
       currency: 'USD'
     });
-  } catch (error) {
-    console.warn('ReactPixel failed, using native fbq:', error);
-    
-    // Fallback to native Facebook Pixel
-    if (typeof window !== 'undefined' && (window as any).fbq) {
-      (window as any).fbq('track', 'InitiateCheckout', {
-        content_name: planName,
-        content_type: 'product',
-        value: price,
-        currency: 'USD'
-      });
-    }
+  } else {
+    console.warn('❌ Facebook Pixel not available');
+  }
+
+  // Track GTM begin_checkout custom event with ecommerce data
+  if (typeof window !== 'undefined' && (window as any).dataLayer) {
+    (window as any).dataLayer.push({
+      event: 'begin_checkout',
+      ecommerce: {
+        currency: 'USD',
+        value: price.toString(),
+        items: [{
+          item_id: planName.toLowerCase().replace(' ', '_'),
+          item_name: planName,
+          category: 'eSIM Plan',
+          quantity: '1',
+          price: price.toString()
+        }]
+      },
+      checkout_step: '1',
+      plan_name: planName
+    });
+
+    console.log('✅ GTM begin_checkout custom event fired:', {
+      value: price,
+      currency: 'USD',
+      plan: planName
+    });
+  } else {
+    console.warn('❌ GTM dataLayer not available');
   }
 };
 

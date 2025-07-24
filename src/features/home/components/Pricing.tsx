@@ -13,6 +13,7 @@ export default function Pricing() {
   const [touchStartY, setTouchStartY] = useState(0);
   const [isHorizontalSwipe, setIsHorizontalSwipe] = useState(false);
   const [swipeLocked, setSwipeLocked] = useState(false);
+  const [autoScrollPaused, setAutoScrollPaused] = useState(false);
 
   // Create a helper function to generate features arrays with fallbacks
   const getFeatures = (planKey: string) => {
@@ -23,7 +24,8 @@ export default function Pricing() {
       'pricing.commonFeatures.feature4',
       'pricing.commonFeatures.feature5',
       'pricing.commonFeatures.feature6',
-      'pricing.commonFeatures.feature7'
+      'pricing.commonFeatures.feature7',
+      'pricing.commonFeatures.feature8'
     ].map(key => t(key));
     
     // Add plan-specific features
@@ -71,23 +73,47 @@ export default function Pricing() {
       checkoutUrl: 'https://buy.stripe.com/8x28wR0IPdCYbYA9XP7Zu01',
       translationKey: 'traveler'
     },
-    {
-      name: t('pricing.max.name'),
-      price: 64.99,
-      dataAmount: t('pricing.max.data'),
-      features: getFeatures('max'),
-      popular: false,
-      promotional: false,
-      promotionalText: '',
-      ctaText: t('pricing.cta'),
-      checkoutUrl: 'https://buy.stripe.com/4gMbJ3fDJ42o5Ac7PH7Zu02',
-      translationKey: 'max'
-    }
+          {
+        name: t('pricing.max.name'),
+        price: 84.99,
+        dataAmount: t('pricing.max.data'),
+        features: getFeatures('max'),
+        popular: false,
+        promotional: true,
+        promotionalText: 'Unlimited',
+        ctaText: t('pricing.cta'),
+        checkoutUrl: 'https://buy.stripe.com/aFa5kF0IP1Ugd2E1rj7Zu03',
+        translationKey: 'max'
+      }
   ];
+
+  // Auto-scroll effect
+  useEffect(() => {
+    if (autoScrollPaused) return;
+
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => {
+        const nextIndex = (prevIndex + 1) % plansWithFallback.length;
+        return nextIndex;
+      });
+    }, 3000); // Change plan every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [autoScrollPaused, plansWithFallback.length]);
+
+  // Pause auto-scroll when user interacts
+  const pauseAutoScroll = () => {
+    setAutoScrollPaused(true);
+    // Resume after 10 seconds of no interaction
+    setTimeout(() => setAutoScrollPaused(false), 10000);
+  };
 
   const scrollToIndex = (index: number) => {
     // Skip if index is out of bounds
     if (index < 0 || index >= plansWithFallback.length) return;
+    
+    // Pause auto-scroll when user manually navigates
+    pauseAutoScroll();
     
     // Simply update the active index
     setActiveIndex(index);
@@ -99,6 +125,8 @@ export default function Pricing() {
     setTouchStartY(e.touches[0].clientY);
     setIsHorizontalSwipe(false);
     setSwipeLocked(false);
+    // Pause auto-scroll when user starts touching
+    pauseAutoScroll();
   };
 
   const handleTouchMove = (e: React.TouchEvent) => {
@@ -234,7 +262,11 @@ export default function Pricing() {
                 )}
                 {plansWithFallback[activeIndex].promotional && (
                   <div className="absolute -top-5 inset-x-0 flex justify-center z-20">
-                    <span className="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-medium shadow-sm">
+                    <span className={`text-white px-4 py-1 rounded-full text-sm font-medium shadow-sm ${
+                      plansWithFallback[activeIndex].promotionalText === 'Unlimited' 
+                        ? 'bg-purple-600' 
+                        : 'bg-green-500'
+                    }`}>
                       {plansWithFallback[activeIndex].promotionalText}
                     </span>
                   </div>
@@ -246,7 +278,14 @@ export default function Pricing() {
                     <span className="text-3xl font-bold text-romio-black">{formatPrice(convertFromUSD(plansWithFallback[activeIndex].price))}</span>
                     <span className="text-cool-slate">/{t('pricing.monthly')}</span>
                   </div>
-                  <div className="mt-1 text-lg font-medium text-signal-blue">{plansWithFallback[activeIndex].dataAmount}</div>
+                  <div className="mt-1">
+                    <div className="text-lg font-medium text-signal-blue">{plansWithFallback[activeIndex].dataAmount}</div>
+                    {plansWithFallback[activeIndex].translationKey === 'max' ? (
+                      <div className="text-xs text-cool-slate">{t('pricing.max.dataNote')}</div>
+                    ) : (
+                      <div className="text-xs text-cool-slate">No Throttling</div>
+                    )}
+                  </div>
                   <p className="mt-2 text-sm text-cool-slate">
                     {t(`pricing.${plansWithFallback[activeIndex].translationKey}.description`)}
                   </p>
@@ -267,20 +306,19 @@ export default function Pricing() {
                   rel="noopener noreferrer"
                   className="btn-primary block text-center py-3 px-4 rounded-lg font-medium transition-colors pointer-events-auto z-30 relative touch-manipulation"
                   onClick={(e: React.MouseEvent) => {
-                    // Track the event immediately
-                    try {
-                      trackInitiateCheckout(plansWithFallback[activeIndex].name, plansWithFallback[activeIndex].price);
-                      console.log('Mobile - InitiateCheckout tracked:', plansWithFallback[activeIndex].name, plansWithFallback[activeIndex].price);
-                    } catch (error) {
-                      console.error('Error tracking InitiateCheckout:', error);
-                    }
-                    
-                    // Don't prevent default - let the link work normally
+                    console.log('📱 Mobile button clicked for:', plansWithFallback[activeIndex].name);
+                    // Track FIRST, then prevent propagation
+                    trackInitiateCheckout(plansWithFallback[activeIndex].name, plansWithFallback[activeIndex].price);
                     e.stopPropagation();
                   }}
-                  onTouchStart={(e: React.TouchEvent) => e.stopPropagation()}
+                  onTouchStart={(e: React.TouchEvent) => {
+                    console.log('👆 Mobile button touched for:', plansWithFallback[activeIndex].name);
+                    // Track on touch start too for mobile reliability
+                    trackInitiateCheckout(plansWithFallback[activeIndex].name, plansWithFallback[activeIndex].price);
+                    e.stopPropagation();
+                  }}
                   onTouchEnd={(e: React.TouchEvent) => e.stopPropagation()}
-                  style={{ touchAction: 'manipulation', position: 'relative', zIndex: 10000, pointerEvents: 'auto' }}
+                  style={{ touchAction: 'manipulation', position: 'relative', zIndex: 9999 }}
                 >
                   {plansWithFallback[activeIndex].ctaText}
                 </a>
@@ -302,7 +340,9 @@ export default function Pricing() {
                 </div>
               )}
               {plan.promotional && (
-                <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-1 rounded-full text-sm font-medium z-10 shadow-sm">
+                <div className={`absolute -top-5 left-1/2 transform -translate-x-1/2 text-white px-4 py-1 rounded-full text-sm font-medium z-10 shadow-sm ${
+                  plan.promotionalText === 'Unlimited' ? 'bg-purple-600' : 'bg-green-500'
+                }`}>
                   {plan.promotionalText}
                 </div>
               )}
@@ -310,7 +350,14 @@ export default function Pricing() {
               <div className="mt-4 mb-6">
                 <span className="text-4xl font-bold text-romio-black">{formatPrice(convertFromUSD(plan.price))}</span>
                 <span className="text-cool-slate">/{t('pricing.monthly')}</span>
-                <div className="mt-1 text-lg font-medium text-signal-blue">{plan.dataAmount}</div>
+                <div className="mt-1">
+                  <div className="text-lg font-medium text-signal-blue">{plan.dataAmount}</div>
+                  {plan.translationKey === 'max' ? (
+                    <div className="text-xs text-cool-slate">{t('pricing.max.dataNote')}</div>
+                  ) : (
+                    <div className="text-xs text-cool-slate">No Throttling</div>
+                  )}
+                </div>
                 <p className="mt-2 text-sm text-cool-slate min-h-[80px]">
                   {t(`pricing.${plan.translationKey}.description`)}
                 </p>
@@ -331,18 +378,10 @@ export default function Pricing() {
                 rel="noopener noreferrer"
                 className="btn-primary block w-full text-center py-3 px-4 rounded-lg font-medium transition-colors"
                 onClick={(e: React.MouseEvent) => {
-                  // Track the event immediately
-                  try {
-                    trackInitiateCheckout(plan.name, plan.price);
-                    console.log('Desktop - InitiateCheckout tracked:', plan.name, plan.price);
-                  } catch (error) {
-                    console.error('Error tracking InitiateCheckout:', error);
-                  }
-                  
-                  // Don't prevent default - let the link work normally
-                  e.stopPropagation();
+                  console.log('🖱️ Desktop button clicked for:', plan.name);
+                  trackInitiateCheckout(plan.name, plan.price);
                 }}
-                style={{ position: 'relative', zIndex: 10000, pointerEvents: 'auto', touchAction: 'manipulation' }}
+                style={{ position: 'relative', zIndex: 9999 }}
               >
                 {plan.ctaText}
               </a>

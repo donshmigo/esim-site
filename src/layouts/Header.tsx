@@ -15,9 +15,6 @@ const Header: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  // External login URL - to be updated later
-  const externalLoginUrl = 'https://account.romiomobile.com/';
-
   // Add scroll effect
   useEffect(() => {
     const handleScroll = () => {
@@ -136,6 +133,12 @@ const Header: React.FC = () => {
               >
                 {t('header.coverage')}
               </button>
+              <Link 
+                to="/data-calculator" 
+                className="text-base font-medium text-gray-500 hover:text-gray-900"
+              >
+                Data Calculator
+              </Link>
               <button 
                 onClick={() => handleNavigation(isHome ? '#how-it-works' : '/')} 
                 className="text-base font-medium text-gray-500 hover:text-gray-900 bg-transparent border-0 cursor-pointer p-0"
@@ -154,14 +157,6 @@ const Header: React.FC = () => {
             <div className="flex items-center space-x-3">
               <LocaleSelector />
               
-              <a 
-                href={externalLoginUrl}
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-base font-medium text-gray-500 hover:text-gray-900"
-              >
-                {t('header.login')}
-              </a>
                   <button
                     onClick={handleSubscribeClick}
                     className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-signal-blue hover:bg-opacity-90"
@@ -194,6 +189,13 @@ const Header: React.FC = () => {
               >
                 {t('header.coverage')}
               </button>
+              <Link 
+                to="/data-calculator"
+                onClick={() => setIsOpen(false)}
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+              >
+                Data Calculator
+              </Link>
               <button 
                 onClick={() => {
                   handleNavigation(isHome ? '#how-it-works' : '/');
@@ -213,14 +215,6 @@ const Header: React.FC = () => {
                 {t('header.faq')}
               </button>
               
-              <a 
-                href={externalLoginUrl}
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-                  >
-                {t('header.login')}
-              </a>
                   <button
                     onClick={() => {
                       handleSubscribeClick();

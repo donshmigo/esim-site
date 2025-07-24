@@ -157,8 +157,8 @@
       "description": "Ottieni aiuto in qualsiasi momento e ovunque dal nostro team globale"
     },
     "feature5": {
-      "title": "Conveniente",
-      "description": "Risparmia fino al 70% rispetto alle tariffe di roaming tradizionali"
+      "title": "Supporto multi-dispositivo",
+      "description": "Usa i dati della tua eSIM su più dispositivi con funzionalità hotspot mobile"
     },
     "feature6": {
       "title": "Compatibile con Dual SIM",
@@ -185,8 +185,8 @@
       "description": "Aggiungi il nostro piano VoIP per mantenere il tuo numero di telefono, ricevere chiamate tramite dati e utilizzare app come WhatsApp senza interruzioni."
     },
     "topUp": {
-      "title": "Flessibilità di ricarica",
-      "description": "Hai bisogno di più dati prima della fine del mese? Ricarica facilmente dal tuo portale o app."
+      "title": "Nessuna tariffa roaming",
+      "description": "Goditi le tariffe dati locali in tutti i paesi coperti. Nessuna fattura a sorpresa o costose tariffe di roaming."
     }
   },
   "howItWorks": {
@@ -212,7 +212,7 @@
   },
   "coverage": {
     "title": "Copertura globale",
-    "subtitle": "Connesso in oltre 75 paesi in tutto il mondo",
+    "subtitle": "Connesso in oltre 90 paesi in tutto il mondo",
     "searchPlaceholder": "Cerca paese...",
     "mapAlt": "Mappa del mondo che mostra le regioni di copertura",
     "moreCountries": "altri paesi",
@@ -238,10 +238,10 @@
     "savingTag": "Risparmia 20%",
     "mostPopular": "Più Popolare",
     "commonFeatures": {
-      "feature1": "Valido per 30 giorni",
-      "feature2": "Dati ad alta velocità (4G/5G)",
-      "feature3": "Copertura globale in oltre 75 paesi",
-      "feature4": "Connessione sicura",
+      "feature1": "Dati ad alta velocità (4G/5G)",
+      "feature2": "Copertura globale in oltre 90+ paesi",
+      "feature3": "Connessione sicura",
+      "feature4": "Accesso ai pass lounge aeroportuali",
       "feature5": "Supporto clienti in tutto il mondo",
       "feature6": "Supporto clienti 24/7",
       "feature7": "Mantieni il tuo numero (prossimamente)",

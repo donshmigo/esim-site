@@ -157,8 +157,8 @@
       "description": "Erhalten Sie jederzeit und überall Hilfe von unserem globalen Team"
     },
     "feature5": {
-      "title": "Kosteneffektiv",
-      "description": "Sparen Sie bis zu 70% im Vergleich zu herkömmlichen Roaming-Gebühren"
+      "title": "Multi-Geräte-Unterstützung",
+      "description": "Nutzen Sie Ihre eSIM-Daten auf mehreren Geräten mit mobiler Hotspot-Funktionalität"
     },
     "feature6": {
       "title": "Dual-SIM-Bereit",
@@ -185,8 +185,8 @@
       "description": "Fügen Sie unseren VoIP-Plan hinzu, um Ihre Telefonnummer zu behalten, Anrufe über Daten zu tätigen und Apps wie WhatsApp ohne Unterbrechung zu nutzen."
     },
     "topUp": {
-      "title": "Aufladungs-Flexibilität",
-      "description": "Benötigen Sie mehr Daten vor Monatsende? Laden Sie einfach über Ihr Portal oder die App auf."
+      "title": "Keine Roaming-Gebühren",
+      "description": "Genießen Sie lokale Datentarife in allen abgedeckten Ländern. Keine überraschenden Rechnungen oder teure Roaming-Gebühren."
     }
   },
   "howItWorks": {
@@ -212,7 +212,7 @@
   },
   "coverage": {
     "title": "Globale Abdeckung",
-    "subtitle": "Verbunden in über 75 Ländern weltweit",
+    "subtitle": "Verbunden in über 90 Ländern weltweit",
     "searchPlaceholder": "Land suchen...",
     "mapAlt": "Weltkarte mit Abdeckungsgebieten",
     "moreCountries": "Weitere Länder",
@@ -252,10 +252,10 @@
     "savingTag": "20% sparen",
     "mostPopular": "Am beliebtesten",
     "commonFeatures": {
-      "feature1": "Gültig für 30 Tage",
-      "feature2": "Hochgeschwindigkeitsdaten (4G/5G)",
-      "feature3": "Weltweite Abdeckung in über 75 Ländern",
-      "feature4": "Sichere Verbindung",
+      "feature1": "Hochgeschwindigkeitsdaten (4G/5G)",
+      "feature2": "Weltweite Abdeckung in über 90+ Ländern",
+      "feature3": "Sichere Verbindung",
+      "feature4": "Zugang zu Flughafen-Lounge-Pässen",
       "feature5": "Globaler Kundenservice",
       "feature6": "24/7 Kundenservice",
       "feature7": "Behalten Sie Ihre Nummer (demnächst verfügbar)",

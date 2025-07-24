@@ -157,8 +157,8 @@
       "description": "Obtenez de l'aide à tout moment, n'importe où, de notre équipe mondiale"
     },
     "feature5": {
-      "title": "Rapport qualité-prix",
-      "description": "Économisez jusqu'à 70% par rapport aux frais d'itinérance traditionnels"
+      "title": "Support multi-appareils",
+      "description": "Utilisez les données de votre eSIM sur plusieurs appareils avec la fonctionnalité hotspot mobile"
     },
     "feature6": {
       "title": "Compatible Dual SIM",
@@ -185,8 +185,8 @@
       "description": "Ajoutez notre forfait VoIP pour conserver votre numéro de téléphone, recevoir des appels via les données et utiliser des applications comme WhatsApp sans interruption."
     },
     "topUp": {
-      "title": "Flexibilité de recharge",
-      "description": "Besoin de plus de données avant la fin du mois ? Rechargez facilement depuis votre portail ou application."
+      "title": "Aucuns frais de roaming",
+      "description": "Profitez des tarifs de données locaux dans tous les pays couverts. Aucune facture surprise ou frais de roaming coûteux."
     }
   },
   "howItWorks": {
@@ -212,7 +212,7 @@
   },
   "coverage": {
     "title": "Couverture mondiale",
-    "subtitle": "Connecté dans plus de 75 pays à travers le monde",
+    "subtitle": "Connecté dans plus de 90 pays à travers le monde",
     "searchPlaceholder": "Rechercher un pays...",
     "mapAlt": "Carte du monde avec zones de couverture",
     "moreCountries": "Plus de pays",
@@ -252,10 +252,10 @@
     "savingTag": "Économisez 20%",
     "mostPopular": "Le plus populaire",
     "commonFeatures": {
-      "feature1": "Valable pendant 30 jours",
-      "feature2": "Données à haut débit (4G/5G)",
-      "feature3": "Couverture mondiale dans plus de 75 pays",
-      "feature4": "Connexion sécurisée",
+      "feature1": "Données à haut débit (4G/5G)",
+      "feature2": "Couverture mondiale dans plus de 90+ pays",
+      "feature3": "Connexion sécurisée",
+      "feature4": "Accès aux pass salon d'aéroport",
       "feature5": "Service client mondial",
       "feature6": "Service client 24/7",
       "feature7": "Conservez votre numéro (bientôt disponible)",

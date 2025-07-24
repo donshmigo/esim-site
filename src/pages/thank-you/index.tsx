@@ -49,6 +49,74 @@ const ThankYou: React.FC = () => {
       });
     }
 
+    // Fire GTM Purchase event
+    if (typeof window !== 'undefined' && (window as any).dataLayer) {
+      (window as any).dataLayer.push({
+        event: 'purchase',
+        ecommerce: {
+          transaction_id: data.orderId || '',
+          value: parseFloat(data.amount) || 0,
+          currency: 'USD',
+          items: [{
+            item_id: data.plan || 'esim-plan',
+            item_name: data.plan || 'eSIM Plan',
+            category: 'eSIM',
+            quantity: 1,
+            price: parseFloat(data.amount) || 0
+          }]
+        },
+        user_data: {
+          utm_source: data.utm_source || '',
+          utm_medium: data.utm_medium || '',
+          utm_campaign: data.utm_campaign || '',
+          referral: data.referral || ''
+        }
+      });
+      
+      console.log('GTM Purchase event fired:', {
+        transaction_id: data.orderId || '',
+        value: parseFloat(data.amount) || 0,
+        currency: 'USD',
+        plan: data.plan || 'eSIM Plan'
+      });
+    }
+
+    // Fire Trackdesk conversion tracking
+    if (typeof window !== 'undefined' && (window as any).trackdesk) {
+      (window as any).trackdesk('romio-mobile', 'conversion', {
+        value: parseFloat(data.amount) || 0,
+        currency: 'USD',
+        order_id: data.orderId || '',
+        plan: data.plan || 'eSIM Plan',
+        referral: data.referral || '',
+        utm_source: data.utm_source || '',
+        utm_medium: data.utm_medium || '',
+        utm_campaign: data.utm_campaign || ''
+      });
+      
+      console.log('Trackdesk conversion event fired:', {
+        value: parseFloat(data.amount) || 0,
+        currency: 'USD',
+        order_id: data.orderId || '',
+        plan: data.plan || 'eSIM Plan',
+        referral: data.referral || ''
+      });
+    } else {
+      console.log('Trackdesk not available for conversion tracking');
+    }
+
+    // Fire GTM Conversion event (simple event for GTM triggers)
+    if (typeof window !== 'undefined' && (window as any).dataLayer) {
+      (window as any).dataLayer.push({
+        event: 'conversion',
+        conversion_type: 'purchase',
+        conversion_value: parseFloat(data.amount) || 0,
+        conversion_currency: 'USD',
+        plan_name: data.plan || 'eSIM Plan',
+        order_id: data.orderId || ''
+      });
+    }
+
     // Track referral data (you can send this to your analytics)
     if (data.referral || data.utm_source) {
       console.log('Referral tracking data:', data);
@@ -122,6 +190,25 @@ const ThankYou: React.FC = () => {
               <p>• Follow our setup guide for your device</p>
               <p>• Start using your global connectivity!</p>
             </div>
+          </div>
+
+          {/* LoungePair Partnership */}
+          <div className="bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 rounded-lg p-6 mb-8">
+            <h3 className="text-lg font-semibold text-purple-900 mb-3">✈️ Enhance Your Travel Experience</h3>
+            <p className="text-purple-800 mb-4 text-left">
+              Now that you're connected globally, make your airport experience even better! Access 500+ premium airport lounges worldwide through our partner LoungePair.
+            </p>
+            <a 
+              href="https://romio.loungepair.com/directory/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-200 shadow-md hover:shadow-lg"
+            >
+              <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+              </svg>
+              Book Airport Lounges
+            </a>
           </div>
 
           {/* Support */}
